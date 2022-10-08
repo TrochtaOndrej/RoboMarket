@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-RoboWorkerService-46BEBDC3-E741-433F-A64E-DCE7B4204D80</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+    <PackageReference Include="ObjectDumper.NET" Version="3.5.2" />
+    <PackageReference Include="Serilog.AspNetCore" Version="6.0.1" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\RobotCryptoExternal\breaker.helpers\Breaker.Helpers\Breaker.Helpers.csproj" />
+    <ProjectReference Include="..\..\RobotCryptoExternal\ExchangeSharp\src\ExchangeSharp\ExchangeSharp.csproj" />
+  </ItemGroup>
+</Project>
