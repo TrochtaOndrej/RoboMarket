@@ -21,7 +21,7 @@ public class CalculateCrypto : ICalculateCrypto
         _logger = logger;
     }
     public MarketProcessBuyOrSell GetOrderWithParameter(OrderProcessType orderProcessType, decimal profitPercent, decimal investmentPrice,
-        IActualMarketValue actualMarketValue)
+        ICupProcessMarketValue cupProcessMarketValue)
     {
         if (profitPercent < 0.01m && profitPercent > 100)
             throw new BussinesExceptions($"{nameof(profitPercent)} is out of range!");
@@ -30,14 +30,14 @@ public class CalculateCrypto : ICalculateCrypto
         switch (orderProcessType)
         {
             case OrderProcessType.Buy:
-                //var cryptoValueBuy = actualMarketValue.GetWallet_EurToCryptoBuy(_actualWallet);
+                //var cryptoValueBuy = cupProcessMarketValue.GetWallet_EurToCryptoBuy(_actualWallet);
                 var totalPriceWitProfit = investmentPrice + (investmentPrice / 100 * profitPercent);
-               // var buyFees = CalculateFees(totalPriceWitProfit);
-              //  var totalPriceToBuy = totalPriceWitProfit + buyFees;
+                // var buyFees = CalculateFees(totalPriceWitProfit);
+                //  var totalPriceToBuy = totalPriceWitProfit + buyFees;
 
-                //  actualMarketValue.CryptoPriceBuy
+                //  cupProcessMarketValue.CryptoPriceBuy
                 //Vypocet kdy nakoupit
-                var oneEur = investmentPrice / actualMarketValue.CryptoPriceBuy;
+                var oneEur = investmentPrice / cupProcessMarketValue.CryptoPriceBuy;
 
                 break;
         }
@@ -48,20 +48,20 @@ public class CalculateCrypto : ICalculateCrypto
     /// <summary> Vypocita jestli se ma uskutecnit prodej nebo nakup. Pokud se nema nic provadet vraci NULL! </summary>
     /// <param name="profitEur"> Profit v EUR od ktereho se uskutecni proces</param>
     /// <returns>Pokud se vrati null nic se neprovadi. Neni zadny profit</returns>
-    public MarketProcessBuyOrSell? CalculateSellOrBuy(decimal profitEur, IActualMarketValue actualMarketValue, decimal addExtraMoneyToPrice = 0)
+    public MarketProcessBuyOrSell? CalculateSellOrBuy(decimal profitEur, ICupProcessMarketValue cupProcessMarketValue, decimal addExtraMoneyToPrice = 0)
     {
-        if (actualMarketValue.MarketCurrency != _actualWallet.NameCurrency)
+        if (cupProcessMarketValue.CryptoCurrency != _actualWallet.CryptoCurrency)
             throw new ArgumentOutOfRangeException("Type currency is not the same in wallet!");
 
-        _logger.LogInformation("Actual market wallet {walletCrypto}: {btc} - {actualWalletEurBuy:F4}", _actualWallet.MarketSymbol, _actualWallet.CryptoAccountValue, actualMarketValue.GetWallet_EurToCrypto(_actualWallet));
+        _logger.LogInformation("Actual market wallet {walletCrypto}: {btc} - {actualWalletEurBuy:F4}", _actualWallet.MarketSymbol, _actualWallet.CryptoAccountValue, cupProcessMarketValue.GetWallet_EurToCrypto());
 
-        var actualProcessOrder = actualMarketValue.GetActualMArketProcess(_actualWallet);
+        var actualProcessOrder = cupProcessMarketValue.GetActualMArketProcess();
         switch (actualProcessOrder)
         {
             case MarketProcessType.Buy:
-                return actualMarketValue.CreateBuyOrder(_actualWallet, profitEur);
+                return cupProcessMarketValue.CreateBuyOrder(profitEur);
             case MarketProcessType.Sell:
-                return actualMarketValue.CreateSellOrder(_actualWallet, profitEur);
+                return cupProcessMarketValue.CreateSellOrder(profitEur);
         }
 
         return null;

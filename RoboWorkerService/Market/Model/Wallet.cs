@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using ExchangeSharp;
+﻿using ExchangeSharp;
 using Newtonsoft.Json;
 using RoboWorkerService.Market.Enum;
 
@@ -7,7 +6,7 @@ namespace RoboWorkerService.Market.Model;
 
 public record Wallet : MarketCurrency
 {
-    /// <summary>BTC na ucte </summary>
+ /// <summary>BTC na ucte </summary>
     public decimal CryptoAccountValue { get; set; }
 
     /// <summary> EUR na ucte </summary>
@@ -18,16 +17,21 @@ public record Wallet : MarketCurrency
 
     public override string ToString()
     {
-        return $"WALLET {NameCurrency} {CryptoAccountValue} |EUR {EurAccountValue}| CZK {CzkAccountValue}";
+        return $"WALLET {CryptoCurrency} {CryptoAccountValue} |EUR {EurAccountValue}| CZK {CzkAccountValue}";
     }
+    /// <summary>The ask is the price to buy at </summary>
+    public decimal CryptoPositionTransaction { get; set; }
 
-    public Wallet(MarketCurrencyType currencyType) : base(currencyType)
-    { }
+    public Wallet(CryptoCurrency cryptoCurrency) : base(cryptoCurrency)
+    {
+       
+    }
 
     public static void SaveWalletToJsonFile(Wallet wallet)
     {
+        //wallet.MarketSymbol  
         lock (wallet)
-            using (StreamWriter file = File.CreateText(@"wallet.json"))
+            using (StreamWriter file = File.CreateText( @"wallet.json"))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 serializer.Serialize(file, wallet);

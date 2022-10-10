@@ -14,7 +14,7 @@ public record MarketProcessBuyOrSell : MarketCurrency
 
     public override string ToString()
     {
-        return $"{ProcessType} - {CryptoValue}{NameCurrency}";
+        return $"{ProcessType} - {CryptoValue}{CryptoCurrency}";
     }
 
     /// <summary> Aktualni hodnota marketu (kde koupit nebo prodat) napr: 428 454</summary>
@@ -22,7 +22,7 @@ public record MarketProcessBuyOrSell : MarketCurrency
 
     public decimal Fees { get; set; }
 
-    public MarketProcessBuyOrSell(MarketCurrencyType currencyType) : base(currencyType)
+    public MarketProcessBuyOrSell(CryptoCurrency cryptoCurrency) : base(cryptoCurrency)
     {
     }
 }

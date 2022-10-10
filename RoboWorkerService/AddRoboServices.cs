@@ -21,7 +21,7 @@ public static class RoboServices
                     using (StreamReader reader = new StreamReader("wallet.json"))
                     {
                         string json = reader.ReadToEnd();
-                        return JsonConvert.DeserializeObject<Wallet>(json) ?? new Wallet(MarketCurrencyType.BTC_EUR);
+                        return JsonConvert.DeserializeObject<Wallet>(json) ?? new Wallet(CryptoCurrencyDefinitionList.BTC_EUR);
                     }
                 }
             }
@@ -30,12 +30,12 @@ public static class RoboServices
                 Log.Error(ex,"Load Wallet failed!");
             }
 
-            return new Wallet(MarketCurrencyType.BTC_EUR);
+            return new Wallet(CryptoCurrencyDefinitionList.BTC_EUR);
         });
 
         services.AddSingleton<ICoinMateRobo, CoinMateRobo>();
         services.AddSingleton<IMarketProcessing, MarketProcessing>();
-        services.AddSingleton<IActualMarketValue, ActualMarketOrder>();
+        services.AddSingleton<ICupProcessMarketValue, CupProcessMarket>();
         services.AddSingleton<ICalculateCrypto, CalculateCrypto>();
         services.AddSingleton<IWalletMarketTransactionData, WalletMarketTransactionData>();
 

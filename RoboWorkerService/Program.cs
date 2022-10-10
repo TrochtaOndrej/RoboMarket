@@ -1,6 +1,3 @@
-using System.Configuration;
-using System.Drawing.Text;
-using Newtonsoft.Json;
 using RoboWorkerService;
 using RoboWorkerService.Market.Model;
 using Serilog.Events;

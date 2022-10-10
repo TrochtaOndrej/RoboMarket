@@ -13,7 +13,7 @@ public class MarketProcessing : IMarketProcessing
     private readonly IWalletMarketTransactionData _walletMarketTransactionData;
     private readonly ICalculateCrypto _calculateCrypto;
     private readonly ILogger<MarketProcessing> _logger;
-    private readonly IActualMarketValue _actualMarketValue;
+    private readonly ICupProcessMarketValue _cupProcessMarketValue;
     private Wallet _wallet = default!;
 
     private ExchangeTicker _lastTicker = default!;
@@ -23,28 +23,31 @@ public class MarketProcessing : IMarketProcessing
         IWalletMarketTransactionData walletMarketTransactionData,
         ICalculateCrypto calculateCrypto,
         ILogger<MarketProcessing> logger,
-        IActualMarketValue actualMarketValue,
+        ICupProcessMarketValue cupProcessMarketValue,
         Wallet wallet)
     {
         _coinMateRobo = coinMateRobo;
         _walletMarketTransactionData = walletMarketTransactionData;
         _calculateCrypto = calculateCrypto;
         _logger = logger;
-        _actualMarketValue = actualMarketValue;
+        _cupProcessMarketValue = cupProcessMarketValue;
         _wallet = wallet;
     }
 
-    public async Task InitAsync(MarketCurrencyType walletCurrency)
+    public async Task InitAsync(CryptoCurrency walletCryptoCurrency)
     {
-        await _coinMateRobo.InitRoboAsync(_wallet.NameCurrency);
+        await _coinMateRobo.InitRoboAsync(_wallet.CryptoCurrency);
         var ticker = await _coinMateRobo.GetTickerAsync();
 
         //Nastaveni vychozi penezenky srovnane na aktualni hladinu EUR a BTC
         if (_wallet.CryptoAccountValue == 0)
         {
             const decimal eurInWallet = 400m;
-            _wallet.CryptoAccountValue = eurInWallet / ((ticker.Ask + ticker.Bid) / 2); // 100 euro v Cryptu
+            var positionAverage = (ticker.Ask + ticker.Bid) / 2;
+            _wallet.CryptoAccountValue = eurInWallet / positionAverage ; // 100 euro v Cryptu
             _wallet.EurAccountValue = eurInWallet;
+            _wallet.CryptoPositionTransaction =  positionAverage;
+
         }
     }
     static SemaphoreSlim semaphoreSlim = new SemaphoreSlim(1, 1);
@@ -53,7 +56,7 @@ public class MarketProcessing : IMarketProcessing
         await semaphoreSlim.WaitAsync();
         try
         {
-           
+
             // nacti novy order z Burzy
             var ticker = await _coinMateRobo.GetTickerAsync();
             if (ticker.Ask == _lastTicker?.Ask && ticker.Bid == _lastTicker?.Bid)
@@ -62,13 +65,13 @@ public class MarketProcessing : IMarketProcessing
                 return;
             }
             Console.WriteLine();
-           _lastTicker = ticker;
+            _lastTicker = ticker;
             _logger.LogInformation("Market position BUY: {ask}, SELL {sell}", ticker.Ask, ticker.Bid);
 
             //vypocti profit 
-            _actualMarketValue.SetActualValue(ticker);
+            _cupProcessMarketValue.SetActualValue(ticker);
 
-            var buyOrSell = _calculateCrypto.CalculateSellOrBuy(1M, _actualMarketValue, 1);
+            var buyOrSell = _calculateCrypto.CalculateSellOrBuy(1M, _cupProcessMarketValue, 1);
             if (buyOrSell == null) return;
 
             _logger.LogDebug(ObjectDumper.Dump(buyOrSell));
@@ -104,7 +107,7 @@ public class MarketProcessing : IMarketProcessing
     private void CalculateActualTransactionIntoWallet(Wallet wallet, ExchangeOrderResult exchange)
     {
         var fees = GetFeesFromOrderInBtc(exchange);
-
+        if (exchange.Price is null) _logger.LogWarning("Price is null after BUY or SELL");
         if (exchange.IsBuy)
         {
             wallet.CryptoAccountValue += exchange.Amount - fees;
@@ -115,6 +118,8 @@ public class MarketProcessing : IMarketProcessing
             wallet.CryptoAccountValue -= exchange.Amount - fees;
             wallet.EurAccountValue += (exchange.Amount - fees) * exchange.Price ?? 0;
         }
+        wallet.CryptoPositionTransaction = exchange.Price ?? 0;
+       
 
         _logger.LogInformation("Fees {fees} | Transaction {@transaction}", fees, exchange);
         _logger.LogInformation("Actual Wallet {wallet}", wallet.ToString());

@@ -5,14 +5,16 @@ namespace RoboWorkerService.Market.Model;
 
 public record MarketCurrency
 {
-    public MarketCurrencyType NameCurrency { get; }
+    public CryptoCurrency CryptoCurrency { get; set; }
 
-    public MarketCurrency(MarketCurrencyType currencyType)
+    public MarketCurrency(CryptoCurrency cryptoCurrencyType)
     {
-        NameCurrency = currencyType;
-        MarketSymbol = currencyType.GetEnumDescription();
+        CryptoCurrency = cryptoCurrencyType;
+        MarketSymbol = cryptoCurrencyType.ToString();
     }
 
     /// <summary> Get BTC-EUR as string </summary>
-    public string MarketSymbol { get; } 
+    public string MarketSymbol { get; }
+
+   
 }

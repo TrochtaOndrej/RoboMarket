@@ -20,7 +20,7 @@ public class Worker : BackgroundService
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        await _marketProcessing.InitAsync(MarketCurrencyType.BTC_EUR);
+        await _marketProcessing.InitAsync(CryptoCurrencyDefinitionList.BTC_EUR);
 
         while (!stoppingToken.IsCancellationRequested)
         {
