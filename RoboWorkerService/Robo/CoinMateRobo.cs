@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security;
-using Breaker.Helpers.Extensions;
+﻿using System.Security;
 using ExchangeSharp;
 using RoboWorkerService.Market.Enum;
 using RoboWorkerService.Market.Model;
 
 namespace RoboWorkerService.Robo;
 
-public interface ICoinMateRobo
+public interface ICoinMateRobo<T> where T : ICryptoCurrency
 {
-    public Task InitRoboAsync(CryptoCurrency symbol);
+    public Task InitRoboAsync(T symbol);
     public Task<IEnumerable<ExchangeOrderResult>> GetValueAsync();
     Task<string> ExchangeRateBtcAsync();
     /// <summary> Aktualni hodnota na burze  </summary>
@@ -21,15 +17,15 @@ public interface ICoinMateRobo
     public Task<ExchangeOrderResult> PlaceOrderAsync(MarketProcessBuyOrSell marketProcessBuyOrSell);
 }
 
-public class CoinMateRobo : ICoinMateRobo
+public class CoinMateRobo<T> : ICoinMateRobo<T> where T : ICryptoCurrency
 {
-    public static CoinMateRobo CoinRobo;
+    public static CoinMateRobo<T> CoinRobo;
     private IExchangeAPI _iexApi = default!;
     private string _marketSymbol;
 
     public CoinMateRobo()
     { }
-    public async Task InitRoboAsync(CryptoCurrency symbol)
+    public async Task InitRoboAsync(T symbol)
     {
         _iexApi = await ExchangeAPI.GetExchangeAPIAsync(typeof(ExchangeCoinbaseAPI));
         _iexApi.LoadAPIKeys(Environment.CurrentDirectory + @"\coinbase.bin");
@@ -39,7 +35,7 @@ public class CoinMateRobo : ICoinMateRobo
 
         ExchangeAPI.UseDefaultMethodCachePolicy = false;
 
-        _marketSymbol = symbol.ToString();
+        _marketSymbol = ((ICryptoCurrency)symbol).Crypto;
 
         foreach (char c in "trochin") _iexApi.Passphrase.AppendChar(c);
     }

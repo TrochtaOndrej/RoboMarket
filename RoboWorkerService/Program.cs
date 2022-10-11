@@ -1,4 +1,5 @@
 using RoboWorkerService;
+using RoboWorkerService.Market.Enum;
 using RoboWorkerService.Market.Model;
 using Serilog.Events;
 using Serilog;
@@ -40,8 +41,8 @@ public static class HostApp
 
     public static void CurrentDomain_ProcessExit(object sender, EventArgs e)
     {
-        var wallet = HostApp.Host.Services?.GetService<Wallet>();
-       if (wallet!= null) Wallet.SaveWalletToJsonFile(wallet);
+       // var wallet = HostApp.Host.Services?.GetService<Wallet>();
+       //if (wallet!= null) Wallet.SaveWalletToJsonFile(wallet);
     }
 }
 

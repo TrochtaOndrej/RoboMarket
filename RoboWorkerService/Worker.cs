@@ -1,5 +1,6 @@
 using Newtonsoft.Json;
 using RoboWorkerService.Interface;
+using RoboWorkerService.Market;
 using RoboWorkerService.Market.Enum;
 using RoboWorkerService.Market.Model;
 
@@ -8,28 +9,27 @@ namespace RoboWorkerService;
 public class Worker : BackgroundService
 {
     private readonly ILogger<Worker> _logger;
-    private readonly IMarketProcessing _marketProcessing;
-    private readonly IWalletMarketTransactionData _walletMarketTransactionData;
+    private readonly IMarketCoreCupBroker<ICryptoBTC> _marketCoreCupBroker;
 
-    public Worker(ILogger<Worker> logger, IMarketProcessing marketProcessing, IWalletMarketTransactionData walletMarketTransactionData)
+    public Worker(
+        ILogger<Worker> logger,
+        IMarketCoreCupBroker<ICryptoBTC> marketCoreCupBroker)
     {
         _logger = logger;
-        _marketProcessing = marketProcessing;
-        _walletMarketTransactionData = walletMarketTransactionData;
+        _marketCoreCupBroker = marketCoreCupBroker;
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        await _marketProcessing.InitAsync(CryptoCurrencyDefinitionList.BTC_EUR);
+        await _marketCoreCupBroker.ConnectToMarketAsync();
 
         while (!stoppingToken.IsCancellationRequested)
         {
             try
             {
-                await _marketProcessing.RunAsync();
+                await _marketCoreCupBroker.RunAsync();
 
-
-                await Task.Delay(5000, stoppingToken);
+                await Task.Delay(500, stoppingToken);
 
             }
             catch (Exception e)

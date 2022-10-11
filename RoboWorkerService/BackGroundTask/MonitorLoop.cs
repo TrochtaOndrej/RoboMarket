@@ -20,7 +20,7 @@ namespace RoboWorkerService.BackGroundTask;
         {
             _logger.LogInformation("MonitorAsync Loop is starting.");
 
-            // Run a console user input loop in a background thread
+            // RunAsync a console user input loop in a background thread
             Task.Run(async () => await MonitorAsync());
         }
 

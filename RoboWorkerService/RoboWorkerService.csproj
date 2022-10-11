@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>dotnet-RoboWorkerService-46BEBDC3-E741-433F-A64E-DCE7B4204D80</UserSecretsId>
+    <Platforms>AnyCPU;x86</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,7 +17,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\RobotCryptoExternal\breaker.helpers\Breaker.Helpers\Breaker.Helpers.csproj" />
     <ProjectReference Include="..\..\RobotCryptoExternal\ExchangeSharp\src\ExchangeSharp\ExchangeSharp.csproj" />
+    <ProjectReference Include="..\Library\Helper\Helper\Helper.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Log\" />
   </ItemGroup>
 </Project>

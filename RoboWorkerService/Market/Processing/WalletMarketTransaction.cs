@@ -1,20 +1,17 @@
 ﻿using ExchangeSharp;
 using RoboWorkerService.Interface;
+using RoboWorkerService.Market.Enum;
 using RoboWorkerService.Market.Model;
 using RoboWorkerService.Robo;
 
-namespace RoboWorkerService.Market.Business;
+namespace RoboWorkerService.Market.Processing;
 
-public class WalletMarketTransactionData : IWalletMarketTransactionData
+public class MarketTransactionData<T> : IWalletMarketTransactionData<T> where  T : ICryptoCurrency
 {
-    private readonly Wallet _wallet;
-    private readonly ICoinMateRobo _coinMateRobo;
     private Transaction _transaction;
 
-    public WalletMarketTransactionData(Wallet wallet, ICoinMateRobo coinMateRobo)
+    public MarketTransactionData()
     {
-        _wallet = wallet;
-        _coinMateRobo = coinMateRobo;
         _transaction = new Transaction();
     }
 
@@ -22,6 +19,4 @@ public class WalletMarketTransactionData : IWalletMarketTransactionData
     {
         _transaction.Add(exchangeOrderResult);
     }
-
-   
 }

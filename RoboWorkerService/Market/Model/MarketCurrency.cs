@@ -1,16 +1,23 @@
-﻿using Breaker.Helpers.Extensions;
-using RoboWorkerService.Market.Enum;
+﻿using RoboWorkerService.Market.Enum;
 
 namespace RoboWorkerService.Market.Model;
 
-public record MarketCurrency
+public interface IMarketCurrency
 {
-    public CryptoCurrency CryptoCurrency { get; set; }
+    ICryptoCurrency CryptoCurrency { get; set; }
 
-    public MarketCurrency(CryptoCurrency cryptoCurrencyType)
+    /// <summary> Get BTC-EUR as string </summary>
+    string MarketSymbol { get; }
+}
+
+public record MarketCurrency : IMarketCurrency
+{
+    public ICryptoCurrency CryptoCurrency { get; set; }
+
+    public MarketCurrency(ICryptoCurrency cryptoCurrencyType)
     {
         CryptoCurrency = cryptoCurrencyType;
-        MarketSymbol = cryptoCurrencyType.ToString();
+        MarketSymbol = cryptoCurrencyType.Crypto.ToString();
     }
 
     /// <summary> Get BTC-EUR as string </summary>
