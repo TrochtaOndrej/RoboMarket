@@ -14,7 +14,7 @@ using RoboWorkerService.Robo;
 
 namespace RoboWorkerService.Market
 {
-    public class MarketCore<T> where T : ICryptoCurrency 
+    public class MarketCore<T> where T : ICryptoCurrency
     {
         protected readonly ICoinMateRobo<T> _cmr;
         private readonly ILogger _logger;
@@ -44,7 +44,7 @@ namespace RoboWorkerService.Market
             return _lastTicker;
         }
 
-        protected void CalculateActualTransactionIntoWallet(IWallet<T> wallet , ExchangeOrderResult exchange) 
+        protected void CalculateActualTransactionIntoWallet(IWallet<T> wallet, ExchangeOrderResult exchange)
         {
             var fees = GetFeesFromOrderInBtc(exchange);
             if (exchange.Price is null) _logger.LogWarning("Price is null after BUY or SELL");
@@ -131,8 +131,8 @@ namespace RoboWorkerService.Market
                 var resultOrder = await _cmr.PlaceOrderAsync(buyOrSell);
                 _logger.LogDebug("Actual transaction {@transaction}", resultOrder);
                 // _pm.AddTransaction(resultOrder);
-                Wallet.SaveWalletToJsonFile(_pm.Wallet);
                 CalculateActualTransactionIntoWallet(_pm.Wallet, resultOrder); // snizi a zvysi hodnotu
+                 _pm.SaveWallet();
                 _logger.LogDebug(ObjectDumper.Dump(resultOrder));
 
                 Console.WriteLine();

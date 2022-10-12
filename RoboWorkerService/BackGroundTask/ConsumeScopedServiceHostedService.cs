@@ -1,11 +1,12 @@
 namespace RoboWorkerService.BackGroundTask;
 
 #region snippet1
+
 public class ConsumeScopedServiceHostedService : BackgroundService
 {
     private readonly ILogger<ConsumeScopedServiceHostedService> _logger;
 
-    public ConsumeScopedServiceHostedService(IServiceProvider services, 
+    public ConsumeScopedServiceHostedService(IServiceProvider services,
         ILogger<ConsumeScopedServiceHostedService> logger)
     {
         Services = services;
@@ -29,7 +30,7 @@ public class ConsumeScopedServiceHostedService : BackgroundService
 
         using (var scope = Services.CreateScope())
         {
-            var scopedProcessingService = 
+            var scopedProcessingService =
                 scope.ServiceProvider
                     .GetRequiredService<IScopedProcessingService>();
 
@@ -45,4 +46,5 @@ public class ConsumeScopedServiceHostedService : BackgroundService
         await base.StopAsync(stoppingToken);
     }
 }
+
 #endregion

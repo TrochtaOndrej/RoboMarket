@@ -1,33 +1,34 @@
 namespace RoboWorkerService.BackGroundTask;
 
-    #region snippet1
-    internal interface IScopedProcessingService
+#region snippet1
+
+internal interface IScopedProcessingService
+{
+    Task DoWork(CancellationToken stoppingToken);
+}
+
+internal class ScopedProcessingService : IScopedProcessingService
+{
+    private int executionCount;
+    private readonly ILogger _logger;
+
+    public ScopedProcessingService(ILogger<ScopedProcessingService> logger)
     {
-        Task DoWork(CancellationToken stoppingToken);
+        _logger = logger;
     }
 
-    internal class ScopedProcessingService : IScopedProcessingService
+    public async Task DoWork(CancellationToken stoppingToken)
     {
-        private int executionCount = 0;
-        private readonly ILogger _logger;
-        
-        public ScopedProcessingService(ILogger<ScopedProcessingService> logger)
+        while (!stoppingToken.IsCancellationRequested)
         {
-            _logger = logger;
-        }
+            executionCount++;
 
-        public async Task DoWork(CancellationToken stoppingToken)
-        {
-            while (!stoppingToken.IsCancellationRequested)
-            {
-                executionCount++;
+            _logger.LogInformation(
+                "Scoped Processing Service is working. Count: {Count}", executionCount);
 
-                _logger.LogInformation(
-                    "Scoped Processing Service is working. Count: {Count}", executionCount);
-
-                await Task.Delay(10000, stoppingToken);
-            }
+            await Task.Delay(10000, stoppingToken);
         }
     }
-    #endregion
+}
 
+#endregion

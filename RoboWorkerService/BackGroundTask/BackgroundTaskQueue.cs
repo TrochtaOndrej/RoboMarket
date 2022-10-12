@@ -2,8 +2,9 @@ using System.Threading.Channels;
 
 namespace RoboWorkerService.BackGroundTask;
 
-    #region snippet1
-    public interface IBackgroundTaskQueue
+#region snippet1
+
+public interface IBackgroundTaskQueue
 {
     ValueTask QueueBackgroundWorkItemAsync(Func<CancellationToken, ValueTask> workItem);
 
@@ -48,5 +49,5 @@ public class BackgroundTaskQueue : IBackgroundTaskQueue
         return workItem;
     }
 }
-    #endregion
 
+#endregion

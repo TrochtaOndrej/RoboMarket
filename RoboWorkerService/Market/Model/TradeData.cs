@@ -6,5 +6,4 @@ public record TradeData
     public decimal MarketValue { get; set; }
 
     public DateTime Date { get; set; }
-
 }

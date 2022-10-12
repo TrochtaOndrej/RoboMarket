@@ -1,11 +1,12 @@
 namespace RoboWorkerService.BackGroundTask;
 
 #region snippet1
+
 public class TimedHostedService : IHostedService, IDisposable
 {
-    private int executionCount = 0;
+    private int executionCount;
     private readonly ILogger<TimedHostedService> _logger;
-    private Timer? _timer = null;
+    private Timer? _timer;
 
     public TimedHostedService(ILogger<TimedHostedService> logger)
     {
@@ -44,4 +45,5 @@ public class TimedHostedService : IHostedService, IDisposable
         _timer?.Dispose();
     }
 }
+
 #endregion

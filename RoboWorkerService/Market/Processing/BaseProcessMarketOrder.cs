@@ -12,10 +12,11 @@ public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T
 {
     protected readonly IConfig Config;
     private readonly IJsonConvertor _json;
+    protected string FileName;
     public IWallet<T> Wallet { get; protected set; }
 
     public BaseProcessMarketOrder(
-        ILogger logger, 
+        ILogger logger,
         IWallet<T> wallet,
         IConfig config,
         IJsonConvertor json
@@ -24,6 +25,7 @@ public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T
         Config = config;
         _json = json;
         Wallet = wallet;
+        FileName = Config.ConfigPath + Wallet.MarketSymbol + "_" + nameof(CupProcessingMarket<T>) + ".json";
     }
 
     /// <summary> Aktualni hodnota v bitcoinu v penezence prevedena na EUR pro Nakup</summary>
@@ -72,29 +74,43 @@ public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T
 
     protected void Validation()
     {
-        if (!Wallet.CryptoCurrency.Equals(CryptoCurrency)) throw new BussinesExceptions(" Wallet marketCurrency is no the same with MarketValue!");
+        if (!Wallet.CryptoCurrency.Crypto.ToString().Equals(CryptoCurrency.Crypto.ToString(), StringComparison.InvariantCultureIgnoreCase)) throw new BussinesExceptions(" Wallet marketCurrency is no the same with MarketValue!");
     }
 
     #region JSon
     public virtual void Init()
     {
-        var fileName = Config.ConfigPath + Wallet.MarketSymbol + "_" + nameof(CupProcessingMarket<T>) + ".json";
-        if (File.Exists(fileName))
+
+        if (File.Exists(FileName))
         {
-            var str = File.ReadAllText(fileName);
-            Wallet = _json.ToInstance<Wallet<T>>(str);
+            var str = File.ReadAllText(FileName);
+            var www = _json.ToInstance<Wallet<T>>(str);
+            if (www.MarketSymbol != Wallet.MarketSymbol)
+                throw new BussinesExceptions(
+                    $"Config for Wallet is broken. The MarketSymbol is different. [{www.MarketSymbol}]!=[{Wallet.MarketSymbol}] ");
+
+            Wallet.CryptoAccountValue = www.CryptoAccountValue;
+            Wallet.CryptoPositionTransaction = www.CryptoPositionTransaction;
+            Wallet.EurAccountValue = www.EurAccountValue;
+
         }
         else
         {
-            var str = _json.ToJson<Wallet<T>>(Wallet);
-            File.WriteAllText(fileName, str);
-            throw new BussinesExceptions($"Is created new config file for Wallet in [{fileName}] ");
+            var str = _json.ToJson<IWallet<T>>(Wallet);
+            File.WriteAllText(FileName, str);
+            throw new BussinesExceptions($"Is created new config file for Wallet in [{FileName}] ");
         }
+    }
+
+    protected void SaveWalletToFile()
+    {
+        var str = _json.ToJson<IWallet<T>>(Wallet);
+        File.WriteAllText(FileName, str);
     }
     #endregion
 }
 
-public interface IBaseProcessMarketOrder<T> : IMarketCrypto  where T : ICryptoCurrency
+public interface IBaseProcessMarketOrder<T> : IMarketCrypto where T : ICryptoCurrency
 {
     IWallet<T> Wallet { get; }
 }

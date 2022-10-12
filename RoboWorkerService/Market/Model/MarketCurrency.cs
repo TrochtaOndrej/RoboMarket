@@ -1,4 +1,5 @@
-﻿using RoboWorkerService.Market.Enum;
+﻿using Newtonsoft.Json;
+using RoboWorkerService.Market.Enum;
 
 namespace RoboWorkerService.Market.Model;
 
@@ -12,16 +13,20 @@ public interface IMarketCurrency
 
 public record MarketCurrency : IMarketCurrency
 {
+    [JsonIgnore]
     public ICryptoCurrency CryptoCurrency { get; set; }
+
+    public MarketCurrency()
+    {
+        
+    }
 
     public MarketCurrency(ICryptoCurrency cryptoCurrencyType)
     {
         CryptoCurrency = cryptoCurrencyType;
-        MarketSymbol = cryptoCurrencyType.Crypto.ToString();
+        MarketSymbol = cryptoCurrencyType?.Crypto.ToString();
     }
 
     /// <summary> Get BTC-EUR as string </summary>
-    public string MarketSymbol { get; }
-
-   
+    public string MarketSymbol { get; set; }
 }

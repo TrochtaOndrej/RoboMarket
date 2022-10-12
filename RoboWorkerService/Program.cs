@@ -22,6 +22,7 @@ HostApp.Host = Host.CreateDefaultBuilder(args)
    .ConfigureServices(services =>
    {
        services.AddHostedService<Worker>();
+       services.AddJsonService();
        services.AddRoboServices();
    })
    .Build();

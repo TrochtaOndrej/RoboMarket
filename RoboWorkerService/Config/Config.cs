@@ -15,7 +15,7 @@ namespace RoboWorkerService.Config
     {
         private readonly string CurrentPath = Environment.CurrentDirectory;
 
-        public string ConfigPath => CurrentPath + @"\Config\";
+        public string ConfigPath => CurrentPath + @"\Setup\";
 
         public Config()
         {

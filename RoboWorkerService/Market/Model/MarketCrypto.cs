@@ -2,7 +2,7 @@
 
 namespace RoboWorkerService.Market.Model;
 
-public interface IMarketCrypto: ICryptoCurrency
+public interface IMarketCrypto : ICryptoCurrency
 {
     public CryptoCurrency CryptoCurrency { get; set; }
 

@@ -1,31 +1,47 @@
-﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+﻿using Newtonsoft.Json;
+using RoboWorkerService.JsonMapping;
 
 namespace RoboWorkerService.Market.Enum;
 
-public record CryptoDefinedList
+
+public interface ICryptoALGO : ICryptoCurrency
 {
-    public static CryptoCurrency BTC_EUR = new CryptoCurrency("BTC-EUR");
-    public static CryptoCurrency ETH_EUR = new CryptoCurrency("ETH-EUR");
 }
 
-public interface ICryptoBTC: ICryptoCurrency
-{ }
-
-public class CryptoBTC :  ICryptoBTC
+public class CryptoALGO : ICryptoALGO
 {
+    [JsonIgnore]
+    public string Crypto { get; set; } = "ALGO-EUR";
+}
+
+
+public interface ICryptoBTC : ICryptoCurrency
+{
+}
+
+public class CryptoBTC : ICryptoBTC
+{
+    [JsonIgnore]
     public string Crypto { get; set; } = "BTC-EUR";
 }
 
-public interface ICryptoETH: ICryptoCurrency
-{ }
-
-public class CryptoETH :  ICryptoETH
+public interface ICryptoETH : ICryptoCurrency
 {
+}
+
+public class CryptoETH : ICryptoETH
+{
+    [JsonIgnore]
     public string Crypto { get; set; } = "ETH-EUR";
 }
 
+public interface ICryptoDOGE : ICryptoCurrency { }
 
+public class CryptoDOGE : ICryptoDOGE
+{
+    [JsonIgnore]
+    public string Crypto { get; set; } = "DOGE-EUR";
+}
 
 
 public interface ICryptoCurrency
@@ -33,7 +49,7 @@ public interface ICryptoCurrency
     public string Crypto { get; set; }
 }
 
-[Serializable]
+
 public class CryptoCurrency : ICryptoCurrency
 {
     public string Crypto { get; set; }
@@ -59,10 +75,11 @@ public class CryptoCurrency : ICryptoCurrency
         return false;
     }
 
-    public static bool operator !=(CryptoCurrency a,CryptoCurrency b)
+    public static bool operator !=(CryptoCurrency a, CryptoCurrency b)
     {
         return !a.Equals(b);
     }
+
     public static bool operator ==(CryptoCurrency a, CryptoCurrency b)
     {
         return a.Equals(b);

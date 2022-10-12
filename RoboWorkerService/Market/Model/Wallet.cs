@@ -50,17 +50,6 @@ public record Wallet : MarketCurrency
     {
 
     }
-
-    public static void SaveWalletToJsonFile<T>(IWallet<T> wallet)
-    {
-        //wallet.MarketSymbol  
-        lock (wallet)
-            using (StreamWriter file = File.CreateText(@"wallet.json"))
-            {
-                JsonSerializer serializer = new JsonSerializer();
-                serializer.Serialize(file, wallet);
-            }
-    }
 }
 
 public class Transaction

@@ -2,11 +2,10 @@
 using RoboWorkerService.Interface;
 using RoboWorkerService.Market.Enum;
 using RoboWorkerService.Market.Model;
-using RoboWorkerService.Robo;
 
 namespace RoboWorkerService.Market.Processing;
 
-public class MarketTransactionData<T> : IWalletMarketTransactionData<T> where  T : ICryptoCurrency
+public class MarketTransactionData<T> : IWalletMarketTransactionData<T> where T : ICryptoCurrency
 {
     private Transaction _transaction;
 

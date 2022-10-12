@@ -11,17 +11,24 @@ public class SerialiazationException : Exception
 
 public interface IJsonConvertor
 {
-    string ToJson<T>(object o);
+    string ToJson<T>(T o);
     T ToInstance<T>(string json);
 }
 
 public class JsonConvertor : IJsonConvertor
 {
-    public string ToJson<T>(object o)
+    private readonly JsonSerializerSettings _settings;
+
+    public JsonConvertor(JsonSerializerSettings settings)
+    {
+        _settings = settings;
+    }
+
+    public string ToJson<T>(T o)
     {
         try
         {
-            var json = JsonConvert.SerializeObject((T)o,Newtonsoft.Json.Formatting.Indented);
+            var json = JsonConvert.SerializeObject(o, Newtonsoft.Json.Formatting.Indented, _settings);
             return json;
         }
         catch (Exception ex)
@@ -32,13 +39,22 @@ public class JsonConvertor : IJsonConvertor
 
     public T ToInstance<T>(string json)
     {
-        return JsonToClass<T>(json);
+        var instance = JsonConvert.DeserializeObject<T>(json, _settings);
+        return instance;
     }
 
-    public static T JsonToClass<T>(string json)
+
+    public class AbstractConverter<TReal, TAbstract>
+        : JsonConverter where TReal : TAbstract
     {
-        var instance = JsonConvert.DeserializeObject<T>(json);
-        return instance;
+        public override Boolean CanConvert(Type objectType)
+            => objectType == typeof(TAbstract);
+
+        public override Object ReadJson(JsonReader reader, Type type, Object value, JsonSerializer jser)
+            => jser.Deserialize<TReal>(reader);
+
+        public override void WriteJson(JsonWriter writer, Object value, JsonSerializer jser)
+            => jser.Serialize(writer, value);
     }
 }
 

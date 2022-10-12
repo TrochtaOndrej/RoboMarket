@@ -10,6 +10,7 @@ public interface ICoinMateRobo<T> where T : ICryptoCurrency
     public Task InitRoboAsync(T symbol);
     public Task<IEnumerable<ExchangeOrderResult>> GetValueAsync();
     Task<string> ExchangeRateBtcAsync();
+
     /// <summary> Aktualni hodnota na burze  </summary>
     public Task<ExchangeTicker> GetTickerAsync();
 
@@ -23,8 +24,6 @@ public class CoinMateRobo<T> : ICoinMateRobo<T> where T : ICryptoCurrency
     private IExchangeAPI _iexApi = default!;
     private string _marketSymbol;
 
-    public CoinMateRobo()
-    { }
     public async Task InitRoboAsync(T symbol)
     {
         _iexApi = await ExchangeAPI.GetExchangeAPIAsync(typeof(ExchangeCoinbaseAPI));
@@ -35,10 +34,11 @@ public class CoinMateRobo<T> : ICoinMateRobo<T> where T : ICryptoCurrency
 
         ExchangeAPI.UseDefaultMethodCachePolicy = false;
 
-        _marketSymbol = ((ICryptoCurrency)symbol).Crypto;
+        _marketSymbol = symbol.Crypto;
 
         foreach (char c in "trochin") _iexApi.Passphrase.AppendChar(c);
     }
+
     public Task<IEnumerable<ExchangeOrderResult>> GetValueAsync()
     {
         return _iexApi.GetOpenOrderDetailsAsync(_marketSymbol);
@@ -58,17 +58,16 @@ public class CoinMateRobo<T> : ICoinMateRobo<T> where T : ICryptoCurrency
     /// <summary>  Buy or Sell on market </summary>
     public Task<ExchangeOrderResult> PlaceOrderAsync(MarketProcessBuyOrSell marketProcessBuyOrSell)
     {
-        ExchangeOrderRequest ech = new ExchangeOrderRequest()
+        ExchangeOrderRequest ech = new ExchangeOrderRequest
         {
             Amount = marketProcessBuyOrSell.CryptoValue,
             OrderType = OrderType.Limit,
             IsBuy = marketProcessBuyOrSell.ProcessType == MarketProcessType.Buy,
             MarketSymbol = marketProcessBuyOrSell.MarketSymbol,
             Price = marketProcessBuyOrSell.Price,
-           // IsPostOnly = true
+            // IsPostOnly = true
         };
 
         return _iexApi.PlaceOrderAsync(ech);
     }
 }
-
