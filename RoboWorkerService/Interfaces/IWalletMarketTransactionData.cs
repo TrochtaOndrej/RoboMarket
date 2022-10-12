@@ -1,7 +1,7 @@
 ﻿using ExchangeSharp;
 using RoboWorkerService.Market.Enum;
 
-namespace RoboWorkerService.Interface;
+namespace RoboWorkerService.Interfaces;
 
 public interface IWalletMarketTransactionData<T> where T : ICryptoCurrency
 {

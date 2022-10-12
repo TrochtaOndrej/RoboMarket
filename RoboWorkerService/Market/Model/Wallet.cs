@@ -1,30 +1,15 @@
-﻿using ExchangeSharp;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using RoboWorkerService.Interface;
+using RoboWorkerService.Interfaces;
 using RoboWorkerService.Market.Enum;
 
 namespace RoboWorkerService.Market.Model;
 
-public record Wallet<T> : Wallet, IWallet<T> where T : ICryptoCurrency 
+public record Wallet<T> : Wallet, IWallet<T> where T : ICryptoCurrency
 {
     public Wallet(T cryptoCurrency) : base(cryptoCurrency)
-    { }
-}
-
-public interface IWallet<T>: IMarketCurrency
-{
-
-    /// <summary>BTC na ucte </summary>
-    decimal CryptoAccountValue { get; set; }
-
-    /// <summary> EUR na ucte </summary>
-    decimal EurAccountValue { get; set; }
-
-    /// <summary> CZK na ucte </summary>
-    [JsonIgnore]
-    decimal CzkAccountValue { get; }
-
-    /// <summary>The ask is the price to buy at </summary>
-    decimal CryptoPositionTransaction { get; set; }
+    {
+    }
 }
 
 public record Wallet : MarketCurrency
@@ -39,25 +24,15 @@ public record Wallet : MarketCurrency
     [JsonIgnore]
     public decimal CzkAccountValue => EurAccountValue * 25;
 
-    public override string ToString()
-    {
-        return $"WALLET {CryptoCurrency} {CryptoAccountValue} |EUR {EurAccountValue}| CZK {CzkAccountValue}";
-    }
     /// <summary>The ask is the price to buy at </summary>
     public decimal CryptoPositionTransaction { get; set; }
 
     public Wallet(ICryptoCurrency cryptoCurrency) : base(cryptoCurrency)
     {
-
     }
-}
 
-public class Transaction
-{
-    public List<ExchangeOrderResult> Trasactions = new List<ExchangeOrderResult>();
-
-    public void Add(ExchangeOrderResult or)
+    public override string ToString()
     {
-        Trasactions.Add(or);
+        return $"WALLET {CryptoCurrency} {CryptoAccountValue} |EUR {EurAccountValue}| CZK {CzkAccountValue}";
     }
 }

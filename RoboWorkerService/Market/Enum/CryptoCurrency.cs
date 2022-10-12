@@ -1,63 +1,42 @@
 ﻿using Newtonsoft.Json;
-using RoboWorkerService.JsonMapping;
+using RoboWorkerService.Interface;
+using RoboWorkerService.Interfaces;
 
 namespace RoboWorkerService.Market.Enum;
 
-
-public interface ICryptoALGO : ICryptoCurrency
-{
-}
-
 public class CryptoALGO : ICryptoALGO
 {
-    [JsonIgnore]
-    public string Crypto { get; set; } = "ALGO-EUR";
-}
-
-
-public interface ICryptoBTC : ICryptoCurrency
-{
+    [JsonIgnore] public string Crypto { get; set; } = "ALGO-EUR";
 }
 
 public class CryptoBTC : ICryptoBTC
 {
-    [JsonIgnore]
-    public string Crypto { get; set; } = "BTC-EUR";
-}
-
-public interface ICryptoETH : ICryptoCurrency
-{
+    [JsonIgnore] public string Crypto { get; set; } = "BTC-EUR";
 }
 
 public class CryptoETH : ICryptoETH
 {
-    [JsonIgnore]
-    public string Crypto { get; set; } = "ETH-EUR";
+    [JsonIgnore] public string Crypto { get; set; } = "ETH-EUR";
 }
-
-public interface ICryptoDOGE : ICryptoCurrency { }
 
 public class CryptoDOGE : ICryptoDOGE
 {
-    [JsonIgnore]
-    public string Crypto { get; set; } = "DOGE-EUR";
+    [JsonIgnore] public string Crypto { get; set; } = "DOGE-EUR";
 }
-
 
 public interface ICryptoCurrency
 {
     public string Crypto { get; set; }
 }
 
-
 public class CryptoCurrency : ICryptoCurrency
 {
-    public string Crypto { get; set; }
-
     public CryptoCurrency(string crypto)
     {
         Crypto = crypto;
     }
+
+    public string Crypto { get; set; }
 
     public override string ToString()
     {
@@ -68,9 +47,7 @@ public class CryptoCurrency : ICryptoCurrency
     {
         if (obj == null) return false;
         if (obj is ICryptoCurrency || obj is CryptoCurrency)
-        {
             return string.Equals(Crypto, ((ICryptoCurrency)obj).Crypto, StringComparison.InvariantCultureIgnoreCase);
-        }
 
         return false;
     }

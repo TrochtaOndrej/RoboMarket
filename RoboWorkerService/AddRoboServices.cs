@@ -1,6 +1,8 @@
 ﻿using Helper.Serialization;
 using Newtonsoft.Json;
 using RoboWorkerService.Config;
+using RoboWorkerService.Interface;
+using RoboWorkerService.Interfaces;
 using RoboWorkerService.Market;
 using RoboWorkerService.Market.Enum;
 using RoboWorkerService.Market.Model;
@@ -14,7 +16,8 @@ public static class RoboServices
     {
 
         services.AddSingleton<IConfig, Config.Config>();
-       // CRYPTO CURRENCY
+      
+        // CRYPTO CURRENCY
         services.AddSingleton<ICryptoBTC, CryptoBTC>();
         AddMarketBurker<ICryptoBTC>(services);
 
@@ -33,7 +36,6 @@ public static class RoboServices
 
     public static IServiceCollection AddMarketBurker<T>(this IServiceCollection services) where T : ICryptoCurrency
     {
-
         services.AddSingleton<IMarketCoreCupBroker<T>, MarketCoreCupBroker<T>>();
         services.AddSingleton<ICupProcessingMarket<T>, CupProcessingMarket<T>>();
         services.AddSingleton<ICoinMateRobo<T>, CoinMateRobo<T>>();

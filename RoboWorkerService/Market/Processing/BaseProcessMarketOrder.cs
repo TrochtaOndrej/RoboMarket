@@ -1,11 +1,15 @@
 ﻿using ExchangeSharp;
 using Helper.Serialization;
 using RoboWorkerService.Config;
+using RoboWorkerService.Interface;
+using RoboWorkerService.Interfaces;
 using RoboWorkerService.Market.Enum;
 using RoboWorkerService.Market.Model;
 
 namespace RoboWorkerService.Market.Processing;
 
+/// <summary> Bazova trida pro pomocne funkce pri vypoctech</summary>
+/// <typeparam name="T"></typeparam>
 public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T>
     //where P : IProcessingMarketValue
     where T : ICryptoCurrency
@@ -109,9 +113,3 @@ public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T
     }
     #endregion
 }
-
-public interface IBaseProcessMarketOrder<T> : IMarketCrypto where T : ICryptoCurrency
-{
-    IWallet<T> Wallet { get; }
-}
-

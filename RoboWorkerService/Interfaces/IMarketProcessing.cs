@@ -1,6 +1,6 @@
 ﻿using RoboWorkerService.Market.Enum;
 
-namespace RoboWorkerService.Interface;
+namespace RoboWorkerService.Interfaces;
 
 public interface IMarketProcessing
 {

@@ -1,6 +1,8 @@
 ﻿using ExchangeSharp;
 using Helper.Serialization;
 using RoboWorkerService.Config;
+using RoboWorkerService.Interface;
+using RoboWorkerService.Interfaces;
 using RoboWorkerService.Market.Enum;
 using RoboWorkerService.Market.Model;
 

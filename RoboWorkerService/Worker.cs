@@ -1,17 +1,15 @@
-using Newtonsoft.Json;
 using RoboWorkerService.Interface;
-using RoboWorkerService.Market;
-using RoboWorkerService.Market.Enum;
+using RoboWorkerService.Interfaces;
 
 namespace RoboWorkerService;
 
 public class Worker : BackgroundService
 {
     private readonly ILogger<Worker> _logger;
-    private readonly IMarketCoreCupBroker<ICryptoBTC> _marketCoreBTCCupBroker;
     private readonly IMarketCoreCupBroker<ICryptoALGO> _marketCoreAlgocCupBroker;
-    private readonly IMarketCoreCupBroker<ICryptoETH> _marketCoreEthCupBroker;
+    private readonly IMarketCoreCupBroker<ICryptoBTC> _marketCoreBTCCupBroker;
     private readonly IMarketCoreCupBroker<ICryptoDOGE> _marketCoreDogeCupBroker;
+    private readonly IMarketCoreCupBroker<ICryptoETH> _marketCoreEthCupBroker;
 
     public Worker(
         ILogger<Worker> logger,
@@ -19,7 +17,7 @@ public class Worker : BackgroundService
         IMarketCoreCupBroker<ICryptoALGO> marketCoreALGOC_CupBroker,
         IMarketCoreCupBroker<ICryptoETH> marketCoreETH_CupBroker,
         IMarketCoreCupBroker<ICryptoDOGE> marketCoreDOGE_CupBroker
-        )
+    )
     {
         _logger = logger;
         _marketCoreBTCCupBroker = marketCoreBTC_CupBroker;
@@ -36,7 +34,6 @@ public class Worker : BackgroundService
         await _marketCoreDogeCupBroker.ConnectToMarketAsync();
 
         while (!stoppingToken.IsCancellationRequested)
-        {
             try
             {
                 await _marketCoreBTCCupBroker.RunAsync();
@@ -50,12 +47,10 @@ public class Worker : BackgroundService
                 _logger.LogError(e, "Worker running at: {time}", DateTimeOffset.Now);
                 throw;
             }
-        }
     }
 
     public override Task StopAsync(CancellationToken cancellationToken)
     {
-
         return base.StopAsync(cancellationToken);
     }
 }

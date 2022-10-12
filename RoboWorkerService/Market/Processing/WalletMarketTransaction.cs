@@ -1,5 +1,5 @@
 ﻿using ExchangeSharp;
-using RoboWorkerService.Interface;
+using RoboWorkerService.Interfaces;
 using RoboWorkerService.Market.Enum;
 using RoboWorkerService.Market.Model;
 

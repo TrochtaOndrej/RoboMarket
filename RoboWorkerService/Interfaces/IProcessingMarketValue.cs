@@ -1,9 +1,8 @@
 ﻿using ExchangeSharp;
 using RoboWorkerService.Market.Enum;
 using RoboWorkerService.Market.Model;
-using RoboWorkerService.Market.Processing;
 
-namespace RoboWorkerService.Interface;
+namespace RoboWorkerService.Interfaces;
 
 public interface IProcessingMarketValue<W> : IBaseProcessMarketOrder<W> where W : ICryptoCurrency
 {

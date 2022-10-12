@@ -18,7 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\RobotCryptoExternal\ExchangeSharp\src\ExchangeSharp\ExchangeSharp.csproj" />
-    <ProjectReference Include="..\Library\Helper\Helper\Helper.csproj" />
+    <ProjectReference Include="..\Library\Helper\Helper.csproj" />
   </ItemGroup>
 
   <ItemGroup>
