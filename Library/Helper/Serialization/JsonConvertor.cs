@@ -13,6 +13,8 @@ public interface IJsonConvertor
 {
     string ToJson<T>(T o);
     T ToInstance<T>(string json);
+    Task ToFileJsonAsync<T>(string filename, T o, CancellationToken cancellationToken = default);
+    Task<T> FileToInstanceAsync<T>(string filename, CancellationToken cancellationToken = default);
 }
 
 public class JsonConvertor : IJsonConvertor
@@ -37,24 +39,33 @@ public class JsonConvertor : IJsonConvertor
         }
     }
 
+    public async Task ToFileJsonAsync<T>(string filename, T o, CancellationToken cancellationToken = default)
+    {
+        await File.WriteAllTextAsync(filename, ToJson(o), cancellationToken);
+    }
+
     public T ToInstance<T>(string json)
     {
         var instance = JsonConvert.DeserializeObject<T>(json, _settings);
         return instance;
     }
 
-
-    public class AbstractConverter<TReal, TAbstract>
-        : JsonConverter where TReal : TAbstract
+    public async Task<T> FileToInstanceAsync<T>(string filename, CancellationToken cancellationToken = default)
     {
-        public override Boolean CanConvert(Type objectType)
-            => objectType == typeof(TAbstract);
-
-        public override Object ReadJson(JsonReader reader, Type type, Object value, JsonSerializer jser)
-            => jser.Deserialize<TReal>(reader);
-
-        public override void WriteJson(JsonWriter writer, Object value, JsonSerializer jser)
-            => jser.Serialize(writer, value);
+        return ToInstance<T>(await File.ReadAllTextAsync(filename, cancellationToken));
     }
+
+}
+public class AbstractConverter<TReal, TAbstract>
+    : JsonConverter where TReal : TAbstract
+{
+    public override Boolean CanConvert(Type objectType)
+        => objectType == typeof(TAbstract);
+
+    public override Object ReadJson(JsonReader reader, Type type, Object value, JsonSerializer jser)
+        => jser.Deserialize<TReal>(reader);
+
+    public override void WriteJson(JsonWriter writer, Object value, JsonSerializer jser)
+        => jser.Serialize(writer, value);
 }
 

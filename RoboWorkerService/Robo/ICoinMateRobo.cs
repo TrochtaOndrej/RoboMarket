@@ -13,6 +13,9 @@ public interface ICoinMateRobo<T> where T : ICryptoCurrency
     /// <summary> Aktualni hodnota na burze  </summary>
     public Task<ExchangeTicker> GetTickerAsync();
 
-    /// <summary>Nakup nebo prodej na Marketu</summary>
-    public Task<ExchangeOrderResult> PlaceOrderAsync(MarketProcessBuyOrSell marketProcessBuyOrSell);
+    /// <summary>Vytvor platebni prikaz pro Market</summary>
+    ExchangeOrderRequest CreateExchangeOrderRequest(MarketProcessBuyOrSell marketProcessBuyOrSell);
+
+    /// <summary>  Buy or Sell on market </summary>
+    Task<ExchangeOrderResult> PlaceOrderAsync(ExchangeOrderRequest orderRequest);
 }

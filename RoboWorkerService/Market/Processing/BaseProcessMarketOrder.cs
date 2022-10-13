@@ -1,7 +1,6 @@
 ﻿using ExchangeSharp;
 using Helper.Serialization;
 using RoboWorkerService.Config;
-using RoboWorkerService.Interface;
 using RoboWorkerService.Interfaces;
 using RoboWorkerService.Market.Enum;
 using RoboWorkerService.Market.Model;
@@ -10,26 +9,30 @@ namespace RoboWorkerService.Market.Processing;
 
 /// <summary> Bazova trida pro pomocne funkce pri vypoctech</summary>
 /// <typeparam name="T"></typeparam>
-public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T>
+public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T> 
     //where P : IProcessingMarketValue
     where T : ICryptoCurrency
 {
     protected readonly IConfig Config;
     private readonly IJsonConvertor _json;
+    private readonly string _processingName;
     protected string FileName;
     public IWallet<T> Wallet { get; protected set; }
+    
 
     public BaseProcessMarketOrder(
         ILogger logger,
         IWallet<T> wallet,
         IConfig config,
-        IJsonConvertor json
+        IJsonConvertor json,
+        string processingName // nazev parent tridy pro rozliseni dat
         ) : base()
     {
         Config = config;
         _json = json;
+        _processingName = processingName;
         Wallet = wallet;
-        FileName = Config.ConfigPath + Wallet.MarketSymbol + "_" + nameof(CupProcessingMarket<T>) + ".json";
+        FileName = Config.ConfigPath + Wallet.MarketSymbol + "_" + processingName + ".json";
     }
 
     /// <summary> Aktualni hodnota v bitcoinu v penezence prevedena na EUR pro Nakup</summary>
@@ -52,7 +55,7 @@ public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T
         return (GetWallet_EurToCryptoBuy() + GetWallet_EurToCryptoSell()) / 2;
     }
 
-    public void SetActualValue(ExchangeTicker ticker)
+    public void SetActualValueFromMarket(ExchangeTicker ticker)
     {
         if (!string.Equals(Wallet.MarketSymbol, ticker.MarketSymbol, StringComparison.InvariantCultureIgnoreCase))
             throw new BussinesExceptions($" CryptoCurrency [{CryptoCurrency.ToString()}] is no the same with order market currency [{ticker.MarketSymbol}] !");

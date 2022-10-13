@@ -2,8 +2,18 @@
 
 namespace RoboWorkerService.Interfaces;
 
-public interface IMarketCoreCupBroker<W> where W : ICryptoCurrency
+public interface IMarketCoreDefinedMoneyBroker<W> : IMarketCoreBroker where W : ICryptoCurrency
+{
+}
+
+public interface IMarketCoreCupBroker<W> : IMarketCoreBroker where W : ICryptoCurrency
+{
+}
+
+public interface IMarketCoreBroker
 {
     Task RunAsync();
     Task ConnectToMarketAsync();
+
+   // IWallet BrokerWallet { get; }
 }

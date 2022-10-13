@@ -8,11 +8,8 @@ using RoboWorkerService.Market.Model;
 
 namespace RoboWorkerService.Market.Processing;
 
-public interface ICupProcessingMarket<W> : IBaseProcessMarketOrder<W> where W : ICryptoCurrency
+public interface ICupProcessingMarket<W> : IProcessAllMarketOrder<W> where W : ICryptoCurrency
 {
-    MarketProcessBuyOrSell? RunProcessing(ExchangeTicker ticker);
-    void Init();
-    void SaveWallet();
 }
 
 /// <summary>
@@ -27,7 +24,7 @@ public class CupProcessingMarket<W> : BaseProcessMarketOrder<W>, ICupProcessingM
         IWallet<W> wallet,
         IConfig config,
         IJsonConvertor json
-    ) : base(logger, wallet, config, json)
+    ) : base(logger, wallet, config, json, nameof(CupProcessingMarket<W>))
     {
         _logger = logger;
     }
@@ -35,7 +32,7 @@ public class CupProcessingMarket<W> : BaseProcessMarketOrder<W>, ICupProcessingM
     public MarketProcessBuyOrSell? RunProcessing(ExchangeTicker ticker)
     {
         //vypocti profit 
-        SetActualValue(ticker);
+        SetActualValueFromMarket(ticker);
         return CalculateSellOrBuy(1M);
     }
 

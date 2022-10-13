@@ -1,26 +1,21 @@
 ﻿using RoboWorkerService.Interfaces;
 using RoboWorkerService.Market.Enum;
-using RoboWorkerService.Market.Model;
 using RoboWorkerService.Market.Processing;
 using RoboWorkerService.Robo;
 
 namespace RoboWorkerService.Market;
 
-/// <summary> Jedna se o Cup metodu zpracovani BUY or SELL</summary>
+/// <summary> Jedna se o UZAVIREJ PREDEM DEFINOVANE PLATBY #MRIZKA# zpracovani BUY or SELL</summary>
 /// <typeparam name="W"></typeparam>
-public class MarketCoreCupBroker<W> : MarketCore<W>, IMarketCoreCupBroker<W> where W : ICryptoCurrency
+public class MarketCoreDefinedMoneyBroker<W> : MarketCore<W>, IMarketCoreDefinedMoneyBroker<W> where W : ICryptoCurrency
 {
-    private readonly ICupProcessingMarket<W> _pm;
+    private readonly IDefinedMoneyProcessMarket<W> _pm;
     private readonly ILogger<MarketCoreCupBroker<W>> _logger;
     private readonly ITransactionProcessing<W> _transaction;
-
-    private readonly string _walletName = nameof(MarketCoreCupBroker<W>);
-
-    public IWallet BrokerWallet { get; private set; }
     //  readonly SemaphoreSlim _semaphoreSlim = new SemaphoreSlim(1, 1);
 
-    public MarketCoreCupBroker(
-        ICupProcessingMarket<W> pm,
+    public MarketCoreDefinedMoneyBroker(
+        IDefinedMoneyProcessMarket<W> pm,
         ICoinMateRobo<W> cmr,
         ILogger<MarketCoreCupBroker<W>> logger,
         ITransactionProcessing<W> transactionProcessing
@@ -34,9 +29,6 @@ public class MarketCoreCupBroker<W> : MarketCore<W>, IMarketCoreCupBroker<W> whe
     public async Task ConnectToMarketAsync()
     {
         _pm.Init();
-        var brokerWallet = _pm.Wallet.GetWallet(_walletName); // aktualni penezenka pro tento process
-        if (brokerWallet == null) _pm.Wallet.SetWallet(_walletName, BrokerWallet = new Wallet(_pm.Wallet.CryptoCurrency));
-
         await _transaction.Load();
         await _cmr.InitRoboAsync((W)_pm.Wallet.CryptoCurrency);
     }
@@ -66,18 +58,18 @@ public class MarketCoreCupBroker<W> : MarketCore<W>, IMarketCoreCupBroker<W> whe
             var orderResult = await _cmr.PlaceOrderAsync(orderRequest);
             _logger.LogDebug("Actual transaction {@transaction}", orderResult);
             // _pm.AddTransaction(resultOrder);
-            CalculateActualTransactionIntoWallet(BrokerWallet, orderResult); // snizi a zvysi hodnotu
+            CalculateActualTransactionIntoWallet(_pm.Wallet, orderResult); // snizi a zvysi hodnotu
             _pm.SaveWallet();
-            _transaction.Add(orderRequest, orderResult, _pm.Wallet, buyOrSell, typeof(W));
+            _transaction.Add(orderRequest, orderResult, _pm.Wallet, buyOrSell,typeof(W));
             await _transaction.SaveAsync();
             _logger.LogDebug(ObjectDumper.Dump(orderResult));
 
             Console.WriteLine();
+
         }
         finally
         {
             //     _semaphoreSlim.Release();
         }
     }
-
 }

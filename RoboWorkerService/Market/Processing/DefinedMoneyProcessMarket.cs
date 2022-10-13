@@ -1,14 +1,13 @@
 ﻿using ExchangeSharp;
 using Helper.Serialization;
 using RoboWorkerService.Config;
-using RoboWorkerService.Interface;
 using RoboWorkerService.Interfaces;
 using RoboWorkerService.Market.Enum;
 using RoboWorkerService.Market.Model;
 
 namespace RoboWorkerService.Market.Processing;
 
-public interface IDefinedMoneyProcessMarket<W> : IBaseProcessMarketOrder<W> where W : ICryptoCurrency
+public interface IDefinedMoneyProcessMarket<W> : IProcessAllMarketOrder<W> where W : ICryptoCurrency
 {
     MarketProcessBuyOrSell? RunProcessing(ExchangeTicker ticker);
 }
@@ -16,22 +15,25 @@ public interface IDefinedMoneyProcessMarket<W> : IBaseProcessMarketOrder<W> wher
 /// <summary> Definice kolik se ma pouzit pri transakci penez </summary>
 public class DefinedMoneyProcessMarket<W> : BaseProcessMarketOrder<W>, IDefinedMoneyProcessMarket<W> where W : ICryptoCurrency
 {
+    private readonly IWallet<W, IDefinedMoneyProcessMarket<W>> _walletLocal;
 
     public DefinedMoneyProcessMarket(
         ILogger<BaseProcessMarketOrder<W>> logger,
         IWallet<W> wallet,
         IConfig config,
-        IJsonConvertor json
-    ) : base(logger, wallet, config, json)
+        IJsonConvertor json,
+        IWallet<W,IDefinedMoneyProcessMarket<W>> walletLocal) : base(logger, wallet, config, json, nameof(DefinedMoneyProcessMarket<W>))
     {
+        _walletLocal = walletLocal;
     }
 
     public MarketProcessBuyOrSell? RunProcessing(ExchangeTicker ticker)
     {
+        SetActualValueFromMarket(ticker);
         return CreateBuyOrder(1, 100);
     }
 
-    public MarketProcessBuyOrSell? CreateBuyOrder(decimal defineProfitInPercently, decimal investMoneyEur)
+    private MarketProcessBuyOrSell? CreateBuyOrder(decimal defineProfitInPercently, decimal investMoneyEur)
     {
         if (defineProfitInPercently < 0.6m)
             throw new BussinesExceptions("Profit must by more then 0.6%. This percent is for market feeds");
@@ -50,7 +52,7 @@ public class DefinedMoneyProcessMarket<W> : BaseProcessMarketOrder<W>, IDefinedM
             };
         }
 
-        var positionPercentSell = Wallet.CryptoPositionTransaction / 100 * defineProfitInPercently + CryptoPriceSell; // hranice prodeje
+        var positionPercentSell = CryptoPriceSell -(Wallet.CryptoPositionTransaction / 100) * defineProfitInPercently  ; // hranice prodeje
 
         if (CryptoPriceSell <= positionPercentSell)
         {
@@ -65,5 +67,10 @@ public class DefinedMoneyProcessMarket<W> : BaseProcessMarketOrder<W>, IDefinedM
         }
 
         return null;
+    }
+
+    public void SaveWallet()
+    {
+        SaveWalletToFile();
     }
 }

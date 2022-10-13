@@ -1,6 +1,4 @@
 using RoboWorkerService;
-using RoboWorkerService.Market.Enum;
-using RoboWorkerService.Market.Model;
 using Serilog.Events;
 using Serilog;
 

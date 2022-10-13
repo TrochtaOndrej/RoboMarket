@@ -2,7 +2,22 @@
 
 namespace RoboWorkerService.Interfaces;
 
-public interface IWallet<T> : IMarketCurrency
+public interface IWallet<T, X> : IWallet<T>
+{
+    IWallet? IWallet.GetWallet(string type)
+    {
+        return GetWallet(type);
+    }
+    IWallet? IWallet.GetWallet(Type type)
+    {
+        return GetWallet(type);
+    }
+}
+
+public interface IWallet<T> : IWallet
+{ }
+
+public interface IWallet : IMarketCurrency
 {
 
     /// <summary>BTC na ucte </summary>
@@ -17,4 +32,9 @@ public interface IWallet<T> : IMarketCurrency
 
     /// <summary>The ask is the price to buy at </summary>
     decimal CryptoPositionTransaction { get; set; }
+
+    public void SetWallet(string key, IWallet w);
+    public IWallet? GetWallet(string key);
+
+    public IWallet? GetWallet(Type key);
 }

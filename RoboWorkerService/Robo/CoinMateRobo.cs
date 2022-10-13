@@ -42,19 +42,23 @@ public class CoinMateRobo<T> : ICoinMateRobo<T> where T : ICryptoCurrency
         return _iexApi.GetTickerAsync(_marketSymbol);
     }
 
-    /// <summary>  Buy or Sell on market </summary>
-    public Task<ExchangeOrderResult> PlaceOrderAsync(MarketProcessBuyOrSell marketProcessBuyOrSell)
+    public ExchangeOrderRequest CreateExchangeOrderRequest(MarketProcessBuyOrSell marketProcessBuyOrSell)
     {
-        ExchangeOrderRequest ech = new ExchangeOrderRequest
+        return new ExchangeOrderRequest
         {
             Amount = marketProcessBuyOrSell.CryptoValue,
             OrderType = OrderType.Limit,
             IsBuy = marketProcessBuyOrSell.ProcessType == MarketProcessType.Buy,
             MarketSymbol = marketProcessBuyOrSell.MarketSymbol,
-            Price = marketProcessBuyOrSell.Price,
+            Price = marketProcessBuyOrSell.Price
             // IsPostOnly = true
         };
-
-        return _iexApi.PlaceOrderAsync(ech);
     }
+
+    /// <summary>  Buy or Sell on market </summary>
+    public Task<ExchangeOrderResult> PlaceOrderAsync(ExchangeOrderRequest orderRequest)
+    {
+        return _iexApi.PlaceOrderAsync(orderRequest);
+    }
+
 }

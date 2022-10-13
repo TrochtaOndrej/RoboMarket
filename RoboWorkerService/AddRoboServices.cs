@@ -9,6 +9,7 @@ using RoboWorkerService.Market.Model;
 using RoboWorkerService.Market.Processing;
 using RoboWorkerService.Robo;
 
+
 namespace RoboWorkerService;
 public static class RoboServices
 {
@@ -16,7 +17,7 @@ public static class RoboServices
     {
 
         services.AddSingleton<IConfig, Config.Config>();
-      
+
         // CRYPTO CURRENCY
         services.AddSingleton<ICryptoBTC, CryptoBTC>();
         AddMarketBurker<ICryptoBTC>(services);
@@ -31,6 +32,15 @@ public static class RoboServices
         AddMarketBurker<ICryptoDOGE>(services);
 
         services.AddSingleton(typeof(IWallet<>), typeof(Wallet<>));
+        //services.AddSingleton(typeof(IWallet<,>), typeof(Wallet<,>));
+        services.AddSingleton(typeof(IWallet<,>), provider =>
+        {
+            
+            return new Wallet(new CryptoBTC());
+        });
+            
+
+        services.AddSingleton(typeof(ITransactionProcessing<>), typeof(TransactionProcessing<>));
         return services;
     }
 
@@ -38,6 +48,9 @@ public static class RoboServices
     {
         services.AddSingleton<IMarketCoreCupBroker<T>, MarketCoreCupBroker<T>>();
         services.AddSingleton<ICupProcessingMarket<T>, CupProcessingMarket<T>>();
+
+        services.AddSingleton<IDefinedMoneyProcessMarket<T>, DefinedMoneyProcessMarket<T>>();
+        services.AddSingleton<IMarketCoreDefinedMoneyBroker<T>, MarketCoreDefinedMoneyBroker<T>>();
         services.AddSingleton<ICoinMateRobo<T>, CoinMateRobo<T>>();
 
         return services;
@@ -50,13 +63,11 @@ public static class RoboServices
         var settings = new JsonSerializerSettings();
         settings.Converters = new List<JsonConverter>()
         {
-            new JsonConvertor.AbstractConverter<CryptoBTC, ICryptoBTC>(),
-            //new AbstractConverter<Thing2, IThingy2>()
+            new AbstractConverter<CryptoBTC, ICryptoBTC>(),
+            new AbstractConverter<Wallet, IWallet>(),
         };
-        //settings.Converters.Add(new CryptoCurrencyJsonConvertor());
-        //settings.Converters.Add(new CryptoICurrencyJsonConvertor());
-        services.AddSingleton(typeof(JsonSerializerSettings), settings);
 
+        services.AddSingleton(typeof(JsonSerializerSettings), settings);
         return services;
     }
 }

@@ -1,0 +1,267 @@
+[
+  {
+    "OrderRequest": {
+      "MarketSymbol": "BTC-EUR",
+      "Amount": 0.0000734912003789538601360014,
+      "Price": 19717.44,
+      "StopPrice": 0.0,
+      "IsBuy": false,
+      "IsMargin": false,
+      "OrderId": null,
+      "ClientOrderId": null,
+      "ShouldRoundAmount": true,
+      "OrderType": 0,
+      "IsPostOnly": null,
+      "ExtraParameters": {}
+    },
+    "OrderResult": {
+      "OrderId": "20c92904-a4af-436c-add1-1b267cb1f12f",
+      "ClientOrderId": null,
+      "Result": 4,
+      "ResultCode": null,
+      "Message": null,
+      "Amount": 0.0000735,
+      "AmountFilled": 0.0,
+      "IsAmountFilledReversed": false,
+      "Price": 19717.44,
+      "AveragePrice": null,
+      "OrderDate": "2022-10-12T19:24:58.02151Z",
+      "HTTPHeaderDate": "2022-10-12T19:24:58Z",
+      "CompletedDate": "0001-01-01T00:00:00",
+      "MarketSymbol": "BTC-EUR",
+      "IsBuy": false,
+      "Fees": 0.0,
+      "FeesCurrency": "BTC",
+      "TradeId": null,
+      "TradeDate": null,
+      "UpdateSequence": null
+    },
+    "Wallet": {
+      "CryptoAccountValue": 0.0508057,
+      "EurAccountValue": 1001.506327588,
+      "CryptoPositionTransaction": 19717.44,
+      "MarketSymbol": "BTC-EUR"
+    },
+    "BuyOrSell": {
+      "ProcessType": 2,
+      "CryptoValue": 0.0000734912003789538601360014,
+      "EurValue": 1.449058334,
+      "Price": 19717.44,
+      "Fees": 0.008694350004,
+      "MarketSymbol": "BTC-EUR"
+    },
+    "ProcessingType": null
+  },
+  {
+    "OrderRequest": {
+      "MarketSymbol": "BTC-EUR",
+      "Amount": 0.0000563369432157497849081431,
+      "Price": 19759.0,
+      "StopPrice": 0.0,
+      "IsBuy": false,
+      "IsMargin": false,
+      "OrderId": null,
+      "ClientOrderId": null,
+      "ShouldRoundAmount": true,
+      "OrderType": 0,
+      "IsPostOnly": null,
+      "ExtraParameters": {}
+    },
+    "OrderResult": {
+      "OrderId": "f31a63d8-c159-491c-a93a-5c1ef4c92c92",
+      "ClientOrderId": null,
+      "Result": 4,
+      "ResultCode": null,
+      "Message": null,
+      "Amount": 0.0000563,
+      "AmountFilled": 0.0,
+      "IsAmountFilledReversed": false,
+      "Price": 19759.0,
+      "AveragePrice": null,
+      "OrderDate": "2022-10-12T21:04:57.92229Z",
+      "HTTPHeaderDate": "2022-10-12T21:04:57Z",
+      "CompletedDate": "0001-01-01T00:00:00",
+      "MarketSymbol": "BTC-EUR",
+      "IsBuy": false,
+      "Fees": 0.0,
+      "FeesCurrency": "BTC",
+      "TradeId": null,
+      "TradeDate": null,
+      "UpdateSequence": null
+    },
+    "Wallet": {
+      "CryptoAccountValue": 0.0507494,
+      "EurAccountValue": 1002.618759288,
+      "CryptoPositionTransaction": 19759.0,
+      "MarketSymbol": "BTC-EUR"
+    },
+    "BuyOrSell": {
+      "ProcessType": 2,
+      "CryptoValue": 0.0000563369432157497849081431,
+      "EurValue": 1.113161661,
+      "Price": 19759.0,
+      "Fees": 0.006678969966,
+      "MarketSymbol": "BTC-EUR"
+    },
+    "ProcessingType": "RoboWorkerService.Interface.ICryptoBTC"
+  },
+  {
+    "OrderRequest": {
+      "MarketSymbol": "BTC-EUR",
+      "Amount": 0.0000615689016161766424753748,
+      "Price": 19763.31,
+      "StopPrice": 0.0,
+      "IsBuy": false,
+      "IsMargin": false,
+      "OrderId": null,
+      "ClientOrderId": null,
+      "ShouldRoundAmount": true,
+      "OrderType": 0,
+      "IsPostOnly": null,
+      "ExtraParameters": {}
+    },
+    "OrderResult": {
+      "OrderId": "cd1c6290-9ff0-4604-936a-9699c8e61d8c",
+      "ClientOrderId": null,
+      "Result": 4,
+      "ResultCode": null,
+      "Message": null,
+      "Amount": 0.0000616,
+      "AmountFilled": 0.0,
+      "IsAmountFilledReversed": false,
+      "Price": 19763.31,
+      "AveragePrice": null,
+      "OrderDate": "2022-10-12T21:10:46.862829Z",
+      "HTTPHeaderDate": "2022-10-12T21:10:46Z",
+      "CompletedDate": "0001-01-01T00:00:00",
+      "MarketSymbol": "BTC-EUR",
+      "IsBuy": false,
+      "Fees": 0.0,
+      "FeesCurrency": "BTC",
+      "TradeId": null,
+      "TradeDate": null,
+      "UpdateSequence": null
+    },
+    "Wallet": {
+      "CryptoAccountValue": 0.0507441,
+      "EurAccountValue": 1002.723747484,
+      "CryptoPositionTransaction": 19763.31,
+      "MarketSymbol": "BTC-EUR"
+    },
+    "BuyOrSell": {
+      "ProcessType": 2,
+      "CryptoValue": 0.0000615689016161766424753748,
+      "EurValue": 1.216805289,
+      "Price": 19763.31,
+      "Fees": 0.007300831734,
+      "MarketSymbol": "BTC-EUR"
+    },
+    "ProcessingType": "RoboWorkerService.Interface.ICryptoBTC"
+  },
+  {
+    "OrderRequest": {
+      "MarketSymbol": "BTC-EUR",
+      "Amount": 0.0000719743288994537730123407,
+      "Price": 19772.0,
+      "StopPrice": 0.0,
+      "IsBuy": false,
+      "IsMargin": false,
+      "OrderId": null,
+      "ClientOrderId": null,
+      "ShouldRoundAmount": true,
+      "OrderType": 0,
+      "IsPostOnly": null,
+      "ExtraParameters": {}
+    },
+    "OrderResult": {
+      "OrderId": "b1978312-f788-4db7-9226-039cb6bded63",
+      "ClientOrderId": null,
+      "Result": 4,
+      "ResultCode": null,
+      "Message": null,
+      "Amount": 0.000072,
+      "AmountFilled": 0.0,
+      "IsAmountFilledReversed": false,
+      "Price": 19772.0,
+      "AveragePrice": null,
+      "OrderDate": "2022-10-12T21:11:49.079122Z",
+      "HTTPHeaderDate": "2022-10-12T21:11:49Z",
+      "CompletedDate": "0001-01-01T00:00:00",
+      "MarketSymbol": "BTC-EUR",
+      "IsBuy": false,
+      "Fees": 0.0,
+      "FeesCurrency": "BTC",
+      "TradeId": null,
+      "TradeDate": null,
+      "UpdateSequence": null
+    },
+    "Wallet": {
+      "CryptoAccountValue": 0.0507337,
+      "EurAccountValue": 1002.929911588,
+      "CryptoPositionTransaction": 19772.0,
+      "MarketSymbol": "BTC-EUR"
+    },
+    "BuyOrSell": {
+      "ProcessType": 2,
+      "CryptoValue": 0.0000719743288994537730123407,
+      "EurValue": 1.423076431,
+      "Price": 19772.0,
+      "Fees": 0.008538458586,
+      "MarketSymbol": "BTC-EUR"
+    },
+    "ProcessingType": "RoboWorkerService.Interface.ICryptoBTC"
+  },
+  {
+    "OrderRequest": {
+      "MarketSymbol": "BTC-EUR",
+      "Amount": 0.0000703189781669813463163767,
+      "Price": 19771.43,
+      "StopPrice": 0.0,
+      "IsBuy": false,
+      "IsMargin": false,
+      "OrderId": null,
+      "ClientOrderId": null,
+      "ShouldRoundAmount": true,
+      "OrderType": 0,
+      "IsPostOnly": null,
+      "ExtraParameters": {}
+    },
+    "OrderResult": {
+      "OrderId": "b2344125-3078-499e-8de0-6f08622c15f4",
+      "ClientOrderId": null,
+      "Result": 4,
+      "ResultCode": null,
+      "Message": null,
+      "Amount": 0.0000703,
+      "AmountFilled": 0.0,
+      "IsAmountFilledReversed": false,
+      "Price": 19771.43,
+      "AveragePrice": null,
+      "OrderDate": "2022-10-12T22:25:35.507911Z",
+      "HTTPHeaderDate": "2022-10-12T22:25:35Z",
+      "CompletedDate": "0001-01-01T00:00:00",
+      "MarketSymbol": "BTC-EUR",
+      "IsBuy": false,
+      "Fees": 0.0,
+      "FeesCurrency": "BTC",
+      "TradeId": null,
+      "TradeDate": null,
+      "UpdateSequence": null
+    },
+    "Wallet": {
+      "CryptoAccountValue": 0.0508057,
+      "EurAccountValue": 1001.506327588,
+      "CryptoPositionTransaction": 19717.44,
+      "MarketSymbol": "BTC-EUR"
+    },
+    "BuyOrSell": {
+      "ProcessType": 2,
+      "CryptoValue": 0.0000703189781669813463163767,
+      "EurValue": 1.3903067545,
+      "Price": 19771.43,
+      "Fees": 0.0083418405270,
+      "MarketSymbol": "BTC-EUR"
+    },
+    "ProcessingType": "RoboWorkerService.Interface.ICryptoBTC"
+  }
+]

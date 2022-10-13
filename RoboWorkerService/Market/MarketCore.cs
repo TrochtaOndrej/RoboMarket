@@ -37,7 +37,7 @@ public class MarketCore<T> where T : ICryptoCurrency
         return _lastTicker;
     }
 
-    protected void CalculateActualTransactionIntoWallet(IWallet<T> wallet, ExchangeOrderResult exchange)
+    protected void CalculateActualTransactionIntoWallet(IWallet wallet, ExchangeOrderResult exchange)
     {
         var fees = GetFeesFromOrderInBtc(exchange);
         if (exchange.Price is null) _logger.LogWarning("Price is null after BUY or SELL");
