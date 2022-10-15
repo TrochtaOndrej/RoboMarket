@@ -10,6 +10,7 @@ namespace RoboWorkerService.Market.Processing;
 
 public interface ICupProcessingMarket<W> : IProcessAllMarketOrder<W> where W : ICryptoCurrency
 {
+   
 }
 
 /// <summary>
@@ -21,12 +22,17 @@ public class CupProcessingMarket<W> : BaseProcessMarketOrder<W>, ICupProcessingM
 
     public CupProcessingMarket(
         ILogger<CupProcessingMarket<W>> logger,
-        IWallet<W> wallet,
+        IWallet<W> globalWallet,
         IConfig config,
         IJsonConvertor json
-    ) : base(logger, wallet, config, json, nameof(CupProcessingMarket<W>))
+    ) : base(logger, globalWallet, config, json, nameof(CupProcessingMarket<W>))
     {
         _logger = logger;
+    }
+
+    public void CalculateGlobalWallet()
+    {
+        GlobalWallet.SumAllWalletAndInsertIntoGlobalWallet();
     }
 
     public MarketProcessBuyOrSell? RunProcessing(ExchangeTicker ticker)
@@ -46,11 +52,11 @@ public class CupProcessingMarket<W> : BaseProcessMarketOrder<W>, ICupProcessingM
     /// <returns>Pokud se vrati null nic se neprovadi. Neni zadny profit</returns>
     private MarketProcessBuyOrSell? CalculateSellOrBuy(decimal profitEur)
     {
-        if (!CryptoCurrency.Equals(Wallet.CryptoCurrency))
-            throw new ArgumentOutOfRangeException("Type currency is not the same in wallet!");
+        if (!CryptoCurrency.Equals(GlobalWallet.CryptoCurrency))
+            throw new ArgumentOutOfRangeException("Type currency is not the same in globalWallet!");
 
-        _logger.LogInformation("Actual market wallet {walletCrypto}: {btc} - {actualWalletEurBuy:F4}",
-            Wallet.MarketSymbol, Wallet.CryptoAccountValue, GetWallet_EurToCrypto());
+        _logger.LogInformation("Actual market globalWallet {walletCrypto}: {btc} - {actualWalletEurBuy:F4}",
+            BrokerWallet.MarketSymbol, BrokerWallet.CryptoAccountValue, GetWallet_EurToCrypto());
 
         var actualProcessOrder = GetActualMArketProcess();
         switch (actualProcessOrder)
@@ -68,15 +74,15 @@ public class CupProcessingMarket<W> : BaseProcessMarketOrder<W>, ICupProcessingM
     {
         Validation();
         decimal walletMarketPositionPriceInEur = GetWallet_EurToCryptoBuy();
-        if (Wallet.EurAccountValue - walletMarketPositionPriceInEur == 0) return null;
+        if (BrokerWallet.EurAccountValue - walletMarketPositionPriceInEur == 0) return null;
 
-        var diffEurToBuy = (Wallet.EurAccountValue - walletMarketPositionPriceInEur) / 2;
+        var diffEurToBuy = (BrokerWallet.EurAccountValue - walletMarketPositionPriceInEur) / 2;
         var feesEurToBuy = CalculateFees(diffEurToBuy);
         var realProfitToBuy = diffEurToBuy - feesEurToBuy;
 
         _logger.LogInformation(
-            "PROFIT BUY -> Actual wallet: {actualWallet}, Define profit: {profit}, Actual profit {actual:F3}",
-            Wallet.EurAccountValue, defineProfitEur, realProfitToBuy);
+            "PROFIT BUY -> Actual Broker Wallet: {actualWallet}, Define profit: {profit}, Actual profit {actual:F3}",
+            BrokerWallet.EurAccountValue, defineProfitEur, realProfitToBuy);
 
         if (realProfitToBuy > defineProfitEur)
         {
@@ -98,22 +104,24 @@ public class CupProcessingMarket<W> : BaseProcessMarketOrder<W>, ICupProcessingM
     {
         Validation();
         decimal walletMarketSellPositionPriceInEur = GetWallet_EurToCryptoSell();
-        if (walletMarketSellPositionPriceInEur == 0 || Wallet.EurAccountValue == 0)
+        if (walletMarketSellPositionPriceInEur == 0 || BrokerWallet.EurAccountValue == 0)
         {
-            _logger.LogWarning("Wallet is empty - Check the value or set inicialization values for Wallet");
+            _logger.LogWarning("GlobalWallet is empty - Check the value or set inicialization values for GlobalWallet");
+            //TODO OT: je potreba nekde varovat Aktualni penezenka je prazdna a obchodovani nelze provest
+            return null;
         }
 
-        if (walletMarketSellPositionPriceInEur - Wallet.EurAccountValue == 0) return null;
+        if (walletMarketSellPositionPriceInEur - BrokerWallet.EurAccountValue == 0) return null;
 
-        var diffEurToSell = (walletMarketSellPositionPriceInEur - Wallet.EurAccountValue) / 2;
+        var diffEurToSell = (walletMarketSellPositionPriceInEur - BrokerWallet.EurAccountValue) / 2;
         if (diffEurToSell < 0) return null;
 
         var feesEurToSell = CalculateFees(diffEurToSell);
         var realProfitSell = diffEurToSell - feesEurToSell;
 
         _logger.LogInformation(
-            "PROFIT SELL -> Actual wallet: {wallet} Define profit: {profit}, Actual profit {actual:F3}",
-            Wallet.EurAccountValue, defineProfitEur, realProfitSell);
+            "PROFIT SELL -> Actual broker Wallet: {globalWallet} Define profit: {profit}, Actual profit {actual:F3}",
+            BrokerWallet.EurAccountValue, defineProfitEur, realProfitSell);
         if (realProfitSell > defineProfitEur)
         {
             if (diffEurToSell < 0.86m) return null; // minimalni nakup

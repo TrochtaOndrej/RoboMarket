@@ -2,24 +2,12 @@
 
 namespace RoboWorkerService.Interfaces;
 
-public interface IWallet<T, X> : IWallet<T>
-{
-    IWallet? IWallet.GetWallet(string type)
-    {
-        return GetWallet(type);
-    }
-    IWallet? IWallet.GetWallet(Type type)
-    {
-        return GetWallet(type);
-    }
-}
-
 public interface IWallet<T> : IWallet
 { }
 
 public interface IWallet : IMarketCurrency
 {
-
+    Dictionary<string, IWallet> ProcessingWallet { get; set; }
     /// <summary>BTC na ucte </summary>
     decimal CryptoAccountValue { get; set; }
 
@@ -36,5 +24,6 @@ public interface IWallet : IMarketCurrency
     public void SetWallet(string key, IWallet w);
     public IWallet? GetWallet(string key);
 
-    public IWallet? GetWallet(Type key);
+    /// <summary>prepocita globa Wallet souctem vsech Broker wallet. Broker wallet je strategie obchodovani</summary>
+    void SumAllWalletAndInsertIntoGlobalWallet();
 }

@@ -9,11 +9,13 @@ public interface IProcessAllMarketOrder<T> : IBaseProcessMarketOrder<T>  where T
 {
     void Init();
     void SaveWallet();
+    void CalculateGlobalWallet();
 
     MarketProcessBuyOrSell? RunProcessing(ExchangeTicker ticker);
 }
 
 public interface IBaseProcessMarketOrder<T> : IMarketCrypto where T : ICryptoCurrency
 {
-    IWallet<T> Wallet { get; }
+    IWallet<T> GlobalWallet { get; }
+    void SetBrokerWallet(IWallet brokerWallet);
 }

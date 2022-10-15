@@ -1,5 +1,6 @@
 ﻿using RoboWorkerService.Interfaces;
 using RoboWorkerService.Market.Enum;
+using RoboWorkerService.Market.Model;
 using RoboWorkerService.Market.Processing;
 using RoboWorkerService.Robo;
 
@@ -29,9 +30,33 @@ public class MarketCoreDefinedMoneyBroker<W> : MarketCore<W>, IMarketCoreDefined
     public async Task ConnectToMarketAsync()
     {
         _pm.Init();
+
+        var brokerWallet = _pm.GlobalWallet.GetWallet(BrokerWalletName); // aktualni penezenka pro tento process
+        if (brokerWallet == null)
+        {
+            _pm.GlobalWallet.SetWallet(BrokerWalletName, BrokerWallet = new Wallet(_pm.GlobalWallet.CryptoCurrency));
+            SetBrokerWallet(BrokerWallet);
+            _pm.SaveWallet();
+        }
+        else
+        {
+            BrokerWallet = brokerWallet;
+            //TODO check jesti hodnoty nejsou nulove
+            SetBrokerWallet(BrokerWallet);
+        }
+
         await _transaction.Load();
-        await _cmr.InitRoboAsync((W)_pm.Wallet.CryptoCurrency);
+        await _cmr.InitRoboAsync((W)_pm.GlobalWallet.CryptoCurrency); // TODO OT: zmena na Market symbol (zjistit)
+
     }
+
+    public void SetBrokerWallet(IWallet brokerWallet)
+    {
+        _pm.SetBrokerWallet(BrokerWallet);
+    }
+
+    protected override IWallet BrokerWallet { get; set; }
+    protected override string BrokerWalletName => nameof(MarketCoreDefinedMoneyBroker<W>);
 
     public Task RunAsync()
     {
@@ -58,9 +83,10 @@ public class MarketCoreDefinedMoneyBroker<W> : MarketCore<W>, IMarketCoreDefined
             var orderResult = await _cmr.PlaceOrderAsync(orderRequest);
             _logger.LogDebug("Actual transaction {@transaction}", orderResult);
             // _pm.AddTransaction(resultOrder);
-            CalculateActualTransactionIntoWallet(_pm.Wallet, orderResult); // snizi a zvysi hodnotu
+            CalculateActualTransactionIntoBrokerWallet(orderResult); // snizi a zvysi hodnotu
+            _pm.CalculateGlobalWallet();
             _pm.SaveWallet();
-            _transaction.Add(orderRequest, orderResult, _pm.Wallet, buyOrSell,typeof(W));
+            _transaction.Add(orderRequest, orderResult, _pm.GlobalWallet, buyOrSell, typeof(W));
             await _transaction.SaveAsync();
             _logger.LogDebug(ObjectDumper.Dump(orderResult));
 

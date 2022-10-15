@@ -32,14 +32,8 @@ public static class RoboServices
         AddMarketBurker<ICryptoDOGE>(services);
 
         services.AddSingleton(typeof(IWallet<>), typeof(Wallet<>));
-        //services.AddSingleton(typeof(IWallet<,>), typeof(Wallet<,>));
-        services.AddSingleton(typeof(IWallet<,>), provider =>
-        {
-            
-            return new Wallet(new CryptoBTC());
-        });
-            
-
+        //services.AddSingleton(typeof(IWallet<,>), typeof(GlobalWallet<,>));
+ 
         services.AddSingleton(typeof(ITransactionProcessing<>), typeof(TransactionProcessing<>));
         return services;
     }

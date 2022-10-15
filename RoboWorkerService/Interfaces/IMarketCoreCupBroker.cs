@@ -14,6 +14,6 @@ public interface IMarketCoreBroker
 {
     Task RunAsync();
     Task ConnectToMarketAsync();
+    void SetBrokerWallet(IWallet brokerWallet);
 
-   // IWallet BrokerWallet { get; }
 }

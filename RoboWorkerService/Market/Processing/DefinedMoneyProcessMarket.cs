@@ -15,22 +15,25 @@ public interface IDefinedMoneyProcessMarket<W> : IProcessAllMarketOrder<W> where
 /// <summary> Definice kolik se ma pouzit pri transakci penez </summary>
 public class DefinedMoneyProcessMarket<W> : BaseProcessMarketOrder<W>, IDefinedMoneyProcessMarket<W> where W : ICryptoCurrency
 {
-    private readonly IWallet<W, IDefinedMoneyProcessMarket<W>> _walletLocal;
-
+ 
     public DefinedMoneyProcessMarket(
         ILogger<BaseProcessMarketOrder<W>> logger,
-        IWallet<W> wallet,
+        IWallet<W> globalWallet,
         IConfig config,
-        IJsonConvertor json,
-        IWallet<W,IDefinedMoneyProcessMarket<W>> walletLocal) : base(logger, wallet, config, json, nameof(DefinedMoneyProcessMarket<W>))
+        IJsonConvertor json)
+       : base(logger, globalWallet, config, json, nameof(DefinedMoneyProcessMarket<W>))
+    { }
+
+    public void CalculateGlobalWallet()
     {
-        _walletLocal = walletLocal;
+       GlobalWallet.SumAllWalletAndInsertIntoGlobalWallet();
     }
 
     public MarketProcessBuyOrSell? RunProcessing(ExchangeTicker ticker)
     {
+        return null; // TODO DORESIT NAPUP A PRODEJ (strategie mrizka)
         SetActualValueFromMarket(ticker);
-        return CreateBuyOrder(1, 100);
+        return CreateBuyOrder(1, 10);
     }
 
     private MarketProcessBuyOrSell? CreateBuyOrder(decimal defineProfitInPercently, decimal investMoneyEur)
@@ -38,7 +41,10 @@ public class DefinedMoneyProcessMarket<W> : BaseProcessMarketOrder<W>, IDefinedM
         if (defineProfitInPercently < 0.6m)
             throw new BussinesExceptions("Profit must by more then 0.6%. This percent is for market feeds");
 
-        var positionPercentBuy = Wallet.CryptoPositionTransaction / 100 * defineProfitInPercently + CryptoPriceBuy; // hranice nakupu
+        if (BrokerWallet.CryptoPositionTransaction < 100)
+            throw new BussinesExceptions($"Actual BrokerWallet.CryptoPositionTransaction is less 100. PLease fill the position in wallet. {FileName} ");
+
+        var positionPercentBuy = BrokerWallet.CryptoPositionTransaction / 100 * defineProfitInPercently + CryptoPriceBuy; // hranice nakupu
 
         if (CryptoPriceBuy >= positionPercentBuy)
         {
@@ -52,7 +58,7 @@ public class DefinedMoneyProcessMarket<W> : BaseProcessMarketOrder<W>, IDefinedM
             };
         }
 
-        var positionPercentSell = CryptoPriceSell -(Wallet.CryptoPositionTransaction / 100) * defineProfitInPercently  ; // hranice prodeje
+        var positionPercentSell = CryptoPriceSell -(BrokerWallet.CryptoPositionTransaction / 100) * defineProfitInPercently  ; // hranice prodeje
 
         if (CryptoPriceSell <= positionPercentSell)
         {

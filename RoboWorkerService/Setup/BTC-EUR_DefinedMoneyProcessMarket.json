@@ -1,4 +1,20 @@
 {
+  "ProcessingWallet": {
+    "MarketCoreCupBroker": {
+      "ProcessingWallet": {},
+      "CryptoAccountValue": 0.005002,
+      "EurAccountValue": 100,
+      "CryptoPositionTransaction": 19990,
+      "MarketSymbol": "BTC-EUR"
+    },
+    "MarketCoreDefinedMoneyBroker": {
+      "ProcessingWallet": {},
+      "CryptoAccountValue": 0.0,
+      "EurAccountValue": 0.0,
+      "CryptoPositionTransaction": 0.0,
+      "MarketSymbol": "BTC-EUR"
+    }
+  },
   "CryptoAccountValue": 0.0508057,
   "EurAccountValue": 1001.506327588,
   "CryptoPositionTransaction": 19717.44,

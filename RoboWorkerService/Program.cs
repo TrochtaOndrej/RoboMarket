@@ -40,8 +40,8 @@ public static class HostApp
 
     public static void CurrentDomain_ProcessExit(object sender, EventArgs e)
     {
-       // var wallet = HostApp.Host.Services?.GetService<Wallet>();
-       //if (wallet!= null) Wallet.SaveWalletToJsonFile(wallet);
+       // var wallet = HostApp.Host.Services?.GetService<GlobalWallet>();
+       //if (wallet!= null) GlobalWallet.SaveWalletToJsonFile(wallet);
     }
 }
 

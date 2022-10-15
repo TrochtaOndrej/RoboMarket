@@ -17,12 +17,14 @@ public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T
     private readonly IJsonConvertor _json;
     private readonly string _processingName;
     protected string FileName;
-    public IWallet<T> Wallet { get; protected set; }
-    
+    private IWallet _brokerWallet;
+    public IWallet<T> GlobalWallet { get; protected set; }
+
+    public IWallet BrokerWallet => _brokerWallet ?? GlobalWallet;
 
     public BaseProcessMarketOrder(
         ILogger logger,
-        IWallet<T> wallet,
+        IWallet<T> globalWallet,
         IConfig config,
         IJsonConvertor json,
         string processingName // nazev parent tridy pro rozliseni dat
@@ -31,22 +33,27 @@ public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T
         Config = config;
         _json = json;
         _processingName = processingName;
-        Wallet = wallet;
-        FileName = Config.ConfigPath + Wallet.MarketSymbol + "_" + processingName + ".json";
+        GlobalWallet = globalWallet;
+        FileName = Config.ConfigPath + GlobalWallet.MarketSymbol + "_" + processingName + ".json";
+    }
+
+    public void SetBrokerWallet(IWallet brokerWallet)
+    {
+        _brokerWallet = brokerWallet;
     }
 
     /// <summary> Aktualni hodnota v bitcoinu v penezence prevedena na EUR pro Nakup</summary>
     public decimal GetWallet_EurToCryptoBuy()
     {
         Validation();
-        return Wallet.CryptoAccountValue * CryptoPriceBuy;
+        return BrokerWallet.CryptoAccountValue * CryptoPriceBuy;
     }
 
     /// <summary> Aktualni hodnota v bitcoinu v penezence prevedena na EUR pro Prodej</summary>
     public decimal GetWallet_EurToCryptoSell()
     {
         Validation();
-        return Wallet.CryptoAccountValue * CryptoPriceSell;
+        return BrokerWallet.CryptoAccountValue * CryptoPriceSell;
     }
 
     public decimal GetWallet_EurToCrypto()
@@ -57,11 +64,12 @@ public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T
 
     public void SetActualValueFromMarket(ExchangeTicker ticker)
     {
-        if (!string.Equals(Wallet.MarketSymbol, ticker.MarketSymbol, StringComparison.InvariantCultureIgnoreCase))
+        if (!string.Equals(GlobalWallet.MarketSymbol, ticker.MarketSymbol, StringComparison.InvariantCultureIgnoreCase))
             throw new BussinesExceptions($" CryptoCurrency [{CryptoCurrency.ToString()}] is no the same with order market currency [{ticker.MarketSymbol}] !");
         CryptoCurrency = new CryptoCurrency(ticker.MarketSymbol);
         CryptoPriceSell = ticker.Bid;
         CryptoPriceBuy = ticker.Ask;
+        BrokerWallet.CryptoCurrency = CryptoCurrency;
     }
     /// <summary> Investovane penize za nakup se vypocita fees </summary>
     /// <param name="investingValue"></param>
@@ -75,13 +83,13 @@ public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T
     public MarketProcessType GetActualMArketProcess()
     {
         // Penize na pozici - penezenka >=0 
-        if (GetWallet_EurToCrypto() - Wallet.EurAccountValue >= 0) return MarketProcessType.Sell;
+        if (GetWallet_EurToCrypto() - BrokerWallet.EurAccountValue >= 0) return MarketProcessType.Sell;
         return MarketProcessType.Buy;
     }
 
     protected void Validation()
     {
-        if (!Wallet.CryptoCurrency.Crypto.ToString().Equals(CryptoCurrency.Crypto.ToString(), StringComparison.InvariantCultureIgnoreCase)) throw new BussinesExceptions(" Wallet marketCurrency is no the same with MarketValue!");
+        if (!BrokerWallet.CryptoCurrency.Crypto.ToString().Equals(CryptoCurrency.Crypto.ToString(), StringComparison.InvariantCultureIgnoreCase)) throw new BussinesExceptions(" GlobalWallet marketCurrency is no the same with MarketValue!");
     }
 
     #region JSon
@@ -92,26 +100,27 @@ public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T
         {
             var str = File.ReadAllText(FileName);
             var www = _json.ToInstance<Wallet<T>>(str);
-            if (www.MarketSymbol != Wallet.MarketSymbol)
+            if (www.MarketSymbol != GlobalWallet.MarketSymbol)
                 throw new BussinesExceptions(
-                    $"Config for Wallet is broken. The MarketSymbol is different. [{www.MarketSymbol}]!=[{Wallet.MarketSymbol}] ");
+                    $"Config for GlobalWallet is broken. The MarketSymbol is different. [{www.MarketSymbol}]!=[{GlobalWallet.MarketSymbol}] ");
 
-            Wallet.CryptoAccountValue = www.CryptoAccountValue;
-            Wallet.CryptoPositionTransaction = www.CryptoPositionTransaction;
-            Wallet.EurAccountValue = www.EurAccountValue;
+            GlobalWallet.CryptoAccountValue = www.CryptoAccountValue;
+            GlobalWallet.CryptoPositionTransaction = www.CryptoPositionTransaction;
+            GlobalWallet.EurAccountValue = www.EurAccountValue;
+            GlobalWallet.ProcessingWallet = www.ProcessingWallet;
 
         }
         else
         {
-            var str = _json.ToJson<IWallet<T>>(Wallet);
+            var str = _json.ToJson<IWallet<T>>(GlobalWallet);
             File.WriteAllText(FileName, str);
-            throw new BussinesExceptions($"Is created new config file for Wallet in [{FileName}] ");
+            throw new BussinesExceptions($"Is created new config file for GlobalWallet in [{FileName}] ");
         }
     }
 
     protected void SaveWalletToFile()
     {
-        var str = _json.ToJson<IWallet<T>>(Wallet);
+        var str = _json.ToJson<IWallet<T>>(GlobalWallet);
         File.WriteAllText(FileName, str);
     }
     #endregion

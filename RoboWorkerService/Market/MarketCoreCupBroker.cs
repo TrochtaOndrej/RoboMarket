@@ -14,9 +14,8 @@ public class MarketCoreCupBroker<W> : MarketCore<W>, IMarketCoreCupBroker<W> whe
     private readonly ILogger<MarketCoreCupBroker<W>> _logger;
     private readonly ITransactionProcessing<W> _transaction;
 
-    private readonly string _walletName = nameof(MarketCoreCupBroker<W>);
-
-    public IWallet BrokerWallet { get; private set; }
+    protected override string BrokerWalletName => nameof(MarketCoreCupBroker<W>);
+    protected override IWallet BrokerWallet { get; set; }
     //  readonly SemaphoreSlim _semaphoreSlim = new SemaphoreSlim(1, 1);
 
     public MarketCoreCupBroker(
@@ -34,11 +33,27 @@ public class MarketCoreCupBroker<W> : MarketCore<W>, IMarketCoreCupBroker<W> whe
     public async Task ConnectToMarketAsync()
     {
         _pm.Init();
-        var brokerWallet = _pm.Wallet.GetWallet(_walletName); // aktualni penezenka pro tento process
-        if (brokerWallet == null) _pm.Wallet.SetWallet(_walletName, BrokerWallet = new Wallet(_pm.Wallet.CryptoCurrency));
+
+        var brokerWallet = _pm.GlobalWallet.GetWallet(BrokerWalletName); // aktualni penezenka pro tento process
+        if (brokerWallet == null)
+        {
+            _pm.GlobalWallet.SetWallet(BrokerWalletName, BrokerWallet = new Wallet(_pm.GlobalWallet.CryptoCurrency));
+            SetBrokerWallet(BrokerWallet);
+            _pm.SaveWallet();
+        }
+        else
+        {
+            BrokerWallet = brokerWallet;
+            SetBrokerWallet(BrokerWallet);
+        }
 
         await _transaction.Load();
-        await _cmr.InitRoboAsync((W)_pm.Wallet.CryptoCurrency);
+        await _cmr.InitRoboAsync((W)_pm.GlobalWallet.CryptoCurrency); // TODO OT: zmena na Market symbol (zjistit)
+    }
+
+    public void SetBrokerWallet(IWallet brokerWallet)
+    {
+        _pm.SetBrokerWallet(BrokerWallet);
     }
 
     public Task RunAsync()
@@ -66,9 +81,10 @@ public class MarketCoreCupBroker<W> : MarketCore<W>, IMarketCoreCupBroker<W> whe
             var orderResult = await _cmr.PlaceOrderAsync(orderRequest);
             _logger.LogDebug("Actual transaction {@transaction}", orderResult);
             // _pm.AddTransaction(resultOrder);
-            CalculateActualTransactionIntoWallet(BrokerWallet, orderResult); // snizi a zvysi hodnotu
+            CalculateActualTransactionIntoBrokerWallet(orderResult); // snizi a zvysi hodnotu
+            _pm.CalculateGlobalWallet();
             _pm.SaveWallet();
-            _transaction.Add(orderRequest, orderResult, _pm.Wallet, buyOrSell, typeof(W));
+            _transaction.Add(orderRequest, orderResult, _pm.GlobalWallet, buyOrSell, typeof(W));
             await _transaction.SaveAsync();
             _logger.LogDebug(ObjectDumper.Dump(orderResult));
 
@@ -79,5 +95,4 @@ public class MarketCoreCupBroker<W> : MarketCore<W>, IMarketCoreCupBroker<W> whe
             //     _semaphoreSlim.Release();
         }
     }
-
 }

@@ -5,13 +5,6 @@ using RoboWorkerService.Market.Enum;
 
 namespace RoboWorkerService.Market.Model;
 
-public record Wallet<T, X> : Wallet<T>, IWallet<T, X> where T : ICryptoCurrency
-{
-    public Wallet(T cryptoCurrency) : base(cryptoCurrency)
-    {
-    }
-}
-
 public record Wallet<T> : Wallet, IWallet<T>, IWallet where T : ICryptoCurrency
 {
     public Wallet(T cryptoCurrency) : base(cryptoCurrency)
@@ -20,7 +13,7 @@ public record Wallet<T> : Wallet, IWallet<T>, IWallet where T : ICryptoCurrency
 
 public record Wallet : MarketCurrency, IWallet
 {
-    protected Dictionary<string, IWallet> _processingWallet = new Dictionary<string, IWallet>();
+    public Dictionary<string, IWallet> ProcessingWallet { get; set; } = new Dictionary<string, IWallet>();
 
     /// <summary>BTC na ucte </summary>
     public decimal CryptoAccountValue { get; set; }
@@ -46,21 +39,37 @@ public record Wallet : MarketCurrency, IWallet
 
     public void SetWallet(string key, IWallet w)
     {
-        if (_processingWallet.ContainsKey(key))
+        if (ProcessingWallet.ContainsKey(key))
 
-            _processingWallet[key] = w;
+            ProcessingWallet[key] = w;
         else
-            _processingWallet.Add(key, w);
+            ProcessingWallet.Add(key, w);
     }
 
     public IWallet? GetWallet(string key)
     {
-        _processingWallet.TryGetValue(key, out var wallet);
+        ProcessingWallet.TryGetValue(key, out var wallet);
         return wallet;
     }
 
-    public IWallet? GetWallet(Type key)
+    /// <summary> vypocita global Wallet hodnoty z pod uctu </summary>
+    /// <param name="key"></param>
+    /// <param name="w"></param>
+    /// <returns></returns>
+    public void SumAllWalletAndInsertIntoGlobalWallet()
     {
-        throw new NotImplementedException();
+        lock (this)
+        {
+            var cryptoValue = 0m;
+            var eur = 0m;
+            foreach (var wallet in ProcessingWallet)
+            {
+                cryptoValue += wallet.Value.CryptoAccountValue;
+                eur += wallet.Value.EurAccountValue;
+            }
+
+            EurAccountValue = eur;
+            CryptoAccountValue = cryptoValue;
+        }
     }
 }

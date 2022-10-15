@@ -1,15 +1,16 @@
 ﻿using ExchangeSharp;
-using RoboWorkerService.Interface;
 using RoboWorkerService.Interfaces;
 using RoboWorkerService.Market.Enum;
 using RoboWorkerService.Robo;
 
 namespace RoboWorkerService.Market;
 
-public class MarketCore<T> where T : ICryptoCurrency
+public abstract class MarketCore<T> where T : ICryptoCurrency
 {
     protected readonly ICoinMateRobo<T> _cmr;
     private readonly ILogger _logger;
+    protected abstract IWallet BrokerWallet { get; set; }
+    protected abstract string BrokerWalletName { get; }
 
     public MarketCore(ICoinMateRobo<T> cmr, ILogger logger)
     {
@@ -37,26 +38,26 @@ public class MarketCore<T> where T : ICryptoCurrency
         return _lastTicker;
     }
 
-    protected void CalculateActualTransactionIntoWallet(IWallet wallet, ExchangeOrderResult exchange)
+    protected void CalculateActualTransactionIntoBrokerWallet(ExchangeOrderResult exchange)
     {
         var fees = GetFeesFromOrderInBtc(exchange);
         if (exchange.Price is null) _logger.LogWarning("Price is null after BUY or SELL");
         if (exchange.IsBuy)
         {
-            wallet.CryptoAccountValue += exchange.Amount - fees;
-            wallet.EurAccountValue -= (exchange.Amount - fees) * exchange.Price ?? 0;
+            BrokerWallet.CryptoAccountValue += exchange.Amount - fees;
+            BrokerWallet.EurAccountValue -= (exchange.Amount - fees) * exchange.Price ?? 0;
         }
         else
         {
-            wallet.CryptoAccountValue -= exchange.Amount - fees;
-            wallet.EurAccountValue += (exchange.Amount - fees) * exchange.Price ?? 0;
+            BrokerWallet.CryptoAccountValue -= exchange.Amount - fees;
+            BrokerWallet.EurAccountValue += (exchange.Amount - fees) * exchange.Price ?? 0;
         }
 
-        wallet.CryptoPositionTransaction = exchange.Price ?? 0;
+        BrokerWallet.CryptoPositionTransaction = exchange.Price ?? 0;
 
 
         _logger.LogInformation("Fees {fees} | Transaction {@transaction}", fees, exchange);
-        _logger.LogInformation("Actual Wallet {wallet}", wallet.ToString());
+        _logger.LogInformation("Actual {brokerWalletName} {wallet}", BrokerWalletName, BrokerWallet.ToString());
     }
 
     protected decimal GetFeesFromOrderInBtc(ExchangeOrderResult exchange)
