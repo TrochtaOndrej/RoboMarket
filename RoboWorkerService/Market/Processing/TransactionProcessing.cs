@@ -26,17 +26,19 @@ public class TransactionProcessing<T> : ITransactionProcessing<T> where T : ICry
             Load().Wait(10000);
     }
 
-    public void Add<X>(ExchangeOrderRequest request, ExchangeOrderResult result, IWallet wallet,
+    public TransactionData Add<X>(ExchangeOrderRequest request, ExchangeOrderResult result, IWallet wallet,
         MarketProcessBuyOrSell buyOrSell, X typeTransaction) where X : class
     {
-        Add(new TransactionData
+        var data = new TransactionData
         {
             Wallet = wallet,
             OrderRequest = request,
             OrderResult = result,
             BuyOrSell = buyOrSell,
             ProcessingType = typeTransaction.ToString()
-        });
+        };
+        Add(data);
+        return data;
     }
 
     public void Add(TransactionData transaction)
@@ -53,6 +55,11 @@ public class TransactionProcessing<T> : ITransactionProcessing<T> where T : ICry
     {
         Trasactions = await _json.FileToInstanceAsync<List<TransactionData>>(_fileName, cancellationToken);
     }
+
+    public IEnumerable<TransactionData> GetTransaction(Func<TransactionData, bool> fnc)
+    {
+        return Trasactions.Where(fnc);
+    }
 }
 
 public interface ITransactionProcessing<T> where T : ICryptoCurrency
@@ -60,7 +67,11 @@ public interface ITransactionProcessing<T> where T : ICryptoCurrency
     void Add(TransactionData transaction);
     Task SaveAsync(CancellationToken cancellationToken = default);
     Task Load(CancellationToken cancellationToken = default);
-    void Add<X>(ExchangeOrderRequest request, ExchangeOrderResult result, IWallet wallet, MarketProcessBuyOrSell buyOrSell, X typeProcessing) where X : class;
+
+    TransactionData Add<T>(ExchangeOrderRequest request, ExchangeOrderResult result, IWallet wallet,
+        MarketProcessBuyOrSell buyOrSell, T typeProcessing) where T : class;
+
+    IEnumerable<TransactionData> GetTransaction(Func<TransactionData, bool> fnc);
 }
 
 public record TransactionData

@@ -1,5 +1,6 @@
 ﻿using Helper.Serialization;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using RoboWorkerService.Config;
 using RoboWorkerService.Interface;
 using RoboWorkerService.Interfaces;
@@ -7,15 +8,16 @@ using RoboWorkerService.Market;
 using RoboWorkerService.Market.Enum;
 using RoboWorkerService.Market.Model;
 using RoboWorkerService.Market.Processing;
+using RoboWorkerService.Market.Processing.DefineMoney;
 using RoboWorkerService.Robo;
 
 
 namespace RoboWorkerService;
+
 public static class RoboServices
 {
     public static IServiceCollection AddRoboServices(this IServiceCollection services)
     {
-
         services.AddSingleton<IConfig, Config.Config>();
 
         // CRYPTO CURRENCY
@@ -32,8 +34,8 @@ public static class RoboServices
         AddMarketBurker<ICryptoDOGE>(services);
 
         services.AddSingleton(typeof(IWallet<>), typeof(Wallet<>));
-        //services.AddSingleton(typeof(IWallet<,>), typeof(GlobalWallet<,>));
- 
+        services.AddSingleton<IBrokerMoneyExtraDataFile, IBrokerMoneyExtraDataFile>();
+
         services.AddSingleton(typeof(ITransactionProcessing<>), typeof(TransactionProcessing<>));
         return services;
     }
@@ -46,7 +48,6 @@ public static class RoboServices
         services.AddSingleton<IDefinedMoneyProcessMarket<T>, DefinedMoneyProcessMarket<T>>();
         services.AddSingleton<IMarketCoreDefinedMoneyBroker<T>, MarketCoreDefinedMoneyBroker<T>>();
         services.AddSingleton<ICoinMateRobo<T>, CoinMateRobo<T>>();
-
         return services;
     }
 
@@ -54,14 +55,22 @@ public static class RoboServices
     {
         services.AddSingleton<IJsonConvertor, JsonConvertor>();
 
-        var settings = new JsonSerializerSettings();
-        settings.Converters = new List<JsonConverter>()
+        JsonSerializerSettings serializerSettings = new JsonSerializerSettings
         {
-            new AbstractConverter<CryptoBTC, ICryptoBTC>(),
-            new AbstractConverter<Wallet, IWallet>(),
+            FloatParseHandling = FloatParseHandling.Decimal,
+            NullValueHandling = NullValueHandling.Ignore,
+            ContractResolver = new DefaultContractResolver
+            {
+                NamingStrategy = new SnakeCaseNamingStrategy()
+            },
+            Converters = new List<JsonConverter>()
+            {
+                new AbstractConverter<CryptoBTC, ICryptoBTC>(),
+                new AbstractConverter<Wallet, IWallet>(),
+            }
         };
 
-        services.AddSingleton(typeof(JsonSerializerSettings), settings);
+        services.AddSingleton(typeof(JsonSerializerSettings), serializerSettings);
         return services;
     }
-}
+} 

@@ -34,7 +34,7 @@ public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T
         _json = json;
         _processingName = processingName;
         GlobalWallet = globalWallet;
-        FileName = Config.ConfigPath + GlobalWallet.MarketSymbol + "_" + processingName + ".json";
+        FileName = Config.ConfigPath + GlobalWallet.MarketSymbol + "_GlobalWallet.json";
     }
 
     public void SetBrokerWallet(IWallet brokerWallet)
@@ -108,7 +108,6 @@ public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T
             GlobalWallet.CryptoPositionTransaction = www.CryptoPositionTransaction;
             GlobalWallet.EurAccountValue = www.EurAccountValue;
             GlobalWallet.ProcessingWallet = www.ProcessingWallet;
-
         }
         else
         {

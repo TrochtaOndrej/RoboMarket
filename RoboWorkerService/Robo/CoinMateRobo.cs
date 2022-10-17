@@ -42,6 +42,11 @@ public class CoinMateRobo<T> : ICoinMateRobo<T> where T : ICryptoCurrency
         return _iexApi.GetTickerAsync(_marketSymbol);
     }
 
+    public Task<IEnumerable<ExchangeOrderResult>> GetOpenOrderDetailsAsync()
+    {
+        return _iexApi.GetOpenOrderDetailsAsync(_marketSymbol);
+    }
+
     public ExchangeOrderRequest CreateExchangeOrderRequest(MarketProcessBuyOrSell marketProcessBuyOrSell)
     {
         return new ExchangeOrderRequest

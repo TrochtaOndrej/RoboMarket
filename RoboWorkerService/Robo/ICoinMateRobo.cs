@@ -18,4 +18,6 @@ public interface ICoinMateRobo<T> where T : ICryptoCurrency
 
     /// <summary>  Buy or Sell on market </summary>
     Task<ExchangeOrderResult> PlaceOrderAsync(ExchangeOrderRequest orderRequest);
+
+    Task<IEnumerable<ExchangeOrderResult>> GetOpenOrderDetailsAsync();
 }

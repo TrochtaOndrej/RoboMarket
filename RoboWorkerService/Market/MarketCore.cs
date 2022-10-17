@@ -38,6 +38,11 @@ public abstract class MarketCore<T> where T : ICryptoCurrency
         return _lastTicker;
     }
 
+    protected async Task GetActualOpenOrders()
+    {
+        _cmr.GetOpenOrderDetailsAsync();
+    }
+
     protected void CalculateActualTransactionIntoBrokerWallet(ExchangeOrderResult exchange)
     {
         var fees = GetFeesFromOrderInBtc(exchange);
