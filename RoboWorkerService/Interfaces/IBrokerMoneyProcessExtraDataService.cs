@@ -5,5 +5,7 @@ namespace RoboWorkerService.Interfaces;
 public interface IBrokerMoneyProcessExtraDataService<W>
 {
     void AddTransaction(TransactionData transactionData);
-    Task SaveData();
+    Task SaveDataAsync();
+    IEnumerable<TransactionData> GetOpenOrderTransaction(Func<TransactionData, bool>? where = null);
+    bool RemoveTransaction(TransactionData transactionData);
 }

@@ -8,11 +8,6 @@ using RoboWorkerService.Market.Model;
 
 namespace RoboWorkerService.Market.Processing;
 
-public interface ICupProcessingMarket<W> : IProcessAllMarketOrder<W> where W : ICryptoCurrency
-{
-   
-}
-
 /// <summary>
 /// Hrnkovy process zpracovani - Prelivani s jednoho hrnu na druhy a udrzovani stejne hodnoty po celou dobu
 /// </summary>

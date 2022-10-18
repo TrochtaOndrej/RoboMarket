@@ -55,8 +55,8 @@ public class CoinMateRobo<T> : ICoinMateRobo<T> where T : ICryptoCurrency
             OrderType = OrderType.Limit,
             IsBuy = marketProcessBuyOrSell.ProcessType == MarketProcessType.Buy,
             MarketSymbol = marketProcessBuyOrSell.MarketSymbol,
-            Price = marketProcessBuyOrSell.Price
-            // IsPostOnly = true
+            Price = marketProcessBuyOrSell.Price,
+            IsPostOnly = marketProcessBuyOrSell.IsPostOnly
         };
     }
 
@@ -65,5 +65,4 @@ public class CoinMateRobo<T> : ICoinMateRobo<T> where T : ICryptoCurrency
     {
         return _iexApi.PlaceOrderAsync(orderRequest);
     }
-
 }

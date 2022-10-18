@@ -9,7 +9,10 @@ public record BrokerMoneyProcessExtraData
     /// <summary> Jedna se o data, ktere maji otevrene ordery a nebo se s ordery neco dale zamysli </summary>
     public List<TransactionData> TransactionData { get; set; } = new List<TransactionData>();
 
+    /// <summary> Hodnoty pro strategii nakupu </summary>
     public MoneyProcessDataBuy ProcessDataBuy { get; set; } = new MoneyProcessDataBuy();
+
+    /// <summary> Hodnoty pro strategii prodeje </summary>
     public MoneyProcessDataSell ProcessDataSell { get; set; } = new MoneyProcessDataSell();
 }
 

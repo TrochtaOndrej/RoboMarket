@@ -21,6 +21,7 @@ public record MarketProcessBuyOrSell : MarketCurrency
     public decimal Price { get; set; }
 
     public decimal Fees { get; set; }
+    public bool IsPostOnly { get; set; } 
 
     public MarketProcessBuyOrSell(CryptoCurrency cryptoCurrency) : base(cryptoCurrency)
     {

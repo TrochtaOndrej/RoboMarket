@@ -56,14 +56,9 @@ public class MarketCoreCupBroker<W> : MarketCore<W>, IMarketCoreCupBroker<W> whe
         _pm.SetBrokerWallet(BrokerWallet);
     }
 
-    public Task RunAsync()
+    public async Task RunAsync()
     {
-        return CheckMarket();
-    }
-
-    private async Task CheckMarket()
-    {
-        //   await _semaphoreSlim.WaitAsync();
+   //   await _semaphoreSlim.WaitAsync();
         try
         {
             // nacti novy order z Burzy

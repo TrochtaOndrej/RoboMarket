@@ -43,6 +43,8 @@ public abstract class MarketCore<T> where T : ICryptoCurrency
         _cmr.GetOpenOrderDetailsAsync();
     }
 
+    /// <summary> Pepocita penezenku z aktualni provedene transakce </summary>
+    /// <param name="exchange"></param>
     protected void CalculateActualTransactionIntoBrokerWallet(ExchangeOrderResult exchange)
     {
         var fees = GetFeesFromOrderInBtc(exchange);

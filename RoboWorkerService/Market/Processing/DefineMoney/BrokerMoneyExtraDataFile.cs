@@ -24,7 +24,7 @@ public record BrokerMoneyExtraDataFile<T> : IBrokerMoneyExtraDataFile where T : 
         return _jsonConvertor.ToInstance<BrokerMoneyProcessExtraData>(_filename);
     }
 
-    public Task Save(BrokerMoneyProcessExtraData brokerMoneyProcessExtraData)
+    public Task SaveAsync(BrokerMoneyProcessExtraData brokerMoneyProcessExtraData)
     {
         return _jsonConvertor.ToFileJsonAsync(_filename, brokerMoneyProcessExtraData);
     }
