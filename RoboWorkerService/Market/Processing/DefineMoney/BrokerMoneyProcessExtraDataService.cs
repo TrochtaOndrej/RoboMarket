@@ -1,6 +1,7 @@
 ﻿using ExchangeSharp;
 using RoboWorkerService.Interfaces;
 using RoboWorkerService.Market.Enum;
+using RoboWorkerService.Market.Model;
 
 namespace RoboWorkerService.Market.Processing.DefineMoney;
 
@@ -10,6 +11,10 @@ public class BrokerMoneyProcessExtraDataService<W> : IBrokerMoneyProcessExtraDat
     private readonly ILogger<BrokerMoneyProcessExtraDataService<W>> _logger;
     private BrokerMoneyProcessExtraData _data;
     private bool _isCollectionChanged = false;
+
+    public MoneyProcessDataBuy MoneyProcessDataBuy => _data.ProcessDataBuy;
+    public MoneyProcessDataSell MoneyProcessDataSell => _data.ProcessDataSell;
+
 
     public BrokerMoneyProcessExtraDataService(IBrokerMoneyExtraDataFile moneyExtraDataFile,
         ILogger<BrokerMoneyProcessExtraDataService<W>> logger)
@@ -30,7 +35,7 @@ public class BrokerMoneyProcessExtraDataService<W> : IBrokerMoneyProcessExtraDat
         if (_data.TransactionData.Remove(transactionData))
         {
             _isCollectionChanged = true;
-            _logger.LogInformation("Removed order transaction OrderId: {OrderId}", transactionData.OrderResult.OrderId);
+            _logger.LogInformation("Removed order transaction OrderId: {O rderId}", transactionData.OrderResult.OrderId);
             return true;
         }
 

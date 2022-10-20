@@ -35,7 +35,7 @@ public class Worker : BackgroundService
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        await _marketCoreBTCCupBroker.ConnectToMarketAsync();
+      //  await _marketCoreBTCCupBroker.ConnectToMarketAsync();
         await _marketCoreBTCDefineMoney.ConnectToMarketAsync();
         
         //await _marketCoreAlgocCupBroker.ConnectToMarketAsync();
@@ -45,7 +45,7 @@ public class Worker : BackgroundService
         while (!stoppingToken.IsCancellationRequested)
             try
             {
-                await _marketCoreBTCCupBroker.RunAsync();
+           //     await _marketCoreBTCCupBroker.RunAsync();
                 await _marketCoreBTCDefineMoney.RunAsync();
 
                 //await _marketCoreAlgocCupBroker.RunAsync();

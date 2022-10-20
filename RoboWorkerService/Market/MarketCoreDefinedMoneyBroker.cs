@@ -12,12 +12,11 @@ namespace RoboWorkerService.Market;
 public class MarketCoreDefinedMoneyBroker<W> : MarketCore<W>, IMarketCoreDefinedMoneyBroker<W>
     where W : ICryptoCurrency
 {
+    private readonly IBrokerMoneyProcessExtraDataService<W> _extraDataService;
     private readonly ILogger<MarketCoreDefinedMoneyBroker<W>> _logger;
     private readonly IDefinedMoneyProcessMarket<W> _pm;
 
     private readonly ITransactionProcessing<W> _transactionLog;
-
-    private readonly IBrokerMoneyProcessExtraDataService<W> _extraDataService;
     //  readonly SemaphoreSlim _semaphoreSlim = new SemaphoreSlim(1, 1);
 
     public MarketCoreDefinedMoneyBroker(
@@ -37,7 +36,6 @@ public class MarketCoreDefinedMoneyBroker<W> : MarketCore<W>, IMarketCoreDefined
     public async Task ConnectToMarketAsync()
     {
         _pm.Init();
-
         var brokerWallet = _pm.GlobalWallet.GetWallet(BrokerWalletName); // aktualni penezenka pro tento process  . 
         if (brokerWallet == null)
         {
@@ -54,6 +52,10 @@ public class MarketCoreDefinedMoneyBroker<W> : MarketCore<W>, IMarketCoreDefined
 
         await _transactionLog.Load();
         await _cmr.InitRoboAsync((W)_pm.GlobalWallet.CryptoCurrency); // TODO OT: zmena na Market symbol (zjistit)
+        var firstTicker = await _cmr.GetTickerAsync();
+       var buyOrSellOrders =   _pm.InicializationFirstSharpStrategy(firstTicker, brokerWallet, _extraDataService);
+      
+        await BuyOrSell(buyOrSellOrders);
         //Inicializuj data z penezenky pri spusteni (nahazej data do marketu dle nejake definice mrizky)
     }
 
@@ -75,6 +77,12 @@ public class MarketCoreDefinedMoneyBroker<W> : MarketCore<W>, IMarketCoreDefined
         //vypocti profit 
         var savedOrder = _cmr.GetOpenOrderDetailsAsync().Result.ToList();
         var buyOrSellOrders = await _pm.RunProcessingAsync(ticker, _extraDataService, savedOrder);
+        await BuyOrSell(buyOrSellOrders);
+    }
+
+    private async Task BuyOrSell(List<MarketProcessBuyOrSell> buyOrSellOrders)
+    {
+        if (!buyOrSellOrders.Any()) return;
 
         try
         {

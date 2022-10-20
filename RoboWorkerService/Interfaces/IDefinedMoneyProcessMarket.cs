@@ -10,6 +10,12 @@ public interface IDefinedMoneyProcessMarket<W> : IProcessAllMarketOrder<W> where
         IBrokerMoneyProcessExtraDataService<W> extraDataService,
         List<ExchangeOrderResult> openOrdersActualInMarket);
 
-    MarketProcessBuyOrSell? CreateBuyOrder(decimal defineProfitInPercently, decimal investMoneyEur,
+    MarketProcessBuyOrSell? CreateBuyOrderEur(decimal defineProfitInPercently, decimal investMoneyEur,
         MarketProcessType marketProcessType);
+
+    public MarketProcessBuyOrSell? CreateBuyOrderCryptoCurrency(decimal defineProfitInPercently, decimal cryptoMoney,
+        MarketProcessType marketProcessType);
+
+    List<MarketProcessBuyOrSell> InicializationFirstSharpStrategy(ExchangeTicker firstTicker, IWallet brokerWallet,
+        IBrokerMoneyProcessExtraDataService<W> externalData);
 }

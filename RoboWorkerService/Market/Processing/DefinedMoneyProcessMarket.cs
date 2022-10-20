@@ -48,7 +48,52 @@ public class DefinedMoneyProcessMarket<W> : BaseProcessMarketOrder<W>, IDefinedM
 
     #region Processing Order - Strategy #
 
-    public MarketProcessBuyOrSell? CreateBuyOrder(decimal defineProfitInPercently, decimal investMoneyEur,
+    public MarketProcessBuyOrSell? CreateBuyOrderCryptoCurrency(decimal defineProfitInPercently, decimal cryptoMoney,
+        MarketProcessType marketProcessType)
+    {
+        if (defineProfitInPercently < 0.6m)
+            throw new BussinesExceptions("Profit must by more then 0.6%. This percent is for market feeds");
+
+        if (BrokerWallet.CryptoPositionTransaction < 100)
+            throw new BussinesExceptions(
+                $"Actual BrokerWallet.CryptoPositionTransaction is less 100. PLease fill the position in wallet. {FileName}");
+
+        if (marketProcessType == MarketProcessType.Buy)
+        {
+            var positionPercentBuy = CryptoPriceBuy - (CryptoPriceBuy / 100 * defineProfitInPercently); // hranice nakupu
+
+            return new MarketProcessBuyOrSell(CryptoCurrency)
+            {
+                CryptoValue = cryptoMoney,
+                EurValue = cryptoMoney * positionPercentBuy,
+                ProcessType = MarketProcessType.Buy,
+                Price = positionPercentBuy,
+                Fees = CalculateFees(cryptoMoney * positionPercentBuy),
+                IsPostOnly = true
+            };
+        }
+        else if (marketProcessType == MarketProcessType.Sell)
+        {
+            var positionPercentSell = CryptoPriceSell + ((CryptoPriceSell / 100) * defineProfitInPercently); // hranice prodeje
+
+            if (CryptoPriceSell <= positionPercentSell)
+            {
+                return new MarketProcessBuyOrSell(CryptoCurrency)
+                {
+                    CryptoValue = cryptoMoney / CryptoPriceSell,
+                    EurValue = cryptoMoney,
+                    ProcessType = MarketProcessType.Sell,
+                    Price = positionPercentSell,
+                    Fees = CalculateFees(cryptoMoney),
+                    IsPostOnly = true,
+                };
+            }
+        }
+
+        return null;
+    }
+
+    public MarketProcessBuyOrSell? CreateBuyOrderEur(decimal defineProfitInPercently, decimal investMoneyEur,
         MarketProcessType marketProcessType)
     {
         if (defineProfitInPercently < 0.6m)
@@ -93,6 +138,61 @@ public class DefinedMoneyProcessMarket<W> : BaseProcessMarketOrder<W>, IDefinedM
         return null;
     }
 
+    //Z penezenky zjisti aktualni suu a propocita mrizku, dle definice
+    public List<MarketProcessBuyOrSell> InicializationFirstSharpStrategy(ExchangeTicker firstTicker, IWallet brokerWallet,
+        IBrokerMoneyProcessExtraDataService<W> externalData)
+    {
+        var listBuyOrSell = new List<MarketProcessBuyOrSell>();
+
+        var buyData = externalData.MoneyProcessDataBuy;
+        if (buyData.MarketProcessType == MarketProcessType.Buy)
+        {
+// TO BUY
+            var countToBuys = (buyData.PercentSpectrumStart - buyData.PercentSpectrumEnd) / buyData.PercentStepCalculatePrice;
+            var moneyStepToBuyEurPrice = buyData.PriceInEur / countToBuys;
+
+            if (moneyStepToBuyEurPrice < 1)
+                throw new BussinesExceptions(" Calculated money is less then one Euro. Change the data:" +
+                                             ObjectDumper.Dump(buyData));
+
+            for (int i = 0; i < countToBuys - 1; i++)
+            {
+                var positionPercentToBuy = buyData.PercentSpectrumStart + buyData.PercentStepCalculatePrice * i;
+                var buyOrSell = CreateBuyOrderEur(positionPercentToBuy, moneyStepToBuyEurPrice, MarketProcessType.Buy);
+                if (buyOrSell is not null)
+                {
+                    listBuyOrSell.Add(buyOrSell);
+                    buyData.PriceInEur -= moneyStepToBuyEurPrice;
+                    if (buyData.PriceInEur < 0) break;; // nejsou zadne penize v penezence
+                }
+                else
+                    break;
+            }
+        }
+
+// TO SELL
+        var sellData = externalData.MoneyProcessDataSell;
+        if (sellData.MarketProcessType == MarketProcessType.Sell)
+        {
+            var countToSell = (sellData.PercentSpectrumStart - sellData.PercentSpectrumEnd) / sellData.PercentStepCalculatePrice;
+            var moneyStepToSellCryptoPrice = sellData.PriceInCrypto / countToSell;
+            for (int i = 0; i < countToSell - 1; i++)
+            {
+                var positionPercentToBuy = buyData.PercentSpectrumStart + buyData.PercentStepCalculatePrice * i;
+                
+                var buyOrSell = CreateBuyOrderEur(positionPercentToBuy, moneyStepToSellCryptoPrice, MarketProcessType.Sell);
+                if (buyOrSell is not null)
+                {
+                    listBuyOrSell.Add(buyOrSell);
+                    sellData.PriceInCrypto -= moneyStepToSellCryptoPrice;
+                    if (sellData.PriceInCrypto < 0) break;// uz neni zadne crypto v penezence
+                }
+                else
+                    break;
+            }
+        }
+    }
+
 
     /// <summary> Porovna aktualni ulozene ordery s ordery na Marketu. Pokud jsou nejake uzavrene
     /// ordery, vytvor dalsi order ze ziskem a vymaz order z extraData listu </summary>
@@ -121,7 +221,7 @@ public class DefinedMoneyProcessMarket<W> : BaseProcessMarketOrder<W>, IDefinedM
                 // doslo ke zmene transakce (vykonal se nakup, nebo se zrusil nakup a pod.
                 _logger.LogInformation("Actual order is completed. Transaction: {@Order}", actualMarketOpenOrder);
                 //je treba vytvorit objednavku se ziskem
-                MarketProcessBuyOrSell? orderBuyOrSell = CreateBuyOrder(1.2m, actualMarketOpenOrder.Amount,
+                MarketProcessBuyOrSell? orderBuyOrSell = CreateBuyOrderEur(1.2m, actualMarketOpenOrder.Amount,
                     actualMarketOpenOrder.IsBuy ? MarketProcessType.Sell : MarketProcessType.Buy);
 
                 if (orderBuyOrSell is not null) orderBuyOrSellList.Add(orderBuyOrSell);

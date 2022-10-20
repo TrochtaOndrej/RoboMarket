@@ -18,7 +18,7 @@ public record BrokerMoneyProcessExtraData
 
 public record MoneyProcessDataSell : SetMoneyProcessData
 {
-    /// <summary> Jedna se o cenu, ktera bude rozpocitana </summary>
+    /// <summary> Jedna se o cenu, ktera bude rozpocitana BTC,ETH,.. </summary>
     public decimal PriceInCrypto { get; set; } = 0m;
 
     public MoneyProcessDataSell()
@@ -30,7 +30,7 @@ public record MoneyProcessDataSell : SetMoneyProcessData
 public record MoneyProcessDataBuy : SetMoneyProcessData
 {
     /// <summary> Jedna se o cenu, ktera bude rozpocitana </summary>
-    public decimal PriceInEur { get; set; } = 0m;
+    public decimal PriceInEur { get; set; } = 100m;
 
     public MoneyProcessDataBuy()
     {
@@ -41,6 +41,10 @@ public record MoneyProcessDataBuy : SetMoneyProcessData
 public record SetMoneyProcessData
 {
     public MarketProcessType MarketProcessType { get; set; } = MarketProcessType.None;
-    public decimal PercentSpectrum { get; set; }
+    /// <summary> dloni hranice nakupu v procentech </summary>
+    public decimal PercentSpectrumStart { get; set; } = 0.7m;
+    /// <summary> horni hranice nakupu </summary>
+    public decimal PercentSpectrumEnd { get; set; } = 5.0m;
+    /// <summary> percentialni krok nakupu </summary>
     public decimal PercentStepCalculatePrice { get; set; } = 0.1m;
 }
