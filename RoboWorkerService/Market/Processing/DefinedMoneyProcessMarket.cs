@@ -191,6 +191,8 @@ public class DefinedMoneyProcessMarket<W> : BaseProcessMarketOrder<W>, IDefinedM
                     break;
             }
         }
+
+        return listBuyOrSell;
     }
 
 
