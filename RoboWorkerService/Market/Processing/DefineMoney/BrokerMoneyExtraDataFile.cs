@@ -12,20 +12,25 @@ public record BrokerMoneyExtraDataFile<T> : IBrokerMoneyExtraDataFile<T> where T
     private readonly string _filename;
     private BrokerMoneyProcessExtraData _extraData = new BrokerMoneyProcessExtraData();
 
-    public BrokerMoneyExtraDataFile(IJsonConvertor jsonConvertor, IConfig config)
+    public BrokerMoneyExtraDataFile(IJsonConvertor jsonConvertor, IConfig config, T cryptoCurrency)
     {
         _jsonConvertor = jsonConvertor;
         _config = config;
-        _filename = config.ConfigPath + nameof(SharpProcessingMarket<T>) + "_" + typeof(T).Name + ".json";
+        _filename = config.ConfigPath + cryptoCurrency.Crypto + "_" + nameof(SharpProcessingMarket<T>) + ".json";
     }
 
-    public BrokerMoneyProcessExtraData LoadFromFile()
+    public async Task<BrokerMoneyProcessExtraData> LoadFromFileAsync(CancellationToken cancellationToken = default)
     {
-        return _jsonConvertor.ToInstance<BrokerMoneyProcessExtraData>(_filename);
+        if (!File.Exists(_filename))
+        {
+            await SaveAsync(new BrokerMoneyProcessExtraData(), cancellationToken);
+        }
+
+        return await _jsonConvertor.FileToInstanceAsync<BrokerMoneyProcessExtraData>(_filename, cancellationToken);
     }
 
-    public Task SaveAsync(BrokerMoneyProcessExtraData brokerMoneyProcessExtraData)
+    public Task SaveAsync(BrokerMoneyProcessExtraData brokerMoneyProcessExtraData, CancellationToken cancellationToken = default)
     {
-        return _jsonConvertor.ToFileJsonAsync(_filename, brokerMoneyProcessExtraData);
+        return _jsonConvertor.ToFileJsonAsync(_filename, brokerMoneyProcessExtraData, cancellationToken);
     }
 }

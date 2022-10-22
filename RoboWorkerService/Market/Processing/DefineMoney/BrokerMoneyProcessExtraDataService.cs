@@ -5,10 +5,11 @@ using RoboWorkerService.Market.Model;
 
 namespace RoboWorkerService.Market.Processing.DefineMoney;
 
-public class BrokerMoneyProcessExtraDataService<W> : IBrokerMoneyProcessExtraDataService<W> where W : CryptoCurrency
+public class BrokerMoneyProcessExtraDataService<W> : IBrokerMoneyProcessExtraDataService<W> where W : ICryptoCurrency
 {
     private readonly IBrokerMoneyExtraDataFile<W> _moneyExtraDataFile;
     private readonly ILogger<BrokerMoneyProcessExtraDataService<W>> _logger;
+    private readonly IAppRobo _appRobo;
     private BrokerMoneyProcessExtraData _data;
     private bool _isCollectionChanged = false;
 
@@ -17,11 +18,12 @@ public class BrokerMoneyProcessExtraDataService<W> : IBrokerMoneyProcessExtraDat
 
 
     public BrokerMoneyProcessExtraDataService(IBrokerMoneyExtraDataFile<W> moneyExtraDataFile,
-        ILogger<BrokerMoneyProcessExtraDataService<W>> logger)
+        ILogger<BrokerMoneyProcessExtraDataService<W>> logger,IAppRobo appRobo)
     {
         _moneyExtraDataFile = moneyExtraDataFile;
         _logger = logger;
-        _data = moneyExtraDataFile.LoadFromFile();
+        _appRobo = appRobo;
+        _data = moneyExtraDataFile.LoadFromFileAsync(_appRobo.GetAppToken()).Result;
     }
 
     public void AddTransaction(TransactionData transactionData)
@@ -47,7 +49,7 @@ public class BrokerMoneyProcessExtraDataService<W> : IBrokerMoneyProcessExtraDat
         if (_isCollectionChanged)
         {
             _isCollectionChanged = false;
-            return _moneyExtraDataFile.SaveAsync(_data);
+            return _moneyExtraDataFile.SaveAsync(_data,_appRobo.GetAppToken());
         }
 
         return Task.CompletedTask;

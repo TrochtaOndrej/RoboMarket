@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Start" Name="StartService" Width="250" Height="250" Click="StartService_OnClick"/>
+        <Button Content="Start" Name="ButtonStartService" Width="250" Height="250" Click="StartService_OnClick"/>
     </Grid>
 </Window>

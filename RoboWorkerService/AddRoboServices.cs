@@ -19,7 +19,7 @@ public static class RoboServices
     public static IServiceCollection AddRoboServices(this IServiceCollection services)
     {
         services.AddSingleton<IConfig, Config.Config>();
-
+        services.AddSingleton<IAppRobo, AppRobo>();
         // CRYPTO CURRENCY
         services.AddSingleton<ICryptoBTC, CryptoBTC>();
         AddMarketBurker<ICryptoBTC>(services);
@@ -48,6 +48,8 @@ public static class RoboServices
         services.AddSingleton<IMarketCoreDefinedMoneyBroker<T>, MarketCoreDefinedSharpBroker<T>>();
         services.AddSingleton<ICoinMateRobo<T>, CoinMateRobo<T>>();
         services.AddSingleton<IBrokerMoneyExtraDataFile<T>, BrokerMoneyExtraDataFile<T>>();
+        services.AddSingleton<IBrokerMoneyProcessExtraDataService<T>, BrokerMoneyProcessExtraDataService<T>>();
+        
         return services;
     }
 

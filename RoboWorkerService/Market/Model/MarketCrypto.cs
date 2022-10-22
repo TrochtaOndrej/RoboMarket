@@ -3,7 +3,7 @@ using RoboWorkerService.Market.Enum;
 
 namespace RoboWorkerService.Market.Model;
 
-/// <summary> hodnota na burze </summary>
+/// <summary> aktulni hodnota na burze </summary>
 public class MarketCrypto : IMarketCrypto
 {
     public CryptoCurrency CryptoCurrency { get; set; }
@@ -19,4 +19,6 @@ public class MarketCrypto : IMarketCrypto
         get { return CryptoCurrency.Crypto; }
         set { CryptoCurrency.Crypto = value; }
     }
+
+    public int CountDecimalNumberInPosition { get; } = 2;
 }

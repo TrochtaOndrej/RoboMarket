@@ -21,7 +21,12 @@ public record MarketProcessBuyOrSell : MarketCurrency
     public decimal Price { get; set; }
 
     public decimal Fees { get; set; }
-    public bool IsPostOnly { get; set; } 
+    public bool IsPostOnly { get; set; }
+
+    /// <summary> Aktulani nakup s uvzovanym profitem </summary>
+    public decimal ProfitPercently { get; set; }
+/// <summary> Vypociany profit v Eur </summary>
+    public decimal ProfitInEur { get; set; }
 
     public MarketProcessBuyOrSell(CryptoCurrency cryptoCurrency) : base(cryptoCurrency)
     {

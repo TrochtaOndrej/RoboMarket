@@ -12,16 +12,19 @@ public class SharpProcessingMarket<W> : BaseProcessMarketOrder<W>, IDefinedMoney
     where W : ICryptoCurrency
 {
     private readonly ILogger<SharpProcessingMarket<W>> _logger;
+    private readonly W _cryptoCurrency;
 
 
     public SharpProcessingMarket(
         ILogger<SharpProcessingMarket<W>> logger,
         IWallet<W> globalWallet,
         IConfig config,
-        IJsonConvertor json)
+        IJsonConvertor json,
+        W cryptoCurrency)
         : base(logger, globalWallet, config, json, nameof(SharpProcessingMarket<W>))
     {
         _logger = logger;
+        _cryptoCurrency = cryptoCurrency;
     }
 
     #region Wallet
@@ -107,30 +110,45 @@ public class SharpProcessingMarket<W> : BaseProcessMarketOrder<W>, IDefinedMoney
         {
             var positionPercentBuy = CryptoPriceBuy - (CryptoPriceBuy / 100 * defineProfitInPercently); // hranice nakupu
 
+            // Zaokrouhlovani pozice na pocet des mist. Jinak chyba "message":"price is too accurate. Smallest unit is 0.01"
+            positionPercentBuy = Math.Round(positionPercentBuy, _cryptoCurrency.CountDecimalNumberInPosition,
+                MidpointRounding.ToEven);
+
+            if (positionPercentBuy < 100)
+                throw new BussinesExceptions("Buy position is less then 100. Please check the parameters in file or market!");
+
+            var fees = CalculateFees(investMoneyEur);
             return new MarketProcessBuyOrSell(CryptoCurrency)
             {
-                CryptoValue = investMoneyEur / CryptoPriceBuy,
+                CryptoValue = investMoneyEur / positionPercentBuy,
                 EurValue = investMoneyEur,
                 ProcessType = MarketProcessType.Buy,
                 Price = positionPercentBuy,
-                Fees = CalculateFees(investMoneyEur),
-                IsPostOnly = true
+                Fees = fees,
+                IsPostOnly = true,
+                ProfitPercently = defineProfitInPercently,
+                ProfitInEur = (investMoneyEur / 100) * defineProfitInPercently - fees,
             };
         }
         else if (marketProcessType == MarketProcessType.Sell)
         {
             var positionPercentSell = CryptoPriceSell + ((CryptoPriceSell / 100) * defineProfitInPercently); // hranice prodeje
+            positionPercentSell = Math.Round(positionPercentSell, _cryptoCurrency.CountDecimalNumberInPosition,
+                MidpointRounding.ToEven);
 
             if (CryptoPriceSell <= positionPercentSell)
             {
+                var fees = CalculateFees(investMoneyEur);
                 return new MarketProcessBuyOrSell(CryptoCurrency)
                 {
                     CryptoValue = investMoneyEur / CryptoPriceSell,
                     EurValue = investMoneyEur,
                     ProcessType = MarketProcessType.Sell,
                     Price = positionPercentSell,
-                    Fees = CalculateFees(investMoneyEur),
+                    Fees = fees,
                     IsPostOnly = true,
+                    ProfitPercently = defineProfitInPercently,
+                    ProfitInEur = (investMoneyEur / 100) * defineProfitInPercently - fees,
                 };
             }
         }
@@ -142,31 +160,38 @@ public class SharpProcessingMarket<W> : BaseProcessMarketOrder<W>, IDefinedMoney
     public List<MarketProcessBuyOrSell> InicializationFirstSharpStrategy(ExchangeTicker firstTicker, IWallet brokerWallet,
         IBrokerMoneyProcessExtraDataService<W> externalData)
     {
-        var listBuyOrSell = new List<MarketProcessBuyOrSell>();
+// vypocet se zaklada na aktualnich hodnotach v marketu
+        SetActualValueFromMarket(firstTicker); // pro vypocet strategie je treba zjistit aktulani hodnoty
 
+        var listBuyOrSell = new List<MarketProcessBuyOrSell>();
         var buyData = externalData.MoneyProcessDataBuy;
         if (buyData.MarketProcessType == MarketProcessType.Buy)
         {
 // TO BUY
-            var countToBuys = (buyData.PercentSpectrumStart - buyData.PercentSpectrumEnd) / buyData.PercentStepCalculatePrice;
+            var countToBuys = (buyData.PercentSpectrumEnd - buyData.PercentSpectrumStart) / buyData.PercentStepCalculatePrice;
             var moneyStepToBuyEurPrice = buyData.PriceInEur / countToBuys;
 
-            if (moneyStepToBuyEurPrice < 1)
-                throw new BussinesExceptions(" Calculated money is less then one Euro. Change the data:" +
-                                             ObjectDumper.Dump(buyData));
-
-            for (int i = 0; i < countToBuys - 1; i++)
+            if (moneyStepToBuyEurPrice >= 1)
             {
-                var positionPercentToBuy = buyData.PercentSpectrumStart + buyData.PercentStepCalculatePrice * i;
-                var buyOrSell = CreateBuyOrderEur(positionPercentToBuy, moneyStepToBuyEurPrice, MarketProcessType.Buy);
-                if (buyOrSell is not null)
+                for (int i = 0; i < countToBuys - 1; i++)
                 {
-                    listBuyOrSell.Add(buyOrSell);
-                    buyData.PriceInEur -= moneyStepToBuyEurPrice;
-                    if (buyData.PriceInEur < 0) break;; // nejsou zadne penize v penezence
+                    var positionPercentToBuy = buyData.PercentSpectrumStart + buyData.PercentStepCalculatePrice * i;
+                    var buyOrSell = CreateBuyOrderEur(positionPercentToBuy, moneyStepToBuyEurPrice, MarketProcessType.Buy);
+                    if (buyOrSell is not null)
+                    {
+                        listBuyOrSell.Add(buyOrSell);
+                        buyData.PriceInEur -= moneyStepToBuyEurPrice;
+                        if (buyData.PriceInEur <= 0) break;
+                        // nejsou zadne penize v penezence
+                    }
+                    else
+                        break;
                 }
-                else
-                    break;
+            }
+            else
+            {
+                _logger.LogDebug("SHARP BUY: Calculated money is less then one Euro. Change the data:" +
+                                 ObjectDumper.Dump(buyData));
             }
         }
 
@@ -174,21 +199,29 @@ public class SharpProcessingMarket<W> : BaseProcessMarketOrder<W>, IDefinedMoney
         var sellData = externalData.MoneyProcessDataSell;
         if (sellData.MarketProcessType == MarketProcessType.Sell)
         {
-            var countToSell = (sellData.PercentSpectrumStart - sellData.PercentSpectrumEnd) / sellData.PercentStepCalculatePrice;
+            var countToSell = (sellData.PercentSpectrumEnd - sellData.PercentSpectrumStart) / sellData.PercentStepCalculatePrice;
             var moneyStepToSellCryptoPrice = sellData.PriceInCrypto / countToSell;
-            for (int i = 0; i < countToSell - 1; i++)
+            if (moneyStepToSellCryptoPrice >= 1)
             {
-                var positionPercentToBuy = buyData.PercentSpectrumStart + buyData.PercentStepCalculatePrice * i;
-                
-                var buyOrSell = CreateBuyOrderEur(positionPercentToBuy, moneyStepToSellCryptoPrice, MarketProcessType.Sell);
-                if (buyOrSell is not null)
+                for (int i = 0; i < countToSell - 1; i++)
                 {
-                    listBuyOrSell.Add(buyOrSell);
-                    sellData.PriceInCrypto -= moneyStepToSellCryptoPrice;
-                    if (sellData.PriceInCrypto < 0) break;// uz neni zadne crypto v penezence
+                    var positionPercentToSell = buyData.PercentSpectrumStart + buyData.PercentStepCalculatePrice * i;
+
+                    var buyOrSell = CreateBuyOrderEur(positionPercentToSell, moneyStepToSellCryptoPrice, MarketProcessType.Sell);
+                    if (buyOrSell is not null)
+                    {
+                        listBuyOrSell.Add(buyOrSell);
+                        sellData.PriceInCrypto -= moneyStepToSellCryptoPrice;
+                        if (sellData.PriceInCrypto <= 0) break; // uz neni zadne crypto v penezence
+                    }
+                    else
+                        break;
                 }
-                else
-                    break;
+            }
+            else
+            {
+                _logger.LogInformation("SHARP SELL: Calculated money is less then one Euro. Change the data:" +
+                                       ObjectDumper.Dump(buyData));
             }
         }
 

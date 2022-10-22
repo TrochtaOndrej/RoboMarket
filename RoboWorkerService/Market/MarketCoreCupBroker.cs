@@ -13,7 +13,7 @@ public class MarketCoreCupBroker<W> : MarketCore<W>, IMarketCoreCupBroker<W> whe
 {
     private readonly ICupProcessingMarket<W> _pm;
     private readonly ILogger<MarketCoreCupBroker<W>> _logger;
-    private readonly IConfig _config;
+    private readonly IAppRobo _appRobo;
     private readonly ITransactionDataDriver<W> _transaction;
 
     protected override string BrokerWalletName => nameof(MarketCoreCupBroker<W>);
@@ -24,12 +24,12 @@ public class MarketCoreCupBroker<W> : MarketCore<W>, IMarketCoreCupBroker<W> whe
         ICupProcessingMarket<W> pm,
         ICoinMateRobo<W> cmr,
         ILogger<MarketCoreCupBroker<W>> logger,
-        ITransactionDataDriver<W> ,
-        IConfig config) : base(cmr, logger)
+        ITransactionDataDriver<W> transactionDataDriver,
+        IAppRobo appRobo) : base(cmr, logger)
     {
         _pm = pm;
         _logger = logger;
-        _config = config;
+        _appRobo = appRobo;
         _transaction = transactionDataDriver;
     }
 
@@ -51,7 +51,7 @@ public class MarketCoreCupBroker<W> : MarketCore<W>, IMarketCoreCupBroker<W> whe
         }
 
         await _transaction.Load();
-        await _cmr.InitRoboAsync((W)_pm.GlobalWallet.CryptoCurrency, _config); // TODO OT: zmena na Market symbol (zjistit)
+        await _cmr.InitRoboAsync((W)_pm.GlobalWallet.CryptoCurrency, _appRobo); // TODO OT: zmena na Market symbol (zjistit)
     }
 
     public void SetBrokerWallet(IWallet brokerWallet)

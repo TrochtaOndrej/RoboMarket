@@ -7,7 +7,7 @@ namespace RoboWorkerService.Interfaces;
 
 public interface ICoinMateRobo<T> where T : ICryptoCurrency
 {
-    public Task InitRoboAsync(T symbol, IConfig config);
+    public Task InitRoboAsync(T symbol, IAppRobo appRobo);
     public Task<IEnumerable<ExchangeOrderResult>> GetValueAsync();
     Task<string> ExchangeRateBtcAsync();
 

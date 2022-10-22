@@ -15,22 +15,26 @@ public class MarketCoreDefinedSharpBroker<W> : MarketCore<W>, IMarketCoreDefined
 {
     private readonly IBrokerMoneyProcessExtraDataService<W> _extraDataService;
     private readonly ILogger<MarketCoreDefinedSharpBroker<W>> _logger;
-    private readonly IConfig _config;
+    private readonly IAppRobo _appRobo;
     private readonly IDefinedMoneyProcessMarket<W> _pm;
 
-    private readonly ITransactionDataDriver<W> _transactionLog;
+    private readonly ITransactionDataDriver<W> _transactionDataDriver;
     //  readonly SemaphoreSlim _semaphoreSlim = new SemaphoreSlim(1, 1);
 
     public MarketCoreDefinedSharpBroker(
         IDefinedMoneyProcessMarket<W> pm,
         ILogger<MarketCoreDefinedSharpBroker<W>> logger,
         ICoinMateRobo<W> coinMateRobo,
-        IConfig config)
+        ITransactionDataDriver<W> transactionDataDriver,
+        IBrokerMoneyProcessExtraDataService<W> extraDataService,
+        IAppRobo appRobo)
         : base(coinMateRobo, logger)
     {
         _pm = pm;
         _logger = logger;
-        _config = config;
+        _appRobo = appRobo;
+        _transactionDataDriver = transactionDataDriver;
+        _extraDataService = extraDataService;
     }
 
     protected override IWallet BrokerWallet { get; set; } = default!;
@@ -53,13 +57,11 @@ public class MarketCoreDefinedSharpBroker<W> : MarketCore<W>, IMarketCoreDefined
             SetBrokerWallet(BrokerWallet);
         }
 
-        var d = "aiiiiIIiuiiaid";
-        d = d + "addds";
-        await _transactionLog.Load();
-        await _cmr.InitRoboAsync((W)_pm.GlobalWallet.CryptoCurrency, _config); // TODO OT: zmena na Market symbol (zjistit)
+        await _transactionDataDriver.Load();
+        await _cmr.InitRoboAsync((W)_pm.GlobalWallet.CryptoCurrency, _appRobo); // TODO OT: zmena na Market symbol (zjistit)
         var firstTicker = await _cmr.GetTickerAsync();
-       var buyOrSellOrders =   _pm.InicializationFirstSharpStrategy(firstTicker, brokerWallet, _extraDataService);
-      
+        var buyOrSellOrders = _pm.InicializationFirstSharpStrategy(firstTicker, brokerWallet, _extraDataService);
+
         await BuyOrSell(buyOrSellOrders);
         //Inicializuj data z penezenky pri spusteni (nahazej data do marketu dle nejake definice mrizky)
     }
@@ -101,7 +103,7 @@ public class MarketCoreDefinedSharpBroker<W> : MarketCore<W>, IMarketCoreDefined
                 var orderResult = await _cmr.PlaceOrderAsync(orderRequest);
                 _logger.LogDebug("{Type} - Actual transaction {@OrderResult}", nameof(SharpProcessingMarket<W>), orderResult);
 
-                var transaction = _transactionLog.Add(orderRequest, orderResult, _pm.GlobalWallet, buyOrSell, typeof(W));
+                var transaction = _transactionDataDriver.Add(orderRequest, orderResult, _pm.GlobalWallet, buyOrSell, typeof(W));
                 _extraDataService.AddTransaction(transaction);
                 Console.WriteLine();
 
@@ -111,7 +113,7 @@ public class MarketCoreDefinedSharpBroker<W> : MarketCore<W>, IMarketCoreDefined
         finally
         {
             await _extraDataService.SaveDataAsync();
-            await _transactionLog.SaveAsync();
+            await _transactionDataDriver.SaveAsync();
         }
     }
 

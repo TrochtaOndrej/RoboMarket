@@ -13,10 +13,10 @@ public class CoinMateRobo<T> : ICoinMateRobo<T> where T : ICryptoCurrency
     private IExchangeAPI _iexApi = default!;
     private string _marketSymbol;
 
-    public async Task InitRoboAsync(T symbol,IConfig config)
+    public async Task InitRoboAsync(T symbol,IAppRobo appRobo)
     {
-        var configFile = config.RootPath + @"\coinbase.bin";
-        if (!File.Exists(configFile)) throw new FileNotFoundException("Config file not found. Path: " + config);
+        var configFile = appRobo.Config.RootPath + @"\coinbase.bin";
+        if (!File.Exists(configFile)) throw new FileNotFoundException("Config file not found. Path: " + appRobo);
 
         _iexApi = await ExchangeAPI.GetExchangeAPIAsync(typeof(ExchangeCoinbaseAPI));
         _iexApi.LoadAPIKeys(configFile);
@@ -54,15 +54,28 @@ public class CoinMateRobo<T> : ICoinMateRobo<T> where T : ICryptoCurrency
 
     public ExchangeOrderRequest CreateExchangeOrderRequest(MarketProcessBuyOrSell marketProcessBuyOrSell)
     {
-        return new ExchangeOrderRequest
+        
+        var request = new ExchangeOrderRequest
         {
-            Amount = marketProcessBuyOrSell.CryptoValue,
+           
             OrderType = OrderType.Limit,
             IsBuy = marketProcessBuyOrSell.ProcessType == MarketProcessType.Buy,
             MarketSymbol = marketProcessBuyOrSell.MarketSymbol,
             Price = marketProcessBuyOrSell.Price,
-            IsPostOnly = marketProcessBuyOrSell.IsPostOnly
+           // IsPostOnly = marketProcessBuyOrSell.IsPostOnly
         };
+        
+        if (marketProcessBuyOrSell.ProcessType == MarketProcessType.Buy)
+        {
+            request.Amount = marketProcessBuyOrSell.CryptoValue;
+        }
+
+        if (marketProcessBuyOrSell.ProcessType == MarketProcessType.Sell)
+        {
+            request.Amount = marketProcessBuyOrSell.CryptoValue;
+        }
+
+        return request;
     }
 
     /// <summary>  Buy or Sell on market </summary>

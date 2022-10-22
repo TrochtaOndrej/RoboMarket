@@ -4,6 +4,6 @@ namespace RoboWorkerService.Interfaces;
 
 public interface IBrokerMoneyExtraDataFile<T>
 {
-    BrokerMoneyProcessExtraData LoadFromFile();
-    Task SaveAsync(BrokerMoneyProcessExtraData brokerMoneyProcessExtraData);
+    Task SaveAsync(BrokerMoneyProcessExtraData brokerMoneyProcessExtraData,CancellationToken cancellationToken = default);
+    Task<BrokerMoneyProcessExtraData> LoadFromFileAsync(CancellationToken cancellationToken = default);
 }

@@ -29,6 +29,7 @@ namespace RoboForm
         {
             try
             {
+                ButtonStartService.IsEnabled = false;
                await RoboWorkerService.Program.Main(new string[0]);
             }
             catch (Exception ex)

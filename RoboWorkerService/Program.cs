@@ -1,4 +1,5 @@
 using RoboWorkerService;
+using RoboWorkerService.Interfaces;
 using Serilog.Events;
 using Serilog;
 
@@ -20,9 +21,7 @@ public static class Program
             .ReadFrom.Configuration(configuration)
             .CreateLogger();
 
-        var ss = "koloTOC";
-        ss = "KOLO";
-        // app
+    // app
         HostApp.Host = Host.CreateDefaultBuilder(args)
            .UseSerilog(Log.Logger)
            .ConfigureServices(services =>
@@ -33,9 +32,11 @@ public static class Program
            })
            .Build();
 
+        
         try
         {
-            await HostApp.Host.RunAsync();
+            var appRobo = HostApp.Host.Services.GetRequiredService<IAppRobo>();
+            await HostApp.Host.RunAsync(appRobo.GetAppToken());
         }
         catch (Exception ex)
         {
