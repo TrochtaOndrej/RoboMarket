@@ -1,4 +1,5 @@
-﻿using RoboWorkerService.Interfaces;
+﻿using RoboWorkerService.Config;
+using RoboWorkerService.Interfaces;
 using RoboWorkerService.Market.Enum;
 using RoboWorkerService.Market.Model;
 using RoboWorkerService.Market.Processing;
@@ -12,6 +13,7 @@ public class MarketCoreCupBroker<W> : MarketCore<W>, IMarketCoreCupBroker<W> whe
 {
     private readonly ICupProcessingMarket<W> _pm;
     private readonly ILogger<MarketCoreCupBroker<W>> _logger;
+    private readonly IConfig _config;
     private readonly ITransactionDataDriver<W> _transaction;
 
     protected override string BrokerWalletName => nameof(MarketCoreCupBroker<W>);
@@ -22,11 +24,12 @@ public class MarketCoreCupBroker<W> : MarketCore<W>, IMarketCoreCupBroker<W> whe
         ICupProcessingMarket<W> pm,
         ICoinMateRobo<W> cmr,
         ILogger<MarketCoreCupBroker<W>> logger,
-        ITransactionDataDriver<W> transactionDataDriver
-        ) : base(cmr, logger)
+        ITransactionDataDriver<W> ,
+        IConfig config) : base(cmr, logger)
     {
         _pm = pm;
         _logger = logger;
+        _config = config;
         _transaction = transactionDataDriver;
     }
 
@@ -48,7 +51,7 @@ public class MarketCoreCupBroker<W> : MarketCore<W>, IMarketCoreCupBroker<W> whe
         }
 
         await _transaction.Load();
-        await _cmr.InitRoboAsync((W)_pm.GlobalWallet.CryptoCurrency); // TODO OT: zmena na Market symbol (zjistit)
+        await _cmr.InitRoboAsync((W)_pm.GlobalWallet.CryptoCurrency, _config); // TODO OT: zmena na Market symbol (zjistit)
     }
 
     public void SetBrokerWallet(IWallet brokerWallet)

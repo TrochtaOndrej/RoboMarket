@@ -1,12 +1,13 @@
 ﻿using ExchangeSharp;
+using RoboWorkerService.Config;
 using RoboWorkerService.Market.Enum;
 using RoboWorkerService.Market.Model;
 
-namespace RoboWorkerService.Robo;
+namespace RoboWorkerService.Interfaces;
 
 public interface ICoinMateRobo<T> where T : ICryptoCurrency
 {
-    public Task InitRoboAsync(T symbol);
+    public Task InitRoboAsync(T symbol, IConfig config);
     public Task<IEnumerable<ExchangeOrderResult>> GetValueAsync();
     Task<string> ExchangeRateBtcAsync();
 

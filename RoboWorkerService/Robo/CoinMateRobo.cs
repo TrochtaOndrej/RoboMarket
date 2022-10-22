@@ -1,5 +1,7 @@
 ﻿using System.Security;
 using ExchangeSharp;
+using RoboWorkerService.Config;
+using RoboWorkerService.Interfaces;
 using RoboWorkerService.Market.Enum;
 using RoboWorkerService.Market.Model;
 
@@ -11,10 +13,13 @@ public class CoinMateRobo<T> : ICoinMateRobo<T> where T : ICryptoCurrency
     private IExchangeAPI _iexApi = default!;
     private string _marketSymbol;
 
-    public async Task InitRoboAsync(T symbol)
+    public async Task InitRoboAsync(T symbol,IConfig config)
     {
+        var configFile = config.RootPath + @"\coinbase.bin";
+        if (!File.Exists(configFile)) throw new FileNotFoundException("Config file not found. Path: " + config);
+
         _iexApi = await ExchangeAPI.GetExchangeAPIAsync(typeof(ExchangeCoinbaseAPI));
-        _iexApi.LoadAPIKeys(Environment.CurrentDirectory + @"\coinbase.bin");
+        _iexApi.LoadAPIKeys(configFile);
         _iexApi.Passphrase = new SecureString();
         _iexApi.Cache = new MemoryCache(299);
         _iexApi.MethodCachePolicy["GetTickerAsync"] = TimeSpan.FromMilliseconds(300);

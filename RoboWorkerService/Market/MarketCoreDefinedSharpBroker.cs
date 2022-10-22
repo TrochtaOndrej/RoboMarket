@@ -1,4 +1,5 @@
 ﻿using ExchangeSharp;
+using RoboWorkerService.Config;
 using RoboWorkerService.Interfaces;
 using RoboWorkerService.Market.Enum;
 using RoboWorkerService.Market.Model;
@@ -14,6 +15,7 @@ public class MarketCoreDefinedSharpBroker<W> : MarketCore<W>, IMarketCoreDefined
 {
     private readonly IBrokerMoneyProcessExtraDataService<W> _extraDataService;
     private readonly ILogger<MarketCoreDefinedSharpBroker<W>> _logger;
+    private readonly IConfig _config;
     private readonly IDefinedMoneyProcessMarket<W> _pm;
 
     private readonly ITransactionDataDriver<W> _transactionLog;
@@ -22,12 +24,13 @@ public class MarketCoreDefinedSharpBroker<W> : MarketCore<W>, IMarketCoreDefined
     public MarketCoreDefinedSharpBroker(
         IDefinedMoneyProcessMarket<W> pm,
         ILogger<MarketCoreDefinedSharpBroker<W>> logger,
-        ICoinMateRobo<W> coinMateRobo
-    )
+        ICoinMateRobo<W> coinMateRobo,
+        IConfig config)
         : base(coinMateRobo, logger)
     {
         _pm = pm;
         _logger = logger;
+        _config = config;
     }
 
     protected override IWallet BrokerWallet { get; set; } = default!;
@@ -53,7 +56,7 @@ public class MarketCoreDefinedSharpBroker<W> : MarketCore<W>, IMarketCoreDefined
         var d = "aiiiiIIiuiiaid";
         d = d + "addds";
         await _transactionLog.Load();
-        await _cmr.InitRoboAsync((W)_pm.GlobalWallet.CryptoCurrency); // TODO OT: zmena na Market symbol (zjistit)
+        await _cmr.InitRoboAsync((W)_pm.GlobalWallet.CryptoCurrency, _config); // TODO OT: zmena na Market symbol (zjistit)
         var firstTicker = await _cmr.GetTickerAsync();
        var buyOrSellOrders =   _pm.InicializationFirstSharpStrategy(firstTicker, brokerWallet, _extraDataService);
       
