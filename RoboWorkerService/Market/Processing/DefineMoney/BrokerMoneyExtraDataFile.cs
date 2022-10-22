@@ -5,7 +5,7 @@ using RoboWorkerService.Market.Enum;
 
 namespace RoboWorkerService.Market.Processing.DefineMoney;
 
-public record BrokerMoneyExtraDataFile<T> : IBrokerMoneyExtraDataFile where T : CryptoCurrency
+public record BrokerMoneyExtraDataFile<T> : IBrokerMoneyExtraDataFile<T> where T : ICryptoCurrency
 {
     private readonly IJsonConvertor _jsonConvertor;
     private readonly IConfig _config;
@@ -16,7 +16,7 @@ public record BrokerMoneyExtraDataFile<T> : IBrokerMoneyExtraDataFile where T : 
     {
         _jsonConvertor = jsonConvertor;
         _config = config;
-        _filename = config.ConfigPath + nameof(DefinedMoneyProcessMarket<T>) + "_" + typeof(T).Name + ".json";
+        _filename = config.ConfigPath + nameof(SharpProcessingMarket<T>) + "_" + typeof(T).Name + ".json";
     }
 
     public BrokerMoneyProcessExtraData LoadFromFile()

@@ -7,7 +7,7 @@ public interface IWallet<T> : IWallet
 
 public interface IWallet : IMarketCurrency
 {
-    Dictionary<string, IWallet> ProcessingWallet { get; set; }
+    Dictionary<string, IWallet> CryptoBrokerWallet { get; set; }
     /// <summary>BTC na ucte </summary>
     decimal CryptoAccountValue { get; set; }
 

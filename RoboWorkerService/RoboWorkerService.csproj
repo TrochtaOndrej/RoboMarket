@@ -1,11 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk.Worker">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>dotnet-RoboWorkerService-46BEBDC3-E741-433F-A64E-DCE7B4204D80</UserSecretsId>
-    <Platforms>AnyCPU;x86</Platforms>
+    <Platforms>x86</Platforms>
+    <OutputType>Exe</OutputType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,5 +29,6 @@
 
   <ItemGroup>
     <Folder Include="Log\" />
+    <Folder Include="Setup" />
   </ItemGroup>
 </Project>

@@ -13,7 +13,7 @@ public record Wallet<T> : Wallet, IWallet<T>, IWallet where T : ICryptoCurrency
 
 public record Wallet : MarketCurrency, IWallet
 {
-    public Dictionary<string, IWallet> ProcessingWallet { get; set; } = new Dictionary<string, IWallet>();
+    public Dictionary<string, IWallet> CryptoBrokerWallet { get; set; } = new Dictionary<string, IWallet>();
 
     /// <summary>BTC na ucte </summary>
     public decimal CryptoAccountValue { get; set; }
@@ -39,16 +39,16 @@ public record Wallet : MarketCurrency, IWallet
 
     public void SetWallet(string key, IWallet w)
     {
-        if (ProcessingWallet.ContainsKey(key))
+        if (CryptoBrokerWallet.ContainsKey(key))
 
-            ProcessingWallet[key] = w;
+            CryptoBrokerWallet[key] = w;
         else
-            ProcessingWallet.Add(key, w);
+            CryptoBrokerWallet.Add(key, w);
     }
 
     public IWallet? GetWallet(string key)
     {
-        ProcessingWallet.TryGetValue(key, out var wallet);
+        CryptoBrokerWallet.TryGetValue(key, out var wallet);
         return wallet;
     }
 
@@ -62,7 +62,7 @@ public record Wallet : MarketCurrency, IWallet
         {
             var cryptoValue = 0m;
             var eur = 0m;
-            foreach (var wallet in ProcessingWallet)
+            foreach (var wallet in CryptoBrokerWallet)
             {
                 cryptoValue += wallet.Value.CryptoAccountValue;
                 eur += wallet.Value.EurAccountValue;

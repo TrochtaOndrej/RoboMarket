@@ -7,7 +7,7 @@ namespace RoboWorkerService.Market.Processing.DefineMoney;
 
 public class BrokerMoneyProcessExtraDataService<W> : IBrokerMoneyProcessExtraDataService<W> where W : CryptoCurrency
 {
-    private readonly IBrokerMoneyExtraDataFile _moneyExtraDataFile;
+    private readonly IBrokerMoneyExtraDataFile<W> _moneyExtraDataFile;
     private readonly ILogger<BrokerMoneyProcessExtraDataService<W>> _logger;
     private BrokerMoneyProcessExtraData _data;
     private bool _isCollectionChanged = false;
@@ -16,7 +16,7 @@ public class BrokerMoneyProcessExtraDataService<W> : IBrokerMoneyProcessExtraDat
     public MoneyProcessDataSell MoneyProcessDataSell => _data.ProcessDataSell;
 
 
-    public BrokerMoneyProcessExtraDataService(IBrokerMoneyExtraDataFile moneyExtraDataFile,
+    public BrokerMoneyProcessExtraDataService(IBrokerMoneyExtraDataFile<W> moneyExtraDataFile,
         ILogger<BrokerMoneyProcessExtraDataService<W>> logger)
     {
         _moneyExtraDataFile = moneyExtraDataFile;

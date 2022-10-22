@@ -1,5 +1,4 @@
-﻿
-namespace RoboWorkerService.Config
+﻿namespace RoboWorkerService.Config
 {
     public interface IConfig
     {
@@ -10,11 +9,16 @@ namespace RoboWorkerService.Config
     {
         private readonly string CurrentPath = Environment.CurrentDirectory;
 
-        public string ConfigPath => CurrentPath + @"\Setup\";
+        public string RootPath => CurrentPath + @"RoboData\";
+        public string ConfigPath => RootPath + @"Config\";
+       
 
-        public Config()
+        public Config(IConfiguration configuration, ILogger<Config> logger)
         {
+            var appPath = configuration.GetValue<string>("RoboApp:RoboDataPath");
+            if (!string.IsNullOrEmpty(appPath)) CurrentPath = appPath;
             Directory.CreateDirectory(ConfigPath);
+            logger.LogInformation("Robo Config data path {Path}", CurrentPath);
         }
     }
 }

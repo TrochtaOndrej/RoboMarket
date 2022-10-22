@@ -12,7 +12,7 @@ public class MarketCoreCupBroker<W> : MarketCore<W>, IMarketCoreCupBroker<W> whe
 {
     private readonly ICupProcessingMarket<W> _pm;
     private readonly ILogger<MarketCoreCupBroker<W>> _logger;
-    private readonly ITransactionProcessing<W> _transaction;
+    private readonly ITransactionDataDriver<W> _transaction;
 
     protected override string BrokerWalletName => nameof(MarketCoreCupBroker<W>);
     protected override IWallet BrokerWallet { get; set; }
@@ -22,12 +22,12 @@ public class MarketCoreCupBroker<W> : MarketCore<W>, IMarketCoreCupBroker<W> whe
         ICupProcessingMarket<W> pm,
         ICoinMateRobo<W> cmr,
         ILogger<MarketCoreCupBroker<W>> logger,
-        ITransactionProcessing<W> transactionProcessing
+        ITransactionDataDriver<W> transactionDataDriver
         ) : base(cmr, logger)
     {
         _pm = pm;
         _logger = logger;
-        _transaction = transactionProcessing;
+        _transaction = transactionDataDriver;
     }
 
     public async Task ConnectToMarketAsync()

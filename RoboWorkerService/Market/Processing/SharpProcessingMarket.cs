@@ -8,18 +8,18 @@ using RoboWorkerService.Market.Model;
 namespace RoboWorkerService.Market.Processing;
 
 /// <summary> Definice kolik se ma pouzit pri transakci penez </summary>
-public class DefinedMoneyProcessMarket<W> : BaseProcessMarketOrder<W>, IDefinedMoneyProcessMarket<W>
+public class SharpProcessingMarket<W> : BaseProcessMarketOrder<W>, IDefinedMoneyProcessMarket<W>
     where W : ICryptoCurrency
 {
-    private readonly ILogger<DefinedMoneyProcessMarket<W>> _logger;
+    private readonly ILogger<SharpProcessingMarket<W>> _logger;
 
 
-    public DefinedMoneyProcessMarket(
-        ILogger<DefinedMoneyProcessMarket<W>> logger,
+    public SharpProcessingMarket(
+        ILogger<SharpProcessingMarket<W>> logger,
         IWallet<W> globalWallet,
         IConfig config,
         IJsonConvertor json)
-        : base(logger, globalWallet, config, json, nameof(DefinedMoneyProcessMarket<W>))
+        : base(logger, globalWallet, config, json, nameof(SharpProcessingMarket<W>))
     {
         _logger = logger;
     }

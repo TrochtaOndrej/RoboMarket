@@ -9,19 +9,19 @@ namespace RoboWorkerService.Market;
 
 /// <summary> Jedna se o UZAVIREJ PREDEM DEFINOVANE PLATBY #MRIZKA# zpracovani BUY or SELL</summary>
 /// <typeparam name="W"></typeparam>
-public class MarketCoreDefinedMoneyBroker<W> : MarketCore<W>, IMarketCoreDefinedMoneyBroker<W>
+public class MarketCoreDefinedSharpBroker<W> : MarketCore<W>, IMarketCoreDefinedMoneyBroker<W>
     where W : ICryptoCurrency
 {
     private readonly IBrokerMoneyProcessExtraDataService<W> _extraDataService;
-    private readonly ILogger<MarketCoreDefinedMoneyBroker<W>> _logger;
+    private readonly ILogger<MarketCoreDefinedSharpBroker<W>> _logger;
     private readonly IDefinedMoneyProcessMarket<W> _pm;
 
-    private readonly ITransactionProcessing<W> _transactionLog;
+    private readonly ITransactionDataDriver<W> _transactionLog;
     //  readonly SemaphoreSlim _semaphoreSlim = new SemaphoreSlim(1, 1);
 
-    public MarketCoreDefinedMoneyBroker(
+    public MarketCoreDefinedSharpBroker(
         IDefinedMoneyProcessMarket<W> pm,
-        ILogger<MarketCoreDefinedMoneyBroker<W>> logger,
+        ILogger<MarketCoreDefinedSharpBroker<W>> logger,
         ICoinMateRobo<W> coinMateRobo
     )
         : base(coinMateRobo, logger)
@@ -31,7 +31,7 @@ public class MarketCoreDefinedMoneyBroker<W> : MarketCore<W>, IMarketCoreDefined
     }
 
     protected override IWallet BrokerWallet { get; set; } = default!;
-    protected override string BrokerWalletName => nameof(MarketCoreDefinedMoneyBroker<W>);
+    protected override string BrokerWalletName => nameof(MarketCoreDefinedSharpBroker<W>);
 
     public async Task ConnectToMarketAsync()
     {
@@ -50,6 +50,8 @@ public class MarketCoreDefinedMoneyBroker<W> : MarketCore<W>, IMarketCoreDefined
             SetBrokerWallet(BrokerWallet);
         }
 
+        var d = "aiiiiIIiuiiaid";
+        d = d + "addds";
         await _transactionLog.Load();
         await _cmr.InitRoboAsync((W)_pm.GlobalWallet.CryptoCurrency); // TODO OT: zmena na Market symbol (zjistit)
         var firstTicker = await _cmr.GetTickerAsync();
@@ -94,7 +96,7 @@ public class MarketCoreDefinedMoneyBroker<W> : MarketCore<W>, IMarketCoreDefined
                 // vytvor platbu (orderPlate)
                 var orderRequest = _cmr.CreateExchangeOrderRequest(buyOrSell);
                 var orderResult = await _cmr.PlaceOrderAsync(orderRequest);
-                _logger.LogDebug("{Type} - Actual transaction {@OrderResult}", nameof(DefinedMoneyProcessMarket<W>), orderResult);
+                _logger.LogDebug("{Type} - Actual transaction {@OrderResult}", nameof(SharpProcessingMarket<W>), orderResult);
 
                 var transaction = _transactionLog.Add(orderRequest, orderResult, _pm.GlobalWallet, buyOrSell, typeof(W));
                 _extraDataService.AddTransaction(transaction);

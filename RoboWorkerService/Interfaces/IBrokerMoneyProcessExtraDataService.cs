@@ -1,4 +1,5 @@
-﻿using RoboWorkerService.Market.Processing;
+﻿using RoboWorkerService.Market.Model;
+using RoboWorkerService.Market.Processing;
 using RoboWorkerService.Market.Processing.DefineMoney;
 
 namespace RoboWorkerService.Interfaces;

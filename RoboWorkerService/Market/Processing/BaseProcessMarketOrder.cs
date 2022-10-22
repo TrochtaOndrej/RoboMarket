@@ -100,14 +100,13 @@ public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T
         {
             var str = File.ReadAllText(FileName);
             var www = _json.ToInstance<Wallet<T>>(str);
-            if (www.MarketSymbol != GlobalWallet.MarketSymbol)
-                throw new BussinesExceptions(
-                    $"Config for GlobalWallet is broken. The MarketSymbol is different. [{www.MarketSymbol}]!=[{GlobalWallet.MarketSymbol}] ");
-
+            // if (www.MarketSymbol != GlobalWallet.MarketSymbol)
+                // throw new BussinesExceptions(
+                    // $"Config for GlobalWallet is broken. The MarketSymbol is different. [{www.MarketSymbol}]!=[{GlobalWallet.MarketSymbol}] ");
             GlobalWallet.CryptoAccountValue = www.CryptoAccountValue;
             GlobalWallet.CryptoPositionTransaction = www.CryptoPositionTransaction;
             GlobalWallet.EurAccountValue = www.EurAccountValue;
-            GlobalWallet.ProcessingWallet = www.ProcessingWallet;
+            GlobalWallet.CryptoBrokerWallet = www.CryptoBrokerWallet;
         }
         else
         {

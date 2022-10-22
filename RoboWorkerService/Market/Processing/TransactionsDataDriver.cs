@@ -8,14 +8,14 @@ using RoboWorkerService.Market.Model;
 
 namespace RoboWorkerService.Market.Processing;
 
-public class TransactionProcessing<T> : ITransactionProcessing<T> where T : ICryptoCurrency
+public class TransactionsDataDriver<T> : ITransactionDataDriver<T> where T : ICryptoCurrency
 {
     private readonly IJsonConvertor _json;
     private readonly IWallet _wallet;
     public List<TransactionData> Trasactions = new List<TransactionData>();
     private readonly string _fileName;
 
-    public TransactionProcessing(IJsonConvertor json, IConfig config, IWallet<T> wallet)
+    public TransactionsDataDriver(IJsonConvertor json, IConfig config, IWallet<T> wallet)
     {
         _json = json;
         _wallet = wallet;
@@ -53,33 +53,17 @@ public class TransactionProcessing<T> : ITransactionProcessing<T> where T : ICry
 
     public async Task Load(CancellationToken cancellationToken = default)
     {
-        Trasactions = await _json.FileToInstanceAsync<List<TransactionData>>(_fileName, cancellationToken);
+        if (File.Exists(_fileName))
+            Trasactions = await _json.FileToInstanceAsync<List<TransactionData>>(_fileName, cancellationToken);
+        else
+        {
+            Trasactions = new List<TransactionData>();
+            await SaveAsync(cancellationToken);
+        }
     }
 
     public IEnumerable<TransactionData> GetTransaction(Func<TransactionData, bool> fnc)
     {
         return Trasactions.Where(fnc);
     }
-}
-
-public interface ITransactionProcessing<T> where T : ICryptoCurrency
-{
-    void Add(TransactionData transaction);
-    Task SaveAsync(CancellationToken cancellationToken = default);
-    Task Load(CancellationToken cancellationToken = default);
-
-    TransactionData Add<T>(ExchangeOrderRequest request, ExchangeOrderResult result, IWallet wallet,
-        MarketProcessBuyOrSell buyOrSell, T typeProcessing) where T : class;
-
-    IEnumerable<TransactionData> GetTransaction(Func<TransactionData, bool> fnc);
-}
-
-public record TransactionData
-{
-    public ExchangeOrderRequest OrderRequest { get; set; }
-    public ExchangeOrderResult OrderResult { get; set; }
-    public IWallet Wallet { get; set; }
-    public MarketProcessBuyOrSell BuyOrSell { get; set; }
-
-    public string ProcessingType { get; set; }
 }

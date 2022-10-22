@@ -34,9 +34,8 @@ public static class RoboServices
         AddMarketBurker<ICryptoDOGE>(services);
 
         services.AddSingleton(typeof(IWallet<>), typeof(Wallet<>));
-        services.AddSingleton<IBrokerMoneyExtraDataFile, IBrokerMoneyExtraDataFile>();
-
-        services.AddSingleton(typeof(ITransactionProcessing<>), typeof(TransactionProcessing<>));
+     
+        services.AddSingleton(typeof(ITransactionDataDriver<>), typeof(TransactionsDataDriver<>));
         return services;
     }
 
@@ -45,9 +44,10 @@ public static class RoboServices
         services.AddSingleton<IMarketCoreCupBroker<T>, MarketCoreCupBroker<T>>();
         services.AddSingleton<ICupProcessingMarket<T>, CupProcessingMarket<T>>();
 
-        services.AddSingleton<IDefinedMoneyProcessMarket<T>, DefinedMoneyProcessMarket<T>>();
-        services.AddSingleton<IMarketCoreDefinedMoneyBroker<T>, MarketCoreDefinedMoneyBroker<T>>();
+        services.AddSingleton<IDefinedMoneyProcessMarket<T>, SharpProcessingMarket<T>>();
+        services.AddSingleton<IMarketCoreDefinedMoneyBroker<T>, MarketCoreDefinedSharpBroker<T>>();
         services.AddSingleton<ICoinMateRobo<T>, CoinMateRobo<T>>();
+        services.AddSingleton<IBrokerMoneyExtraDataFile<T>, BrokerMoneyExtraDataFile<T>>();
         return services;
     }
 
