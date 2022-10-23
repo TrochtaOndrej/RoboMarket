@@ -79,11 +79,11 @@ public class MarketCoreDefinedSharpBroker<W> : MarketCore<W>, IMarketCoreDefined
         if (ticker is null) return;
 
 
-        // await CheckOrdersByTransactionAsync(_extraDataService);
+        //await CheckOrdersByTransactionAsync(_extraDataService);
 
         //vypocti profit 
-        var savedOrder = _cmr.GetOpenOrderDetailsAsync().Result.ToList();
-        var buyOrSellOrders = await _pm.RunProcessingAsync(ticker, _extraDataService, savedOrder);
+        var savedOrder = await _cmr.GetOpenOrderDetailsAsync();
+        var buyOrSellOrders = await _pm.RunProcessingAsync(ticker, _extraDataService, savedOrder.ToList());
         await BuyOrSell(buyOrSellOrders);
     }
 

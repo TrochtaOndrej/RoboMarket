@@ -11,10 +11,18 @@ public interface IDefinedMoneyProcessMarket<W> : IProcessAllMarketOrder<W> where
         List<ExchangeOrderResult> openOrdersActualInMarket);
 
     MarketProcessBuyOrSell? CreateBuyOrderEur(decimal defineProfitInPercently, decimal investMoneyEur,
-        MarketProcessType marketProcessType);
+        MarketProcessType marketProcessType, decimal? cryptoPosition = null);
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="defineProfitInPercently"></param>
+    /// <param name="cryptoMoney"></param>
+    /// <param name="marketProcessType"></param>
+    /// <param name="cryptoPosition">Pozicce krytpa jinak Price a pokud je null berese aktualni hodnota v Marketu</param>
+    /// <returns></returns>
     public MarketProcessBuyOrSell? CreateBuyOrderCryptoCurrency(decimal defineProfitInPercently, decimal cryptoMoney,
-        MarketProcessType marketProcessType);
+        MarketProcessType marketProcessType, decimal? cryptoPosition = null);
 
     List<MarketProcessBuyOrSell> InicializationFirstSharpStrategy(ExchangeTicker firstTicker, IWallet brokerWallet,
         IBrokerMoneyProcessExtraDataService<W> externalData);

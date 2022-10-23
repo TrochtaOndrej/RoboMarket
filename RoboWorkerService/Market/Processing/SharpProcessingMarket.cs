@@ -52,7 +52,7 @@ public class SharpProcessingMarket<W> : BaseProcessMarketOrder<W>, IDefinedMoney
     #region Processing Order - Strategy #
 
     public MarketProcessBuyOrSell? CreateBuyOrderCryptoCurrency(decimal defineProfitInPercently, decimal cryptoMoney,
-        MarketProcessType marketProcessType)
+        MarketProcessType marketProcessType, decimal? cryptoPosition = null)
     {
         if (defineProfitInPercently < 0.6m)
             throw new BussinesExceptions("Profit must by more then 0.6%. This percent is for market feeds");
@@ -60,6 +60,13 @@ public class SharpProcessingMarket<W> : BaseProcessMarketOrder<W>, IDefinedMoney
         if (BrokerWallet.CryptoPositionTransaction < 100)
             throw new BussinesExceptions(
                 $"Actual BrokerWallet.CryptoPositionTransaction is less 100. PLease fill the position in wallet. {FileName}");
+
+        // pokud neni definovana pozice tak , se bere aktualni pozice v marketu jinak se nastavi hodnota, kterou
+        // definujeme v promene. Tahle podminka jen nastavuje pro vypocet hodnotu predanou
+        if (cryptoPosition is not null)
+        {
+            CryptoPriceBuy = CryptoPriceSell = cryptoPosition.Value;
+        }
 
         if (marketProcessType == MarketProcessType.Buy)
         {
@@ -97,7 +104,7 @@ public class SharpProcessingMarket<W> : BaseProcessMarketOrder<W>, IDefinedMoney
     }
 
     public MarketProcessBuyOrSell? CreateBuyOrderEur(decimal defineProfitInPercently, decimal investMoneyEur,
-        MarketProcessType marketProcessType)
+        MarketProcessType marketProcessType, decimal? cryptoPosition = null)
     {
         if (defineProfitInPercently < 0.6m)
             throw new BussinesExceptions("Profit must by more then 0.6%. This percent is for market feeds");
@@ -105,6 +112,13 @@ public class SharpProcessingMarket<W> : BaseProcessMarketOrder<W>, IDefinedMoney
         if (BrokerWallet.CryptoPositionTransaction < 100)
             throw new BussinesExceptions(
                 $"Actual BrokerWallet.CryptoPositionTransaction is less 100. PLease fill the position in wallet. {FileName}");
+
+        // pokud neni definovana pozice tak , se bere aktualni pozice v marketu jinak se nastavi hodnota, kterou
+        // definujeme v promene. Tahle podminka jen nastavuje pro vypocet hodnotu predanou
+        if (cryptoPosition is not null)
+        {
+            CryptoPriceBuy = CryptoPriceSell = cryptoPosition.Value;
+        }
 
         if (marketProcessType == MarketProcessType.Buy)
         {
@@ -162,6 +176,7 @@ public class SharpProcessingMarket<W> : BaseProcessMarketOrder<W>, IDefinedMoney
     {
 // vypocet se zaklada na aktualnich hodnotach v marketu
         SetActualValueFromMarket(firstTicker); // pro vypocet strategie je treba zjistit aktulani hodnoty
+
 
         var listBuyOrSell = new List<MarketProcessBuyOrSell>();
         var buyData = externalData.MoneyProcessDataBuy;
@@ -230,7 +245,7 @@ public class SharpProcessingMarket<W> : BaseProcessMarketOrder<W>, IDefinedMoney
 
 
     /// <summary> Porovna aktualni ulozene ordery s ordery na Marketu. Pokud jsou nejake uzavrene
-    /// ordery, vytvor dalsi order ze ziskem a vymaz order z extraData listu </summary>
+    /// ordery, vytvor dalsi order ze ziskem a vymazes stary order z order z extraData listu </summary>
     private async Task<List<MarketProcessBuyOrSell>> CompareSavedOrderWithMarketOrderAndGetNewOrderBuyOrSellAsync(
         IBrokerMoneyProcessExtraDataService<W> extraDataService,
         List<ExchangeOrderResult> openOrdersActualInMarket)
@@ -246,7 +261,6 @@ public class SharpProcessingMarket<W> : BaseProcessMarketOrder<W>, IDefinedMoney
         foreach (var actualSavedOrderTransaction in savedOrderTransaction)
         {
             var actualMarketOpenOrder = openOrdersActualInMarket.FirstOrDefault(x =>
-                x.TradeId == actualSavedOrderTransaction.OrderResult.TradeId &&
                 x.OrderId == actualSavedOrderTransaction.OrderResult.OrderId);
             if (actualMarketOpenOrder == null) continue;
 
@@ -255,9 +269,12 @@ public class SharpProcessingMarket<W> : BaseProcessMarketOrder<W>, IDefinedMoney
             {
                 // doslo ke zmene transakce (vykonal se nakup, nebo se zrusil nakup a pod.
                 _logger.LogInformation("Actual order is completed. Transaction: {@Order}", actualMarketOpenOrder);
-                //je treba vytvorit objednavku se ziskem
-                MarketProcessBuyOrSell? orderBuyOrSell = CreateBuyOrderEur(1.2m, actualMarketOpenOrder.Amount,
-                    actualMarketOpenOrder.IsBuy ? MarketProcessType.Sell : MarketProcessType.Buy);
+                //je treba vytvorit objednavku se ziskem 
+                // TODO OT: Dodelat lepsi strategii pro znovu nakup nebo prodej, Njelepe rozdeli zisk na puku a prcentrulane rozpocitat
+                MarketProcessBuyOrSell? orderBuyOrSell = CreateBuyOrderEur(actualSavedOrderTransaction.BuyOrSell.ProfitPercently,
+                    actualMarketOpenOrder.Amount,
+                    actualMarketOpenOrder.IsBuy ? MarketProcessType.Sell : MarketProcessType.Buy,
+                    actualMarketOpenOrder.Price);
 
                 if (orderBuyOrSell is not null) orderBuyOrSellList.Add(orderBuyOrSell);
 

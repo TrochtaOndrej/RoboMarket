@@ -13,7 +13,7 @@ public class CoinMateRobo<T> : ICoinMateRobo<T> where T : ICryptoCurrency
     private IExchangeAPI _iexApi = default!;
     private string _marketSymbol;
 
-    public async Task InitRoboAsync(T symbol,IAppRobo appRobo)
+    public async Task InitRoboAsync(T symbol, IAppRobo appRobo)
     {
         var configFile = appRobo.Config.RootPath + @"\coinbase.bin";
         if (!File.Exists(configFile)) throw new FileNotFoundException("Config file not found. Path: " + appRobo);
@@ -49,22 +49,22 @@ public class CoinMateRobo<T> : ICoinMateRobo<T> where T : ICryptoCurrency
 
     public Task<IEnumerable<ExchangeOrderResult>> GetOpenOrderDetailsAsync()
     {
+        return _iexApi.GetCompletedOrderDetailsAsync(_marketSymbol,
+            DateTime.Now.Date); //TODO OT: doresit datum od kdy si vyhledat uzavrene ordery
         return _iexApi.GetOpenOrderDetailsAsync(_marketSymbol);
     }
 
     public ExchangeOrderRequest CreateExchangeOrderRequest(MarketProcessBuyOrSell marketProcessBuyOrSell)
     {
-        
         var request = new ExchangeOrderRequest
         {
-           
             OrderType = OrderType.Limit,
             IsBuy = marketProcessBuyOrSell.ProcessType == MarketProcessType.Buy,
             MarketSymbol = marketProcessBuyOrSell.MarketSymbol,
             Price = marketProcessBuyOrSell.Price,
-           // IsPostOnly = marketProcessBuyOrSell.IsPostOnly
+            // IsPostOnly = marketProcessBuyOrSell.IsPostOnly
         };
-        
+
         if (marketProcessBuyOrSell.ProcessType == MarketProcessType.Buy)
         {
             request.Amount = marketProcessBuyOrSell.CryptoValue;

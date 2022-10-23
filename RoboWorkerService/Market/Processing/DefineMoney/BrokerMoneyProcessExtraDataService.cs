@@ -18,7 +18,7 @@ public class BrokerMoneyProcessExtraDataService<W> : IBrokerMoneyProcessExtraDat
 
 
     public BrokerMoneyProcessExtraDataService(IBrokerMoneyExtraDataFile<W> moneyExtraDataFile,
-        ILogger<BrokerMoneyProcessExtraDataService<W>> logger,IAppRobo appRobo)
+        ILogger<BrokerMoneyProcessExtraDataService<W>> logger, IAppRobo appRobo)
     {
         _moneyExtraDataFile = moneyExtraDataFile;
         _logger = logger;
@@ -49,7 +49,7 @@ public class BrokerMoneyProcessExtraDataService<W> : IBrokerMoneyProcessExtraDat
         if (_isCollectionChanged)
         {
             _isCollectionChanged = false;
-            return _moneyExtraDataFile.SaveAsync(_data,_appRobo.GetAppToken());
+            return _moneyExtraDataFile.SaveAsync(_data, _appRobo.GetAppToken());
         }
 
         return Task.CompletedTask;
@@ -58,7 +58,7 @@ public class BrokerMoneyProcessExtraDataService<W> : IBrokerMoneyProcessExtraDat
     public IEnumerable<TransactionData> GetOpenOrderTransaction(Func<TransactionData, bool>? where = null)
     {
         var data = _data.TransactionData.Where(
-            x => x.OrderResult.Result.IsCompleted());
+            x => x.OrderResult.Result.IsCompleted() == false);
 
         if (where is not null) data = data.Where(where);
         return data;
