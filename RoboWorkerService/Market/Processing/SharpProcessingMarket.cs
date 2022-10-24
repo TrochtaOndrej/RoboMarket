@@ -42,9 +42,9 @@ public class SharpProcessingMarket<W> : BaseProcessMarketOrder<W>, IDefinedMoney
         return await CompareSavedOrderWithMarketOrderAndGetNewOrderBuyOrSellAsync(extraDataService, openOrdersActualInMarket);
     }
 
-    public void SaveWallet()
+    public Task SaveWalletAsync()
     {
-        SaveWalletToFile();
+        return SaveWalletToFileAsync();
     }
 
     #endregion
@@ -270,9 +270,10 @@ public class SharpProcessingMarket<W> : BaseProcessMarketOrder<W>, IDefinedMoney
                 // doslo ke zmene transakce (vykonal se nakup, nebo se zrusil nakup a pod.
                 _logger.LogInformation("Actual order is completed. Transaction: {@Order}", actualMarketOpenOrder);
                 //je treba vytvorit objednavku se ziskem 
-                // TODO OT: Dodelat lepsi strategii pro znovu nakup nebo prodej, Njelepe rozdeli zisk na puku a prcentrulane rozpocitat
+                // TODO OT: Dodelat lepsi strategii pro znovu nakup nebo prodej, Nejelepe rozdelit zisk na pulku a precentrulane rozpocitat
                 MarketProcessBuyOrSell? orderBuyOrSell = CreateBuyOrderEur(actualSavedOrderTransaction.BuyOrSell.ProfitPercently,
-                    actualMarketOpenOrder.Amount,
+                    actualSavedOrderTransaction.BuyOrSell
+                        .EurValue, // TODO OT: vysoka priorita Vypocet nakupu nebo prodeje v pozici bez ztraty penez
                     actualMarketOpenOrder.IsBuy ? MarketProcessType.Sell : MarketProcessType.Buy,
                     actualMarketOpenOrder.Price);
 

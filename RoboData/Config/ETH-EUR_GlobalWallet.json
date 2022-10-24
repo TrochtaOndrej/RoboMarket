@@ -1,0 +1,15 @@
+{
+  "crypto_broker_wallet": {
+    "MarketCoreCupBroker": {
+      "crypto_broker_wallet": {},
+      "crypto_account_value": 0.05096979,
+      "eur_account_value": 69.98,
+      "crypto_position_transaction": 1373,
+      "market_symbol": "ETH-EUR"
+    }
+  },
+  "crypto_account_value": 0.0,
+  "eur_account_value": 0.0,
+  "crypto_position_transaction": 0.0,
+  "market_symbol": "ETH-EUR"
+}

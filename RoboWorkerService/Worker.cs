@@ -16,42 +16,43 @@ public class Worker : BackgroundService
     public Worker(
         ILogger<Worker> logger,
         IMarketCoreCupBroker<ICryptoBTC> marketCoreBTC_CupBroker,
-        IMarketCoreDefinedMoneyBroker<ICryptoBTC> marketCoreBTCSharpBroker
-
-        //IMarketCoreCupBroker<ICryptoALGO> marketCoreALGOC_CupBroker,
-        //IMarketCoreCupBroker<ICryptoETH> marketCoreETH_CupBroker,
-        //IMarketCoreCupBroker<ICryptoDOGE> marketCoreDOGE_CupBroker
-
-
+        IMarketCoreDefinedMoneyBroker<ICryptoBTC> marketCoreBTCSharpBroker,
+        IMarketCoreCupBroker<ICryptoALGO> marketCoreALGOC_CupBroker,
+        IMarketCoreCupBroker<ICryptoETH> marketCoreETH_CupBroker,
+        IMarketCoreCupBroker<ICryptoDOGE> marketCoreDOGE_CupBroker
     )
     {
         _logger = logger;
         _marketCoreBtcCupBroker = marketCoreBTC_CupBroker;
         _marketCoreBtcSharpBroker = marketCoreBTCSharpBroker;
-        //_marketCoreAlgocCupBroker = marketCoreALGOC_CupBroker;
-        //_marketCoreEthCupBroker = marketCoreETH_CupBroker;
-        //_marketCoreDogeCupBroker = marketCoreDOGE_CupBroker;
+        _marketCoreAlgocCupBroker = marketCoreALGOC_CupBroker;
+        _marketCoreEthCupBroker = marketCoreETH_CupBroker;
+        _marketCoreDogeCupBroker = marketCoreDOGE_CupBroker;
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         await _marketCoreBtcCupBroker.ConnectToMarketAsync();
         await _marketCoreBtcSharpBroker.ConnectToMarketAsync();
-        
-        //await _marketCoreAlgocCupBroker.ConnectToMarketAsync();
-        //await _marketCoreEthCupBroker.ConnectToMarketAsync();
-        //await _marketCoreDogeCupBroker.ConnectToMarketAsync();
 
+        await _marketCoreAlgocCupBroker.ConnectToMarketAsync();
+        await _marketCoreEthCupBroker.ConnectToMarketAsync();
+        await _marketCoreDogeCupBroker.ConnectToMarketAsync();
+
+        var delay = 3000;
         while (!stoppingToken.IsCancellationRequested)
             try
             {
                 await _marketCoreBtcCupBroker.RunAsync();
+                await Task.Delay(delay, stoppingToken);
                 await _marketCoreBtcSharpBroker.RunAsync();
-
-                //await _marketCoreAlgocCupBroker.RunAsync();
-                //await _marketCoreEthCupBroker.RunAsync();
-                //await _marketCoreDogeCupBroker.RunAsync();
-                await Task.Delay(500, stoppingToken);
+                await Task.Delay(delay, stoppingToken);
+                await _marketCoreAlgocCupBroker.RunAsync();
+                await Task.Delay(delay, stoppingToken);
+                await _marketCoreEthCupBroker.RunAsync();
+                await Task.Delay(delay, stoppingToken);
+                await _marketCoreDogeCupBroker.RunAsync();
+                await Task.Delay(delay, stoppingToken);
             }
             catch (Exception e)
             {

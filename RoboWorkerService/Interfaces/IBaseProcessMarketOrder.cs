@@ -5,12 +5,11 @@ using RoboWorkerService.Market.Model;
 
 namespace RoboWorkerService.Interfaces;
 
-public interface IProcessAllMarketOrder<T> : IBaseProcessMarketOrder<T>  where T : ICryptoCurrency
+public interface IProcessAllMarketOrder<T> : IBaseProcessMarketOrder<T> where T : ICryptoCurrency
 {
     void Init();
-    void SaveWallet();
+    Task SaveWalletAsync();
     void CalculateGlobalWallet();
-    
 }
 
 public interface IBaseProcessMarketOrder<T> : IMarketCrypto where T : ICryptoCurrency

@@ -48,7 +48,7 @@ public class MarketCoreDefinedSharpBroker<W> : MarketCore<W>, IMarketCoreDefined
         {
             _pm.GlobalWallet.SetWallet(BrokerWalletName, BrokerWallet = new Wallet(_pm.GlobalWallet.CryptoCurrency));
             SetBrokerWallet(BrokerWallet);
-            _pm.SaveWallet();
+            await _pm.SaveWalletAsync();
         }
         else
         {
@@ -71,15 +71,18 @@ public class MarketCoreDefinedSharpBroker<W> : MarketCore<W>, IMarketCoreDefined
         _pm.SetBrokerWallet(BrokerWallet);
     }
 
+    private DateTime questionToMarket = DateTime.Now;
+
     public async Task RunAsync()
     {
+        // Sharp procedury se ptame 1 x za 30 sec
+        if (questionToMarket < DateTime.Now) return;
+        questionToMarket = questionToMarket.AddSeconds(30);
+
         //   await _semaphoreSlim.WaitAsync();
-        // nacti novy order z Burzy
+        // nacti aktualni order z Burzy
         var ticker = await IsTheSameTickerWithLastTickerAsync();
         if (ticker is null) return;
-
-
-        //await CheckOrdersByTransactionAsync(_extraDataService);
 
         //vypocti profit 
         var savedOrder = await _cmr.GetOpenOrderDetailsAsync();
@@ -107,7 +110,7 @@ public class MarketCoreDefinedSharpBroker<W> : MarketCore<W>, IMarketCoreDefined
                 _extraDataService.AddTransaction(transaction);
                 Console.WriteLine();
 
-                RecalculateWalletAfterBuyOrSellOrder(orderResult); // prepocti penezenku
+                await RecalculateWalletAfterBuyOrSellOrderAsync(orderResult); // prepocti penezenku
             }
         }
         finally
@@ -117,13 +120,16 @@ public class MarketCoreDefinedSharpBroker<W> : MarketCore<W>, IMarketCoreDefined
         }
     }
 
-    private void RecalculateWalletAfterBuyOrSellOrder(ExchangeOrderResult orderResult)
+    private Task RecalculateWalletAfterBuyOrSellOrderAsync(ExchangeOrderResult orderResult)
     {
         if (orderResult.Result.IsCompleted())
         {
             CalculateActualTransactionIntoBrokerWallet(orderResult); // snizi a zvysi hodnotu
+            _pm.GlobalWallet.SetWallet(BrokerWalletName, BrokerWallet);
             _pm.CalculateGlobalWallet();
-            _pm.SaveWallet();
+            return _pm.SaveWalletAsync();
         }
+
+        return Task.CompletedTask;
     }
 }

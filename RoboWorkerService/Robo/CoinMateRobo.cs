@@ -51,7 +51,6 @@ public class CoinMateRobo<T> : ICoinMateRobo<T> where T : ICryptoCurrency
     {
         return _iexApi.GetCompletedOrderDetailsAsync(_marketSymbol,
             DateTime.Now.Date); //TODO OT: doresit datum od kdy si vyhledat uzavrene ordery
-        return _iexApi.GetOpenOrderDetailsAsync(_marketSymbol);
     }
 
     public ExchangeOrderRequest CreateExchangeOrderRequest(MarketProcessBuyOrSell marketProcessBuyOrSell)

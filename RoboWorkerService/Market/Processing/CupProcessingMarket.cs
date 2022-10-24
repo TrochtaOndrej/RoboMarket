@@ -34,12 +34,12 @@ public class CupProcessingMarket<W> : BaseProcessMarketOrder<W>, ICupProcessingM
     {
         //vypocti profit 
         SetActualValueFromMarket(ticker);
-        return CalculateSellOrBuy(1M);
+        return CalculateSellOrBuy(1.5M);
     }
 
-    public void SaveWallet()
+    public Task SaveWalletAsync()
     {
-        SaveWalletToFile();
+        return SaveWalletToFileAsync();
     }
 
     /// <summary> Vypocita jestli se ma uskutecnit prodej nebo nakup. Pokud se nema nic provadet vraci NULL! </summary>

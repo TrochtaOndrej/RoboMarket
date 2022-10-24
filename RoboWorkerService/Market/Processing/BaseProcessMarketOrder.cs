@@ -9,7 +9,7 @@ namespace RoboWorkerService.Market.Processing;
 
 /// <summary> Bazova trida pro pomocne funkce pri vypoctech</summary>
 /// <typeparam name="T"></typeparam>
-public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T> 
+public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T>
     //where P : IProcessingMarketValue
     where T : ICryptoCurrency
 {
@@ -28,7 +28,7 @@ public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T
         IConfig config,
         IJsonConvertor json,
         string processingName // nazev parent tridy pro rozliseni dat
-        ) : base()
+    ) : base()
     {
         Config = config;
         _json = json;
@@ -65,12 +65,14 @@ public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T
     public void SetActualValueFromMarket(ExchangeTicker ticker)
     {
         if (!string.Equals(GlobalWallet.MarketSymbol, ticker.MarketSymbol, StringComparison.InvariantCultureIgnoreCase))
-            throw new BussinesExceptions($" CryptoCurrency [{CryptoCurrency.ToString()}] is no the same with order market currency [{ticker.MarketSymbol}] !");
+            throw new BussinesExceptions(
+                $" CryptoCurrency [{CryptoCurrency.ToString()}] is no the same with order market currency [{ticker.MarketSymbol}] !");
         CryptoCurrency = new CryptoCurrency(ticker.MarketSymbol);
         CryptoPriceSell = ticker.Bid;
         CryptoPriceBuy = ticker.Ask;
         BrokerWallet.CryptoCurrency = CryptoCurrency;
     }
+
     /// <summary> Investovane penize za nakup se vypocita fees </summary>
     /// <param name="investingValue"></param>
     /// <returns></returns>
@@ -89,20 +91,22 @@ public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T
 
     protected void Validation()
     {
-        if (!BrokerWallet.CryptoCurrency.Crypto.ToString().Equals(CryptoCurrency.Crypto.ToString(), StringComparison.InvariantCultureIgnoreCase)) throw new BussinesExceptions(" GlobalWallet marketCurrency is no the same with MarketValue!");
+        if (!BrokerWallet.CryptoCurrency.Crypto.ToString()
+                .Equals(CryptoCurrency.Crypto.ToString(), StringComparison.InvariantCultureIgnoreCase))
+            throw new BussinesExceptions(" GlobalWallet marketCurrency is no the same with MarketValue!");
     }
 
     #region JSon
+
     public virtual void Init()
     {
-
         if (File.Exists(FileName))
         {
             var str = File.ReadAllText(FileName);
             var www = _json.ToInstance<Wallet<T>>(str);
             // if (www.MarketSymbol != GlobalWallet.MarketSymbol)
-                // throw new BussinesExceptions(
-                    // $"Config for GlobalWallet is broken. The MarketSymbol is different. [{www.MarketSymbol}]!=[{GlobalWallet.MarketSymbol}] ");
+            // throw new BussinesExceptions(
+            // $"Config for GlobalWallet is broken. The MarketSymbol is different. [{www.MarketSymbol}]!=[{GlobalWallet.MarketSymbol}] ");
             GlobalWallet.CryptoAccountValue = www.CryptoAccountValue;
             GlobalWallet.CryptoPositionTransaction = www.CryptoPositionTransaction;
             GlobalWallet.EurAccountValue = www.EurAccountValue;
@@ -116,10 +120,10 @@ public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T
         }
     }
 
-    protected void SaveWalletToFile()
+    protected Task SaveWalletToFileAsync()
     {
-        var str = _json.ToJson<IWallet<T>>(GlobalWallet);
-        File.WriteAllText(FileName, str);
+        return _json.ToFileJsonAsync(FileName, GlobalWallet, CancellationToken.None);
     }
+
     #endregion
 }

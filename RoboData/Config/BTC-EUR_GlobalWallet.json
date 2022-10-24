@@ -2,9 +2,9 @@
   "crypto_broker_wallet": {
     "MarketCoreCupBroker": {
       "crypto_broker_wallet": {},
-      "crypto_account_value": 0.1027749,
-      "eur_account_value": 2000.0,
-      "crypto_position_transaction": 19460.0,
+      "crypto_account_value": 0.1020581,
+      "eur_account_value": 2014.360053571,
+      "crypto_position_transaction": 19737.39,
       "market_symbol": "BTC-EUR"
     },
     "MarketCoreDefinedSharpBroker": {
@@ -15,8 +15,8 @@
       "market_symbol": "BTC-EUR"
     }
   },
-  "crypto_account_value": 0.1119110068,
-  "eur_account_value": 2150.0,
+  "crypto_account_value": 0.1111942068,
+  "eur_account_value": 2164.360053571,
   "crypto_position_transaction": 0.0,
   "market_symbol": "BTC-EUR"
 }

@@ -38,10 +38,10 @@ public abstract class MarketCore<T> where T : ICryptoCurrency
         return _lastTicker;
     }
 
-    protected async Task GetActualOpenOrders()
-    {
-        _cmr.GetOpenOrderDetailsAsync();
-    }
+    // protected async Task GetActualOpenOrders()
+    // {
+    //     _cmr.GetOpenOrderDetailsAsync();
+    // }
 
     /// <summary> Pepocita penezenku z aktualni provedene transakce </summary>
     /// <param name="exchange"></param>
