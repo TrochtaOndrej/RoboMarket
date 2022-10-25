@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using RoboWorkerService.Config;
+using RoboWorkerService.Csv;
 using RoboWorkerService.Interface;
 using RoboWorkerService.Interfaces;
 using RoboWorkerService.Market;
@@ -34,8 +35,10 @@ public static class RoboServices
         AddMarketBurker<ICryptoDOGE>(services);
 
         services.AddSingleton(typeof(IWallet<>), typeof(Wallet<>));
-     
+
         services.AddSingleton(typeof(ITransactionDataDriver<>), typeof(TransactionsDataDriver<>));
+        services.AddSingleton(typeof(IMarketTransactionCsv<>), typeof(MarketTransactionCsv<>));
+
         return services;
     }
 
@@ -49,7 +52,7 @@ public static class RoboServices
         services.AddSingleton<ICoinMateRobo<T>, CoinMateRobo<T>>();
         services.AddSingleton<IBrokerMoneyExtraDataFile<T>, BrokerMoneyExtraDataFile<T>>();
         services.AddSingleton<IBrokerMoneyProcessExtraDataService<T>, BrokerMoneyProcessExtraDataService<T>>();
-        
+
         return services;
     }
 
@@ -75,4 +78,4 @@ public static class RoboServices
         services.AddSingleton(typeof(JsonSerializerSettings), serializerSettings);
         return services;
     }
-} 
+}

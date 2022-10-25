@@ -6,12 +6,10 @@ namespace RoboWorkerService.Market.Model;
 
 public record MarketCurrency : IMarketCurrency
 {
-    [JsonIgnore]
-    public ICryptoCurrency CryptoCurrency { get; set; }
+    [JsonIgnore] public ICryptoCurrency CryptoCurrency { get; set; }
 
     public MarketCurrency()
     {
-        
     }
 
     public MarketCurrency(ICryptoCurrency cryptoCurrencyType)

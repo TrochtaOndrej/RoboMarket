@@ -58,7 +58,8 @@ public class MarketCoreDefinedSharpBroker<W> : MarketCore<W>, IMarketCoreDefined
         }
 
         await _transactionDataDriver.Load();
-        await _cmr.InitRoboAsync((W)_pm.GlobalWallet.CryptoCurrency, _appRobo); // TODO OT: zmena na Market symbol (zjistit)
+        await _cmr.InitRoboAsync((W)_pm.GlobalWallet.CryptoCurrency, _appRobo,
+            _logger); // TODO OT: zmena na Market symbol (zjistit)
         var firstTicker = await _cmr.GetTickerAsync();
         var buyOrSellOrders = _pm.InicializationFirstSharpStrategy(firstTicker, brokerWallet, _extraDataService);
 
@@ -100,6 +101,7 @@ public class MarketCoreDefinedSharpBroker<W> : MarketCore<W>, IMarketCoreDefined
             {
                 // Nakup a zaloguj
                 _logger.LogDebug(ObjectDumper.Dump(buyOrSell));
+//uloz do cvs souboru
 
                 // vytvor platbu (orderPlate)
                 var orderRequest = _cmr.CreateExchangeOrderRequest(buyOrSell);

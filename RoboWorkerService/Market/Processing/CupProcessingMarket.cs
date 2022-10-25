@@ -88,7 +88,9 @@ public class CupProcessingMarket<W> : BaseProcessMarketOrder<W>, ICupProcessingM
                 EurValue = Math.Abs(diffEurToBuy),
                 ProcessType = MarketProcessType.Buy,
                 Price = CryptoPriceBuy,
-                Fees = feesEurToBuy
+                Fees = feesEurToBuy,
+                Strategy = nameof(CupProcessingMarket<W>),
+                ProfitPercently = 0,
             };
         }
 

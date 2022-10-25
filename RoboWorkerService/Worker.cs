@@ -29,16 +29,20 @@ public class Worker : BackgroundService
         _marketCoreEthCupBroker = marketCoreETH_CupBroker;
         _marketCoreDogeCupBroker = marketCoreDOGE_CupBroker;
     }
+    // coinmate - CZ
+
+    //coinbase
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
+        _logger.LogInformation("-*CONNECT TO MARKET*-");
         await _marketCoreBtcCupBroker.ConnectToMarketAsync();
         await _marketCoreBtcSharpBroker.ConnectToMarketAsync();
 
         await _marketCoreAlgocCupBroker.ConnectToMarketAsync();
         await _marketCoreEthCupBroker.ConnectToMarketAsync();
         await _marketCoreDogeCupBroker.ConnectToMarketAsync();
-
+        _logger.LogInformation("-*START ROBO STRATEGY*-");
         var delay = 3000;
         while (!stoppingToken.IsCancellationRequested)
             try

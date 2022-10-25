@@ -1,4 +1,5 @@
 ﻿using RoboWorkerService.Config;
+using RoboWorkerService.Csv;
 using RoboWorkerService.Interfaces;
 using RoboWorkerService.Market.Enum;
 using RoboWorkerService.Market.Model;
@@ -14,6 +15,7 @@ public class MarketCoreCupBroker<W> : MarketCore<W>, IMarketCoreCupBroker<W> whe
     private readonly ICupProcessingMarket<W> _pm;
     private readonly ILogger<MarketCoreCupBroker<W>> _logger;
     private readonly IAppRobo _appRobo;
+    private readonly IMarketTransactionCsv<MarketProcessBuyOrSell> _csvBuyOrSell;
     private readonly ITransactionDataDriver<W> _transaction;
 
     protected override string BrokerWalletName => nameof(MarketCoreCupBroker<W>);
@@ -26,11 +28,13 @@ public class MarketCoreCupBroker<W> : MarketCore<W>, IMarketCoreCupBroker<W> whe
         ICoinMateRobo<W> cmr,
         ILogger<MarketCoreCupBroker<W>> logger,
         ITransactionDataDriver<W> transactionDataDriver,
-        IAppRobo appRobo) : base(cmr, logger)
+        IAppRobo appRobo,
+        IMarketTransactionCsv<MarketProcessBuyOrSell> csvBuyOrSell) : base(cmr, logger)
     {
         _pm = pm;
         _logger = logger;
         _appRobo = appRobo;
+        _csvBuyOrSell = csvBuyOrSell;
         _transaction = transactionDataDriver;
     }
 
@@ -52,7 +56,8 @@ public class MarketCoreCupBroker<W> : MarketCore<W>, IMarketCoreCupBroker<W> whe
         }
 
         await _transaction.Load();
-        await _cmr.InitRoboAsync((W)_pm.GlobalWallet.CryptoCurrency, _appRobo); // TODO OT: zmena na Market symbol (zjistit)
+        await _cmr.InitRoboAsync((W)_pm.GlobalWallet.CryptoCurrency, _appRobo,
+            _logger); // TODO OT: zmena na Market symbol (zjistit)
     }
 
     public void SetBrokerWallet(IWallet brokerWallet)
@@ -87,6 +92,7 @@ public class MarketCoreCupBroker<W> : MarketCore<W>, IMarketCoreCupBroker<W> whe
             await _pm.SaveWalletAsync();
             _transaction.Add(orderRequest, orderResult, _pm.GlobalWallet, buyOrSell, typeof(W));
             await _transaction.SaveAsync();
+            _csvBuyOrSell.WriteToFileCsv(buyOrSell);
             _logger.LogDebug(ObjectDumper.Dump(orderResult));
 
             Console.WriteLine();

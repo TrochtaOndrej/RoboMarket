@@ -142,6 +142,8 @@ public class SharpProcessingMarket<W> : BaseProcessMarketOrder<W>, IDefinedMoney
                 IsPostOnly = true,
                 ProfitPercently = defineProfitInPercently,
                 ProfitInEur = (investMoneyEur / 100) * defineProfitInPercently - fees,
+                Strategy = nameof(SharpProcessingMarket<W>) + " " +
+                           (cryptoPosition == null ? "ActualMarketPosition" : "DefinedPosition")
             };
         }
         else if (marketProcessType == MarketProcessType.Sell)

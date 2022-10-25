@@ -25,8 +25,11 @@ public record MarketProcessBuyOrSell : MarketCurrency
 
     /// <summary> Aktulani nakup s uvzovanym profitem </summary>
     public decimal ProfitPercently { get; set; }
-/// <summary> Vypociany profit v Eur </summary>
+
+    /// <summary> Vypociany profit v Eur </summary>
     public decimal ProfitInEur { get; set; }
+
+    public string Strategy { get; set; }
 
     public MarketProcessBuyOrSell(CryptoCurrency cryptoCurrency) : base(cryptoCurrency)
     {
