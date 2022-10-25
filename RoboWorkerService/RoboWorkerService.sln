@@ -9,11 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeSharp", "..\..\Robo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helper", "..\Library\Helper\Helper.csproj", "{8E1AB7F7-D2E6-40EE-9698-82C98D7E560E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoboForm", "..\WpfForm\RoboForm\RoboForm.csproj", "{4937E5A5-1D6F-4996-AE6E-D174B823DD4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoboForm", "..\WpfForm\RoboForm\RoboForm.csproj", "{4937E5A5-1D6F-4996-AE6E-D174B823DD4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoboAppTest", "..\UnitTest\RoboAppTest\RoboAppTest.csproj", "{058D7CE7-871D-42FF-AFEA-4CE3CD6B82E0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoboMsTest", "..\MsTest\RoboMsTest\RoboMsTest.csproj", "{C6C4E6AF-F153-47FF-8AFD-E0E89FD847B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoboMsTest", "..\MsTest\RoboMsTest\RoboMsTest.csproj", "{C6C4E6AF-F153-47FF-8AFD-E0E89FD847B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +35,6 @@ Global
 		{4937E5A5-1D6F-4996-AE6E-D174B823DD4A}.Debug|x86.Build.0 = Debug|Any CPU
 		{4937E5A5-1D6F-4996-AE6E-D174B823DD4A}.Release|x86.ActiveCfg = Release|Any CPU
 		{4937E5A5-1D6F-4996-AE6E-D174B823DD4A}.Release|x86.Build.0 = Release|Any CPU
-		{058D7CE7-871D-42FF-AFEA-4CE3CD6B82E0}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{058D7CE7-871D-42FF-AFEA-4CE3CD6B82E0}.Debug|x86.Build.0 = Debug|Any CPU
-		{058D7CE7-871D-42FF-AFEA-4CE3CD6B82E0}.Release|x86.ActiveCfg = Release|Any CPU
-		{058D7CE7-871D-42FF-AFEA-4CE3CD6B82E0}.Release|x86.Build.0 = Release|Any CPU
 		{C6C4E6AF-F153-47FF-8AFD-E0E89FD847B7}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{C6C4E6AF-F153-47FF-8AFD-E0E89FD847B7}.Debug|x86.Build.0 = Debug|Any CPU
 		{C6C4E6AF-F153-47FF-8AFD-E0E89FD847B7}.Release|x86.ActiveCfg = Release|Any CPU
