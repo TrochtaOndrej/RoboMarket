@@ -1,0 +1,655 @@
+2022-10-25 00:23:54.285 +01:00 [INF] Root RoboData path: d:\Programming\Trochta.Net\RoboMarket\RoboData\
+2022-10-25 00:23:54.590 +01:00 [FTL] RoboWorkerService.BussinesExceptions: Is created new config file for GlobalWallet in [d:\Programming\Trochta.Net\RoboMarket\RoboData\ExchangeCoinmateAPI\Config\BTC-EUR_GlobalWallet.json] 
+   at RoboWorkerService.Market.Processing.BaseProcessMarketOrder`1.Init() in D:\Programming\Trochta.Net\RoboMarket\RoboWorkerService\Market\Processing\BaseProcessMarketOrder.cs:line 119
+   at RoboWorkerService.Market.MarketCoreCupBroker`1.ConnectToMarketAsync() in D:\Programming\Trochta.Net\RoboMarket\RoboWorkerService\Market\MarketCoreCupBroker.cs:line 43
+   at RoboWorkerService.Worker.ExecuteAsync(CancellationToken stoppingToken) in D:\Programming\Trochta.Net\RoboMarket\RoboWorkerService\Worker.cs:line 35
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at RoboWorkerService.Program.Main(String[] args) in D:\Programming\Trochta.Net\RoboMarket\RoboWorkerService\Program.cs:line 39
+2022-10-25 00:36:44.810 +01:00 [INF] Root RoboData path: d:\Programming\Trochta.Net\RoboMarket\RoboData\
+2022-10-25 01:11:39.356 +01:00 [INF] Root RoboData path: d:\Programming\Trochta.Net\RoboMarket\RoboData\
+2022-10-25 01:11:39.574 +01:00 [INF] -*CONNECT TO MARKET*-
+2022-10-25 01:11:57.998 +01:00 [ERR] BackgroundService failed
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at RoboWorkerService.Market.Processing.BaseProcessMarketOrder`1.SetActualValueFromMarket(ExchangeTicker ticker) in D:\Programming\Trochta.Net\RoboMarket\RoboWorkerService\Market\Processing\BaseProcessMarketOrder.cs:line 68
+   at RoboWorkerService.Market.Processing.SharpProcessingMarket`1.InicializationFirstSharpStrategy(ExchangeTicker firstTicker, IWallet brokerWallet, IBrokerMoneyProcessExtraDataService`1 externalData) in D:\Programming\Trochta.Net\RoboMarket\RoboWorkerService\Market\Processing\SharpProcessingMarket.cs:line 180
+   at RoboWorkerService.Market.MarketCoreDefinedSharpBroker`1.ConnectToMarketAsync() in D:\Programming\Trochta.Net\RoboMarket\RoboWorkerService\Market\MarketCoreDefinedSharpBroker.cs:line 0
+   at RoboWorkerService.Worker.ExecuteAsync(CancellationToken stoppingToken) in D:\Programming\Trochta.Net\RoboMarket\RoboWorkerService\Worker.cs:line 40
+   at Microsoft.Extensions.Hosting.Internal.Host.TryExecuteBackgroundServiceAsync(BackgroundService backgroundService)
+2022-10-25 01:11:58.028 +01:00 [FTL] The HostOptions.BackgroundServiceExceptionBehavior is configured to StopHost. A BackgroundService has thrown an unhandled exception, and the IHost instance is stopping. To avoid this behavior, configure this to Ignore; however the BackgroundService will not be restarted.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at RoboWorkerService.Market.Processing.BaseProcessMarketOrder`1.SetActualValueFromMarket(ExchangeTicker ticker) in D:\Programming\Trochta.Net\RoboMarket\RoboWorkerService\Market\Processing\BaseProcessMarketOrder.cs:line 68
+   at RoboWorkerService.Market.Processing.SharpProcessingMarket`1.InicializationFirstSharpStrategy(ExchangeTicker firstTicker, IWallet brokerWallet, IBrokerMoneyProcessExtraDataService`1 externalData) in D:\Programming\Trochta.Net\RoboMarket\RoboWorkerService\Market\Processing\SharpProcessingMarket.cs:line 180
+   at RoboWorkerService.Market.MarketCoreDefinedSharpBroker`1.ConnectToMarketAsync() in D:\Programming\Trochta.Net\RoboMarket\RoboWorkerService\Market\MarketCoreDefinedSharpBroker.cs:line 0
+   at RoboWorkerService.Worker.ExecuteAsync(CancellationToken stoppingToken) in D:\Programming\Trochta.Net\RoboMarket\RoboWorkerService\Worker.cs:line 40
+   at Microsoft.Extensions.Hosting.Internal.Host.TryExecuteBackgroundServiceAsync(BackgroundService backgroundService)
+2022-10-25 01:15:13.299 +01:00 [INF] Root RoboData path: d:\Programming\Trochta.Net\RoboMarket\RoboData\
+2022-10-25 01:15:13.510 +01:00 [INF] -*CONNECT TO MARKET*-
+2022-10-25 01:15:29.051 +01:00 [ERR] BackgroundService failed
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at RoboWorkerService.Market.Processing.BaseProcessMarketOrder`1.SetActualValueFromMarket(ExchangeTicker ticker) in D:\Programming\Trochta.Net\RoboMarket\RoboWorkerService\Market\Processing\BaseProcessMarketOrder.cs:line 68
+   at RoboWorkerService.Market.Processing.SharpProcessingMarket`1.InicializationFirstSharpStrategy(ExchangeTicker firstTicker, IWallet brokerWallet, IBrokerMoneyProcessExtraDataService`1 externalData) in D:\Programming\Trochta.Net\RoboMarket\RoboWorkerService\Market\Processing\SharpProcessingMarket.cs:line 180
+   at RoboWorkerService.Market.MarketCoreDefinedSharpBroker`1.ConnectToMarketAsync() in D:\Programming\Trochta.Net\RoboMarket\RoboWorkerService\Market\MarketCoreDefinedSharpBroker.cs:line 0
+   at RoboWorkerService.Worker.ExecuteAsync(CancellationToken stoppingToken) in D:\Programming\Trochta.Net\RoboMarket\RoboWorkerService\Worker.cs:line 40
+   at Microsoft.Extensions.Hosting.Internal.Host.TryExecuteBackgroundServiceAsync(BackgroundService backgroundService)
+2022-10-25 01:15:29.056 +01:00 [FTL] The HostOptions.BackgroundServiceExceptionBehavior is configured to StopHost. A BackgroundService has thrown an unhandled exception, and the IHost instance is stopping. To avoid this behavior, configure this to Ignore; however the BackgroundService will not be restarted.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at RoboWorkerService.Market.Processing.BaseProcessMarketOrder`1.SetActualValueFromMarket(ExchangeTicker ticker) in D:\Programming\Trochta.Net\RoboMarket\RoboWorkerService\Market\Processing\BaseProcessMarketOrder.cs:line 68
+   at RoboWorkerService.Market.Processing.SharpProcessingMarket`1.InicializationFirstSharpStrategy(ExchangeTicker firstTicker, IWallet brokerWallet, IBrokerMoneyProcessExtraDataService`1 externalData) in D:\Programming\Trochta.Net\RoboMarket\RoboWorkerService\Market\Processing\SharpProcessingMarket.cs:line 180
+   at RoboWorkerService.Market.MarketCoreDefinedSharpBroker`1.ConnectToMarketAsync() in D:\Programming\Trochta.Net\RoboMarket\RoboWorkerService\Market\MarketCoreDefinedSharpBroker.cs:line 0
+   at RoboWorkerService.Worker.ExecuteAsync(CancellationToken stoppingToken) in D:\Programming\Trochta.Net\RoboMarket\RoboWorkerService\Worker.cs:line 40
+   at Microsoft.Extensions.Hosting.Internal.Host.TryExecuteBackgroundServiceAsync(BackgroundService backgroundService)
+2022-10-25 01:19:29.758 +01:00 [INF] Root RoboData path: d:\Programming\Trochta.Net\RoboMarket\RoboData\
+2022-10-25 01:19:29.976 +01:00 [INF] -*CONNECT TO MARKET*-
+2022-10-25 15:54:31.846 +01:00 [INF] Root RoboData path: d:\Programming\Trochta.Net\RoboMarket\RoboData\
+2022-10-25 15:54:42.237 +01:00 [INF] -*CONNECT TO MARKET*-
+2022-10-25 15:55:01.252 +01:00 [INF] -*START ROBO STRATEGY*-
+2022-10-25 16:07:28.215 +01:00 [INF] Root RoboData path: d:\Programming\Trochta.Net\RoboMarket\RoboData\
+2022-10-25 16:07:31.761 +01:00 [INF] -*CONNECT TO MARKET*-
+2022-10-25 16:07:40.446 +01:00 [INF] Root RoboData path: d:\Programming\Trochta.Net\RoboMarket\RoboData\
+2022-10-25 16:07:40.616 +01:00 [INF] -*CONNECT TO MARKET*-
+2022-10-25 16:07:40.650 +01:00 [INF] -*START ROBO STRATEGY*-
+2022-10-25 16:08:22.251 +01:00 [INF] Root RoboData path: d:\Programming\Trochta.Net\RoboMarket\RoboData\
+2022-10-25 16:08:22.425 +01:00 [INF] -*CONNECT TO MARKET*-
+2022-10-25 16:08:22.443 +01:00 [INF] -*START ROBO STRATEGY*-
+2022-10-25 16:09:04.785 +01:00 [INF] Root RoboData path: d:\Programming\Trochta.Net\RoboMarket\RoboData\
+2022-10-25 16:09:04.962 +01:00 [INF] -*CONNECT TO MARKET*-
+2022-10-25 16:09:04.980 +01:00 [INF] -*START ROBO STRATEGY*-
+2022-10-25 16:59:07.041 +01:00 [INF] Root RoboData path: d:\Programming\Trochta.Net\RoboMarket\RoboData\
+2022-10-25 16:59:07.244 +01:00 [INF] -*CONNECT TO MARKET*-
+2022-10-25 16:59:07.266 +01:00 [INF] -*START ROBO STRATEGY*-
+2022-10-25 16:59:07.644 +01:00 [INF] SHARP SELL: Calculated money is less then one Euro. Change the data:{MoneyProcessDataBuy}
+  PriceInEur: 1.6666666666666666666666666666
+  MarketProcessType: MarketProcessType.Buy
+  PercentSpectrumStart: 0.7
+  PercentSpectrumEnd: 1
+  PercentStepCalculatePrice: 0.1
+2022-10-25 16:59:07.651 +01:00 [DBG] {MarketProcessBuyOrSell}
+  ProcessType: MarketProcessType.Buy
+  CryptoValue: 0.0000846931237822187464164222
+  EurValue: 1.6666666666666666666666666667
+  Price: 19678.89
+  Fees: 0.0100000000000000000000000000
+  IsPostOnly: true
+  ProfitPercently: 0.7
+  ProfitInEur: 0.0016666666666666666666666667
+  Strategy: "SharpProcessingMarket"
+  StartingPointPositionToBuyOrSell: 19817.61
+  CryptoCurrency: {CryptoCurrency}
+    Crypto: "BTC-EUR"
+    CountDecimalNumberInPosition: 2
+  MarketSymbol: "BTC-EUR"
+2022-10-25 16:59:08.165 +01:00 [DBG] SharpProcessingMarket - Actual transaction {"OrderId":"ef0d79ad-6053-4bad-8420-b069c4abf068","ClientOrderId":null,"Result":"PendingOpen","ResultCode":null,"Message":null,"Amount":0.0000847,"AmountFilled":0,"IsAmountFilledReversed":false,"Price":19678.89,"AveragePrice":null,"OrderDate":"2022-10-25T15:59:08.3566490Z","HTTPHeaderDate":"2022-10-25T15:59:08.0000000Z","CompletedDate":"0001-01-01T00:00:00.0000000","MarketSymbol":"BTC-EUR","IsBuy":true,"Fees":0,"FeesCurrency":"BTC","TradeId":null,"TradeDate":null,"UpdateSequence":null,"$type":"ExchangeOrderResult"}
+2022-10-25 16:59:08.180 +01:00 [DBG] {MarketProcessBuyOrSell}
+  ProcessType: MarketProcessType.Buy
+  CryptoValue: 0.0000847785102075869645240933
+  EurValue: 1.6666666666666666666666666667
+  Price: 19659.07
+  Fees: 0.0100000000000000000000000000
+  IsPostOnly: true
+  ProfitPercently: 0.8
+  ProfitInEur: 0.0033333333333333333333333334
+  Strategy: "SharpProcessingMarket"
+  StartingPointPositionToBuyOrSell: 19817.61
+  CryptoCurrency: {CryptoCurrency}
+    Crypto: "BTC-EUR"
+    CountDecimalNumberInPosition: 2
+  MarketSymbol: "BTC-EUR"
+2022-10-25 16:59:08.366 +01:00 [DBG] SharpProcessingMarket - Actual transaction {"OrderId":"671abddd-a0f3-458b-8e47-7f438017a73b","ClientOrderId":null,"Result":"PendingOpen","ResultCode":null,"Message":null,"Amount":0.0000848,"AmountFilled":0,"IsAmountFilledReversed":false,"Price":19659.07,"AveragePrice":null,"OrderDate":"2022-10-25T15:59:08.6675680Z","HTTPHeaderDate":"2022-10-25T15:59:08.0000000Z","CompletedDate":"0001-01-01T00:00:00.0000000","MarketSymbol":"BTC-EUR","IsBuy":true,"Fees":0,"FeesCurrency":"BTC","TradeId":null,"TradeDate":null,"UpdateSequence":null,"$type":"ExchangeOrderResult"}
+2022-10-25 16:59:10.315 +01:00 [INF] Market position BUY: 19816.75, SELL 19811.48
+2022-10-25 16:59:14.540 +01:00 [INF] Market position BUY: 19816.98, SELL 19813.05
+2022-10-25 16:59:17.587 +01:00 [INF] Market position BUY: 19817.6, SELL 19815.65
+2022-10-25 16:59:20.771 +01:00 [INF] Market position BUY: 19817.62, SELL 19814.7
+2022-10-25 16:59:23.937 +01:00 [INF] Market position BUY: 19817.39, SELL 19812.73
+2022-10-25 16:59:27.105 +01:00 [INF] Market position BUY: 19817.69, SELL 19813.62
+2022-10-25 16:59:30.157 +01:00 [INF] Market position BUY: 19808.88, SELL 19804.75
+2022-10-25 16:59:33.208 +01:00 [INF] Market position BUY: 19812.62, SELL 19807.91
+2022-10-25 16:59:36.265 +01:00 [INF] Market position BUY: 19812.59, SELL 19807.7
+2022-10-25 16:59:39.355 +01:00 [INF] Market position BUY: 19811.76, SELL 19805.2
+2022-10-25 16:59:42.574 +01:00 [INF] Market position BUY: 19812.41, SELL 19808.35
+2022-10-25 16:59:45.642 +01:00 [INF] Market position BUY: 19812.62, SELL 19808.77
+2022-10-25 16:59:48.679 +01:00 [INF] Market position BUY: 19816.27, SELL 19812.97
+2022-10-25 16:59:51.844 +01:00 [INF] Market position BUY: 19822.64, SELL 19814.19
+2022-10-25 16:59:55.141 +01:00 [INF] Market position BUY: 19834.79, SELL 19826.32
+2022-10-25 16:59:58.319 +01:00 [INF] Market position BUY: 19834.79, SELL 19831.17
+2022-10-25 17:00:01.425 +01:00 [INF] Market position BUY: 19834.79, SELL 19830.14
+2022-10-25 17:00:04.484 +01:00 [INF] Market position BUY: 19834.79, SELL 19832.65
+2022-10-25 17:00:07.649 +01:00 [INF] Market position BUY: 19841.43, SELL 19839.8
+2022-10-25 17:00:10.827 +01:00 [INF] Market position BUY: 19843.41, SELL 19839.96
+2022-10-25 17:00:13.895 +01:00 [INF] Market position BUY: 19844.53, SELL 19839.8
+2022-10-25 17:43:24.918 +01:00 [INF] Root RoboData path: d:\Programming\Trochta.Net\RoboMarket\RoboData\
+2022-10-25 17:43:25.165 +01:00 [INF] -*CONNECT TO MARKET*-
+2022-10-25 17:43:25.172 +01:00 [INF] -*START ROBO STRATEGY*-
+2022-10-25 17:43:25.499 +01:00 [INF] SHARP SELL: Calculated money is less then one Euro. Change the data:{MoneyProcessDataBuy}
+  PriceInEur: 2.3255813953488372093023256048
+  MarketProcessType: MarketProcessType.Buy
+  PercentSpectrumStart: 0.7
+  PercentSpectrumEnd: 5.0
+  PercentStepCalculatePrice: 0.1
+2022-10-25 17:43:25.507 +01:00 [DBG] {MarketProcessBuyOrSell}
+  ProcessType: MarketProcessType.Buy
+  CryptoValue: 0.0001178719321221748705786813
+  EurValue: 2.3255813953488372093023255814
+  Price: 19729.73
+  Fees: 0.0139534883720930232558139535
+  IsPostOnly: true
+  ProfitPercently: 0.7
+  ProfitInEur: 0.0023255813953488372093023256
+  Strategy: "SharpProcessingMarket"
+  StartingPointPositionToBuyOrSell: 19868.81
+  CryptoCurrency: {CryptoCurrency}
+    Crypto: "BTC-EUR"
+    CountDecimalNumberInPosition: 2
+  MarketSymbol: "BTC-EUR"
+2022-10-25 17:43:26.322 +01:00 [DBG] SharpProcessingMarket - Actual transaction {"OrderId":"bbddde9c-9bef-468b-b451-640650b89e5f","ClientOrderId":null,"Result":"PendingOpen","ResultCode":null,"Message":null,"Amount":0.0001179,"AmountFilled":0,"IsAmountFilledReversed":false,"Price":19729.73,"AveragePrice":null,"OrderDate":"2022-10-25T16:43:26.5230720Z","HTTPHeaderDate":"2022-10-25T16:43:26.0000000Z","CompletedDate":"0001-01-01T00:00:00.0000000","MarketSymbol":"BTC-EUR","IsBuy":true,"Fees":0,"FeesCurrency":"BTC","TradeId":null,"TradeDate":null,"UpdateSequence":null,"$type":"ExchangeOrderResult"}
+2022-10-25 17:43:26.337 +01:00 [DBG] {MarketProcessBuyOrSell}
+  ProcessType: MarketProcessType.Buy
+  CryptoValue: 0.00011799076174812186435126
+  EurValue: 2.3255813953488372093023255814
+  Price: 19709.86
+  Fees: 0.0139534883720930232558139535
+  IsPostOnly: true
+  ProfitPercently: 0.8
+  ProfitInEur: 0.0046511627906976744186046511
+  Strategy: "SharpProcessingMarket"
+  StartingPointPositionToBuyOrSell: 19868.81
+  CryptoCurrency: {CryptoCurrency}
+    Crypto: "BTC-EUR"
+    CountDecimalNumberInPosition: 2
+  MarketSymbol: "BTC-EUR"
+2022-10-25 17:43:26.515 +01:00 [DBG] SharpProcessingMarket - Actual transaction {"OrderId":"a79066c9-bf5f-4acd-bfb0-1235c1b9e29f","ClientOrderId":null,"Result":"PendingOpen","ResultCode":null,"Message":null,"Amount":0.000118,"AmountFilled":0,"IsAmountFilledReversed":false,"Price":19709.86,"AveragePrice":null,"OrderDate":"2022-10-25T16:43:26.7509140Z","HTTPHeaderDate":"2022-10-25T16:43:26.0000000Z","CompletedDate":"0001-01-01T00:00:00.0000000","MarketSymbol":"BTC-EUR","IsBuy":true,"Fees":0,"FeesCurrency":"BTC","TradeId":null,"TradeDate":null,"UpdateSequence":null,"$type":"ExchangeOrderResult"}
+2022-10-25 17:43:26.527 +01:00 [DBG] {MarketProcessBuyOrSell}
+  ProcessType: MarketProcessType.Buy
+  CryptoValue: 0.0001181098312060512579895838
+  EurValue: 2.3255813953488372093023255814
+  Price: 19689.99
+  Fees: 0.0139534883720930232558139535
+  IsPostOnly: true
+  ProfitPercently: 0.9
+  ProfitInEur: 0.0069767441860465116279069767
+  Strategy: "SharpProcessingMarket"
+  StartingPointPositionToBuyOrSell: 19868.81
+  CryptoCurrency: {CryptoCurrency}
+    Crypto: "BTC-EUR"
+    CountDecimalNumberInPosition: 2
+  MarketSymbol: "BTC-EUR"
+2022-10-25 17:43:26.782 +01:00 [DBG] SharpProcessingMarket - Actual transaction {"OrderId":"043dba06-a260-4ba7-a31f-9dbf07819619","ClientOrderId":null,"Result":"PendingOpen","ResultCode":null,"Message":null,"Amount":0.0001181,"AmountFilled":0,"IsAmountFilledReversed":false,"Price":19689.99,"AveragePrice":null,"OrderDate":"2022-10-25T16:43:27.0183320Z","HTTPHeaderDate":"2022-10-25T16:43:27.0000000Z","CompletedDate":"0001-01-01T00:00:00.0000000","MarketSymbol":"BTC-EUR","IsBuy":true,"Fees":0,"FeesCurrency":"BTC","TradeId":null,"TradeDate":null,"UpdateSequence":null,"$type":"ExchangeOrderResult"}
+2022-10-25 17:43:26.794 +01:00 [DBG] {MarketProcessBuyOrSell}
+  ProcessType: MarketProcessType.Buy
+  CryptoValue: 0.0001182291412227702326829895
+  EurValue: 2.3255813953488372093023255814
+  Price: 19670.12
+  Fees: 0.0139534883720930232558139535
+  IsPostOnly: true
+  ProfitPercently: 1.0
+  ProfitInEur: 0.0093023255813953488372093023
+  Strategy: "SharpProcessingMarket"
+  StartingPointPositionToBuyOrSell: 19868.81
+  CryptoCurrency: {CryptoCurrency}
+    Crypto: "BTC-EUR"
+    CountDecimalNumberInPosition: 2
+  MarketSymbol: "BTC-EUR"
+2022-10-25 17:43:26.983 +01:00 [DBG] SharpProcessingMarket - Actual transaction {"OrderId":"7cea0d68-e607-46cd-82eb-c343e6d547a4","ClientOrderId":null,"Result":"PendingOpen","ResultCode":null,"Message":null,"Amount":0.0001182,"AmountFilled":0,"IsAmountFilledReversed":false,"Price":19670.12,"AveragePrice":null,"OrderDate":"2022-10-25T16:43:27.2137210Z","HTTPHeaderDate":"2022-10-25T16:43:27.0000000Z","CompletedDate":"0001-01-01T00:00:00.0000000","MarketSymbol":"BTC-EUR","IsBuy":true,"Fees":0,"FeesCurrency":"BTC","TradeId":null,"TradeDate":null,"UpdateSequence":null,"$type":"ExchangeOrderResult"}
+2022-10-25 17:43:26.995 +01:00 [DBG] {MarketProcessBuyOrSell}
+  ProcessType: MarketProcessType.Buy
+  CryptoValue: 0.0001183486925280257100699648
+  EurValue: 2.3255813953488372093023255814
+  Price: 19650.25
+  Fees: 0.0139534883720930232558139535
+  IsPostOnly: true
+  ProfitPercently: 1.1
+  ProfitInEur: 0.0116279069767441860465116279
+  Strategy: "SharpProcessingMarket"
+  StartingPointPositionToBuyOrSell: 19868.81
+  CryptoCurrency: {CryptoCurrency}
+    Crypto: "BTC-EUR"
+    CountDecimalNumberInPosition: 2
+  MarketSymbol: "BTC-EUR"
+2022-10-25 17:43:27.185 +01:00 [DBG] SharpProcessingMarket - Actual transaction {"OrderId":"212a8a98-c7e5-4a0d-9cde-31623bf368fc","ClientOrderId":null,"Result":"PendingOpen","ResultCode":null,"Message":null,"Amount":0.0001183,"AmountFilled":0,"IsAmountFilledReversed":false,"Price":19650.25,"AveragePrice":null,"OrderDate":"2022-10-25T16:43:27.4232030Z","HTTPHeaderDate":"2022-10-25T16:43:27.0000000Z","CompletedDate":"0001-01-01T00:00:00.0000000","MarketSymbol":"BTC-EUR","IsBuy":true,"Fees":0,"FeesCurrency":"BTC","TradeId":null,"TradeDate":null,"UpdateSequence":null,"$type":"ExchangeOrderResult"}
+2022-10-25 17:43:27.197 +01:00 [DBG] {MarketProcessBuyOrSell}
+  ProcessType: MarketProcessType.Buy
+  CryptoValue: 0.0001184684858545192303614258
+  EurValue: 2.3255813953488372093023255814
+  Price: 19630.38
+  Fees: 0.0139534883720930232558139535
+  IsPostOnly: true
+  ProfitPercently: 1.2
+  ProfitInEur: 0.0139534883720930232558139535
+  Strategy: "SharpProcessingMarket"
+  StartingPointPositionToBuyOrSell: 19868.81
+  CryptoCurrency: {CryptoCurrency}
+    Crypto: "BTC-EUR"
+    CountDecimalNumberInPosition: 2
+  MarketSymbol: "BTC-EUR"
+2022-10-25 17:43:27.386 +01:00 [DBG] SharpProcessingMarket - Actual transaction {"OrderId":"41898ead-3626-4344-a63d-84fdc80378f7","ClientOrderId":null,"Result":"PendingOpen","ResultCode":null,"Message":null,"Amount":0.0001185,"AmountFilled":0,"IsAmountFilledReversed":false,"Price":19630.38,"AveragePrice":null,"OrderDate":"2022-10-25T16:43:27.6246140Z","HTTPHeaderDate":"2022-10-25T16:43:27.0000000Z","CompletedDate":"0001-01-01T00:00:00.0000000","MarketSymbol":"BTC-EUR","IsBuy":true,"Fees":0,"FeesCurrency":"BTC","TradeId":null,"TradeDate":null,"UpdateSequence":null,"$type":"ExchangeOrderResult"}
+2022-10-25 17:43:27.396 +01:00 [DBG] {MarketProcessBuyOrSell}
+  ProcessType: MarketProcessType.Buy
+  CryptoValue: 0.0001185884614660313550738239
+  EurValue: 2.3255813953488372093023255814
+  Price: 19610.52
+  Fees: 0.0139534883720930232558139535
+  IsPostOnly: true
+  ProfitPercently: 1.3
+  ProfitInEur: 0.0162790697674418604651162790
+  Strategy: "SharpProcessingMarket"
+  StartingPointPositionToBuyOrSell: 19868.81
+  CryptoCurrency: {CryptoCurrency}
+    Crypto: "BTC-EUR"
+    CountDecimalNumberInPosition: 2
+  MarketSymbol: "BTC-EUR"
+2022-10-25 17:43:27.584 +01:00 [DBG] SharpProcessingMarket - Actual transaction {"OrderId":"1ad976a6-91b8-4796-893f-59a5033b6128","ClientOrderId":null,"Result":"PendingOpen","ResultCode":null,"Message":null,"Amount":0.0001186,"AmountFilled":0,"IsAmountFilledReversed":false,"Price":19610.52,"AveragePrice":null,"OrderDate":"2022-10-25T16:43:27.8226070Z","HTTPHeaderDate":"2022-10-25T16:43:27.0000000Z","CompletedDate":"0001-01-01T00:00:00.0000000","MarketSymbol":"BTC-EUR","IsBuy":true,"Fees":0,"FeesCurrency":"BTC","TradeId":null,"TradeDate":null,"UpdateSequence":null,"$type":"ExchangeOrderResult"}
+2022-10-25 17:43:27.595 +01:00 [DBG] {MarketProcessBuyOrSell}
+  ProcessType: MarketProcessType.Buy
+  CryptoValue: 0.0001187087409222683887110599
+  EurValue: 2.3255813953488372093023255814
+  Price: 19590.65
+  Fees: 0.0139534883720930232558139535
+  IsPostOnly: true
+  ProfitPercently: 1.4
+  ProfitInEur: 0.0186046511627906976744186046
+  Strategy: "SharpProcessingMarket"
+  StartingPointPositionToBuyOrSell: 19868.81
+  CryptoCurrency: {CryptoCurrency}
+    Crypto: "BTC-EUR"
+    CountDecimalNumberInPosition: 2
+  MarketSymbol: "BTC-EUR"
+2022-10-25 17:43:27.755 +01:00 [DBG] SharpProcessingMarket - Actual transaction {"OrderId":"38f7f258-740f-4608-b8e8-e7cb6b8f2e61","ClientOrderId":null,"Result":"PendingOpen","ResultCode":null,"Message":null,"Amount":0.0001187,"AmountFilled":0,"IsAmountFilledReversed":false,"Price":19590.65,"AveragePrice":null,"OrderDate":"2022-10-25T16:43:27.9950340Z","HTTPHeaderDate":"2022-10-25T16:43:28.0000000Z","CompletedDate":"0001-01-01T00:00:00.0000000","MarketSymbol":"BTC-EUR","IsBuy":true,"Fees":0,"FeesCurrency":"BTC","TradeId":null,"TradeDate":null,"UpdateSequence":null,"$type":"ExchangeOrderResult"}
+2022-10-25 17:43:27.768 +01:00 [DBG] {MarketProcessBuyOrSell}
+  ProcessType: MarketProcessType.Buy
+  CryptoValue: 0.0001188292646153519281961335
+  EurValue: 2.3255813953488372093023255814
+  Price: 19570.78
+  Fees: 0.0139534883720930232558139535
+  IsPostOnly: true
+  ProfitPercently: 1.5
+  ProfitInEur: 0.0209302325581395348837209302
+  Strategy: "SharpProcessingMarket"
+  StartingPointPositionToBuyOrSell: 19868.81
+  CryptoCurrency: {CryptoCurrency}
+    Crypto: "BTC-EUR"
+    CountDecimalNumberInPosition: 2
+  MarketSymbol: "BTC-EUR"
+2022-10-25 17:43:27.969 +01:00 [DBG] SharpProcessingMarket - Actual transaction {"OrderId":"10f20dd3-060a-4e06-a76d-1bd7ca414309","ClientOrderId":null,"Result":"PendingOpen","ResultCode":null,"Message":null,"Amount":0.0001188,"AmountFilled":0,"IsAmountFilledReversed":false,"Price":19570.78,"AveragePrice":null,"OrderDate":"2022-10-25T16:43:28.1935200Z","HTTPHeaderDate":"2022-10-25T16:43:28.0000000Z","CompletedDate":"0001-01-01T00:00:00.0000000","MarketSymbol":"BTC-EUR","IsBuy":true,"Fees":0,"FeesCurrency":"BTC","TradeId":null,"TradeDate":null,"UpdateSequence":null,"$type":"ExchangeOrderResult"}
+2022-10-25 17:43:27.982 +01:00 [DBG] {MarketProcessBuyOrSell}
+  ProcessType: MarketProcessType.Buy
+  CryptoValue: 0.0001189500332899510666921553
+  EurValue: 2.3255813953488372093023255814
+  Price: 19550.91
+  Fees: 0.0139534883720930232558139535
+  IsPostOnly: true
+  ProfitPercently: 1.6
+  ProfitInEur: 0.0232558139534883720930232558
+  Strategy: "SharpProcessingMarket"
+  StartingPointPositionToBuyOrSell: 19868.81
+  CryptoCurrency: {CryptoCurrency}
+    Crypto: "BTC-EUR"
+    CountDecimalNumberInPosition: 2
+  MarketSymbol: "BTC-EUR"
+2022-10-25 17:43:28.169 +01:00 [DBG] SharpProcessingMarket - Actual transaction {"OrderId":"3721dde1-37ce-45cb-a969-5e1802730f26","ClientOrderId":null,"Result":"PendingOpen","ResultCode":null,"Message":null,"Amount":0.000119,"AmountFilled":0,"IsAmountFilledReversed":false,"Price":19550.91,"AveragePrice":null,"OrderDate":"2022-10-25T16:43:28.4038660Z","HTTPHeaderDate":"2022-10-25T16:43:28.0000000Z","CompletedDate":"0001-01-01T00:00:00.0000000","MarketSymbol":"BTC-EUR","IsBuy":true,"Fees":0,"FeesCurrency":"BTC","TradeId":null,"TradeDate":null,"UpdateSequence":null,"$type":"ExchangeOrderResult"}
+2022-10-25 17:43:28.181 +01:00 [DBG] {MarketProcessBuyOrSell}
+  ProcessType: MarketProcessType.Buy
+  CryptoValue: 0.0001190710476937652684804458
+  EurValue: 2.3255813953488372093023255814
+  Price: 19531.04
+  Fees: 0.0139534883720930232558139535
+  IsPostOnly: true
+  ProfitPercently: 1.7
+  ProfitInEur: 0.0255813953488372093023255814
+  Strategy: "SharpProcessingMarket"
+  StartingPointPositionToBuyOrSell: 19868.81
+  CryptoCurrency: {CryptoCurrency}
+    Crypto: "BTC-EUR"
+    CountDecimalNumberInPosition: 2
+  MarketSymbol: "BTC-EUR"
+2022-10-25 17:43:28.235 +01:00 [INF] Market position BUY: 19864.42, SELL 19860.71
+2022-10-25 17:43:28.363 +01:00 [DBG] SharpProcessingMarket - Actual transaction {"OrderId":"be01c639-3795-4b21-9682-4da42cb64658","ClientOrderId":null,"Result":"PendingOpen","ResultCode":null,"Message":null,"Amount":0.0001191,"AmountFilled":0,"IsAmountFilledReversed":false,"Price":19531.04,"AveragePrice":null,"OrderDate":"2022-10-25T16:43:28.5912550Z","HTTPHeaderDate":"2022-10-25T16:43:28.0000000Z","CompletedDate":"0001-01-01T00:00:00.0000000","MarketSymbol":"BTC-EUR","IsBuy":true,"Fees":0,"FeesCurrency":"BTC","TradeId":null,"TradeDate":null,"UpdateSequence":null,"$type":"ExchangeOrderResult"}
+2022-10-25 17:43:28.374 +01:00 [DBG] {MarketProcessBuyOrSell}
+  ProcessType: MarketProcessType.Buy
+  CryptoValue: 0.000119192308577539799473959
+  EurValue: 2.3255813953488372093023255814
+  Price: 19511.17
+  Fees: 0.0139534883720930232558139535
+  IsPostOnly: true
+  ProfitPercently: 1.8
+  ProfitInEur: 0.0279069767441860465116279069
+  Strategy: "SharpProcessingMarket"
+  StartingPointPositionToBuyOrSell: 19868.81
+  CryptoCurrency: {CryptoCurrency}
+    Crypto: "BTC-EUR"
+    CountDecimalNumberInPosition: 2
+  MarketSymbol: "BTC-EUR"
+2022-10-25 17:43:28.564 +01:00 [DBG] SharpProcessingMarket - Actual transaction {"OrderId":"71375fc8-ab09-4929-9cae-8e8de004eca7","ClientOrderId":null,"Result":"PendingOpen","ResultCode":null,"Message":null,"Amount":0.0001192,"AmountFilled":0,"IsAmountFilledReversed":false,"Price":19511.17,"AveragePrice":null,"OrderDate":"2022-10-25T16:43:28.7815880Z","HTTPHeaderDate":"2022-10-25T16:43:28.0000000Z","CompletedDate":"0001-01-01T00:00:00.0000000","MarketSymbol":"BTC-EUR","IsBuy":true,"Fees":0,"FeesCurrency":"BTC","TradeId":null,"TradeDate":null,"UpdateSequence":null,"$type":"ExchangeOrderResult"}
+2022-10-25 17:43:28.573 +01:00 [DBG] {MarketProcessBuyOrSell}
+  ProcessType: MarketProcessType.Buy
+  CryptoValue: 0.0001193138166950812521126003
+  EurValue: 2.3255813953488372093023255814
+  Price: 19491.30
+  Fees: 0.0139534883720930232558139535
+  IsPostOnly: true
+  ProfitPercently: 1.9
+  ProfitInEur: 0.0302325581395348837209302325
+  Strategy: "SharpProcessingMarket"
+  StartingPointPositionToBuyOrSell: 19868.81
+  CryptoCurrency: {CryptoCurrency}
+    Crypto: "BTC-EUR"
+    CountDecimalNumberInPosition: 2
+  MarketSymbol: "BTC-EUR"
+2022-10-25 17:43:28.746 +01:00 [DBG] SharpProcessingMarket - Actual transaction {"OrderId":"01032090-b3d1-41c0-b841-7cfd7184c2e3","ClientOrderId":null,"Result":"PendingOpen","ResultCode":null,"Message":null,"Amount":0.0001193,"AmountFilled":0,"IsAmountFilledReversed":false,"Price":19491.3,"AveragePrice":null,"OrderDate":"2022-10-25T16:43:28.9833510Z","HTTPHeaderDate":"2022-10-25T16:43:29.0000000Z","CompletedDate":"0001-01-01T00:00:00.0000000","MarketSymbol":"BTC-EUR","IsBuy":true,"Fees":0,"FeesCurrency":"BTC","TradeId":null,"TradeDate":null,"UpdateSequence":null,"$type":"ExchangeOrderResult"}
+2022-10-25 17:43:28.756 +01:00 [DBG] {MarketProcessBuyOrSell}
+  ProcessType: MarketProcessType.Buy
+  CryptoValue: 0.0001194355728032731653146341
+  EurValue: 2.3255813953488372093023255814
+  Price: 19471.43
+  Fees: 0.0139534883720930232558139535
+  IsPostOnly: true
+  ProfitPercently: 2.0
+  ProfitInEur: 0.0325581395348837209302325581
+  Strategy: "SharpProcessingMarket"
+  StartingPointPositionToBuyOrSell: 19868.81
+  CryptoCurrency: {CryptoCurrency}
+    Crypto: "BTC-EUR"
+    CountDecimalNumberInPosition: 2
+  MarketSymbol: "BTC-EUR"
+2022-10-25 17:43:28.954 +01:00 [DBG] SharpProcessingMarket - Actual transaction {"OrderId":"7a6d0044-6af8-4dea-ad74-9ea6584fcb30","ClientOrderId":null,"Result":"PendingOpen","ResultCode":null,"Message":null,"Amount":0.0001194,"AmountFilled":0,"IsAmountFilledReversed":false,"Price":19471.43,"AveragePrice":null,"OrderDate":"2022-10-25T16:43:29.1716120Z","HTTPHeaderDate":"2022-10-25T16:43:29.0000000Z","CompletedDate":"0001-01-01T00:00:00.0000000","MarketSymbol":"BTC-EUR","IsBuy":true,"Fees":0,"FeesCurrency":"BTC","TradeId":null,"TradeDate":null,"UpdateSequence":null,"$type":"ExchangeOrderResult"}
+2022-10-25 17:43:28.964 +01:00 [DBG] {MarketProcessBuyOrSell}
+  ProcessType: MarketProcessType.Buy
+  CryptoValue: 0.0001195575776620917401638905
+  EurValue: 2.3255813953488372093023255814
+  Price: 19451.56
+  Fees: 0.0139534883720930232558139535
+  IsPostOnly: true
+  ProfitPercently: 2.1
+  ProfitInEur: 0.0348837209302325581395348837
+  Strategy: "SharpProcessingMarket"
+  StartingPointPositionToBuyOrSell: 19868.81
+  CryptoCurrency: {CryptoCurrency}
+    Crypto: "BTC-EUR"
+    CountDecimalNumberInPosition: 2
+  MarketSymbol: "BTC-EUR"
+2022-10-25 17:43:29.385 +01:00 [DBG] SharpProcessingMarket - Actual transaction {"OrderId":"0f5e1ee5-f4ed-4fe9-95cf-375fbdd2036c","ClientOrderId":null,"Result":"PendingOpen","ResultCode":null,"Message":null,"Amount":0.0001196,"AmountFilled":0,"IsAmountFilledReversed":false,"Price":19451.56,"AveragePrice":null,"OrderDate":"2022-10-25T16:43:29.6136050Z","HTTPHeaderDate":"2022-10-25T16:43:29.0000000Z","CompletedDate":"0001-01-01T00:00:00.0000000","MarketSymbol":"BTC-EUR","IsBuy":true,"Fees":0,"FeesCurrency":"BTC","TradeId":null,"TradeDate":null,"UpdateSequence":null,"$type":"ExchangeOrderResult"}
+2022-10-25 17:43:29.396 +01:00 [DBG] {MarketProcessBuyOrSell}
+  ProcessType: MarketProcessType.Buy
+  CryptoValue: 0.000119679770444625905571943
+  EurValue: 2.3255813953488372093023255814
+  Price: 19431.70
+  Fees: 0.0139534883720930232558139535
+  IsPostOnly: true
+  ProfitPercently: 2.2
+  ProfitInEur: 0.0372093023255813953488372093
+  Strategy: "SharpProcessingMarket"
+  StartingPointPositionToBuyOrSell: 19868.81
+  CryptoCurrency: {CryptoCurrency}
+    Crypto: "BTC-EUR"
+    CountDecimalNumberInPosition: 2
+  MarketSymbol: "BTC-EUR"
+2022-10-25 17:54:17.550 +01:00 [INF] Root RoboData path: d:\Programming\Trochta.Net\RoboMarket\RoboData\
+2022-10-25 17:54:17.755 +01:00 [INF] -*CONNECT TO MARKET*-
+2022-10-25 17:54:17.763 +01:00 [INF] -*START ROBO STRATEGY*-
+2022-10-25 17:54:18.282 +01:00 [DBG] {MarketProcessBuyOrSell}
+  ProcessType: MarketProcessType.Buy
+  CryptoValue: 0.000084573819835774556642893
+  EurValue: 1.6666666666666666666666666667
+  Price: 19706.65
+  Fees: 0.0100000000000000000000000000
+  IsPostOnly: true
+  ProfitPercently: 0.7
+  ProfitInEur: 0.0016666666666666666666666667
+  Strategy: "SharpProcessingMarket"
+  StartingPointPositionToBuyOrSell: 19845.57
+  CryptoCurrency: {CryptoCurrency}
+    Crypto: "BTC-EUR"
+    CountDecimalNumberInPosition: 2
+  MarketSymbol: "BTC-EUR"
+2022-10-25 17:54:18.707 +01:00 [DBG] SharpProcessingMarket - Actual transaction {"OrderId":"f51ac1a4-5c23-4ed3-a194-6c9c18061733","ClientOrderId":null,"Result":"PendingOpen","ResultCode":null,"Message":null,"Amount":0.0000846,"AmountFilled":0,"IsAmountFilledReversed":false,"Price":19706.65,"AveragePrice":null,"OrderDate":"2022-10-25T16:54:18.8929630Z","HTTPHeaderDate":"2022-10-25T16:54:18.0000000Z","CompletedDate":"0001-01-01T00:00:00.0000000","MarketSymbol":"BTC-EUR","IsBuy":true,"Fees":0,"FeesCurrency":"BTC","TradeId":null,"TradeDate":null,"UpdateSequence":null,"$type":"ExchangeOrderResult"}
+2022-10-25 17:54:18.723 +01:00 [DBG] {MarketProcessBuyOrSell}
+  ProcessType: MarketProcessType.Buy
+  CryptoValue: 0.000084659051754279472736653
+  EurValue: 1.6666666666666666666666666667
+  Price: 19686.81
+  Fees: 0.0100000000000000000000000000
+  IsPostOnly: true
+  ProfitPercently: 0.8
+  ProfitInEur: 0.0033333333333333333333333334
+  Strategy: "SharpProcessingMarket"
+  StartingPointPositionToBuyOrSell: 19845.57
+  CryptoCurrency: {CryptoCurrency}
+    Crypto: "BTC-EUR"
+    CountDecimalNumberInPosition: 2
+  MarketSymbol: "BTC-EUR"
+2022-10-25 17:54:18.909 +01:00 [DBG] SharpProcessingMarket - Actual transaction {"OrderId":"00a5971b-07fe-43df-82fd-63505405f71f","ClientOrderId":null,"Result":"PendingOpen","ResultCode":null,"Message":null,"Amount":0.0000847,"AmountFilled":0,"IsAmountFilledReversed":false,"Price":19686.81,"AveragePrice":null,"OrderDate":"2022-10-25T16:54:19.1263670Z","HTTPHeaderDate":"2022-10-25T16:54:19.0000000Z","CompletedDate":"0001-01-01T00:00:00.0000000","MarketSymbol":"BTC-EUR","IsBuy":true,"Fees":0,"FeesCurrency":"BTC","TradeId":null,"TradeDate":null,"UpdateSequence":null,"$type":"ExchangeOrderResult"}
+2022-10-25 17:54:18.918 +01:00 [DBG] {MarketProcessBuyOrSell}
+  ProcessType: MarketProcessType.Sell
+  CryptoValue: 0.0000840074934684173828305485
+  EurValue: 1.6666666666666666666666666667
+  Price: 19978.38
+  Fees: 0.0100000000000000000000000000
+  IsPostOnly: true
+  ProfitPercently: 0.7
+  ProfitInEur: 0.0016666666666666666666666667
+  Strategy: "SharpProcessingMarket"
+  StartingPointPositionToBuyOrSell: 19839.5
+  CryptoCurrency: {CryptoCurrency}
+    Crypto: "BTC-EUR"
+    CountDecimalNumberInPosition: 2
+  MarketSymbol: "BTC-EUR"
+2022-10-25 17:54:19.097 +01:00 [DBG] SharpProcessingMarket - Actual transaction {"OrderId":"54be48ce-f8aa-48b8-814c-e0331e948d9d","ClientOrderId":null,"Result":"PendingOpen","ResultCode":null,"Message":null,"Amount":0.000084,"AmountFilled":0,"IsAmountFilledReversed":false,"Price":19978.38,"AveragePrice":null,"OrderDate":"2022-10-25T16:54:19.3124550Z","HTTPHeaderDate":"2022-10-25T16:54:19.0000000Z","CompletedDate":"0001-01-01T00:00:00.0000000","MarketSymbol":"BTC-EUR","IsBuy":false,"Fees":0,"FeesCurrency":"BTC","TradeId":null,"TradeDate":null,"UpdateSequence":null,"$type":"ExchangeOrderResult"}
+2022-10-25 17:54:19.108 +01:00 [DBG] {MarketProcessBuyOrSell}
+  ProcessType: MarketProcessType.Sell
+  CryptoValue: 0.0000840074934684173828305485
+  EurValue: 1.6666666666666666666666666667
+  Price: 19998.22
+  Fees: 0.0100000000000000000000000000
+  IsPostOnly: true
+  ProfitPercently: 0.8
+  ProfitInEur: 0.0033333333333333333333333334
+  Strategy: "SharpProcessingMarket"
+  StartingPointPositionToBuyOrSell: 19839.5
+  CryptoCurrency: {CryptoCurrency}
+    Crypto: "BTC-EUR"
+    CountDecimalNumberInPosition: 2
+  MarketSymbol: "BTC-EUR"
+2022-10-25 17:54:19.269 +01:00 [DBG] SharpProcessingMarket - Actual transaction {"OrderId":"e7caac48-8cb0-4496-9334-4367d1613c01","ClientOrderId":null,"Result":"PendingOpen","ResultCode":null,"Message":null,"Amount":0.000084,"AmountFilled":0,"IsAmountFilledReversed":false,"Price":19998.22,"AveragePrice":null,"OrderDate":"2022-10-25T16:54:19.4930320Z","HTTPHeaderDate":"2022-10-25T16:54:19.0000000Z","CompletedDate":"0001-01-01T00:00:00.0000000","MarketSymbol":"BTC-EUR","IsBuy":false,"Fees":0,"FeesCurrency":"BTC","TradeId":null,"TradeDate":null,"UpdateSequence":null,"$type":"ExchangeOrderResult"}
+2022-10-25 17:54:20.823 +01:00 [INF] Market position BUY: 19848.02, SELL 19841.97
+2022-10-25 17:54:21.531 +01:00 [INF] Order: bbddde9c-9bef-468b-b451-640650b89e5f  is not found in open order section at online Market.
+2022-10-25 17:54:21.535 +01:00 [INF] Removed order transaction OrderId: bbddde9c-9bef-468b-b451-640650b89e5f
+2022-10-25 18:03:09.683 +01:00 [INF] Root RoboData path: d:\Programming\Trochta.Net\RoboMarket\RoboData\
+2022-10-25 18:03:09.924 +01:00 [INF] -*CONNECT TO MARKET*-
+2022-10-25 18:03:09.933 +01:00 [INF] -*START ROBO STRATEGY*-
+2022-10-25 18:03:10.464 +01:00 [DBG] SHARP BUY: Calculated money is less then one Euro. Change the data:{MoneyProcessDataBuy}
+  PriceInEur: 1.6666666666666666666666666666
+  MarketProcessType: MarketProcessType.Buy
+  PercentSpectrumStart: 0.7
+  PercentSpectrumEnd: 1.0
+  PercentStepCalculatePrice: 0.1
+2022-10-25 18:03:10.468 +01:00 [INF] SHARP SELL: Calculated money is less then one Euro. Change the data:{MoneyProcessDataBuy}
+  PriceInEur: 1.6666666666666666666666666666
+  MarketProcessType: MarketProcessType.Buy
+  PercentSpectrumStart: 0.7
+  PercentSpectrumEnd: 1.0
+  PercentStepCalculatePrice: 0.1
+2022-10-25 18:03:13.157 +01:00 [INF] Market position BUY: 20058.38, SELL 20054.69
+2022-10-25 18:03:14.454 +01:00 [INF] Actual order is completed. Transaction: {"OrderId":"54be48ce-f8aa-48b8-814c-e0331e948d9d","ClientOrderId":null,"Result":"Filled","ResultCode":null,"Message":null,"Amount":0.000084,"AmountFilled":0.000084,"IsAmountFilledReversed":false,"Price":19978.38,"AveragePrice":19978.38,"OrderDate":"2022-10-25T16:54:19.3177520Z","HTTPHeaderDate":null,"CompletedDate":"2022-10-25T17:00:23.1923110Z","MarketSymbol":"BTC-EUR","IsBuy":false,"Fees":0.00671273568,"FeesCurrency":"BTC","TradeId":null,"TradeDate":null,"UpdateSequence":null,"$type":"ExchangeOrderResult"}
+2022-10-25 18:03:14.465 +01:00 [INF] Removed order transaction OrderId: 54be48ce-f8aa-48b8-814c-e0331e948d9d
+2022-10-25 18:03:14.467 +01:00 [INF] Actual order is completed. Transaction: {"OrderId":"e7caac48-8cb0-4496-9334-4367d1613c01","ClientOrderId":null,"Result":"Filled","ResultCode":null,"Message":null,"Amount":0.000084,"AmountFilled":0.000084,"IsAmountFilledReversed":false,"Price":19998.22,"AveragePrice":19998.22,"OrderDate":"2022-10-25T16:54:19.4988830Z","HTTPHeaderDate":null,"CompletedDate":"2022-10-25T17:00:26.2808710Z","MarketSymbol":"BTC-EUR","IsBuy":false,"Fees":0.00671940192,"FeesCurrency":"BTC","TradeId":null,"TradeDate":null,"UpdateSequence":null,"$type":"ExchangeOrderResult"}
+2022-10-25 18:03:14.476 +01:00 [INF] Removed order transaction OrderId: e7caac48-8cb0-4496-9334-4367d1613c01
+2022-10-25 18:03:14.504 +01:00 [DBG] {MarketProcessBuyOrSell}
+  ProcessType: MarketProcessType.Buy
+  CryptoValue: 0.0000840116009939580536797165
+  EurValue: 1.6666666666666666666666666667
+  Price: 19838.53
+  Fees: 0.0100000000000000000000000000
+  IsPostOnly: true
+  ProfitPercently: 0.7
+  ProfitInEur: 0.0016666666666666666666666667
+  Strategy: "SharpProcessingMarket"
+  StartingPointPositionToBuyOrSell: 19978.38
+  CryptoCurrency: {CryptoCurrency}
+    Crypto: "BTC-EUR"
+    CountDecimalNumberInPosition: 2
+  MarketSymbol: "BTC-EUR"
+2022-10-25 18:03:14.754 +01:00 [DBG] SharpProcessingMarket - Actual transaction {"OrderId":"bd892d5d-57c3-4ca8-984d-79c79f991a04","ClientOrderId":null,"Result":"PendingOpen","ResultCode":null,"Message":null,"Amount":0.000084,"AmountFilled":0,"IsAmountFilledReversed":false,"Price":19838.53,"AveragePrice":null,"OrderDate":"2022-10-25T17:03:14.8949620Z","HTTPHeaderDate":"2022-10-25T17:03:14.0000000Z","CompletedDate":"0001-01-01T00:00:00.0000000","MarketSymbol":"BTC-EUR","IsBuy":true,"Fees":0,"FeesCurrency":"BTC","TradeId":null,"TradeDate":null,"UpdateSequence":null,"$type":"ExchangeOrderResult"}
+2022-10-25 18:03:14.765 +01:00 [DBG] {MarketProcessBuyOrSell}
+  ProcessType: MarketProcessType.Buy
+  CryptoValue: 0.0000840128714440081936073262
+  EurValue: 1.6666666666666666666666666667
+  Price: 19838.23
+  Fees: 0.0100000000000000000000000000
+  IsPostOnly: true
+  ProfitPercently: 0.8
+  ProfitInEur: 0.0033333333333333333333333334
+  Strategy: "SharpProcessingMarket"
+  StartingPointPositionToBuyOrSell: 19998.22
+  CryptoCurrency: {CryptoCurrency}
+    Crypto: "BTC-EUR"
+    CountDecimalNumberInPosition: 2
+  MarketSymbol: "BTC-EUR"
+2022-10-25 18:03:14.955 +01:00 [DBG] SharpProcessingMarket - Actual transaction {"OrderId":"132ffb53-5f77-4c43-a7c6-19566ac10a6b","ClientOrderId":null,"Result":"PendingOpen","ResultCode":null,"Message":null,"Amount":0.000084,"AmountFilled":0,"IsAmountFilledReversed":false,"Price":19838.23,"AveragePrice":null,"OrderDate":"2022-10-25T17:03:15.1607580Z","HTTPHeaderDate":"2022-10-25T17:03:15.0000000Z","CompletedDate":"0001-01-01T00:00:00.0000000","MarketSymbol":"BTC-EUR","IsBuy":true,"Fees":0,"FeesCurrency":"BTC","TradeId":null,"TradeDate":null,"UpdateSequence":null,"$type":"ExchangeOrderResult"}
+2022-10-25 18:03:15.184 +01:00 [INF] Order: bbddde9c-9bef-468b-b451-640650b89e5f  is not found in open order section at online Market
+2022-10-25 18:03:15.189 +01:00 [INF] Removed order transaction OrderId: bbddde9c-9bef-468b-b451-640650b89e5f
+2022-10-25 18:03:15.193 +01:00 [INF] Order: a79066c9-bf5f-4acd-bfb0-1235c1b9e29f  is not found in open order section at online Market
+2022-10-25 18:03:15.197 +01:00 [INF] Removed order transaction OrderId: a79066c9-bf5f-4acd-bfb0-1235c1b9e29f
+2022-10-25 18:03:15.199 +01:00 [INF] Order: 043dba06-a260-4ba7-a31f-9dbf07819619  is not found in open order section at online Market
+2022-10-25 18:03:15.202 +01:00 [INF] Removed order transaction OrderId: 043dba06-a260-4ba7-a31f-9dbf07819619
+2022-10-25 18:03:15.205 +01:00 [INF] Order: 7cea0d68-e607-46cd-82eb-c343e6d547a4  is not found in open order section at online Market
+2022-10-25 18:03:15.207 +01:00 [INF] Removed order transaction OrderId: 7cea0d68-e607-46cd-82eb-c343e6d547a4
+2022-10-25 18:03:15.208 +01:00 [INF] Order: 212a8a98-c7e5-4a0d-9cde-31623bf368fc  is not found in open order section at online Market
+2022-10-25 18:03:15.211 +01:00 [INF] Removed order transaction OrderId: 212a8a98-c7e5-4a0d-9cde-31623bf368fc
+2022-10-25 18:03:15.213 +01:00 [INF] Order: 41898ead-3626-4344-a63d-84fdc80378f7  is not found in open order section at online Market
+2022-10-25 18:03:15.215 +01:00 [INF] Removed order transaction OrderId: 41898ead-3626-4344-a63d-84fdc80378f7
+2022-10-25 18:03:15.217 +01:00 [INF] Order: 1ad976a6-91b8-4796-893f-59a5033b6128  is not found in open order section at online Market
+2022-10-25 18:03:15.219 +01:00 [INF] Removed order transaction OrderId: 1ad976a6-91b8-4796-893f-59a5033b6128
+2022-10-25 18:03:15.222 +01:00 [INF] Order: 38f7f258-740f-4608-b8e8-e7cb6b8f2e61  is not found in open order section at online Market
+2022-10-25 18:03:15.223 +01:00 [INF] Removed order transaction OrderId: 38f7f258-740f-4608-b8e8-e7cb6b8f2e61
+2022-10-25 18:03:15.225 +01:00 [INF] Order: 10f20dd3-060a-4e06-a76d-1bd7ca414309  is not found in open order section at online Market
+2022-10-25 18:03:15.227 +01:00 [INF] Removed order transaction OrderId: 10f20dd3-060a-4e06-a76d-1bd7ca414309
+2022-10-25 18:03:15.229 +01:00 [INF] Order: 3721dde1-37ce-45cb-a969-5e1802730f26  is not found in open order section at online Market
+2022-10-25 18:03:15.230 +01:00 [INF] Removed order transaction OrderId: 3721dde1-37ce-45cb-a969-5e1802730f26
+2022-10-25 18:03:15.232 +01:00 [INF] Order: be01c639-3795-4b21-9682-4da42cb64658  is not found in open order section at online Market
+2022-10-25 18:03:15.235 +01:00 [INF] Removed order transaction OrderId: be01c639-3795-4b21-9682-4da42cb64658
+2022-10-25 18:03:15.237 +01:00 [INF] Order: 71375fc8-ab09-4929-9cae-8e8de004eca7  is not found in open order section at online Market
+2022-10-25 18:03:15.240 +01:00 [INF] Removed order transaction OrderId: 71375fc8-ab09-4929-9cae-8e8de004eca7
+2022-10-25 18:03:15.242 +01:00 [INF] Order: 01032090-b3d1-41c0-b841-7cfd7184c2e3  is not found in open order section at online Market
+2022-10-25 18:03:15.244 +01:00 [INF] Removed order transaction OrderId: 01032090-b3d1-41c0-b841-7cfd7184c2e3
+2022-10-25 18:03:15.245 +01:00 [INF] Order: 7a6d0044-6af8-4dea-ad74-9ea6584fcb30  is not found in open order section at online Market
+2022-10-25 18:03:15.247 +01:00 [INF] Removed order transaction OrderId: 7a6d0044-6af8-4dea-ad74-9ea6584fcb30
+2022-10-25 18:03:15.248 +01:00 [INF] Order: bd892d5d-57c3-4ca8-984d-79c79f991a04  is not found in open order section at online Market
+2022-10-25 18:03:15.250 +01:00 [INF] Removed order transaction OrderId: bd892d5d-57c3-4ca8-984d-79c79f991a04
+2022-10-25 18:03:15.253 +01:00 [INF] Order: 132ffb53-5f77-4c43-a7c6-19566ac10a6b  is not found in open order section at online Market
+2022-10-25 18:03:15.255 +01:00 [INF] Removed order transaction OrderId: 132ffb53-5f77-4c43-a7c6-19566ac10a6b
+2022-10-25 18:03:18.706 +01:00 [INF] Market position BUY: 20062.34, SELL 20054.11
+2022-10-25 18:03:21.997 +01:00 [INF] Market position BUY: 20058.97, SELL 20053.53
+2022-10-25 18:03:25.365 +01:00 [INF] Market position BUY: 20055.8, SELL 20049.09
+2022-10-25 18:03:28.759 +01:00 [INF] Market position BUY: 20047.26, SELL 20038.66
+2022-10-25 18:03:32.151 +01:00 [INF] Market position BUY: 20051.96, SELL 20046.25
+2022-10-25 18:03:35.524 +01:00 [INF] Market position BUY: 20044.82, SELL 20034.79
+2022-10-25 21:29:35.767 +01:00 [INF] Root RoboData path: d:\Programming\Trochta.Net\RoboMarket\RoboData\
+2022-10-25 21:31:37.708 +01:00 [INF] Root RoboData path: d:\Programming\Trochta.Net\RoboMarket\RoboData\
+2022-10-25 21:52:41.968 +01:00 [INF] Root RoboData path: d:\Programming\Trochta.Net\RoboMarket\RoboData\
+2022-10-25 21:53:17.556 +01:00 [INF] Root RoboData path: d:\Programming\Trochta.Net\RoboMarket\RoboData\
+2022-10-25 21:55:15.752 +01:00 [INF] -*CONNECT TO MARKET*-
+2022-10-25 21:55:18.456 +01:00 [INF] -*START ROBO STRATEGY*-
+2022-10-25 21:55:22.142 +01:00 [DBG] SHARP BUY: Calculated money is less then one Euro. Change the data:{MoneyProcessDataBuy}
+  PriceInEur: 1.6666666666666666666666666666
+  MarketProcessType: MarketProcessType.Buy
+  PercentSpectrumStart: 0.7
+  PercentSpectrumEnd: 1.0
+  PercentStepCalculatePrice: 0.1
+2022-10-25 21:55:22.145 +01:00 [INF] SHARP SELL: Calculated money is less then one Euro. Change the data:{MoneyProcessDataBuy}
+  PriceInEur: 1.6666666666666666666666666666
+  MarketProcessType: MarketProcessType.Buy
+  PercentSpectrumStart: 0.7
+  PercentSpectrumEnd: 1.0
+  PercentStepCalculatePrice: 0.1
+2022-10-25 21:55:30.661 +01:00 [INF] Market position BUY: 20218.72, SELL 20213.9
+2022-10-25 21:57:07.548 +01:00 [INF] Market position BUY: 20228.87, SELL 20224.38
+2022-10-25 21:57:19.400 +01:00 [INF] Market position BUY: 20224.73, SELL 20222.64
+2022-10-25 21:57:22.819 +01:00 [INF] Market position BUY: 20224.06, SELL 20220.8
+2022-10-25 21:57:26.233 +01:00 [INF] Market position BUY: 20224.54, SELL 20221
+2022-10-25 21:57:29.601 +01:00 [INF] Market position BUY: 20225.6, SELL 20221.41
+2022-10-25 21:57:32.965 +01:00 [INF] Market position BUY: 20228, SELL 20224.19
+2022-10-25 21:57:36.310 +01:00 [INF] Market position BUY: 20227.46, SELL 20222.77
+2022-10-25 21:57:39.984 +01:00 [INF] Market position BUY: 20224.95, SELL 20222.74
+2022-10-25 21:57:43.221 +01:00 [INF] Market position BUY: 20224.03, SELL 20221
+2022-10-25 21:57:46.579 +01:00 [INF] Market position BUY: 20224.7, SELL 20220.8
+2022-10-25 21:57:49.814 +01:00 [INF] Market position BUY: 20221.16, SELL 20217.53
+2022-10-25 21:57:53.245 +01:00 [INF] Market position BUY: 20217.87, SELL 20213.3
+2022-10-25 21:57:56.881 +01:00 [INF] Market position BUY: 20216.9, SELL 20214.09
+2022-10-25 21:58:00.299 +01:00 [INF] Market position BUY: 20222.1, SELL 20217.55
+2022-10-25 21:58:03.649 +01:00 [INF] Market position BUY: 20220.2, SELL 20216.45
+2022-10-25 21:58:07.050 +01:00 [INF] Market position BUY: 20226.84, SELL 20222.65
+2022-10-25 21:58:10.436 +01:00 [INF] Market position BUY: 20228.6, SELL 20224.23
+2022-10-25 21:58:13.686 +01:00 [INF] Market position BUY: 20228.89, SELL 20224.23
+2022-10-25 22:04:25.101 +01:00 [INF] Root RoboData path: d:\Programming\Trochta.Net\RoboMarket\RoboData\
+2022-10-25 22:04:34.243 +01:00 [INF] -*CONNECT TO MARKET*-
+2022-10-25 22:04:38.104 +01:00 [INF] -*START ROBO STRATEGY*-
+2022-10-25 22:04:38.745 +01:00 [DBG] SHARP BUY: Calculated money is less then one Euro. Change the data:{MoneyProcessDataBuy}
+  PriceInEur: 1.6666666666666666666666666666
+  MarketProcessType: MarketProcessType.Buy
+  PercentSpectrumStart: 0.7
+  PercentSpectrumEnd: 1.0
+  PercentStepCalculatePrice: 0.1
+2022-10-25 22:04:38.749 +01:00 [INF] SHARP SELL: Calculated money is less then one Euro. Change the data:{MoneyProcessDataBuy}
+  PriceInEur: 1.6666666666666666666666666666
+  MarketProcessType: MarketProcessType.Buy
+  PercentSpectrumStart: 0.7
+  PercentSpectrumEnd: 1.0
+  PercentStepCalculatePrice: 0.1
+2022-10-25 22:04:41.150 +01:00 [INF] Market position BUY: 20227.46, SELL 20223.67
+2022-10-25 22:18:03.171 +01:00 [INF] Root RoboData path: d:\Programming\Trochta.Net\RoboMarket\RoboData\
+2022-10-25 22:18:06.866 +01:00 [INF] -*CONNECT TO MARKET*-
+2022-10-25 22:18:06.874 +01:00 [INF] -*START ROBO STRATEGY*-
+2022-10-25 22:18:07.307 +01:00 [DBG] SHARP BUY: Calculated money is less then one Euro. Change the data:{MoneyProcessDataBuy}
+  PriceInEur: 1.6666666666666666666666666666
+  MarketProcessType: MarketProcessType.Buy
+  PercentSpectrumStart: 0.7
+  PercentSpectrumEnd: 1.0
+  PercentStepCalculatePrice: 0.1
+2022-10-25 22:18:07.309 +01:00 [INF] SHARP SELL: Calculated money is less then one Euro. Change the data:{MoneyProcessDataBuy}
+  PriceInEur: 1.6666666666666666666666666666
+  MarketProcessType: MarketProcessType.Buy
+  PercentSpectrumStart: 0.7
+  PercentSpectrumEnd: 1.0
+  PercentStepCalculatePrice: 0.1
+2022-10-25 22:18:10.097 +01:00 [INF] Market position BUY: 20212.88, SELL 20208.85
+2022-10-25 22:18:23.353 +01:00 [INF] Market position BUY: 20214.85, SELL 20208.33
+2022-10-25 22:18:35.253 +01:00 [INF] Market position BUY: 20213.33, SELL 20208.87
+2022-10-25 22:18:43.725 +01:00 [INF] Market position BUY: 20213.78, SELL 20208.43
+2022-10-25 22:18:48.133 +01:00 [INF] Market position BUY: 20212.91, SELL 20208.43
+2022-10-25 22:18:54.916 +01:00 [INF] Market position BUY: 20213.08, SELL 20208.35
+2022-10-25 22:19:01.367 +01:00 [INF] Market position BUY: 20213.87, SELL 20208.9
+2022-10-25 22:19:04.959 +01:00 [INF] Market position BUY: 20202.43, SELL 20196.49
+2022-10-25 22:19:08.447 +01:00 [INF] Market position BUY: 20197.88, SELL 20194
+2022-10-25 22:19:12.121 +01:00 [INF] Market position BUY: 20194.57, SELL 20190.69
+2022-10-25 22:19:15.495 +01:00 [INF] Market position BUY: 20190.74, SELL 20188.1
+2022-10-25 22:19:18.737 +01:00 [INF] Market position BUY: 20191.15, SELL 20188.1
+2022-10-25 22:19:22.110 +01:00 [INF] Market position BUY: 20191.14, SELL 20186.51
+2022-10-25 22:19:25.485 +01:00 [INF] Market position BUY: 20193.79, SELL 20189.35
+2022-10-25 22:19:28.748 +01:00 [INF] Market position BUY: 20193.64, SELL 20188.97
+2022-10-25 22:19:32.157 +01:00 [INF] Market position BUY: 20184.62, SELL 20177.8
+2022-10-25 22:19:35.542 +01:00 [INF] Market position BUY: 20186.37, SELL 20179.99
+2022-10-25 22:19:38.929 +01:00 [INF] Market position BUY: 20188.23, SELL 20183.29
+2022-10-25 22:19:42.292 +01:00 [INF] Market position BUY: 20189.29, SELL 20185
+2022-10-25 22:19:45.918 +01:00 [INF] Market position BUY: 20190.36, SELL 20185.99
+2022-10-25 22:19:49.192 +01:00 [INF] Market position BUY: 20190.36, SELL 20184.36
+2022-10-25 22:19:52.581 +01:00 [INF] Market position BUY: 20190.36, SELL 20185.01
+2022-10-25 22:19:55.941 +01:00 [INF] Market position BUY: 20189.47, SELL 20184.22
+2022-10-25 22:19:59.239 +01:00 [INF] Market position BUY: 20193.56, SELL 20188.95
+2022-10-25 22:20:02.591 +01:00 [INF] Market position BUY: 20197.61, SELL 20191.67
+2022-10-25 22:20:05.990 +01:00 [INF] Market position BUY: 20201.7, SELL 20193.29
+2022-10-25 22:20:09.230 +01:00 [INF] Market position BUY: 20201.7, SELL 20192.74
+2022-10-25 22:20:12.720 +01:00 [INF] Market position BUY: 20183.38, SELL 20176.45
+2022-10-25 22:20:16.087 +01:00 [INF] Market position BUY: 20181.59, SELL 20174.77
+2022-10-25 22:20:19.677 +01:00 [INF] Market position BUY: 20180.86, SELL 20174.77
+2022-10-25 22:20:23.068 +01:00 [INF] Market position BUY: 20181.59, SELL 20174.75
+2022-10-25 22:20:26.462 +01:00 [INF] Market position BUY: 20178.57, SELL 20174.78
+2022-10-25 22:20:29.831 +01:00 [INF] Market position BUY: 20178.56, SELL 20174.76
+2022-10-25 22:20:33.301 +01:00 [INF] Market position BUY: 20181.59, SELL 20175.6
+2022-10-25 22:20:36.664 +01:00 [INF] Market position BUY: 20181.59, SELL 20175.59
+2022-10-25 22:20:39.889 +01:00 [INF] Market position BUY: 20181.59, SELL 20175.63
+2022-10-25 22:20:43.251 +01:00 [INF] Market position BUY: 20178.06, SELL 20174.75
+2022-10-25 22:20:46.670 +01:00 [INF] Market position BUY: 20178.29, SELL 20174.75
+2022-10-25 22:20:49.984 +01:00 [INF] Market position BUY: 20178.56, SELL 20174.76
+2022-10-25 22:20:53.335 +01:00 [INF] Market position BUY: 20178.57, SELL 20175
+2022-10-25 22:20:56.701 +01:00 [INF] Market position BUY: 20181.23, SELL 20176.08
+2022-10-25 22:21:00.103 +01:00 [INF] Market position BUY: 20178.56, SELL 20174.75
