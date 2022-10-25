@@ -1,4 +1,5 @@
 ﻿using ExchangeSharp;
+using Helper.Interface;
 using Helper.Serialization;
 using NLog.LayoutRenderers.Wrappers;
 using RoboWorkerService.Config;
@@ -26,8 +27,8 @@ public class TransactionsDataDriver<T> : ITransactionDataDriver<T> where T : ICr
             Load().Wait(10000);
     }
 
-    public TransactionData Add<X>(ExchangeOrderRequest request, ExchangeOrderResult result, IWallet wallet,
-        MarketProcessBuyOrSell buyOrSell, X typeTransaction) where X : class
+    public TransactionData Add(ExchangeOrderRequest request, ExchangeOrderResult result, IWallet wallet,
+        MarketProcessBuyOrSell buyOrSell, string strategyName)
     {
         var data = new TransactionData
         {
@@ -35,7 +36,7 @@ public class TransactionsDataDriver<T> : ITransactionDataDriver<T> where T : ICr
             OrderRequest = request,
             OrderResult = result,
             BuyOrSell = buyOrSell,
-            ProcessingType = typeTransaction.ToString()
+            StrategyName = strategyName
         };
         Add(data);
         return data;

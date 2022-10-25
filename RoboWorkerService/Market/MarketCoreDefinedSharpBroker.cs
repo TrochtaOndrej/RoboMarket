@@ -10,7 +10,7 @@ namespace RoboWorkerService.Market;
 
 /// <summary> Jedna se o UZAVIREJ PREDEM DEFINOVANE PLATBY #MRIZKA# zpracovani BUY or SELL</summary>
 /// <typeparam name="W"></typeparam>
-public class MarketCoreDefinedSharpBroker<W> : MarketCore<W>, IMarketCoreDefinedMoneyBroker<W>
+public class MarketCoreDefinedSharpBroker<W> : MarketCore<W>, IMarketCoreSharpBroker<W>
     where W : ICryptoCurrency
 {
     private readonly IBrokerMoneyProcessExtraDataService<W> _extraDataService;
@@ -77,18 +77,30 @@ public class MarketCoreDefinedSharpBroker<W> : MarketCore<W>, IMarketCoreDefined
     public async Task RunAsync()
     {
         // Sharp procedury se ptame 1 x za 30 sec
-        if (questionToMarket < DateTime.Now) return;
-        questionToMarket = questionToMarket.AddSeconds(30);
+        // if (questionToMarket < DateTime.Now) return;
+        // questionToMarket = questionToMarket.AddSeconds(30);
 
-        //   await _semaphoreSlim.WaitAsync();
+
         // nacti aktualni order z Burzy
         var ticker = await IsTheSameTickerWithLastTickerAsync();
         if (ticker is null) return;
 
         //vypocti profit 
-        var savedOrder = await _cmr.GetOpenOrderDetailsAsync();
-        var buyOrSellOrders = await _pm.RunProcessingAsync(ticker, _extraDataService, savedOrder.ToList());
+        var completedOrderInMarket = await _cmr.GetCompletedOrderDetailsAsync();
+        var buyOrSellOrders = await _pm.RunProcessingAsync(ticker, _extraDataService, completedOrderInMarket.ToList());
         await BuyOrSell(buyOrSellOrders);
+        var openOrder = await _cmr.GetOpenOrderDetailAsync();
+        CheckOpenOrdersAndRemoveFromLocalOrders(openOrder);
+    }
+
+    private void CheckOpenOrdersAndRemoveFromLocalOrders(IEnumerable<ExchangeOrderResult> openOrders)
+    {
+        foreach (var localOpenOrder in _extraDataService.GetOpenOrderTransaction().ToList())
+        {
+            if (openOrders.Any(x => x.OrderId == localOpenOrder.OrderResult.OrderId)) continue;
+            _logger.LogInformation("Order: {OrderId}  is not found in open order section at online Market.", localOpenOrder.OrderResult.OrderId);
+            _extraDataService.RemoveTransaction(localOpenOrder);
+        }
     }
 
     private async Task BuyOrSell(List<MarketProcessBuyOrSell> buyOrSellOrders)
@@ -101,14 +113,13 @@ public class MarketCoreDefinedSharpBroker<W> : MarketCore<W>, IMarketCoreDefined
             {
                 // Nakup a zaloguj
                 _logger.LogDebug(ObjectDumper.Dump(buyOrSell));
-//uloz do cvs souboru
 
                 // vytvor platbu (orderPlate)
                 var orderRequest = _cmr.CreateExchangeOrderRequest(buyOrSell);
                 var orderResult = await _cmr.PlaceOrderAsync(orderRequest);
                 _logger.LogDebug("{Type} - Actual transaction {@OrderResult}", nameof(SharpProcessingMarket<W>), orderResult);
-
-                var transaction = _transactionDataDriver.Add(orderRequest, orderResult, _pm.GlobalWallet, buyOrSell, typeof(W));
+               
+                var transaction = _transactionDataDriver.Add(orderRequest, orderResult, _pm.GlobalWallet, buyOrSell, BrokerWalletName);
                 _extraDataService.AddTransaction(transaction);
                 Console.WriteLine();
 
@@ -116,7 +127,7 @@ public class MarketCoreDefinedSharpBroker<W> : MarketCore<W>, IMarketCoreDefined
             }
         }
         finally
-        {
+        { // uloz do Csv souboru
             await _extraDataService.SaveDataAsync();
             await _transactionDataDriver.SaveAsync();
         }

@@ -90,7 +90,7 @@ public class MarketCoreCupBroker<W> : MarketCore<W>, IMarketCoreCupBroker<W> whe
             _pm.CalculateGlobalWallet();
 
             await _pm.SaveWalletAsync();
-            _transaction.Add(orderRequest, orderResult, _pm.GlobalWallet, buyOrSell, typeof(W));
+            _transaction.Add(orderRequest, orderResult, _pm.GlobalWallet, buyOrSell, BrokerWalletName);
             await _transaction.SaveAsync();
             _csvBuyOrSell.WriteToFileCsv(buyOrSell);
             _logger.LogDebug(ObjectDumper.Dump(orderResult));

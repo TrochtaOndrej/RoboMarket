@@ -2,7 +2,7 @@
 
 namespace RoboWorkerService.Interfaces;
 
-public interface IMarketCoreDefinedMoneyBroker<W> : IMarketCoreBroker where W : ICryptoCurrency
+public interface IMarketCoreSharpBroker<W> : IMarketCoreBroker where W : ICryptoCurrency
 {
 }
 

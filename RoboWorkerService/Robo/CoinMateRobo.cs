@@ -56,12 +56,24 @@ public class CoinMateRobo<T> : ICoinMateRobo<T> where T : ICryptoCurrency
         return _iexApi.GetTickerAsync(_marketSymbol);
     }
 
-    public Task<IEnumerable<ExchangeOrderResult>> GetOpenOrderDetailsAsync()
+    public Task<IEnumerable<ExchangeOrderResult>> GetCompletedOrderDetailsAsync()
     {
         return _iexApi.GetCompletedOrderDetailsAsync(_marketSymbol,
             DateTime.Now.Date); //TODO OT: doresit datum od kdy si vyhledat uzavrene ordery
     }
 
+    public async Task<ExchangeMarginPositionResult> MarginPositionResult()
+    {
+        var margin = await _iexApi.GetOpenPositionAsync(_marketSymbol);
+        return margin;
+    }
+
+    public async Task<IEnumerable<ExchangeOrderResult>> GetOpenOrderDetailAsync()
+    {
+        var margin = await _iexApi.GetOpenOrderDetailsAsync(_marketSymbol);
+        return margin;
+    }
+    
     public ExchangeOrderRequest CreateExchangeOrderRequest(MarketProcessBuyOrSell marketProcessBuyOrSell)
     {
         return new ExchangeOrderRequest
@@ -78,6 +90,8 @@ public class CoinMateRobo<T> : ICoinMateRobo<T> where T : ICryptoCurrency
     /// <summary>  Buy or Sell on market </summary>
     public async Task<ExchangeOrderResult> PlaceOrderAsync(ExchangeOrderRequest orderRequest)
     {
+        #region FakeData in Development
+
         if (_appRobo.Config.IsDevelopment) // pokud se jedna o development verzi - vraci FAKE DATA
             return new ExchangeOrderResult()
             {
@@ -91,7 +105,11 @@ public class CoinMateRobo<T> : ICoinMateRobo<T> where T : ICryptoCurrency
                 Result = ExchangeAPIOrderResult.Filled
             };
 
+        #endregion
+     
+        orderRequest.ExtraParameters.Add("RoboNumberOrder", _appRobo.RoboConfig.Data.GetNumberOrder());
         var result = await _iexApi.PlaceOrderAsync(orderRequest);
+
         _csvOrderRequestFile.WriteToFileCsv(orderRequest);
         _csvOrderResultFile.WriteToFileCsv(result);
         return result;

@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using System.Text;
 using CsvHelper;
 using CsvHelper.Configuration;
 using RoboWorkerService.Interfaces;
@@ -9,17 +10,31 @@ public class MarketTransactionCsv<T> : IMarketTransactionCsv<T>
 {
     private readonly string _fileNameCsv;
 
+    private static CsvConfiguration _csvConfiguration
+    {
+        get
+        {
+            var con = new CsvHelper.Configuration.CsvConfiguration(CultureInfo.InvariantCulture);
+            con.HasHeaderRecord = true;
+            
+            return con;
+        }
+    }
+
     public MarketTransactionCsv(IAppRobo appRobo)
     {
+        ;
         _fileNameCsv = appRobo.Config.ReportPath + typeof(T).Name;
     }
 
     private void WriteToFile<T>(T records)
     {
         using (var writer = new StreamWriter(_fileNameCsv))
-        using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+        using (var csv = new CsvWriter(writer, _csvConfiguration))
         {
+            csv.WriteHeader<T>();
             csv.WriteRecord(records);
+            csv.NextRecord();
         }
     }
 
@@ -31,6 +46,7 @@ public class MarketTransactionCsv<T> : IMarketTransactionCsv<T>
     {
         if (!File.Exists(_fileNameCsv))
         {
+        
             WriteToFile<T>(records);
             return;
         }
@@ -45,7 +61,9 @@ public class MarketTransactionCsv<T> : IMarketTransactionCsv<T>
         using (var writer = new StreamWriter(stream))
         using (var csv = new CsvWriter(writer, config))
         {
+            csv.WriteHeader<T>();
             csv.WriteRecord(records);
+            csv.NextRecord();
         }
     }
 }

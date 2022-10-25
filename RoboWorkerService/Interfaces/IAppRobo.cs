@@ -1,4 +1,5 @@
-﻿using RoboWorkerService.Config;
+﻿using Helper.Serialization;
+using RoboWorkerService.Config;
 
 namespace RoboWorkerService.Interfaces;
 
@@ -8,5 +9,6 @@ public interface IAppRobo
     CancellationToken GetAppToken();
     IConfig Config { get; }
     IConfiguration Configuration { get; }
+    IJsonFolderConfigAppRobo<RoboConfig> RoboConfig { get; }
     T GetService<T>();
 }

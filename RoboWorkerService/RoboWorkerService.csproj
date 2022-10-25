@@ -1,35 +1,43 @@
 <Project Sdk="Microsoft.NET.Sdk.Worker">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>dotnet-RoboWorkerService-46BEBDC3-E741-433F-A64E-DCE7B4204D80</UserSecretsId>
-    <Platforms>x86</Platforms>
-    <OutputType>Exe</OutputType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>dotnet-RoboWorkerService-46BEBDC3-E741-433F-A64E-DCE7B4204D80</UserSecretsId>
+        <Platforms>x86</Platforms>
+        <OutputType>Exe</OutputType>
+        <PlatformTarget>AnyCPU</PlatformTarget>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="CsvHelper" Version="29.0.0"/>
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.1" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="6.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
-    <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />
-    <PackageReference Include="ObjectDumper.NET" Version="3.5.2" />
-    <PackageReference Include="Serilog.AspNetCore" Version="6.0.1" />
-    <PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
-    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
-  </ItemGroup>
+    <ItemGroup>
+      <Compile Remove="Setup\**" />
+      <Content Remove="Setup\**" />
+      <EmbeddedResource Remove="Setup\**" />
+      <None Remove="Setup\**" />
+    </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\RobotCryptoExternal\ExchangeSharp\src\ExchangeSharp\ExchangeSharp.csproj" />
-    <ProjectReference Include="..\Library\Helper\Helper.csproj" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="AutoMapper" Version="12.0.0" />
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+        <PackageReference Include="CsvHelper" Version="29.0.0" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.1" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+        <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="6.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+        <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />
+        <PackageReference Include="ObjectDumper.NET" Version="3.5.2" />
+        <PackageReference Include="Serilog.AspNetCore" Version="6.0.1" />
+        <PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
+        <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+    </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Log\" />
-    <Folder Include="Setup" />
-  </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\..\RobotCryptoExternal\ExchangeSharp\src\ExchangeSharp\ExchangeSharp.csproj" />
+        <ProjectReference Include="..\Library\Helper\Helper.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="Log\" />
+    </ItemGroup>
 </Project>

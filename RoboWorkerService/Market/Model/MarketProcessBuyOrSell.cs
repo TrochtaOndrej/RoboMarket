@@ -29,7 +29,7 @@ public record MarketProcessBuyOrSell : MarketCurrency
     /// <summary> Vypociany profit v Eur </summary>
     public decimal ProfitInEur { get; set; }
 
-    public string Strategy { get; set; }
+    public InternalDataBuyOrSell InternalData { get; set; } = new InternalDataBuyOrSell();
 
     public MarketProcessBuyOrSell(CryptoCurrency cryptoCurrency) : base(cryptoCurrency)
     {

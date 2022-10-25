@@ -1,4 +1,5 @@
 ﻿using ExchangeSharp;
+using Helper.Interface;
 using Helper.Serialization;
 using RoboWorkerService.Config;
 using RoboWorkerService.Interfaces;
@@ -15,6 +16,8 @@ public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T
 {
     protected readonly IConfig Config;
     private readonly IJsonConvertor _json;
+    private readonly IAppRobo _appRobo;
+    private readonly T _cryptoCurrency;
     private readonly string _processingName;
     protected string FileName;
     private IWallet _brokerWallet;
@@ -23,15 +26,19 @@ public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T
     public IWallet BrokerWallet => _brokerWallet ?? GlobalWallet;
 
     public BaseProcessMarketOrder(
+        T cryptoCurrency,
         ILogger logger,
         IWallet<T> globalWallet,
         IConfig config,
         IJsonConvertor json,
+        IAppRobo appRobo,
         string processingName // nazev parent tridy pro rozliseni dat
     ) : base()
     {
         Config = config;
         _json = json;
+        _appRobo = appRobo;
+        _cryptoCurrency = cryptoCurrency;
         _processingName = processingName;
         GlobalWallet = globalWallet;
         FileName = Config.ConfigPath + GlobalWallet.MarketSymbol + "_GlobalWallet.json";
@@ -82,18 +89,91 @@ public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T
         return (investingValue / 100) * feesPercentlyInMarket;
     }
 
-    public MarketProcessType GetActualMArketProcess()
-    {
-        // Penize na pozici - penezenka >=0 
-        if (GetWallet_EurToCrypto() - BrokerWallet.EurAccountValue >= 0) return MarketProcessType.Sell;
-        return MarketProcessType.Buy;
-    }
-
     protected void Validation()
     {
         if (!BrokerWallet.CryptoCurrency.Crypto.ToString()
                 .Equals(CryptoCurrency.Crypto.ToString(), StringComparison.InvariantCultureIgnoreCase))
             throw new BussinesExceptions(" GlobalWallet marketCurrency is no the same with MarketValue!");
+    }
+
+    public MarketProcessBuyOrSell? CreateBuyOrderEur(decimal defineProfitInPercently, decimal investMoneyEur,
+        MarketProcessType marketProcessType, decimal? cryptoPosition = null)
+    {
+        if (defineProfitInPercently < 0.6m)
+            throw new BussinesExceptions("Profit must by more then 0.6%. This percent is for market feeds");
+
+        if (BrokerWallet.CryptoPositionTransaction < 100)
+            throw new BussinesExceptions(
+                $"Actual BrokerWallet.CryptoPositionTransaction is less 100. PLease fill the position in wallet. {FileName}");
+
+        // pokud neni definovana pozice tak , se bere aktualni pozice v marketu jinak se nastavi hodnota, kterou
+        // definujeme v promene. Tahle podminka jen nastavuje pro vypocet hodnotu predanou
+        if (cryptoPosition is not null)
+        {
+            CryptoPriceBuy = CryptoPriceSell = cryptoPosition.Value;
+        }
+
+        if (marketProcessType == MarketProcessType.Buy)
+        {
+            var positionPercentBuy = CryptoPriceBuy - (CryptoPriceBuy / 100 * defineProfitInPercently); // hranice nakupu
+
+            // Zaokrouhlovani pozice na pocet des mist. Jinak chyba "message":"price is too accurate. Smallest unit is 0.01"
+            positionPercentBuy = Math.Round(positionPercentBuy, _cryptoCurrency.CountDecimalNumberInPosition,
+                MidpointRounding.ToEven);
+
+            if (positionPercentBuy < 100)
+                throw new BussinesExceptions("Buy position is less then 100. Please check the parameters in file or market!");
+
+
+            var fees = CalculateFees(investMoneyEur);
+            return new MarketProcessBuyOrSell(CryptoCurrency)
+            {
+                CryptoValue = investMoneyEur / positionPercentBuy,
+                EurValue = investMoneyEur,
+                ProcessType = MarketProcessType.Buy,
+                Price = positionPercentBuy,
+                Fees = fees,
+                IsPostOnly = true,
+                ProfitPercently = defineProfitInPercently,
+                ProfitInEur = (investMoneyEur / 100) * defineProfitInPercently - fees,
+                InternalData = new InternalDataBuyOrSell()
+                {
+                    Strategy = _processingName,
+                    StartingPointPositionToBuyOrSell = CryptoPriceBuy,
+                    InternalNumber = _appRobo.RoboConfig.Data.GetNumberOrder()
+                },
+            };
+        }
+        else if (marketProcessType == MarketProcessType.Sell)
+        {
+            var positionPercentSell = CryptoPriceSell + ((CryptoPriceSell / 100) * defineProfitInPercently); // hranice prodeje
+            positionPercentSell = Math.Round(positionPercentSell, _cryptoCurrency.CountDecimalNumberInPosition,
+                MidpointRounding.ToEven);
+
+            if (CryptoPriceSell <= positionPercentSell)
+            {
+                var fees = CalculateFees(investMoneyEur);
+                return new MarketProcessBuyOrSell(CryptoCurrency)
+                {
+                    CryptoValue = investMoneyEur / CryptoPriceSell,
+                    EurValue = investMoneyEur,
+                    ProcessType = MarketProcessType.Sell,
+                    Price = positionPercentSell,
+                    Fees = fees,
+                    IsPostOnly = true,
+                    ProfitPercently = defineProfitInPercently,
+                    ProfitInEur = (investMoneyEur / 100) * defineProfitInPercently - fees,
+                    InternalData = new InternalDataBuyOrSell()
+                    {
+                        Strategy = _processingName,
+                        StartingPointPositionToBuyOrSell = CryptoPriceSell,
+                        InternalNumber = _appRobo.RoboConfig.Data.GetNumberOrder()
+                    }
+                };
+            }
+        }
+
+        return null;
     }
 
     #region JSon

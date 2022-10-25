@@ -1,4 +1,5 @@
-﻿using Helper.Serialization;
+﻿using Helper.Interface;
+using Helper.Serialization;
 using RoboWorkerService.Config;
 using RoboWorkerService.Interfaces;
 using RoboWorkerService.Market.Enum;

@@ -1,10 +1,12 @@
-﻿using Helper.Serialization;
+﻿using Helper.Interface;
+using Helper.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using RoboWorkerService.Config;
 using RoboWorkerService.Csv;
 using RoboWorkerService.Interface;
 using RoboWorkerService.Interfaces;
+using RoboWorkerService.Json;
 using RoboWorkerService.Market;
 using RoboWorkerService.Market.Enum;
 using RoboWorkerService.Market.Model;
@@ -22,6 +24,8 @@ public static class RoboServices
         services.AddSingleton<IConfig, Config.Config>();
         services.AddSingleton<IAppRobo, AppRobo>();
         // CRYPTO CURRENCY
+        
+        
         services.AddSingleton<ICryptoBTC, CryptoBTC>();
         AddMarketBurker<ICryptoBTC>(services);
 
@@ -41,6 +45,7 @@ public static class RoboServices
 
         return services;
     }
+ 
 
     public static IServiceCollection AddMarketBurker<T>(this IServiceCollection services) where T : ICryptoCurrency
     {
@@ -48,7 +53,7 @@ public static class RoboServices
         services.AddSingleton<ICupProcessingMarket<T>, CupProcessingMarket<T>>();
 
         services.AddSingleton<IDefinedMoneyProcessMarket<T>, SharpProcessingMarket<T>>();
-        services.AddSingleton<IMarketCoreDefinedMoneyBroker<T>, MarketCoreDefinedSharpBroker<T>>();
+        services.AddSingleton<IMarketCoreSharpBroker<T>, MarketCoreDefinedSharpBroker<T>>();
         services.AddSingleton<ICoinMateRobo<T>, CoinMateRobo<T>>();
         services.AddSingleton<IBrokerMoneyExtraDataFile<T>, BrokerMoneyExtraDataFile<T>>();
         services.AddSingleton<IBrokerMoneyProcessExtraDataService<T>, BrokerMoneyProcessExtraDataService<T>>();
@@ -59,6 +64,7 @@ public static class RoboServices
     public static IServiceCollection AddJsonService(this IServiceCollection services)
     {
         services.AddSingleton<IJsonConvertor, JsonConvertor>();
+        services.AddSingleton(typeof(IJsonFolderConfigAppRobo<>), typeof(JsonFolderConfigAppRobo<>));
 
         JsonSerializerSettings serializerSettings = new JsonSerializerSettings
         {

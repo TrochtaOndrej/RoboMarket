@@ -18,7 +18,7 @@ public interface IWallet : IMarketCurrency
     [JsonIgnore]
     decimal CzkAccountValue { get; }
 
-    /// <summary>The ask is the price to buy at </summary>
+    /// <summary>The ask is the price to buy at. Posledni pozice nakupu nebo prodeje napr. 14950 </summary>
     decimal CryptoPositionTransaction { get; set; }
 
     public void SetWallet(string key, IWallet w);

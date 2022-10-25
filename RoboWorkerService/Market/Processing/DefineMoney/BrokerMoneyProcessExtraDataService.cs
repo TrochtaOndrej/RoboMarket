@@ -13,6 +13,7 @@ public class BrokerMoneyProcessExtraDataService<W> : IBrokerMoneyProcessExtraDat
     private BrokerMoneyProcessExtraData _data;
     private bool _isCollectionChanged = false;
 
+    public int ActualNumber => _data.ActualOrderNumber;
     public MoneyProcessDataBuy MoneyProcessDataBuy => _data.ProcessDataBuy;
     public MoneyProcessDataSell MoneyProcessDataSell => _data.ProcessDataSell;
 
@@ -29,6 +30,7 @@ public class BrokerMoneyProcessExtraDataService<W> : IBrokerMoneyProcessExtraDat
     public void AddTransaction(TransactionData transactionData)
     {
         _data.TransactionData.Add(transactionData);
+        _data.ActualOrderNumber++;
         _isCollectionChanged = true;
     }
 
@@ -37,7 +39,7 @@ public class BrokerMoneyProcessExtraDataService<W> : IBrokerMoneyProcessExtraDat
         if (_data.TransactionData.Remove(transactionData))
         {
             _isCollectionChanged = true;
-            _logger.LogInformation("Removed order transaction OrderId: {O rderId}", transactionData.OrderResult.OrderId);
+            _logger.LogInformation("Removed local order transaction OrderId: {OrderId}", transactionData.OrderResult.OrderId);
             return true;
         }
 

@@ -4,9 +4,10 @@ using Serilog.Events;
 using Serilog;
 
 namespace RoboWorkerService;
+
 public static class Program
 {
-   public static async Task Main(string[] args)
+    public static async Task Main(string[] args)
     {
         Console.WriteLine("Hello World!");
         AppDomain.CurrentDomain.ProcessExit += new EventHandler(HostApp.CurrentDomain_ProcessExit);
@@ -21,31 +22,37 @@ public static class Program
             .ReadFrom.Configuration(configuration)
             .CreateLogger();
 
-    // app
+        // app
         HostApp.Host = Host.CreateDefaultBuilder(args)
-           .UseSerilog(Log.Logger)
-           .ConfigureServices(services =>
-           {
-               services.AddHostedService<Worker>();
-               services.AddJsonService();
-               services.AddRoboServices();
-           })
-           .Build();
+            .UseSerilog(Log.Logger)
+            .ConfigureServices(services =>
+            {
+                services.AddHostedService<Worker>();
+                services.AddJsonService();
+                services.AddRoboServices();
+            })
+            .Build();
 
-        
         try
         {
             var appRobo = HostApp.Host.Services.GetRequiredService<IAppRobo>();
-            await HostApp.Host.RunAsync(appRobo.GetAppToken());
+            try
+            {
+                await HostApp.Host.RunAsync(appRobo.GetAppToken());
+            }
+            catch (Exception ex)
+            {
+                Log.Logger.Write(LogEventLevel.Fatal, ex.ToString());
+            }
+
+            appRobo?.RoboConfig.SaveDataAsync().Wait();
         }
         catch (Exception ex)
         {
-            Log.Logger.Write(LogEventLevel.Fatal, ex.ToString());
+            Log.Logger.Fatal(ex, "Aplication ended before start Host Run process");
         }
     }
 }
-
-
 
 public static class HostApp
 {
@@ -53,8 +60,7 @@ public static class HostApp
 
     public static void CurrentDomain_ProcessExit(object sender, EventArgs e)
     {
-       // var wallet = HostApp.Host.Services?.GetService<GlobalWallet>();
-       //if (wallet!= null) GlobalWallet.SaveWalletToJsonFile(wallet);
+        var appRobo = HostApp.Host.Services?.GetService<IAppRobo>();
+        appRobo?.RoboConfig.SaveDataAsync().Wait();
     }
 }
-

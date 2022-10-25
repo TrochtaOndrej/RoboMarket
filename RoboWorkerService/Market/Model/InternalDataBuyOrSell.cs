@@ -1,6 +1,6 @@
 ﻿namespace RoboWorkerService.Market.Model;
 
-public record InternalData
+public record InternalDataBuyOrSell
 {
     /// <summary> Strategie metody nakupu a prodeje </summary>
     public string Strategy { get; set; }

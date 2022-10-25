@@ -1,13 +1,14 @@
 ﻿using System.Globalization;
+using AutoMapper;
 using ExchangeSharp;
+using RoboWorkerService.Market.Model;
 
 namespace RoboWorkerService.Csv;
 
-public class ExchangeOrderRequestCsvMap:ExchangeOrderRequest
+public sealed class AutoMapperProfileCsv : Profile
 {
-    public FooMap()
+    public  AutoMapperProfileCsv()
     {
-        AutoMap(CultureInfo.InvariantCulture);
-        Map(m => m.Name).Name("The Name");
+        CreateMap<TransactionData, TransactionData>();
     }
 }

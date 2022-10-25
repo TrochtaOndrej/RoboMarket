@@ -1,4 +1,5 @@
 ﻿using ExchangeSharp;
+using Helper.Interface;
 using Helper.Serialization;
 using RoboWorkerService.Config;
 using RoboWorkerService.Interfaces;
@@ -20,11 +21,11 @@ public class SharpProcessingMarket<W> : BaseProcessMarketOrder<W>, IDefinedMoney
         IWallet<W> globalWallet,
         IConfig config,
         IJsonConvertor json,
-        W cryptoCurrency)
-        : base(logger, globalWallet, config, json, nameof(SharpProcessingMarket<W>))
+        IAppRobo appRobo,
+        W type)
+        : base(type, logger, globalWallet, config, json,appRobo, nameof(SharpProcessingMarket<W>))
     {
         _logger = logger;
-        _cryptoCurrency = cryptoCurrency;
     }
 
     #region Wallet
@@ -103,74 +104,6 @@ public class SharpProcessingMarket<W> : BaseProcessMarketOrder<W>, IDefinedMoney
         return null;
     }
 
-    public MarketProcessBuyOrSell? CreateBuyOrderEur(decimal defineProfitInPercently, decimal investMoneyEur,
-        MarketProcessType marketProcessType, decimal? cryptoPosition = null)
-    {
-        if (defineProfitInPercently < 0.6m)
-            throw new BussinesExceptions("Profit must by more then 0.6%. This percent is for market feeds");
-
-        if (BrokerWallet.CryptoPositionTransaction < 100)
-            throw new BussinesExceptions(
-                $"Actual BrokerWallet.CryptoPositionTransaction is less 100. PLease fill the position in wallet. {FileName}");
-
-        // pokud neni definovana pozice tak , se bere aktualni pozice v marketu jinak se nastavi hodnota, kterou
-        // definujeme v promene. Tahle podminka jen nastavuje pro vypocet hodnotu predanou
-        if (cryptoPosition is not null)
-        {
-            CryptoPriceBuy = CryptoPriceSell = cryptoPosition.Value;
-        }
-
-        if (marketProcessType == MarketProcessType.Buy)
-        {
-            var positionPercentBuy = CryptoPriceBuy - (CryptoPriceBuy / 100 * defineProfitInPercently); // hranice nakupu
-
-            // Zaokrouhlovani pozice na pocet des mist. Jinak chyba "message":"price is too accurate. Smallest unit is 0.01"
-            positionPercentBuy = Math.Round(positionPercentBuy, _cryptoCurrency.CountDecimalNumberInPosition,
-                MidpointRounding.ToEven);
-
-            if (positionPercentBuy < 100)
-                throw new BussinesExceptions("Buy position is less then 100. Please check the parameters in file or market!");
-
-            var fees = CalculateFees(investMoneyEur);
-            return new MarketProcessBuyOrSell(CryptoCurrency)
-            {
-                CryptoValue = investMoneyEur / positionPercentBuy,
-                EurValue = investMoneyEur,
-                ProcessType = MarketProcessType.Buy,
-                Price = positionPercentBuy,
-                Fees = fees,
-                IsPostOnly = true,
-                ProfitPercently = defineProfitInPercently,
-                ProfitInEur = (investMoneyEur / 100) * defineProfitInPercently - fees,
-                Strategy = nameof(SharpProcessingMarket<W>) + " " +
-                           (cryptoPosition == null ? "ActualMarketPosition" : "DefinedPosition")
-            };
-        }
-        else if (marketProcessType == MarketProcessType.Sell)
-        {
-            var positionPercentSell = CryptoPriceSell + ((CryptoPriceSell / 100) * defineProfitInPercently); // hranice prodeje
-            positionPercentSell = Math.Round(positionPercentSell, _cryptoCurrency.CountDecimalNumberInPosition,
-                MidpointRounding.ToEven);
-
-            if (CryptoPriceSell <= positionPercentSell)
-            {
-                var fees = CalculateFees(investMoneyEur);
-                return new MarketProcessBuyOrSell(CryptoCurrency)
-                {
-                    CryptoValue = investMoneyEur / CryptoPriceSell,
-                    EurValue = investMoneyEur,
-                    ProcessType = MarketProcessType.Sell,
-                    Price = positionPercentSell,
-                    Fees = fees,
-                    IsPostOnly = true,
-                    ProfitPercently = defineProfitInPercently,
-                    ProfitInEur = (investMoneyEur / 100) * defineProfitInPercently - fees,
-                };
-            }
-        }
-
-        return null;
-    }
 
     //Z penezenky zjisti aktualni suu a propocita mrizku, dle definice
     public List<MarketProcessBuyOrSell> InicializationFirstSharpStrategy(ExchangeTicker firstTicker, IWallet brokerWallet,
@@ -217,7 +150,7 @@ public class SharpProcessingMarket<W> : BaseProcessMarketOrder<W>, IDefinedMoney
         if (sellData.MarketProcessType == MarketProcessType.Sell)
         {
             var countToSell = (sellData.PercentSpectrumEnd - sellData.PercentSpectrumStart) / sellData.PercentStepCalculatePrice;
-            var moneyStepToSellCryptoPrice = sellData.PriceInCrypto / countToSell;
+            var moneyStepToSellCryptoPrice = sellData.PriceInCryptoInEur / countToSell;
             if (moneyStepToSellCryptoPrice >= 1)
             {
                 for (int i = 0; i < countToSell - 1; i++)
@@ -228,8 +161,8 @@ public class SharpProcessingMarket<W> : BaseProcessMarketOrder<W>, IDefinedMoney
                     if (buyOrSell is not null)
                     {
                         listBuyOrSell.Add(buyOrSell);
-                        sellData.PriceInCrypto -= moneyStepToSellCryptoPrice;
-                        if (sellData.PriceInCrypto <= 0) break; // uz neni zadne crypto v penezence
+                        sellData.PriceInCryptoInEur -= moneyStepToSellCryptoPrice;
+                        if (sellData.PriceInCryptoInEur <= 0) break; // uz neni zadne crypto v penezence
                     }
                     else
                         break;
@@ -253,14 +186,14 @@ public class SharpProcessingMarket<W> : BaseProcessMarketOrder<W>, IDefinedMoney
         List<ExchangeOrderResult> openOrdersActualInMarket)
     {
         var orderBuyOrSellList = new List<MarketProcessBuyOrSell>();
-        var savedOrderTransaction = extraDataService.GetOpenOrderTransaction().ToList();
-        if (!savedOrderTransaction.Any())
+        var savedLocalOrderTransaction = extraDataService.GetOpenOrderTransaction().ToList();
+        if (!savedLocalOrderTransaction.Any())
         {
             _logger.LogInformation("No open transaction in {Crypto}", Crypto);
             return orderBuyOrSellList;
         }
 
-        foreach (var actualSavedOrderTransaction in savedOrderTransaction)
+        foreach (var actualSavedOrderTransaction in savedLocalOrderTransaction)
         {
             var actualMarketOpenOrder = openOrdersActualInMarket.FirstOrDefault(x =>
                 x.OrderId == actualSavedOrderTransaction.OrderResult.OrderId);
@@ -274,11 +207,11 @@ public class SharpProcessingMarket<W> : BaseProcessMarketOrder<W>, IDefinedMoney
                 //je treba vytvorit objednavku se ziskem 
                 // TODO OT: Dodelat lepsi strategii pro znovu nakup nebo prodej, Nejelepe rozdelit zisk na pulku a precentrulane rozpocitat
                 MarketProcessBuyOrSell? orderBuyOrSell = CreateBuyOrderEur(actualSavedOrderTransaction.BuyOrSell.ProfitPercently,
-                    actualSavedOrderTransaction.BuyOrSell
-                        .EurValue, // TODO OT: vysoka priorita Vypocet nakupu nebo prodeje v pozici bez ztraty penez
+                    actualSavedOrderTransaction.BuyOrSell.EurValue, // TODO OT: vysoka priorita Vypocet nakupu nebo prodeje v pozici bez ztraty penez
                     actualMarketOpenOrder.IsBuy ? MarketProcessType.Sell : MarketProcessType.Buy,
                     actualMarketOpenOrder.Price);
 
+               
                 if (orderBuyOrSell is not null) orderBuyOrSellList.Add(orderBuyOrSell);
 
                 // odstran jiz stavajici order v extradata

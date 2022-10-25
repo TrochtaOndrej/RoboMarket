@@ -10,8 +10,8 @@ public interface ITransactionDataDriver<T> where T : ICryptoCurrency
     Task SaveAsync(CancellationToken cancellationToken = default);
     Task Load(CancellationToken cancellationToken = default);
 
-    TransactionData Add<T>(ExchangeOrderRequest request, ExchangeOrderResult result, IWallet wallet,
-        MarketProcessBuyOrSell buyOrSell, T typeProcessing) where T : class;
+    TransactionData Add(ExchangeOrderRequest request, ExchangeOrderResult result, IWallet wallet,
+        MarketProcessBuyOrSell buyOrSell, string strategyName);
 
     IEnumerable<TransactionData> GetTransaction(Func<TransactionData, bool> fnc);
 }

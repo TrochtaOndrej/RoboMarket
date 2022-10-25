@@ -1,11 +1,11 @@
+﻿using Helper.Interface;
 using Newtonsoft.Json;
 
 namespace Helper.Serialization;
 
 public class JsonConvertor : IJsonConvertor
 {
-    public static string ApplicationPath = Environment.CurrentDirectory + Environment.SystemDirectory;
-    private readonly JsonSerializerSettings _settings;
+   private readonly JsonSerializerSettings _settings;
 
     public JsonConvertor(JsonSerializerSettings settings)
     {

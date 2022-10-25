@@ -1,4 +1,6 @@
-﻿namespace RoboWorkerService.Config
+﻿using Helper.Serialization;
+
+namespace RoboWorkerService.Config
 {
     public interface IConfig
     {
@@ -8,6 +10,17 @@
         string ReportPath { get; }
         bool IsDevelopment { get; }
         Type DefineMarketAsType { get; }
+    }
+
+    public record RoboConfig
+    {
+        public const string NumberOrderName = nameof(NumberOrder);
+        public int NumberOrder { get; set; }
+
+        public int GetNumberOrder()
+        {
+            return NumberOrder++;
+        }
     }
 
     public class Config : IConfig

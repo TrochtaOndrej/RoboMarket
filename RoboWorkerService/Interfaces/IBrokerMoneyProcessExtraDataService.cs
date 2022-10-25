@@ -13,4 +13,5 @@ public interface IBrokerMoneyProcessExtraDataService<W>
     /// <summary> Data pro strategii, </summary>
     MoneyProcessDataBuy MoneyProcessDataBuy { get; }
     MoneyProcessDataSell MoneyProcessDataSell { get; }
+    int ActualNumber { get; }
 }

@@ -7,56 +7,52 @@ namespace RoboWorkerService;
 public class Worker : BackgroundService
 {
     private readonly ILogger<Worker> _logger;
-    private readonly IMarketCoreCupBroker<ICryptoALGO> _marketCoreAlgocCupBroker;
-    private readonly IMarketCoreCupBroker<ICryptoBTC> _marketCoreBtcCupBroker;
-    private readonly IMarketCoreDefinedMoneyBroker<ICryptoBTC> _marketCoreBtcSharpBroker;
-    private readonly IMarketCoreCupBroker<ICryptoDOGE> _marketCoreDogeCupBroker;
-    private readonly IMarketCoreCupBroker<ICryptoETH> _marketCoreEthCupBroker;
+    private static int _counter = 0;
+    private static IAppRobo _appRobo;
 
-    public Worker(
-        ILogger<Worker> logger,
-        IMarketCoreCupBroker<ICryptoBTC> marketCoreBTC_CupBroker,
-        IMarketCoreDefinedMoneyBroker<ICryptoBTC> marketCoreBTCSharpBroker,
-        IMarketCoreCupBroker<ICryptoALGO> marketCoreALGOC_CupBroker,
-        IMarketCoreCupBroker<ICryptoETH> marketCoreETH_CupBroker,
-        IMarketCoreCupBroker<ICryptoDOGE> marketCoreDOGE_CupBroker
-    )
+    public Worker(ILogger<Worker> logger)
     {
         _logger = logger;
-        _marketCoreBtcCupBroker = marketCoreBTC_CupBroker;
-        _marketCoreBtcSharpBroker = marketCoreBTCSharpBroker;
-        _marketCoreAlgocCupBroker = marketCoreALGOC_CupBroker;
-        _marketCoreEthCupBroker = marketCoreETH_CupBroker;
-        _marketCoreDogeCupBroker = marketCoreDOGE_CupBroker;
     }
-    // coinmate - CZ
-
-    //coinbase
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        _logger.LogInformation("-*CONNECT TO MARKET*-");
-        await _marketCoreBtcCupBroker.ConnectToMarketAsync();
-        await _marketCoreBtcSharpBroker.ConnectToMarketAsync();
+        List<Type> typeCryptoOnMarket = new List<Type>()
+        {
+            typeof(ICryptoBTC)
+            /*, typeof(ICryptoETH) */
+        };
 
-        await _marketCoreAlgocCupBroker.ConnectToMarketAsync();
-        await _marketCoreEthCupBroker.ConnectToMarketAsync();
-        await _marketCoreDogeCupBroker.ConnectToMarketAsync();
+        List<IMarketCoreBroker> cryptoProcessing = new List<IMarketCoreBroker>();
+
+        foreach (var crypto in typeCryptoOnMarket)
+        {
+            var marketCoreCrypto =
+                (IMarketCoreBroker)HostApp.Host.Services.GetService(
+                    typeof(IMarketCoreSharpBroker<>).MakeGenericType(new[] { crypto }))!;
+            cryptoProcessing.Add(marketCoreCrypto);
+        }
+
+        _logger.LogInformation("-*CONNECT TO MARKET*-");
+        cryptoProcessing.ForEach(async x => await x.ConnectToMarketAsync());
+
+        _appRobo = HostApp.Host.Services.GetService<IAppRobo>() ??
+                   throw new NullReferenceException("IAppRobo services is not registered!");
+
         _logger.LogInformation("-*START ROBO STRATEGY*-");
         var delay = 3000;
         while (!stoppingToken.IsCancellationRequested)
             try
             {
-                await _marketCoreBtcCupBroker.RunAsync();
-                await Task.Delay(delay, stoppingToken);
-                await _marketCoreBtcSharpBroker.RunAsync();
-                await Task.Delay(delay, stoppingToken);
-                await _marketCoreAlgocCupBroker.RunAsync();
-                await Task.Delay(delay, stoppingToken);
-                await _marketCoreEthCupBroker.RunAsync();
-                await Task.Delay(delay, stoppingToken);
-                await _marketCoreDogeCupBroker.RunAsync();
-                await Task.Delay(delay, stoppingToken);
+                _counter++;
+                foreach (var marketCoreBroker in cryptoProcessing)
+                {
+                    await Task.Delay(delay, stoppingToken);
+                    await marketCoreBroker.RunAsync();
+                }
+
+                if (_counter == Int32.MaxValue) _counter = 0;
+                if (_counter % 100 == 0) await _appRobo.RoboConfig.SaveDataAsync(stoppingToken);
             }
             catch (Exception e)
             {
