@@ -10,15 +10,19 @@
         <PlatformTarget>AnyCPU</PlatformTarget>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+    </PropertyGroup>
+
     <ItemGroup>
-      <Compile Remove="Setup\**" />
-      <Content Remove="Setup\**" />
-      <EmbeddedResource Remove="Setup\**" />
-      <None Remove="Setup\**" />
+        <Compile Remove="Setup\**"/>
+        <Content Remove="Setup\**"/>
+        <EmbeddedResource Remove="Setup\**"/>
+        <None Remove="Setup\**"/>
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="AutoMapper" Version="12.0.0" />
+        <PackageReference Include="AutoMapper" Version="12.0.0"/>
         <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
         <PackageReference Include="CsvHelper" Version="29.0.0" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.1" />

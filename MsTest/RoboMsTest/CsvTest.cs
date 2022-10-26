@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using RoboWorkerService;
 using RoboWorkerService.Csv;
+using RoboWorkerService.Interfaces;
 using RoboWorkerService.Json;
 
 namespace RoboMsTest;

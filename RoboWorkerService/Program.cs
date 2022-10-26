@@ -1,3 +1,4 @@
+using ExchangeSharp;
 using RoboWorkerService;
 using RoboWorkerService.Interfaces;
 using Serilog.Events;
@@ -9,7 +10,8 @@ public static class Program
 {
     public static async Task Main(string[] args)
     {
-        Console.WriteLine("Hello World!");
+        Console.WriteLine("Hello There :)");
+        //   Console.WriteLine(typeof(ExchangeCoinmateAPI).AssemblyQualifiedName ?? "NULL");
         AppDomain.CurrentDomain.ProcessExit += new EventHandler(HostApp.CurrentDomain_ProcessExit);
         //Serilog
         var configuration = new ConfigurationBuilder()

@@ -1,4 +1,5 @@
-﻿using Helper.Interface;
+﻿using CryptoBotCore.API;
+using Helper.Interface;
 using Helper.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
@@ -23,6 +24,7 @@ public static class RoboServices
     {
         services.AddSingleton<IConfig, Config.Config>();
         services.AddSingleton<IAppRobo, AppRobo>();
+        services.AddSingleton<ICoinmateAPI, CoinmateAPI>();
         // CRYPTO CURRENCY
 
         services.AddSingleton<ICryptoBTC, CryptoBTC>();

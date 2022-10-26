@@ -26,7 +26,7 @@ public class MarketTransactionCsv<T> : IMarketTransactionCsv<T>
         FileNameCsv = appRobo.Config.ReportPath + typeof(T).Name + ".csv";
     }
 
-    private void WriteToFile<T>(T records)
+    private void WriteToFile(T records)
     {
         using (var writer = new StreamWriter(FileNameCsv))
         using (var csv = new CsvWriter(writer, _csvConfiguration))
@@ -42,11 +42,11 @@ public class MarketTransactionCsv<T> : IMarketTransactionCsv<T>
     /// <param name="fileName">pouze jmeno souboru napr test.csv</param>
     /// <param name="records">zaznam, ktery chceme pridat do csv</param>
     /// <typeparam name="T">typ zaznamu csv</typeparam>
-    public void WriteToFileCsv<T>(T records)
+    public void WriteToFileCsv(T records)
     {
         if (!File.Exists(FileNameCsv))
         {
-            WriteToFile<T>(records);
+            WriteToFile(records);
             return;
         }
 

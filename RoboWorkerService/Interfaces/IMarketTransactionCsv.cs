@@ -1,4 +1,4 @@
-﻿namespace RoboWorkerService.Csv;
+﻿namespace RoboWorkerService.Interfaces;
 
 public interface IMarketTransactionCsv<T>
 {
@@ -6,7 +6,7 @@ public interface IMarketTransactionCsv<T>
     /// <param name="fileName">pouze jmeno souboru napr test.csv</param>
     /// <param name="records">zaznam, ktery chceme pridat do csv</param>
     /// <typeparam name="T">typ zaznamu csv</typeparam>
-    void WriteToFileCsv<T>(T records);
+    void WriteToFileCsv(T records);
 
     void DeleteCsvFile();
     string FileNameCsv { get; }

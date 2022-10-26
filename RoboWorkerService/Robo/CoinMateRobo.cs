@@ -35,7 +35,7 @@ public class CoinMateRobo<T> : ICoinMateRobo<T> where T : ICryptoCurrency
 
         ExchangeAPI.UseDefaultMethodCachePolicy = false; // TODO: prozkoumat jaky to ma vliv na GetTickerAsync
 
-        _marketSymbol = symbol.Crypto;
+        _marketSymbol = symbol.Crypto.Replace('-', appRobo.Config.CryptoSeparator);
 
         foreach (char c in appRobo.Configuration.GetValue<string>("RoboApp:Passphrase")) _iexApi.Passphrase.AppendChar(c);
     }
@@ -73,7 +73,7 @@ public class CoinMateRobo<T> : ICoinMateRobo<T> where T : ICryptoCurrency
         var margin = await _iexApi.GetOpenOrderDetailsAsync(_marketSymbol);
         return margin;
     }
-    
+
     public ExchangeOrderRequest CreateExchangeOrderRequest(MarketProcessBuyOrSell marketProcessBuyOrSell)
     {
         return new ExchangeOrderRequest
@@ -82,7 +82,9 @@ public class CoinMateRobo<T> : ICoinMateRobo<T> where T : ICryptoCurrency
             IsBuy = marketProcessBuyOrSell.ProcessType == MarketProcessType.Buy,
             MarketSymbol = marketProcessBuyOrSell.MarketSymbol,
             Price = marketProcessBuyOrSell.Price,
-            Amount = marketProcessBuyOrSell.CryptoValue
+            Amount = Math.Round(marketProcessBuyOrSell.CryptoValue, 7),
+            IsPostOnly = false,
+
             // IsPostOnly = marketProcessBuyOrSell.IsPostOnly
         };
     }
@@ -106,7 +108,7 @@ public class CoinMateRobo<T> : ICoinMateRobo<T> where T : ICryptoCurrency
             };
 
         #endregion
-     
+
         orderRequest.ExtraParameters.Add("RoboNumberOrder", _appRobo.RoboConfig.Data.GetNumberOrder());
         var result = await _iexApi.PlaceOrderAsync(orderRequest);
 

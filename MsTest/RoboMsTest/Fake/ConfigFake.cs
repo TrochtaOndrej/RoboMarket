@@ -10,6 +10,7 @@ public class ConfigFake : IConfig
     public string ReportPath => ConfigPath + @"Report\";
     public bool IsDevelopment { get; } = true;
     public Type DefineMarketAsType => typeof(ExchangeCoinbaseAPI);
+    public char CryptoSeparator { get; } = '_';
 
     public ConfigFake()
     {

@@ -1,0 +1,15 @@
+{
+  "crypto_broker_wallet": {
+    "MarketCoreDefinedSharpBroker": {
+      "crypto_broker_wallet": {},
+      "crypto_account_value": 0.00001,
+      "eur_account_value": 1,
+      "crypto_position_transaction": 52000.0,
+      "market_symbol": "BTC_EUR"
+    }
+  },
+  "crypto_account_value": 0.00001,
+  "eur_account_value": 1.0,
+  "crypto_position_transaction": 52000.0,
+  "market_symbol": "BTC_EUR"
+}

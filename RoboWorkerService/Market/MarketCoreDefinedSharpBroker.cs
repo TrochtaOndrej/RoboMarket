@@ -98,7 +98,8 @@ public class MarketCoreDefinedSharpBroker<W> : MarketCore<W>, IMarketCoreSharpBr
         foreach (var localOpenOrder in _extraDataService.GetOpenOrderTransaction().ToList())
         {
             if (openOrders.Any(x => x.OrderId == localOpenOrder.OrderResult.OrderId)) continue;
-            _logger.LogInformation("Order: {OrderId}  is not found in open order section at online Market.", localOpenOrder.OrderResult.OrderId);
+            _logger.LogInformation("Order: {OrderId}  is not found in open order section at online Market.",
+                localOpenOrder.OrderResult.OrderId);
             _extraDataService.RemoveTransaction(localOpenOrder);
         }
     }
@@ -116,10 +117,12 @@ public class MarketCoreDefinedSharpBroker<W> : MarketCore<W>, IMarketCoreSharpBr
 
                 // vytvor platbu (orderPlate)
                 var orderRequest = _cmr.CreateExchangeOrderRequest(buyOrSell);
+                await Task.Delay(200);
                 var orderResult = await _cmr.PlaceOrderAsync(orderRequest);
                 _logger.LogDebug("{Type} - Actual transaction {@OrderResult}", nameof(SharpProcessingMarket<W>), orderResult);
-               
-                var transaction = _transactionDataDriver.Add(orderRequest, orderResult, _pm.GlobalWallet, buyOrSell, BrokerWalletName);
+
+                var transaction =
+                    _transactionDataDriver.Add(orderRequest, orderResult, _pm.GlobalWallet, buyOrSell, BrokerWalletName);
                 _extraDataService.AddTransaction(transaction);
                 Console.WriteLine();
 
@@ -127,7 +130,8 @@ public class MarketCoreDefinedSharpBroker<W> : MarketCore<W>, IMarketCoreSharpBr
             }
         }
         finally
-        { // uloz do Csv souboru
+        {
+            // uloz do Csv souboru
             await _extraDataService.SaveDataAsync();
             await _transactionDataDriver.SaveAsync();
         }
