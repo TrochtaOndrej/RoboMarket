@@ -24,8 +24,7 @@ public static class RoboServices
         services.AddSingleton<IConfig, Config.Config>();
         services.AddSingleton<IAppRobo, AppRobo>();
         // CRYPTO CURRENCY
-        
-        
+
         services.AddSingleton<ICryptoBTC, CryptoBTC>();
         AddMarketBurker<ICryptoBTC>(services);
 
@@ -45,7 +44,7 @@ public static class RoboServices
 
         return services;
     }
- 
+
 
     public static IServiceCollection AddMarketBurker<T>(this IServiceCollection services) where T : ICryptoCurrency
     {

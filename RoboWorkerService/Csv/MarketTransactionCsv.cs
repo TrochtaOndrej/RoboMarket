@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using System.Net;
 using System.Text;
 using CsvHelper;
 using CsvHelper.Configuration;
@@ -8,7 +9,7 @@ namespace RoboWorkerService.Csv;
 
 public class MarketTransactionCsv<T> : IMarketTransactionCsv<T>
 {
-    private readonly string _fileNameCsv;
+    public string FileNameCsv { get; }
 
     private static CsvConfiguration _csvConfiguration
     {
@@ -16,23 +17,22 @@ public class MarketTransactionCsv<T> : IMarketTransactionCsv<T>
         {
             var con = new CsvHelper.Configuration.CsvConfiguration(CultureInfo.InvariantCulture);
             con.HasHeaderRecord = true;
-            
             return con;
         }
     }
 
     public MarketTransactionCsv(IAppRobo appRobo)
     {
-        ;
-        _fileNameCsv = appRobo.Config.ReportPath + typeof(T).Name;
+        FileNameCsv = appRobo.Config.ReportPath + typeof(T).Name + ".csv";
     }
 
     private void WriteToFile<T>(T records)
     {
-        using (var writer = new StreamWriter(_fileNameCsv))
+        using (var writer = new StreamWriter(FileNameCsv))
         using (var csv = new CsvWriter(writer, _csvConfiguration))
         {
             csv.WriteHeader<T>();
+            csv.NextRecord();
             csv.WriteRecord(records);
             csv.NextRecord();
         }
@@ -44,9 +44,8 @@ public class MarketTransactionCsv<T> : IMarketTransactionCsv<T>
     /// <typeparam name="T">typ zaznamu csv</typeparam>
     public void WriteToFileCsv<T>(T records)
     {
-        if (!File.Exists(_fileNameCsv))
+        if (!File.Exists(FileNameCsv))
         {
-        
             WriteToFile<T>(records);
             return;
         }
@@ -57,13 +56,17 @@ public class MarketTransactionCsv<T> : IMarketTransactionCsv<T>
             // Don't write the header again.
             HasHeaderRecord = false,
         };
-        using (var stream = File.Open(_fileNameCsv, FileMode.Append))
+        using (var stream = File.Open(FileNameCsv, FileMode.Append))
         using (var writer = new StreamWriter(stream))
         using (var csv = new CsvWriter(writer, config))
         {
-            csv.WriteHeader<T>();
             csv.WriteRecord(records);
             csv.NextRecord();
         }
+    }
+
+    public void DeleteCsvFile()
+    {
+        if (File.Exists(FileNameCsv)) File.Delete(FileNameCsv);
     }
 }

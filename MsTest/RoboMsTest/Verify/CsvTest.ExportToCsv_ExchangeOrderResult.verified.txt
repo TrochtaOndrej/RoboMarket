@@ -1,0 +1,3 @@
+﻿OrderId,ClientOrderId,Result,ResultCode,Message,Amount,AmountFilled,IsAmountFilledReversed,Price,AveragePrice,OrderDate,HTTPHeaderDate,CompletedDate,MarketSymbol,IsBuy,Fees,FeesCurrency,TradeId,TradeDate,UpdateSequence
+,,Unknown,,,0,,False,,,01/01/0001 00:00:00,,,,False,,,,,
+order-id-1,,Filled,,MsTest,5,,False,,,01/01/0001 00:00:00,,,,True,0.1,,,12/24/2022 00:00:00,

@@ -7,4 +7,7 @@ public interface IMarketTransactionCsv<T>
     /// <param name="records">zaznam, ktery chceme pridat do csv</param>
     /// <typeparam name="T">typ zaznamu csv</typeparam>
     void WriteToFileCsv<T>(T records);
+
+    void DeleteCsvFile();
+    string FileNameCsv { get; }
 }
