@@ -1,4 +1,5 @@
-﻿using Helper.Serialization;
+﻿using ExchangeSharp;
+using Helper.Serialization;
 
 namespace RoboWorkerService.Config
 {
@@ -27,10 +28,10 @@ namespace RoboWorkerService.Config
     {
         private readonly string CurrentPath = Environment.CurrentDirectory;
 
-        public string RootPath => CurrentPath + @"RoboData\";
-        public string ReportPath => RootPath + DefineMarketAsType.Name + @"\Reports\";
+        public string RootPath => $@"{CurrentPath}RoboData\";
+        public string ReportPath => $@"{RootPath}{DefineMarketAsType.Name}\Reports\";
         public bool IsDevelopment { get; }
-        public string ConfigPath => RootPath + DefineMarketAsType.Name + @"\Config\";
+        public string ConfigPath => $@"{RootPath}{DefineMarketAsType.Name}\Config\";
 
         public Type DefineMarketAsType { get; }
 
@@ -51,11 +52,19 @@ namespace RoboWorkerService.Config
 
         private Type GetTypeExchangeFromString(string qualifyNamespace)
         {
-            var type = Type.GetType(qualifyNamespace, false);
-            if (type is null)
-                throw new BussinesExceptions(
-                    $"Defined namespace in `appsettings.json`: {qualifyNamespace} is not possible load from Exchange!");
-            return type;
+            try
+            {
+                var type = Type.GetType(qualifyNamespace, false);
+                if (type is null)
+                    throw new BussinesExceptions(
+                        $"Defined namespace in `appsettings.json`: {qualifyNamespace} is not possible load from Exchange!");
+                return type;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"You can try this:{typeof(ExchangeCoinbaseAPI).AssemblyQualifiedName}");
+                throw;
+            }
         }
     }
 }

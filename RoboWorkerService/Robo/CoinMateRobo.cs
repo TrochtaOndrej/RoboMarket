@@ -59,7 +59,7 @@ public class CoinMateRobo<T> : ICoinMateRobo<T> where T : ICryptoCurrency
     public Task<IEnumerable<ExchangeOrderResult>> GetCompletedOrderDetailsAsync()
     {
         return _iexApi.GetCompletedOrderDetailsAsync(_marketSymbol,
-            DateTime.Now.Date); //TODO OT: doresit datum od kdy si vyhledat uzavrene ordery
+            DateTime.Now.Date.AddDays(-3)); //TODO OT: doresit datum od kdy si vyhledat uzavrene ordery
     }
 
     public async Task<ExchangeMarginPositionResult> MarginPositionResult()
@@ -73,7 +73,7 @@ public class CoinMateRobo<T> : ICoinMateRobo<T> where T : ICryptoCurrency
         var margin = await _iexApi.GetOpenOrderDetailsAsync(_marketSymbol);
         return margin;
     }
-    
+
     public ExchangeOrderRequest CreateExchangeOrderRequest(MarketProcessBuyOrSell marketProcessBuyOrSell)
     {
         return new ExchangeOrderRequest
@@ -106,7 +106,7 @@ public class CoinMateRobo<T> : ICoinMateRobo<T> where T : ICryptoCurrency
             };
 
         #endregion
-     
+
         orderRequest.ExtraParameters.Add("RoboNumberOrder", _appRobo.RoboConfig.Data.GetNumberOrder());
         var result = await _iexApi.PlaceOrderAsync(orderRequest);
 
