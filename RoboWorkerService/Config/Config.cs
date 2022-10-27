@@ -11,6 +11,8 @@ namespace RoboWorkerService.Config
         string ReportPath { get; }
         bool IsDevelopment { get; }
         Type DefineMarketAsType { get; }
+
+        int WaitingBetweenStrategyInMiliSeconds { get; }
     }
 
     public record RoboConfig
@@ -34,6 +36,7 @@ namespace RoboWorkerService.Config
         public string ConfigPath => $@"{RootPath}{DefineMarketAsType.Name}\Config\";
 
         public Type DefineMarketAsType { get; }
+        public int WaitingBetweenStrategyInMiliSeconds { get; } = 5;
 
         public Config(IConfiguration configuration, ILogger<Config> logger)
         {
@@ -41,6 +44,7 @@ namespace RoboWorkerService.Config
             DefineMarketAsType = GetTypeExchangeFromString(namespaceExchange);
 
             var appPath = configuration.GetValue<string>("RoboApp:RoboDataPath");
+            WaitingBetweenStrategyInMiliSeconds = configuration.GetValue<int>("RoboApp:WaitingBetweenStrategyInSec") * 1000;
             if (!string.IsNullOrEmpty(appPath)) CurrentPath = appPath;
 
             Directory.CreateDirectory(ConfigPath);

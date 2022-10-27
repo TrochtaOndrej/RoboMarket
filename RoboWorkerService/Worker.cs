@@ -47,12 +47,12 @@ public class Worker : BackgroundService
                 _counter++;
                 foreach (var marketCoreBroker in cryptoProcessing)
                 {
-                    await Task.Delay(delay, stoppingToken);
                     await marketCoreBroker.RunAsync();
+                    await Task.Delay(_appRobo.Config.WaitingBetweenStrategyInMiliSeconds, stoppingToken);
                 }
 
                 if (_counter == Int32.MaxValue) _counter = 0;
-                if (_counter % 100 == 0) await _appRobo.RoboConfig.SaveDataAsync(stoppingToken);
+                if (_counter % 10 == 0) await _appRobo.RoboConfig.SaveDataAsync(stoppingToken);
             }
             catch (Exception e)
             {
