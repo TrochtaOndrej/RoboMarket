@@ -5,17 +5,19 @@ using RoboWorkerService.Csv;
 using RoboWorkerService.Interfaces;
 using RoboWorkerService.Market.Enum;
 using RoboWorkerService.Market.Model;
+using RoboWorkerService.Telegram;
 
 namespace RoboWorkerService.Robo;
 
 public class CoinMateRobo<T> : ICoinMateRobo<T> where T : ICryptoCurrency
 {
     private IExchangeAPI _iexApi = default!;
-    private string _marketSymbol;
-    private IAppRobo _appRobo;
-    private IMarketTransactionCsv<ExchangeOrderRequest> _csvOrderRequestFile;
-    private IMarketTransactionCsv<ExchangeOrderResult> _csvOrderResultFile;
-    private ILogger _logger;
+    private string _marketSymbol = null!;
+    private IAppRobo _appRobo = null!;
+    private IMarketTransactionCsv<ExchangeOrderRequest> _csvOrderRequestFile = null!;
+    private IMarketTransactionCsv<ExchangeOrderResult> _csvOrderResultFile = null!;
+    private ILogger _logger = null!;
+    private ITelegram _telegram = null!;
 
     public async Task InitRoboAsync(T symbol, IAppRobo appRobo, ILogger logger)
     {
@@ -23,6 +25,7 @@ public class CoinMateRobo<T> : ICoinMateRobo<T> where T : ICryptoCurrency
         _appRobo = appRobo;
         _csvOrderRequestFile = _appRobo.GetService<IMarketTransactionCsv<ExchangeOrderRequest>>();
         _csvOrderResultFile = _appRobo.GetService<IMarketTransactionCsv<ExchangeOrderResult>>();
+        _telegram = _appRobo.GetService<ITelegram>();
         var configFile = appRobo.Config.RootPath + @$"\{appRobo.Config.DefineMarketAsType.Name}.bin";
         if (!File.Exists(configFile)) throw new FileNotFoundException("Config file not found. Path: " + configFile);
 
@@ -109,6 +112,9 @@ public class CoinMateRobo<T> : ICoinMateRobo<T> where T : ICryptoCurrency
 
         orderRequest.ExtraParameters.Add("RoboNumberOrder", _appRobo.RoboConfig.Data.GetNumberOrder());
         var result = await _iexApi.PlaceOrderAsync(orderRequest);
+        await _telegram.SendOkTextAsync(
+            $"{(orderRequest.IsBuy ? "Koupit:" : "Prodat:")} {orderRequest.MarketSymbol} {Environment.NewLine} " +
+            $"pozice: {orderRequest.Price} mnozstvi: {orderRequest.Amount.ToString("F5")}");
 
         _csvOrderRequestFile.WriteToFileCsv(orderRequest);
         _csvOrderResultFile.WriteToFileCsv(result);

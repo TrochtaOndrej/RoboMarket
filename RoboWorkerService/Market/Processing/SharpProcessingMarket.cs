@@ -23,9 +23,10 @@ public class SharpProcessingMarket<W> : BaseProcessMarketOrder<W>, IDefinedMoney
         IJsonConvertor json,
         IAppRobo appRobo,
         W type)
-        : base(type, logger, globalWallet, config, json,appRobo, nameof(SharpProcessingMarket<W>))
+        : base(type, logger, globalWallet, config, json, appRobo, nameof(SharpProcessingMarket<W>))
     {
         _logger = logger;
+        _cryptoCurrency = type;
     }
 
     #region Wallet
@@ -58,9 +59,9 @@ public class SharpProcessingMarket<W> : BaseProcessMarketOrder<W>, IDefinedMoney
         if (defineProfitInPercently < 0.6m)
             throw new BussinesExceptions("Profit must by more then 0.6%. This percent is for market feeds");
 
-        if (BrokerWallet.CryptoPositionTransaction < 100)
+        if (BrokerWallet.CryptoPositionTransaction <= 0)
             throw new BussinesExceptions(
-                $"Actual BrokerWallet.CryptoPositionTransaction is less 100. PLease fill the position in wallet. {FileName}");
+                $"Actual BrokerWallet.CryptoPositionTransaction is less 0. PLease fill the position in wallet. {FileName}");
 
         // pokud neni definovana pozice tak , se bere aktualni pozice v marketu jinak se nastavi hodnota, kterou
         // definujeme v promene. Tahle podminka jen nastavuje pro vypocet hodnotu predanou
@@ -140,7 +141,7 @@ public class SharpProcessingMarket<W> : BaseProcessMarketOrder<W>, IDefinedMoney
             }
             else
             {
-                _logger.LogDebug("SHARP BUY: Calculated money is less then one Euro. Change the data:" +
+                _logger.LogDebug($"SHARP BUY {_cryptoCurrency.Crypto}: Calculated money is less then one Euro. Change the data:" +
                                  ObjectDumper.Dump(buyData));
             }
         }
@@ -207,11 +208,12 @@ public class SharpProcessingMarket<W> : BaseProcessMarketOrder<W>, IDefinedMoney
                 //je treba vytvorit objednavku se ziskem 
                 // TODO OT: Dodelat lepsi strategii pro znovu nakup nebo prodej, Nejelepe rozdelit zisk na pulku a precentrulane rozpocitat
                 MarketProcessBuyOrSell? orderBuyOrSell = CreateBuyOrderEur(actualSavedOrderTransaction.BuyOrSell.ProfitPercently,
-                    actualSavedOrderTransaction.BuyOrSell.EurValue, // TODO OT: vysoka priorita Vypocet nakupu nebo prodeje v pozici bez ztraty penez
+                    actualSavedOrderTransaction.BuyOrSell
+                        .EurValue, // TODO OT: vysoka priorita Vypocet nakupu nebo prodeje v pozici bez ztraty penez
                     actualMarketOpenOrder.IsBuy ? MarketProcessType.Sell : MarketProcessType.Buy,
                     actualMarketOpenOrder.Price);
 
-               
+
                 if (orderBuyOrSell is not null) orderBuyOrSellList.Add(orderBuyOrSell);
 
                 // odstran jiz stavajici order v extradata

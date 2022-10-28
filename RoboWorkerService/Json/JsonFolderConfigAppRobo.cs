@@ -13,6 +13,7 @@ public class JsonFolderConfigAppRobo<T> : IJsonFolderConfigAppRobo<T> where T : 
 
     public JsonFolderConfigAppRobo(IJsonConvertor jsonConvertor, IConfig config)
     {
+        ArgumentNullException.ThrowIfNull(jsonConvertor);
         _jsonConvertor = jsonConvertor;
         _config = config;
         LoadDataAsync().Wait();
@@ -40,7 +41,7 @@ public class JsonFolderConfigAppRobo<T> : IJsonFolderConfigAppRobo<T> where T : 
 
     public T Data { get; private set; }
 
-    private Task SaveData<T>(T o, CancellationToken cancellationToken = default)
+    private Task SaveData(T o, CancellationToken cancellationToken = default)
     {
         return _jsonConvertor.ToFileJsonAsync(_fileName, o, cancellationToken);
     }

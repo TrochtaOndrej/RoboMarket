@@ -9,8 +9,8 @@ public static class Program
 {
     public static async Task Main(string[] args)
     {
-        Console.WriteLine("Hello World!");
-        AppDomain.CurrentDomain.ProcessExit += new EventHandler(HostApp.CurrentDomain_ProcessExit);
+        Console.WriteLine("Hello there. I go make a money :)");
+        AppDomain.CurrentDomain.ProcessExit += new EventHandler(HostApp.CurrentDomain_ProcessExit!);
         //Serilog
         var configuration = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
@@ -56,7 +56,7 @@ public static class Program
 
 public static class HostApp
 {
-    public static IHost Host { get; set; }
+    public static IHost Host { get; set; } = null!;
 
     public static void CurrentDomain_ProcessExit(object sender, EventArgs e)
     {

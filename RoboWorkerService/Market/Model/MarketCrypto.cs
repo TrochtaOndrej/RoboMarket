@@ -6,7 +6,7 @@ namespace RoboWorkerService.Market.Model;
 /// <summary> aktulni hodnota na burze </summary>
 public class MarketCrypto : IMarketCrypto
 {
-    public CryptoCurrency CryptoCurrency { get; set; }
+    public CryptoCurrency CryptoCurrency { get; set; } = null!;
 
     /// <summary> position in market pro nakup (napr. 19957)</summary>
     public decimal CryptoPriceBuy { get; set; }
@@ -21,4 +21,5 @@ public class MarketCrypto : IMarketCrypto
     }
 
     public int CountDecimalNumberInPosition { get; } = 2;
+    public int CountDecimalNumberCryptoCurency { get; } = 6;
 }

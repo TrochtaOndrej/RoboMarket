@@ -3,7 +3,7 @@
 public record InternalDataBuyOrSell
 {
     /// <summary> Strategie metody nakupu a prodeje </summary>
-    public string Strategy { get; set; }
+    public string Strategy { get; set; } = null!;
 
     /// <summary> Odkud se pocitala cena </summary>
     public decimal StartingPointPositionToBuyOrSell { get; set; }

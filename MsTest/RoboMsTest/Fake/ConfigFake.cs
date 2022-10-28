@@ -11,6 +11,8 @@ public class ConfigFake : IConfig
     public bool IsDevelopment { get; } = true;
     public Type DefineMarketAsType => typeof(ExchangeCoinbaseAPI);
     public int WaitingBetweenStrategyInMiliSeconds { get; } = 10;
+    public string TelegramToken { get; }
+    public string ComplileEnvironment { get; }
 
     public ConfigFake()
     {

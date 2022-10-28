@@ -13,6 +13,9 @@ namespace RoboWorkerService.Config
         Type DefineMarketAsType { get; }
 
         int WaitingBetweenStrategyInMiliSeconds { get; }
+
+        string TelegramToken { get; }
+        string ComplileEnvironment { get; }
     }
 
     public record RoboConfig
@@ -28,7 +31,7 @@ namespace RoboWorkerService.Config
 
     public class Config : IConfig
     {
-        private readonly string CurrentPath = Environment.CurrentDirectory;
+        private readonly string CurrentPath = System.Environment.CurrentDirectory;
 
         public string RootPath => $@"{CurrentPath}RoboData\";
         public string ReportPath => $@"{RootPath}{DefineMarketAsType.Name}\Reports\";
@@ -37,14 +40,23 @@ namespace RoboWorkerService.Config
 
         public Type DefineMarketAsType { get; }
         public int WaitingBetweenStrategyInMiliSeconds { get; } = 5;
+        public string TelegramToken { get; }
+        public string ComplileEnvironment { get; }
 
         public Config(IConfiguration configuration, ILogger<Config> logger)
         {
+#if (DEBUG)
+            ComplileEnvironment = "Test";
+#else
+            ComplileEnvironment = "Prod";
+#endif
+
             var namespaceExchange = configuration.GetValue<string>("RoboApp:ActualMarket");
             DefineMarketAsType = GetTypeExchangeFromString(namespaceExchange);
 
             var appPath = configuration.GetValue<string>("RoboApp:RoboDataPath");
             WaitingBetweenStrategyInMiliSeconds = configuration.GetValue<int>("RoboApp:WaitingBetweenStrategyInSec") * 1000;
+            TelegramToken = configuration.GetValue<string>("RoboApp:TelegramToken");
             if (!string.IsNullOrEmpty(appPath)) CurrentPath = appPath;
 
             Directory.CreateDirectory(ConfigPath);
@@ -66,7 +78,7 @@ namespace RoboWorkerService.Config
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"You can try this:{typeof(ExchangeCoinbaseAPI).AssemblyQualifiedName}");
+                Logger.Error(ex, $"You can try this:{typeof(ExchangeCoinbaseAPI).AssemblyQualifiedName}");
                 throw;
             }
         }

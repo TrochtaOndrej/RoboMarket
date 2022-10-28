@@ -20,7 +20,7 @@ public class MarketCoreCupBroker<W> : MarketCore<W>, IMarketCoreCupBroker<W> whe
 
     protected override string BrokerWalletName => nameof(MarketCoreCupBroker<W>);
 
-    protected override IWallet BrokerWallet { get; set; }
+    protected override IWallet BrokerWallet { get; set; } = null!;
     //  readonly SemaphoreSlim _semaphoreSlim = new SemaphoreSlim(1, 1);
 
     public MarketCoreCupBroker(

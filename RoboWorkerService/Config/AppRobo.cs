@@ -27,7 +27,7 @@ public class AppRobo : IAppRobo
         return _cancellationTokenSource.Token;
     }
 
-    public T GetService<T>()
+    public T GetService<T>() where T : notnull
     {
         return HostApp.Host.Services.GetRequiredService<T>();
     }

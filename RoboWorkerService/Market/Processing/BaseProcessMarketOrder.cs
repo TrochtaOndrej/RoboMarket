@@ -18,9 +18,10 @@ public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T
     private readonly IJsonConvertor _json;
     private readonly IAppRobo _appRobo;
     private readonly T _cryptoCurrency;
+    private readonly ILogger _logger;
     private readonly string _processingName;
-    protected string FileName;
-    private IWallet _brokerWallet;
+    protected readonly string FileName;
+    private IWallet _brokerWallet = null!;
     public IWallet<T> GlobalWallet { get; protected set; }
 
     public IWallet BrokerWallet => _brokerWallet ?? GlobalWallet;
@@ -39,6 +40,7 @@ public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T
         _json = json;
         _appRobo = appRobo;
         _cryptoCurrency = cryptoCurrency;
+        _logger = logger;
         _processingName = processingName;
         GlobalWallet = globalWallet;
         FileName = Config.ConfigPath + GlobalWallet.MarketSymbol + "_GlobalWallet.json";
@@ -93,7 +95,8 @@ public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T
     {
         if (!BrokerWallet.CryptoCurrency.Crypto.ToString()
                 .Equals(CryptoCurrency.Crypto.ToString(), StringComparison.InvariantCultureIgnoreCase))
-            throw new BussinesExceptions(" GlobalWallet marketCurrency is no the same with MarketValue!");
+            throw new BussinesExceptions(
+                $"GlobalWallet marketCurrency [{_brokerWallet.MarketSymbol}] is no the same with MarketValue!");
     }
 
     public MarketProcessBuyOrSell? CreateBuyOrderEur(decimal defineProfitInPercently, decimal investMoneyEur,
@@ -102,9 +105,9 @@ public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T
         if (defineProfitInPercently < 0.6m)
             throw new BussinesExceptions("Profit must by more then 0.6%. This percent is for market feeds");
 
-        if (BrokerWallet.CryptoPositionTransaction < 100)
+        if (BrokerWallet.CryptoPositionTransaction <= 0)
             throw new BussinesExceptions(
-                $"Actual BrokerWallet.CryptoPositionTransaction is less 100. PLease fill the position in wallet. {FileName}");
+                $"Actual BrokerWallet [{_brokerWallet.MarketSymbol}].CryptoPositionTransaction is less or equal 0. PLease fill the position in wallet. {FileName}");
 
         // pokud neni definovana pozice tak , se bere aktualni pozice v marketu jinak se nastavi hodnota, kterou
         // definujeme v promene. Tahle podminka jen nastavuje pro vypocet hodnotu predanou
@@ -121,14 +124,16 @@ public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T
             positionPercentBuy = Math.Round(positionPercentBuy, _cryptoCurrency.CountDecimalNumberInPosition,
                 MidpointRounding.ToEven);
 
-            if (positionPercentBuy < 100)
-                throw new BussinesExceptions("Buy position is less then 100. Please check the parameters in file or market!");
+            if (positionPercentBuy <= 0)
+                throw new BussinesExceptions(
+                    $"Buy position is less or equals to 0.Currency [{_brokerWallet.MarketSymbol}] Please check the parameters in file or market!");
 
 
             var fees = CalculateFees(investMoneyEur);
             return new MarketProcessBuyOrSell(CryptoCurrency)
             {
-                CryptoValue = investMoneyEur / positionPercentBuy,
+                CryptoValue = Math.Round(investMoneyEur / positionPercentBuy, _cryptoCurrency.CountDecimalNumberCryptoCurency,
+                    MidpointRounding.ToEven),
                 EurValue = investMoneyEur,
                 ProcessType = MarketProcessType.Buy,
                 Price = positionPercentBuy,
@@ -155,7 +160,8 @@ public class BaseProcessMarketOrder<T> : MarketCrypto, IBaseProcessMarketOrder<T
                 var fees = CalculateFees(investMoneyEur);
                 return new MarketProcessBuyOrSell(CryptoCurrency)
                 {
-                    CryptoValue = investMoneyEur / CryptoPriceSell,
+                    CryptoValue = Math.Round(investMoneyEur / CryptoPriceSell, _cryptoCurrency.CountDecimalNumberCryptoCurency,
+                        MidpointRounding.ToEven),
                     EurValue = investMoneyEur,
                     ProcessType = MarketProcessType.Sell,
                     Price = positionPercentSell,

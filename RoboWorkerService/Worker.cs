@@ -1,14 +1,16 @@
+using Helper;
 using RoboWorkerService.Interface;
 using RoboWorkerService.Interfaces;
 using RoboWorkerService.Market.Processing;
+using RoboWorkerService.Telegram;
 
 namespace RoboWorkerService;
 
 public class Worker : BackgroundService
 {
     private readonly ILogger<Worker> _logger;
-    private static int _counter = 0;
-    private static IAppRobo _appRobo;
+    public static int Counter = 0;
+    private static IAppRobo _appRobo = null!;
 
     public Worker(ILogger<Worker> logger)
     {
@@ -19,8 +21,11 @@ public class Worker : BackgroundService
     {
         List<Type> typeCryptoOnMarket = new List<Type>()
         {
-            typeof(ICryptoBTC)
-            /*, typeof(ICryptoETH) */
+            typeof(ICryptoBTC),
+            typeof(ICryptoETH),
+            typeof(ICryptoDOGE),
+            typeof(ICryptoALGO),
+            typeof(ICryptoALCX)
         };
 
         List<IMarketCoreBroker> cryptoProcessing = new List<IMarketCoreBroker>();
@@ -33,30 +38,35 @@ public class Worker : BackgroundService
             cryptoProcessing.Add(marketCoreCrypto);
         }
 
-        _logger.LogInformation("-*CONNECT TO MARKET*-");
-        cryptoProcessing.ForEach(async x => await x.ConnectToMarketAsync());
+        var botTelegram = HostApp.Host.Services.GetService<ITelegram>() ??
+                          throw new NullReferenceException("Tegram service is null");
+        botTelegram.TelegramSays += TelegramEvenHandler;
+
+        await botTelegram.SendOkTextAsync("-*CONNECT TO MARKET*-");
+        await cryptoProcessing.ForEachAsync(x => x.ConnectToMarketAsync());
 
         _appRobo = HostApp.Host.Services.GetService<IAppRobo>() ??
                    throw new NullReferenceException("IAppRobo services is not registered!");
 
-        _logger.LogInformation("-*START ROBO STRATEGY*-");
-        var delay = 3000;
+        await botTelegram.SendOkTextAsync("-*START ROBO STRATEGY*-");
+
         while (!stoppingToken.IsCancellationRequested)
             try
             {
-                _counter++;
+                Counter++;
                 foreach (var marketCoreBroker in cryptoProcessing)
                 {
                     await marketCoreBroker.RunAsync();
                     await Task.Delay(_appRobo.Config.WaitingBetweenStrategyInMiliSeconds, stoppingToken);
                 }
 
-                if (_counter == Int32.MaxValue) _counter = 0;
-                if (_counter % 10 == 0) await _appRobo.RoboConfig.SaveDataAsync(stoppingToken);
+                //     await botTelegram.SendOkTextAsync($"Divam se po: {_counter}");
+                if (Counter == Int32.MaxValue) Counter = 0;
+                if (Counter % 10 == 0) await _appRobo.RoboConfig.SaveDataAsync(stoppingToken);
             }
             catch (Exception e)
             {
-                _logger.LogError(e, "Worker running at: {time}", DateTimeOffset.Now);
+                await botTelegram.SendErrorTextAsync(e, "Error, core crash at: { DateTimeOffset.Now}");
                 throw;
             }
     }
@@ -64,5 +74,33 @@ public class Worker : BackgroundService
     public override Task StopAsync(CancellationToken cancellationToken)
     {
         return base.StopAsync(cancellationToken);
+    }
+
+    public string TelegramEvenHandler(string word)
+    {
+        word = word.ToUpper();
+        switch (word)
+        {
+            case "/ITERACE":
+                return $@"Aktualni smycka: {Counter} ";
+            case "/BTCEUR":
+                var wallet = _appRobo.GetService<IWallet<ICryptoBTC>>();
+                var walletDump = "Wallet: " + Environment.NewLine;
+                if (wallet is not null)
+                {
+                    foreach (var brokerWallet in wallet.CryptoBrokerWallet)
+                    {
+                        var dumpWallet = brokerWallet.Value.Dump();
+                        walletDump += dumpWallet + Environment.NewLine;
+                    }
+
+                    return walletDump;
+                }
+
+                break;
+        }
+
+        return "Nerozeznal jsem prikaz :( ." + Environment.NewLine +
+               " Zkus: /Iterace /BTCEUR";
     }
 }

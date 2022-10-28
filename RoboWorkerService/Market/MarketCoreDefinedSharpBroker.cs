@@ -44,7 +44,7 @@ public class MarketCoreDefinedSharpBroker<W> : MarketCore<W>, IMarketCoreSharpBr
     {
         _pm.Init();
         var brokerWallet = _pm.GlobalWallet.GetWallet(BrokerWalletName); // aktualni penezenka pro tento process  . 
-        if (brokerWallet == null)
+        if (brokerWallet is null)
         {
             _pm.GlobalWallet.SetWallet(BrokerWalletName, BrokerWallet = new Wallet(_pm.GlobalWallet.CryptoCurrency));
             SetBrokerWallet(BrokerWallet);
@@ -61,7 +61,7 @@ public class MarketCoreDefinedSharpBroker<W> : MarketCore<W>, IMarketCoreSharpBr
         await _cmr.InitRoboAsync((W)_pm.GlobalWallet.CryptoCurrency, _appRobo,
             _logger); // TODO OT: zmena na Market symbol (zjistit)
         var firstTicker = await _cmr.GetTickerAsync();
-        var buyOrSellOrders = _pm.InicializationFirstSharpStrategy(firstTicker, brokerWallet, _extraDataService);
+        var buyOrSellOrders = _pm.InicializationFirstSharpStrategy(firstTicker, brokerWallet!, _extraDataService);
 
         await BuyOrSell(buyOrSellOrders);
         //Inicializuj data z penezenky pri spusteni (nahazej data do marketu dle nejake definice mrizky)
@@ -98,7 +98,8 @@ public class MarketCoreDefinedSharpBroker<W> : MarketCore<W>, IMarketCoreSharpBr
         foreach (var localOpenOrder in _extraDataService.GetOpenOrderTransaction().ToList())
         {
             if (openOrders.Any(x => x.OrderId == localOpenOrder.OrderResult.OrderId)) continue;
-            _logger.LogInformation("Order: {OrderId}  is not found in open order section at online Market.", localOpenOrder.OrderResult.OrderId);
+            _logger.LogInformation("Order: {OrderId}  is not found in open order section at online Market.",
+                localOpenOrder.OrderResult.OrderId);
             _extraDataService.RemoveTransaction(localOpenOrder);
         }
     }
@@ -118,8 +119,9 @@ public class MarketCoreDefinedSharpBroker<W> : MarketCore<W>, IMarketCoreSharpBr
                 var orderRequest = _cmr.CreateExchangeOrderRequest(buyOrSell);
                 var orderResult = await _cmr.PlaceOrderAsync(orderRequest);
                 _logger.LogDebug("{Type} - Actual transaction {@OrderResult}", nameof(SharpProcessingMarket<W>), orderResult);
-               
-                var transaction = _transactionDataDriver.Add(orderRequest, orderResult, _pm.GlobalWallet, buyOrSell, BrokerWalletName);
+
+                var transaction =
+                    _transactionDataDriver.Add(orderRequest, orderResult, _pm.GlobalWallet, buyOrSell, BrokerWalletName);
                 _extraDataService.AddTransaction(transaction);
                 Console.WriteLine();
 
@@ -127,7 +129,8 @@ public class MarketCoreDefinedSharpBroker<W> : MarketCore<W>, IMarketCoreSharpBr
             }
         }
         finally
-        { // uloz do Csv souboru
+        {
+            // uloz do Csv souboru
             await _extraDataService.SaveDataAsync();
             await _transactionDataDriver.SaveAsync();
         }

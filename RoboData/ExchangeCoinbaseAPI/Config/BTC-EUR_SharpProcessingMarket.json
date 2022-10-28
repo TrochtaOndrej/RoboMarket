@@ -1,6 +1,6 @@
 {
   "note": "Pri spusteni se rozpocitavaji ceny do marketu. Ceny jsou uvedeny v mene Crypta a to v EUR!",
-  "actual_order_number": 121,
+  "actual_order_number": 150,
   "process_data_buy": {
     "price_in_eur": 1.6666666666666666666666666622,
     "market_process_type": 1,
@@ -133,321 +133,6 @@
         },
         "market_symbol": "BTC-EUR"
       }
-    },
-    {
-      "order_request": {
-        "market_symbol": "BTC-EUR",
-        "amount": 0.0001979253465178004160390784,
-        "price": 20209.64,
-        "stop_price": 0.0,
-        "is_buy": true,
-        "is_margin": false,
-        "should_round_amount": true,
-        "order_type": 0,
-        "extra_parameters": {
-          "RoboNumberOrder": 86
-        }
-      },
-      "order_result": {
-        "order_id": "4efc63d8-584b-43b5-b354-5e6eba4f1152",
-        "result": 4,
-        "amount": 0.0001979,
-        "amount_filled": 0.0,
-        "is_amount_filled_reversed": false,
-        "price": 20209.64,
-        "order_date": "2022-10-27T00:13:46.268113Z",
-        "http_header_date": "2022-10-27T00:13:46Z",
-        "completed_date": "0001-01-01T00:00:00",
-        "market_symbol": "BTC-EUR",
-        "is_buy": true,
-        "fees": 0.0,
-        "fees_currency": "BTC"
-      },
-      "wallet": {
-        "crypto_broker_wallet": {
-          "MarketCoreDefinedSharpBroker": {
-            "crypto_broker_wallet": {},
-            "crypto_account_value": 0.00254194,
-            "eur_account_value": 50.0,
-            "crypto_position_transaction": 19670.0,
-            "market_symbol": "BTC-EUR"
-          }
-        },
-        "crypto_account_value": 0.0,
-        "eur_account_value": 0.0,
-        "crypto_position_transaction": 0.0,
-        "market_symbol": "BTC-EUR"
-      },
-      "buy_or_sell": {
-        "process_type": 1,
-        "crypto_value": 0.0001979253465178004160390784,
-        "eur_value": 4.0,
-        "price": 20209.64,
-        "fees": 0.024,
-        "is_post_only": true,
-        "profit_percently": 2.0,
-        "profit_in_eur": 0.056,
-        "internal_data": {
-          "strategy": "SharpProcessingMarket",
-          "starting_point_position_to_buy_or_sell": 20622.08,
-          "internal_number": 0,
-          "order_from_internal_number": 0
-        },
-        "market_symbol": "BTC-EUR"
-      },
-      "strategy_name": "MarketCoreDefinedSharpBroker"
-    },
-    {
-      "order_request": {
-        "market_symbol": "BTC-EUR",
-        "amount": 0.0001981274970256109509030156,
-        "price": 20189.02,
-        "stop_price": 0.0,
-        "is_buy": true,
-        "is_margin": false,
-        "should_round_amount": true,
-        "order_type": 0,
-        "extra_parameters": {
-          "RoboNumberOrder": 87
-        }
-      },
-      "order_result": {
-        "order_id": "f26e4753-55a6-44dd-9a19-9425f032eeac",
-        "result": 4,
-        "amount": 0.0001981,
-        "amount_filled": 0.0,
-        "is_amount_filled_reversed": false,
-        "price": 20189.02,
-        "order_date": "2022-10-27T00:13:50.694747Z",
-        "http_header_date": "2022-10-27T00:13:50Z",
-        "completed_date": "0001-01-01T00:00:00",
-        "market_symbol": "BTC-EUR",
-        "is_buy": true,
-        "fees": 0.0,
-        "fees_currency": "BTC"
-      },
-      "wallet": {
-        "crypto_broker_wallet": {
-          "MarketCoreDefinedSharpBroker": {
-            "crypto_broker_wallet": {},
-            "crypto_account_value": 0.00254194,
-            "eur_account_value": 50.0,
-            "crypto_position_transaction": 19670.0,
-            "market_symbol": "BTC-EUR"
-          }
-        },
-        "crypto_account_value": 0.0,
-        "eur_account_value": 0.0,
-        "crypto_position_transaction": 0.0,
-        "market_symbol": "BTC-EUR"
-      },
-      "buy_or_sell": {
-        "process_type": 1,
-        "crypto_value": 0.0001981274970256109509030156,
-        "eur_value": 4.0,
-        "price": 20189.02,
-        "fees": 0.024,
-        "is_post_only": true,
-        "profit_percently": 2.1,
-        "profit_in_eur": 0.060,
-        "internal_data": {
-          "strategy": "SharpProcessingMarket",
-          "starting_point_position_to_buy_or_sell": 20622.08,
-          "internal_number": 1,
-          "order_from_internal_number": 0
-        },
-        "market_symbol": "BTC-EUR"
-      },
-      "strategy_name": "MarketCoreDefinedSharpBroker"
-    },
-    {
-      "order_request": {
-        "market_symbol": "BTC-EUR",
-        "amount": 0.0001983301592244100793370219,
-        "price": 20168.39,
-        "stop_price": 0.0,
-        "is_buy": true,
-        "is_margin": false,
-        "should_round_amount": true,
-        "order_type": 0,
-        "extra_parameters": {
-          "RoboNumberOrder": 88
-        }
-      },
-      "order_result": {
-        "order_id": "86be492e-7011-48be-bc62-ba40b0ac99aa",
-        "result": 4,
-        "amount": 0.0001983,
-        "amount_filled": 0.0,
-        "is_amount_filled_reversed": false,
-        "price": 20168.39,
-        "order_date": "2022-10-27T00:13:55.818355Z",
-        "http_header_date": "2022-10-27T00:13:55Z",
-        "completed_date": "0001-01-01T00:00:00",
-        "market_symbol": "BTC-EUR",
-        "is_buy": true,
-        "fees": 0.0,
-        "fees_currency": "BTC"
-      },
-      "wallet": {
-        "crypto_broker_wallet": {
-          "MarketCoreDefinedSharpBroker": {
-            "crypto_broker_wallet": {},
-            "crypto_account_value": 0.00254194,
-            "eur_account_value": 50.0,
-            "crypto_position_transaction": 19670.0,
-            "market_symbol": "BTC-EUR"
-          }
-        },
-        "crypto_account_value": 0.0,
-        "eur_account_value": 0.0,
-        "crypto_position_transaction": 0.0,
-        "market_symbol": "BTC-EUR"
-      },
-      "buy_or_sell": {
-        "process_type": 1,
-        "crypto_value": 0.0001983301592244100793370219,
-        "eur_value": 4.0,
-        "price": 20168.39,
-        "fees": 0.024,
-        "is_post_only": true,
-        "profit_percently": 2.2,
-        "profit_in_eur": 0.064,
-        "internal_data": {
-          "strategy": "SharpProcessingMarket",
-          "starting_point_position_to_buy_or_sell": 20622.08,
-          "internal_number": 2,
-          "order_from_internal_number": 0
-        },
-        "market_symbol": "BTC-EUR"
-      },
-      "strategy_name": "MarketCoreDefinedSharpBroker"
-    },
-    {
-      "order_request": {
-        "market_symbol": "BTC-EUR",
-        "amount": 0.000198533137910547916717334,
-        "price": 20147.77,
-        "stop_price": 0.0,
-        "is_buy": true,
-        "is_margin": false,
-        "should_round_amount": true,
-        "order_type": 0,
-        "extra_parameters": {
-          "RoboNumberOrder": 89
-        }
-      },
-      "order_result": {
-        "order_id": "83cee5cb-daef-4995-8854-36c821f3892b",
-        "result": 4,
-        "amount": 0.0001985,
-        "amount_filled": 0.0,
-        "is_amount_filled_reversed": false,
-        "price": 20147.77,
-        "order_date": "2022-10-27T00:14:00.00492Z",
-        "http_header_date": "2022-10-27T00:14:00Z",
-        "completed_date": "0001-01-01T00:00:00",
-        "market_symbol": "BTC-EUR",
-        "is_buy": true,
-        "fees": 0.0,
-        "fees_currency": "BTC"
-      },
-      "wallet": {
-        "crypto_broker_wallet": {
-          "MarketCoreDefinedSharpBroker": {
-            "crypto_broker_wallet": {},
-            "crypto_account_value": 0.00254194,
-            "eur_account_value": 50.0,
-            "crypto_position_transaction": 19670.0,
-            "market_symbol": "BTC-EUR"
-          }
-        },
-        "crypto_account_value": 0.0,
-        "eur_account_value": 0.0,
-        "crypto_position_transaction": 0.0,
-        "market_symbol": "BTC-EUR"
-      },
-      "buy_or_sell": {
-        "process_type": 1,
-        "crypto_value": 0.000198533137910547916717334,
-        "eur_value": 4.0,
-        "price": 20147.77,
-        "fees": 0.024,
-        "is_post_only": true,
-        "profit_percently": 2.3,
-        "profit_in_eur": 0.068,
-        "internal_data": {
-          "strategy": "SharpProcessingMarket",
-          "starting_point_position_to_buy_or_sell": 20622.08,
-          "internal_number": 3,
-          "order_from_internal_number": 0
-        },
-        "market_symbol": "BTC-EUR"
-      },
-      "strategy_name": "MarketCoreDefinedSharpBroker"
-    },
-    {
-      "order_request": {
-        "market_symbol": "BTC-EUR",
-        "amount": 0.0001987365324946651662058463,
-        "price": 20127.15,
-        "stop_price": 0.0,
-        "is_buy": true,
-        "is_margin": false,
-        "should_round_amount": true,
-        "order_type": 0,
-        "extra_parameters": {
-          "RoboNumberOrder": 90
-        }
-      },
-      "order_result": {
-        "order_id": "0ef77aed-ca1d-4885-9fe6-09aa98c992f8",
-        "result": 4,
-        "amount": 0.0001987,
-        "amount_filled": 0.0,
-        "is_amount_filled_reversed": false,
-        "price": 20127.15,
-        "order_date": "2022-10-27T00:14:01.833962Z",
-        "http_header_date": "2022-10-27T00:14:01Z",
-        "completed_date": "0001-01-01T00:00:00",
-        "market_symbol": "BTC-EUR",
-        "is_buy": true,
-        "fees": 0.0,
-        "fees_currency": "BTC"
-      },
-      "wallet": {
-        "crypto_broker_wallet": {
-          "MarketCoreDefinedSharpBroker": {
-            "crypto_broker_wallet": {},
-            "crypto_account_value": 0.00254194,
-            "eur_account_value": 50.0,
-            "crypto_position_transaction": 19670.0,
-            "market_symbol": "BTC-EUR"
-          }
-        },
-        "crypto_account_value": 0.0,
-        "eur_account_value": 0.0,
-        "crypto_position_transaction": 0.0,
-        "market_symbol": "BTC-EUR"
-      },
-      "buy_or_sell": {
-        "process_type": 1,
-        "crypto_value": 0.0001987365324946651662058463,
-        "eur_value": 4.0,
-        "price": 20127.15,
-        "fees": 0.024,
-        "is_post_only": true,
-        "profit_percently": 2.4,
-        "profit_in_eur": 0.072,
-        "internal_data": {
-          "strategy": "SharpProcessingMarket",
-          "starting_point_position_to_buy_or_sell": 20622.08,
-          "internal_number": 4,
-          "order_from_internal_number": 0
-        },
-        "market_symbol": "BTC-EUR"
-      },
-      "strategy_name": "MarketCoreDefinedSharpBroker"
     },
     {
       "order_request": {
@@ -5429,1455 +5114,6 @@
     {
       "order_request": {
         "market_symbol": "BTC-EUR",
-        "amount": 0.0000814612718450619643310417,
-        "price": 20459.62,
-        "stop_price": 0.0,
-        "is_buy": true,
-        "is_margin": false,
-        "should_round_amount": true,
-        "order_type": 0,
-        "extra_parameters": {
-          "RoboNumberOrder": 34
-        }
-      },
-      "order_result": {
-        "order_id": "e382dd39-5508-4eef-9a24-05118c057fa7",
-        "result": 4,
-        "amount": 0.0000815,
-        "amount_filled": 0.0,
-        "is_amount_filled_reversed": false,
-        "price": 20459.62,
-        "order_date": "2022-10-27T14:25:01.646404Z",
-        "http_header_date": "2022-10-27T14:25:01Z",
-        "completed_date": "0001-01-01T00:00:00",
-        "market_symbol": "BTC-EUR",
-        "is_buy": true,
-        "fees": 0.0,
-        "fees_currency": "BTC"
-      },
-      "wallet": {
-        "crypto_broker_wallet": {
-          "MarketCoreDefinedSharpBroker": {
-            "crypto_broker_wallet": {},
-            "crypto_account_value": 0.00254194,
-            "eur_account_value": 50.0,
-            "crypto_position_transaction": 19670.0,
-            "market_symbol": "BTC-EUR"
-          }
-        },
-        "crypto_account_value": 0.0,
-        "eur_account_value": 0.0,
-        "crypto_position_transaction": 0.0,
-        "market_symbol": "BTC-EUR"
-      },
-      "buy_or_sell": {
-        "process_type": 1,
-        "crypto_value": 0.0000814612718450619643310417,
-        "eur_value": 1.6666666666666666666666666667,
-        "price": 20459.62,
-        "fees": 0.0100000000000000000000000000,
-        "is_post_only": true,
-        "profit_percently": 0.7,
-        "profit_in_eur": 0.0016666666666666666666666667,
-        "internal_data": {
-          "strategy": "SharpProcessingMarket",
-          "starting_point_position_to_buy_or_sell": 20603.85,
-          "internal_number": 0,
-          "order_from_internal_number": 0
-        },
-        "market_symbol": "BTC-EUR"
-      },
-      "strategy_name": "MarketCoreDefinedSharpBroker"
-    },
-    {
-      "order_request": {
-        "market_symbol": "BTC-EUR",
-        "amount": 0.0000815433747149651336838394,
-        "price": 20439.02,
-        "stop_price": 0.0,
-        "is_buy": true,
-        "is_margin": false,
-        "should_round_amount": true,
-        "order_type": 0,
-        "extra_parameters": {
-          "RoboNumberOrder": 35
-        }
-      },
-      "order_result": {
-        "order_id": "edb792cc-8f70-4d09-8311-e94f069822d8",
-        "result": 4,
-        "amount": 0.0000815,
-        "amount_filled": 0.0,
-        "is_amount_filled_reversed": false,
-        "price": 20439.02,
-        "order_date": "2022-10-27T14:25:01.99735Z",
-        "http_header_date": "2022-10-27T14:25:02Z",
-        "completed_date": "0001-01-01T00:00:00",
-        "market_symbol": "BTC-EUR",
-        "is_buy": true,
-        "fees": 0.0,
-        "fees_currency": "BTC"
-      },
-      "wallet": {
-        "crypto_broker_wallet": {
-          "MarketCoreDefinedSharpBroker": {
-            "crypto_broker_wallet": {},
-            "crypto_account_value": 0.00254194,
-            "eur_account_value": 50.0,
-            "crypto_position_transaction": 19670.0,
-            "market_symbol": "BTC-EUR"
-          }
-        },
-        "crypto_account_value": 0.0,
-        "eur_account_value": 0.0,
-        "crypto_position_transaction": 0.0,
-        "market_symbol": "BTC-EUR"
-      },
-      "buy_or_sell": {
-        "process_type": 1,
-        "crypto_value": 0.0000815433747149651336838394,
-        "eur_value": 1.6666666666666666666666666667,
-        "price": 20439.02,
-        "fees": 0.0100000000000000000000000000,
-        "is_post_only": true,
-        "profit_percently": 0.8,
-        "profit_in_eur": 0.0033333333333333333333333334,
-        "internal_data": {
-          "strategy": "SharpProcessingMarket",
-          "starting_point_position_to_buy_or_sell": 20603.85,
-          "internal_number": 1,
-          "order_from_internal_number": 0
-        },
-        "market_symbol": "BTC-EUR"
-      },
-      "strategy_name": "MarketCoreDefinedSharpBroker"
-    },
-    {
-      "order_request": {
-        "market_symbol": "BTC-EUR",
-        "amount": 0.0000816256432508816385727528,
-        "price": 20418.42,
-        "stop_price": 0.0,
-        "is_buy": true,
-        "is_margin": false,
-        "should_round_amount": true,
-        "order_type": 0,
-        "extra_parameters": {
-          "RoboNumberOrder": 36
-        }
-      },
-      "order_result": {
-        "order_id": "d180935b-a519-4c64-9257-558d7979f300",
-        "result": 4,
-        "amount": 0.0000816,
-        "amount_filled": 0.0,
-        "is_amount_filled_reversed": false,
-        "price": 20418.42,
-        "order_date": "2022-10-27T14:25:02.207687Z",
-        "http_header_date": "2022-10-27T14:25:02Z",
-        "completed_date": "0001-01-01T00:00:00",
-        "market_symbol": "BTC-EUR",
-        "is_buy": true,
-        "fees": 0.0,
-        "fees_currency": "BTC"
-      },
-      "wallet": {
-        "crypto_broker_wallet": {
-          "MarketCoreDefinedSharpBroker": {
-            "crypto_broker_wallet": {},
-            "crypto_account_value": 0.00254194,
-            "eur_account_value": 50.0,
-            "crypto_position_transaction": 19670.0,
-            "market_symbol": "BTC-EUR"
-          }
-        },
-        "crypto_account_value": 0.0,
-        "eur_account_value": 0.0,
-        "crypto_position_transaction": 0.0,
-        "market_symbol": "BTC-EUR"
-      },
-      "buy_or_sell": {
-        "process_type": 1,
-        "crypto_value": 0.0000816256432508816385727528,
-        "eur_value": 1.6666666666666666666666666667,
-        "price": 20418.42,
-        "fees": 0.0100000000000000000000000000,
-        "is_post_only": true,
-        "profit_percently": 0.9,
-        "profit_in_eur": 0.0050000000000000000000000000,
-        "internal_data": {
-          "strategy": "SharpProcessingMarket",
-          "starting_point_position_to_buy_or_sell": 20603.85,
-          "internal_number": 2,
-          "order_from_internal_number": 0
-        },
-        "market_symbol": "BTC-EUR"
-      },
-      "strategy_name": "MarketCoreDefinedSharpBroker"
-    },
-    {
-      "order_request": {
-        "market_symbol": "BTC-EUR",
-        "amount": 0.0000817081180120153421699029,
-        "price": 20397.81,
-        "stop_price": 0.0,
-        "is_buy": true,
-        "is_margin": false,
-        "should_round_amount": true,
-        "order_type": 0,
-        "extra_parameters": {
-          "RoboNumberOrder": 37
-        }
-      },
-      "order_result": {
-        "order_id": "27fc1e15-9f05-424b-86ff-660b05ba97bd",
-        "result": 4,
-        "amount": 0.0000817,
-        "amount_filled": 0.0,
-        "is_amount_filled_reversed": false,
-        "price": 20397.81,
-        "order_date": "2022-10-27T14:25:02.40162Z",
-        "http_header_date": "2022-10-27T14:25:02Z",
-        "completed_date": "0001-01-01T00:00:00",
-        "market_symbol": "BTC-EUR",
-        "is_buy": true,
-        "fees": 0.0,
-        "fees_currency": "BTC"
-      },
-      "wallet": {
-        "crypto_broker_wallet": {
-          "MarketCoreDefinedSharpBroker": {
-            "crypto_broker_wallet": {},
-            "crypto_account_value": 0.00254194,
-            "eur_account_value": 50.0,
-            "crypto_position_transaction": 19670.0,
-            "market_symbol": "BTC-EUR"
-          }
-        },
-        "crypto_account_value": 0.0,
-        "eur_account_value": 0.0,
-        "crypto_position_transaction": 0.0,
-        "market_symbol": "BTC-EUR"
-      },
-      "buy_or_sell": {
-        "process_type": 1,
-        "crypto_value": 0.0000817081180120153421699029,
-        "eur_value": 1.6666666666666666666666666667,
-        "price": 20397.81,
-        "fees": 0.0100000000000000000000000000,
-        "is_post_only": true,
-        "profit_percently": 1.0,
-        "profit_in_eur": 0.0066666666666666666666666667,
-        "internal_data": {
-          "strategy": "SharpProcessingMarket",
-          "starting_point_position_to_buy_or_sell": 20603.85,
-          "internal_number": 3,
-          "order_from_internal_number": 0
-        },
-        "market_symbol": "BTC-EUR"
-      },
-      "strategy_name": "MarketCoreDefinedSharpBroker"
-    },
-    {
-      "order_request": {
-        "market_symbol": "BTC-EUR",
-        "amount": 0.0000817907194687921784516461,
-        "price": 20377.21,
-        "stop_price": 0.0,
-        "is_buy": true,
-        "is_margin": false,
-        "should_round_amount": true,
-        "order_type": 0,
-        "extra_parameters": {
-          "RoboNumberOrder": 38
-        }
-      },
-      "order_result": {
-        "order_id": "6484b46b-6e0b-47fa-848a-06ac0840d4e0",
-        "result": 4,
-        "amount": 0.0000818,
-        "amount_filled": 0.0,
-        "is_amount_filled_reversed": false,
-        "price": 20377.21,
-        "order_date": "2022-10-27T14:25:02.597139Z",
-        "http_header_date": "2022-10-27T14:25:02Z",
-        "completed_date": "0001-01-01T00:00:00",
-        "market_symbol": "BTC-EUR",
-        "is_buy": true,
-        "fees": 0.0,
-        "fees_currency": "BTC"
-      },
-      "wallet": {
-        "crypto_broker_wallet": {
-          "MarketCoreDefinedSharpBroker": {
-            "crypto_broker_wallet": {},
-            "crypto_account_value": 0.00254194,
-            "eur_account_value": 50.0,
-            "crypto_position_transaction": 19670.0,
-            "market_symbol": "BTC-EUR"
-          }
-        },
-        "crypto_account_value": 0.0,
-        "eur_account_value": 0.0,
-        "crypto_position_transaction": 0.0,
-        "market_symbol": "BTC-EUR"
-      },
-      "buy_or_sell": {
-        "process_type": 1,
-        "crypto_value": 0.0000817907194687921784516461,
-        "eur_value": 1.6666666666666666666666666667,
-        "price": 20377.21,
-        "fees": 0.0100000000000000000000000000,
-        "is_post_only": true,
-        "profit_percently": 1.1,
-        "profit_in_eur": 0.0083333333333333333333333334,
-        "internal_data": {
-          "strategy": "SharpProcessingMarket",
-          "starting_point_position_to_buy_or_sell": 20603.85,
-          "internal_number": 4,
-          "order_from_internal_number": 0
-        },
-        "market_symbol": "BTC-EUR"
-      },
-      "strategy_name": "MarketCoreDefinedSharpBroker"
-    },
-    {
-      "order_request": {
-        "market_symbol": "BTC-EUR",
-        "amount": 0.0000818735283233283881722226,
-        "price": 20356.60,
-        "stop_price": 0.0,
-        "is_buy": true,
-        "is_margin": false,
-        "should_round_amount": true,
-        "order_type": 0,
-        "extra_parameters": {
-          "RoboNumberOrder": 39
-        }
-      },
-      "order_result": {
-        "order_id": "6d0e22c6-36a7-46d1-acea-d2ba3cb7eca3",
-        "result": 4,
-        "amount": 0.0000819,
-        "amount_filled": 0.0,
-        "is_amount_filled_reversed": false,
-        "price": 20356.6,
-        "order_date": "2022-10-27T14:25:02.777386Z",
-        "http_header_date": "2022-10-27T14:25:02Z",
-        "completed_date": "0001-01-01T00:00:00",
-        "market_symbol": "BTC-EUR",
-        "is_buy": true,
-        "fees": 0.0,
-        "fees_currency": "BTC"
-      },
-      "wallet": {
-        "crypto_broker_wallet": {
-          "MarketCoreDefinedSharpBroker": {
-            "crypto_broker_wallet": {},
-            "crypto_account_value": 0.00254194,
-            "eur_account_value": 50.0,
-            "crypto_position_transaction": 19670.0,
-            "market_symbol": "BTC-EUR"
-          }
-        },
-        "crypto_account_value": 0.0,
-        "eur_account_value": 0.0,
-        "crypto_position_transaction": 0.0,
-        "market_symbol": "BTC-EUR"
-      },
-      "buy_or_sell": {
-        "process_type": 1,
-        "crypto_value": 0.0000818735283233283881722226,
-        "eur_value": 1.6666666666666666666666666667,
-        "price": 20356.60,
-        "fees": 0.0100000000000000000000000000,
-        "is_post_only": true,
-        "profit_percently": 1.2,
-        "profit_in_eur": 0.0100000000000000000000000000,
-        "internal_data": {
-          "strategy": "SharpProcessingMarket",
-          "starting_point_position_to_buy_or_sell": 20603.85,
-          "internal_number": 5,
-          "order_from_internal_number": 0
-        },
-        "market_symbol": "BTC-EUR"
-      },
-      "strategy_name": "MarketCoreDefinedSharpBroker"
-    },
-    {
-      "order_request": {
-        "market_symbol": "BTC-EUR",
-        "amount": 0.0000819564647259375819564647,
-        "price": 20336.00,
-        "stop_price": 0.0,
-        "is_buy": true,
-        "is_margin": false,
-        "should_round_amount": true,
-        "order_type": 0,
-        "extra_parameters": {
-          "RoboNumberOrder": 40
-        }
-      },
-      "order_result": {
-        "order_id": "411dc286-e4ca-4c24-9f89-74fb9857d582",
-        "result": 4,
-        "amount": 0.000082,
-        "amount_filled": 0.0,
-        "is_amount_filled_reversed": false,
-        "price": 20336.0,
-        "order_date": "2022-10-27T14:25:02.998409Z",
-        "http_header_date": "2022-10-27T14:25:03Z",
-        "completed_date": "0001-01-01T00:00:00",
-        "market_symbol": "BTC-EUR",
-        "is_buy": true,
-        "fees": 0.0,
-        "fees_currency": "BTC"
-      },
-      "wallet": {
-        "crypto_broker_wallet": {
-          "MarketCoreDefinedSharpBroker": {
-            "crypto_broker_wallet": {},
-            "crypto_account_value": 0.00254194,
-            "eur_account_value": 50.0,
-            "crypto_position_transaction": 19670.0,
-            "market_symbol": "BTC-EUR"
-          }
-        },
-        "crypto_account_value": 0.0,
-        "eur_account_value": 0.0,
-        "crypto_position_transaction": 0.0,
-        "market_symbol": "BTC-EUR"
-      },
-      "buy_or_sell": {
-        "process_type": 1,
-        "crypto_value": 0.0000819564647259375819564647,
-        "eur_value": 1.6666666666666666666666666667,
-        "price": 20336.00,
-        "fees": 0.0100000000000000000000000000,
-        "is_post_only": true,
-        "profit_percently": 1.3,
-        "profit_in_eur": 0.0116666666666666666666666667,
-        "internal_data": {
-          "strategy": "SharpProcessingMarket",
-          "starting_point_position_to_buy_or_sell": 20603.85,
-          "internal_number": 6,
-          "order_from_internal_number": 0
-        },
-        "market_symbol": "BTC-EUR"
-      },
-      "strategy_name": "MarketCoreDefinedSharpBroker"
-    },
-    {
-      "order_request": {
-        "market_symbol": "BTC-EUR",
-        "amount": 0.0000820395693250768710764576,
-        "price": 20315.40,
-        "stop_price": 0.0,
-        "is_buy": true,
-        "is_margin": false,
-        "should_round_amount": true,
-        "order_type": 0,
-        "extra_parameters": {
-          "RoboNumberOrder": 41
-        }
-      },
-      "order_result": {
-        "order_id": "ce7e73f3-a126-4c29-bd18-54a91985dcdb",
-        "result": 4,
-        "amount": 0.000082,
-        "amount_filled": 0.0,
-        "is_amount_filled_reversed": false,
-        "price": 20315.4,
-        "order_date": "2022-10-27T14:25:03.215835Z",
-        "http_header_date": "2022-10-27T14:25:03Z",
-        "completed_date": "0001-01-01T00:00:00",
-        "market_symbol": "BTC-EUR",
-        "is_buy": true,
-        "fees": 0.0,
-        "fees_currency": "BTC"
-      },
-      "wallet": {
-        "crypto_broker_wallet": {
-          "MarketCoreDefinedSharpBroker": {
-            "crypto_broker_wallet": {},
-            "crypto_account_value": 0.00254194,
-            "eur_account_value": 50.0,
-            "crypto_position_transaction": 19670.0,
-            "market_symbol": "BTC-EUR"
-          }
-        },
-        "crypto_account_value": 0.0,
-        "eur_account_value": 0.0,
-        "crypto_position_transaction": 0.0,
-        "market_symbol": "BTC-EUR"
-      },
-      "buy_or_sell": {
-        "process_type": 1,
-        "crypto_value": 0.0000820395693250768710764576,
-        "eur_value": 1.6666666666666666666666666667,
-        "price": 20315.40,
-        "fees": 0.0100000000000000000000000000,
-        "is_post_only": true,
-        "profit_percently": 1.4,
-        "profit_in_eur": 0.0133333333333333333333333334,
-        "internal_data": {
-          "strategy": "SharpProcessingMarket",
-          "starting_point_position_to_buy_or_sell": 20603.85,
-          "internal_number": 7,
-          "order_from_internal_number": 0
-        },
-        "market_symbol": "BTC-EUR"
-      },
-      "strategy_name": "MarketCoreDefinedSharpBroker"
-    },
-    {
-      "order_request": {
-        "market_symbol": "BTC-EUR",
-        "amount": 0.00008212288309791166435655,
-        "price": 20294.79,
-        "stop_price": 0.0,
-        "is_buy": true,
-        "is_margin": false,
-        "should_round_amount": true,
-        "order_type": 0,
-        "extra_parameters": {
-          "RoboNumberOrder": 42
-        }
-      },
-      "order_result": {
-        "order_id": "f1ae20c7-e9d9-44b9-a644-d4067c52285d",
-        "result": 4,
-        "amount": 0.0000821,
-        "amount_filled": 0.0,
-        "is_amount_filled_reversed": false,
-        "price": 20294.79,
-        "order_date": "2022-10-27T14:25:03.409487Z",
-        "http_header_date": "2022-10-27T14:25:03Z",
-        "completed_date": "0001-01-01T00:00:00",
-        "market_symbol": "BTC-EUR",
-        "is_buy": true,
-        "fees": 0.0,
-        "fees_currency": "BTC"
-      },
-      "wallet": {
-        "crypto_broker_wallet": {
-          "MarketCoreDefinedSharpBroker": {
-            "crypto_broker_wallet": {},
-            "crypto_account_value": 0.00254194,
-            "eur_account_value": 50.0,
-            "crypto_position_transaction": 19670.0,
-            "market_symbol": "BTC-EUR"
-          }
-        },
-        "crypto_account_value": 0.0,
-        "eur_account_value": 0.0,
-        "crypto_position_transaction": 0.0,
-        "market_symbol": "BTC-EUR"
-      },
-      "buy_or_sell": {
-        "process_type": 1,
-        "crypto_value": 0.00008212288309791166435655,
-        "eur_value": 1.6666666666666666666666666667,
-        "price": 20294.79,
-        "fees": 0.0100000000000000000000000000,
-        "is_post_only": true,
-        "profit_percently": 1.5,
-        "profit_in_eur": 0.0150000000000000000000000000,
-        "internal_data": {
-          "strategy": "SharpProcessingMarket",
-          "starting_point_position_to_buy_or_sell": 20603.85,
-          "internal_number": 8,
-          "order_from_internal_number": 0
-        },
-        "market_symbol": "BTC-EUR"
-      },
-      "strategy_name": "MarketCoreDefinedSharpBroker"
-    },
-    {
-      "order_request": {
-        "market_symbol": "BTC-EUR",
-        "amount": 0.0000822063257109984007581396,
-        "price": 20274.19,
-        "stop_price": 0.0,
-        "is_buy": true,
-        "is_margin": false,
-        "should_round_amount": true,
-        "order_type": 0,
-        "extra_parameters": {
-          "RoboNumberOrder": 43
-        }
-      },
-      "order_result": {
-        "order_id": "d188838f-bc09-4ecf-b9b5-d865f89cbd04",
-        "result": 4,
-        "amount": 0.0000822,
-        "amount_filled": 0.0,
-        "is_amount_filled_reversed": false,
-        "price": 20274.19,
-        "order_date": "2022-10-27T14:25:03.612603Z",
-        "http_header_date": "2022-10-27T14:25:03Z",
-        "completed_date": "0001-01-01T00:00:00",
-        "market_symbol": "BTC-EUR",
-        "is_buy": true,
-        "fees": 0.0,
-        "fees_currency": "BTC"
-      },
-      "wallet": {
-        "crypto_broker_wallet": {
-          "MarketCoreDefinedSharpBroker": {
-            "crypto_broker_wallet": {},
-            "crypto_account_value": 0.00254194,
-            "eur_account_value": 50.0,
-            "crypto_position_transaction": 19670.0,
-            "market_symbol": "BTC-EUR"
-          }
-        },
-        "crypto_account_value": 0.0,
-        "eur_account_value": 0.0,
-        "crypto_position_transaction": 0.0,
-        "market_symbol": "BTC-EUR"
-      },
-      "buy_or_sell": {
-        "process_type": 1,
-        "crypto_value": 0.0000822063257109984007581396,
-        "eur_value": 1.6666666666666666666666666667,
-        "price": 20274.19,
-        "fees": 0.0100000000000000000000000000,
-        "is_post_only": true,
-        "profit_percently": 1.6,
-        "profit_in_eur": 0.0166666666666666666666666667,
-        "internal_data": {
-          "strategy": "SharpProcessingMarket",
-          "starting_point_position_to_buy_or_sell": 20603.85,
-          "internal_number": 9,
-          "order_from_internal_number": 0
-        },
-        "market_symbol": "BTC-EUR"
-      },
-      "strategy_name": "MarketCoreDefinedSharpBroker"
-    },
-    {
-      "order_request": {
-        "market_symbol": "BTC-EUR",
-        "amount": 0.0000822899786934787166844907,
-        "price": 20253.58,
-        "stop_price": 0.0,
-        "is_buy": true,
-        "is_margin": false,
-        "should_round_amount": true,
-        "order_type": 0,
-        "extra_parameters": {
-          "RoboNumberOrder": 44
-        }
-      },
-      "order_result": {
-        "order_id": "29682271-3788-4367-8989-33f33294dddc",
-        "result": 4,
-        "amount": 0.0000823,
-        "amount_filled": 0.0,
-        "is_amount_filled_reversed": false,
-        "price": 20253.58,
-        "order_date": "2022-10-27T14:25:03.831683Z",
-        "http_header_date": "2022-10-27T14:25:03Z",
-        "completed_date": "0001-01-01T00:00:00",
-        "market_symbol": "BTC-EUR",
-        "is_buy": true,
-        "fees": 0.0,
-        "fees_currency": "BTC"
-      },
-      "wallet": {
-        "crypto_broker_wallet": {
-          "MarketCoreDefinedSharpBroker": {
-            "crypto_broker_wallet": {},
-            "crypto_account_value": 0.00254194,
-            "eur_account_value": 50.0,
-            "crypto_position_transaction": 19670.0,
-            "market_symbol": "BTC-EUR"
-          }
-        },
-        "crypto_account_value": 0.0,
-        "eur_account_value": 0.0,
-        "crypto_position_transaction": 0.0,
-        "market_symbol": "BTC-EUR"
-      },
-      "buy_or_sell": {
-        "process_type": 1,
-        "crypto_value": 0.0000822899786934787166844907,
-        "eur_value": 1.6666666666666666666666666667,
-        "price": 20253.58,
-        "fees": 0.0100000000000000000000000000,
-        "is_post_only": true,
-        "profit_percently": 1.7,
-        "profit_in_eur": 0.0183333333333333333333333334,
-        "internal_data": {
-          "strategy": "SharpProcessingMarket",
-          "starting_point_position_to_buy_or_sell": 20603.85,
-          "internal_number": 10,
-          "order_from_internal_number": 0
-        },
-        "market_symbol": "BTC-EUR"
-      },
-      "strategy_name": "MarketCoreDefinedSharpBroker"
-    },
-    {
-      "order_request": {
-        "market_symbol": "BTC-EUR",
-        "amount": 0.0000823737613869369053232231,
-        "price": 20232.98,
-        "stop_price": 0.0,
-        "is_buy": true,
-        "is_margin": false,
-        "should_round_amount": true,
-        "order_type": 0,
-        "extra_parameters": {
-          "RoboNumberOrder": 45
-        }
-      },
-      "order_result": {
-        "order_id": "9072b506-18e9-4af2-92fb-880cf47c8df9",
-        "result": 4,
-        "amount": 0.0000824,
-        "amount_filled": 0.0,
-        "is_amount_filled_reversed": false,
-        "price": 20232.98,
-        "order_date": "2022-10-27T14:25:04.071689Z",
-        "http_header_date": "2022-10-27T14:25:04Z",
-        "completed_date": "0001-01-01T00:00:00",
-        "market_symbol": "BTC-EUR",
-        "is_buy": true,
-        "fees": 0.0,
-        "fees_currency": "BTC"
-      },
-      "wallet": {
-        "crypto_broker_wallet": {
-          "MarketCoreDefinedSharpBroker": {
-            "crypto_broker_wallet": {},
-            "crypto_account_value": 0.00254194,
-            "eur_account_value": 50.0,
-            "crypto_position_transaction": 19670.0,
-            "market_symbol": "BTC-EUR"
-          }
-        },
-        "crypto_account_value": 0.0,
-        "eur_account_value": 0.0,
-        "crypto_position_transaction": 0.0,
-        "market_symbol": "BTC-EUR"
-      },
-      "buy_or_sell": {
-        "process_type": 1,
-        "crypto_value": 0.0000823737613869369053232231,
-        "eur_value": 1.6666666666666666666666666667,
-        "price": 20232.98,
-        "fees": 0.0100000000000000000000000000,
-        "is_post_only": true,
-        "profit_percently": 1.8,
-        "profit_in_eur": 0.0200000000000000000000000001,
-        "internal_data": {
-          "strategy": "SharpProcessingMarket",
-          "starting_point_position_to_buy_or_sell": 20603.85,
-          "internal_number": 11,
-          "order_from_internal_number": 0
-        },
-        "market_symbol": "BTC-EUR"
-      },
-      "strategy_name": "MarketCoreDefinedSharpBroker"
-    },
-    {
-      "order_request": {
-        "market_symbol": "BTC-EUR",
-        "amount": 0.000082457714859243031580975,
-        "price": 20212.38,
-        "stop_price": 0.0,
-        "is_buy": true,
-        "is_margin": false,
-        "should_round_amount": true,
-        "order_type": 0,
-        "extra_parameters": {
-          "RoboNumberOrder": 46
-        }
-      },
-      "order_result": {
-        "order_id": "137fe5ae-6e0e-49e7-ac2b-e3435dc0cfb2",
-        "result": 4,
-        "amount": 0.0000825,
-        "amount_filled": 0.0,
-        "is_amount_filled_reversed": false,
-        "price": 20212.38,
-        "order_date": "2022-10-27T14:25:04.513451Z",
-        "http_header_date": "2022-10-27T14:25:04Z",
-        "completed_date": "0001-01-01T00:00:00",
-        "market_symbol": "BTC-EUR",
-        "is_buy": true,
-        "fees": 0.0,
-        "fees_currency": "BTC"
-      },
-      "wallet": {
-        "crypto_broker_wallet": {
-          "MarketCoreDefinedSharpBroker": {
-            "crypto_broker_wallet": {},
-            "crypto_account_value": 0.00254194,
-            "eur_account_value": 50.0,
-            "crypto_position_transaction": 19670.0,
-            "market_symbol": "BTC-EUR"
-          }
-        },
-        "crypto_account_value": 0.0,
-        "eur_account_value": 0.0,
-        "crypto_position_transaction": 0.0,
-        "market_symbol": "BTC-EUR"
-      },
-      "buy_or_sell": {
-        "process_type": 1,
-        "crypto_value": 0.000082457714859243031580975,
-        "eur_value": 1.6666666666666666666666666667,
-        "price": 20212.38,
-        "fees": 0.0100000000000000000000000000,
-        "is_post_only": true,
-        "profit_percently": 1.9,
-        "profit_in_eur": 0.0216666666666666666666666667,
-        "internal_data": {
-          "strategy": "SharpProcessingMarket",
-          "starting_point_position_to_buy_or_sell": 20603.85,
-          "internal_number": 12,
-          "order_from_internal_number": 0
-        },
-        "market_symbol": "BTC-EUR"
-      },
-      "strategy_name": "MarketCoreDefinedSharpBroker"
-    },
-    {
-      "order_request": {
-        "market_symbol": "BTC-EUR",
-        "amount": 0.0000825418805120436032436318,
-        "price": 20191.77,
-        "stop_price": 0.0,
-        "is_buy": true,
-        "is_margin": false,
-        "should_round_amount": true,
-        "order_type": 0,
-        "extra_parameters": {
-          "RoboNumberOrder": 47
-        }
-      },
-      "order_result": {
-        "order_id": "bd490dfb-576b-40c3-ba5c-a6cc5825509e",
-        "result": 4,
-        "amount": 0.0000825,
-        "amount_filled": 0.0,
-        "is_amount_filled_reversed": false,
-        "price": 20191.77,
-        "order_date": "2022-10-27T14:25:04.96029Z",
-        "http_header_date": "2022-10-27T14:25:05Z",
-        "completed_date": "0001-01-01T00:00:00",
-        "market_symbol": "BTC-EUR",
-        "is_buy": true,
-        "fees": 0.0,
-        "fees_currency": "BTC"
-      },
-      "wallet": {
-        "crypto_broker_wallet": {
-          "MarketCoreDefinedSharpBroker": {
-            "crypto_broker_wallet": {},
-            "crypto_account_value": 0.00254194,
-            "eur_account_value": 50.0,
-            "crypto_position_transaction": 19670.0,
-            "market_symbol": "BTC-EUR"
-          }
-        },
-        "crypto_account_value": 0.0,
-        "eur_account_value": 0.0,
-        "crypto_position_transaction": 0.0,
-        "market_symbol": "BTC-EUR"
-      },
-      "buy_or_sell": {
-        "process_type": 1,
-        "crypto_value": 0.0000825418805120436032436318,
-        "eur_value": 1.6666666666666666666666666667,
-        "price": 20191.77,
-        "fees": 0.0100000000000000000000000000,
-        "is_post_only": true,
-        "profit_percently": 2.0,
-        "profit_in_eur": 0.0233333333333333333333333334,
-        "internal_data": {
-          "strategy": "SharpProcessingMarket",
-          "starting_point_position_to_buy_or_sell": 20603.85,
-          "internal_number": 13,
-          "order_from_internal_number": 0
-        },
-        "market_symbol": "BTC-EUR"
-      },
-      "strategy_name": "MarketCoreDefinedSharpBroker"
-    },
-    {
-      "order_request": {
-        "market_symbol": "BTC-EUR",
-        "amount": 0.0000826261771958030529050455,
-        "price": 20171.17,
-        "stop_price": 0.0,
-        "is_buy": true,
-        "is_margin": false,
-        "should_round_amount": true,
-        "order_type": 0,
-        "extra_parameters": {
-          "RoboNumberOrder": 48
-        }
-      },
-      "order_result": {
-        "order_id": "4a2cbfae-868c-46c6-a9db-c9ddd44f0612",
-        "result": 4,
-        "amount": 0.0000826,
-        "amount_filled": 0.0,
-        "is_amount_filled_reversed": false,
-        "price": 20171.17,
-        "order_date": "2022-10-27T14:25:05.149915Z",
-        "http_header_date": "2022-10-27T14:25:05Z",
-        "completed_date": "0001-01-01T00:00:00",
-        "market_symbol": "BTC-EUR",
-        "is_buy": true,
-        "fees": 0.0,
-        "fees_currency": "BTC"
-      },
-      "wallet": {
-        "crypto_broker_wallet": {
-          "MarketCoreDefinedSharpBroker": {
-            "crypto_broker_wallet": {},
-            "crypto_account_value": 0.00254194,
-            "eur_account_value": 50.0,
-            "crypto_position_transaction": 19670.0,
-            "market_symbol": "BTC-EUR"
-          }
-        },
-        "crypto_account_value": 0.0,
-        "eur_account_value": 0.0,
-        "crypto_position_transaction": 0.0,
-        "market_symbol": "BTC-EUR"
-      },
-      "buy_or_sell": {
-        "process_type": 1,
-        "crypto_value": 0.0000826261771958030529050455,
-        "eur_value": 1.6666666666666666666666666667,
-        "price": 20171.17,
-        "fees": 0.0100000000000000000000000000,
-        "is_post_only": true,
-        "profit_percently": 2.1,
-        "profit_in_eur": 0.0250000000000000000000000001,
-        "internal_data": {
-          "strategy": "SharpProcessingMarket",
-          "starting_point_position_to_buy_or_sell": 20603.85,
-          "internal_number": 14,
-          "order_from_internal_number": 0
-        },
-        "market_symbol": "BTC-EUR"
-      },
-      "strategy_name": "MarketCoreDefinedSharpBroker"
-    },
-    {
-      "order_request": {
-        "market_symbol": "BTC-EUR",
-        "amount": 0.0000827106462331669360552414,
-        "price": 20150.57,
-        "stop_price": 0.0,
-        "is_buy": true,
-        "is_margin": false,
-        "should_round_amount": true,
-        "order_type": 0,
-        "extra_parameters": {
-          "RoboNumberOrder": 49
-        }
-      },
-      "order_result": {
-        "order_id": "f0df7782-3719-488e-ba31-111653d9866f",
-        "result": 4,
-        "amount": 0.0000827,
-        "amount_filled": 0.0,
-        "is_amount_filled_reversed": false,
-        "price": 20150.57,
-        "order_date": "2022-10-27T14:25:05.352007Z",
-        "http_header_date": "2022-10-27T14:25:05Z",
-        "completed_date": "0001-01-01T00:00:00",
-        "market_symbol": "BTC-EUR",
-        "is_buy": true,
-        "fees": 0.0,
-        "fees_currency": "BTC"
-      },
-      "wallet": {
-        "crypto_broker_wallet": {
-          "MarketCoreDefinedSharpBroker": {
-            "crypto_broker_wallet": {},
-            "crypto_account_value": 0.00254194,
-            "eur_account_value": 50.0,
-            "crypto_position_transaction": 19670.0,
-            "market_symbol": "BTC-EUR"
-          }
-        },
-        "crypto_account_value": 0.0,
-        "eur_account_value": 0.0,
-        "crypto_position_transaction": 0.0,
-        "market_symbol": "BTC-EUR"
-      },
-      "buy_or_sell": {
-        "process_type": 1,
-        "crypto_value": 0.0000827106462331669360552414,
-        "eur_value": 1.6666666666666666666666666667,
-        "price": 20150.57,
-        "fees": 0.0100000000000000000000000000,
-        "is_post_only": true,
-        "profit_percently": 2.2,
-        "profit_in_eur": 0.0266666666666666666666666667,
-        "internal_data": {
-          "strategy": "SharpProcessingMarket",
-          "starting_point_position_to_buy_or_sell": 20603.85,
-          "internal_number": 15,
-          "order_from_internal_number": 0
-        },
-        "market_symbol": "BTC-EUR"
-      },
-      "strategy_name": "MarketCoreDefinedSharpBroker"
-    },
-    {
-      "order_request": {
-        "market_symbol": "BTC-EUR",
-        "amount": 0.0000827953292836481874115332,
-        "price": 20129.96,
-        "stop_price": 0.0,
-        "is_buy": true,
-        "is_margin": false,
-        "should_round_amount": true,
-        "order_type": 0,
-        "extra_parameters": {
-          "RoboNumberOrder": 50
-        }
-      },
-      "order_result": {
-        "order_id": "29d99582-cf61-4ed4-ad34-c05482287848",
-        "result": 4,
-        "amount": 0.0000828,
-        "amount_filled": 0.0,
-        "is_amount_filled_reversed": false,
-        "price": 20129.96,
-        "order_date": "2022-10-27T14:25:05.563753Z",
-        "http_header_date": "2022-10-27T14:25:05Z",
-        "completed_date": "0001-01-01T00:00:00",
-        "market_symbol": "BTC-EUR",
-        "is_buy": true,
-        "fees": 0.0,
-        "fees_currency": "BTC"
-      },
-      "wallet": {
-        "crypto_broker_wallet": {
-          "MarketCoreDefinedSharpBroker": {
-            "crypto_broker_wallet": {},
-            "crypto_account_value": 0.00254194,
-            "eur_account_value": 50.0,
-            "crypto_position_transaction": 19670.0,
-            "market_symbol": "BTC-EUR"
-          }
-        },
-        "crypto_account_value": 0.0,
-        "eur_account_value": 0.0,
-        "crypto_position_transaction": 0.0,
-        "market_symbol": "BTC-EUR"
-      },
-      "buy_or_sell": {
-        "process_type": 1,
-        "crypto_value": 0.0000827953292836481874115332,
-        "eur_value": 1.6666666666666666666666666667,
-        "price": 20129.96,
-        "fees": 0.0100000000000000000000000000,
-        "is_post_only": true,
-        "profit_percently": 2.3,
-        "profit_in_eur": 0.0283333333333333333333333334,
-        "internal_data": {
-          "strategy": "SharpProcessingMarket",
-          "starting_point_position_to_buy_or_sell": 20603.85,
-          "internal_number": 16,
-          "order_from_internal_number": 0
-        },
-        "market_symbol": "BTC-EUR"
-      },
-      "strategy_name": "MarketCoreDefinedSharpBroker"
-    },
-    {
-      "order_request": {
-        "market_symbol": "BTC-EUR",
-        "amount": 0.0000809121976432542368054052,
-        "price": 20763.25,
-        "stop_price": 0.0,
-        "is_buy": false,
-        "is_margin": false,
-        "should_round_amount": true,
-        "order_type": 0,
-        "extra_parameters": {
-          "RoboNumberOrder": 52
-        }
-      },
-      "order_result": {
-        "order_id": "86f4af42-4a11-4c5b-a56d-eabbb5b82032",
-        "result": 4,
-        "amount": 0.0000809,
-        "amount_filled": 0.0,
-        "is_amount_filled_reversed": false,
-        "price": 20763.25,
-        "order_date": "2022-10-27T14:25:05.972451Z",
-        "http_header_date": "2022-10-27T14:25:06Z",
-        "completed_date": "0001-01-01T00:00:00",
-        "market_symbol": "BTC-EUR",
-        "is_buy": false,
-        "fees": 0.0,
-        "fees_currency": "BTC"
-      },
-      "wallet": {
-        "crypto_broker_wallet": {
-          "MarketCoreDefinedSharpBroker": {
-            "crypto_broker_wallet": {},
-            "crypto_account_value": 0.00254194,
-            "eur_account_value": 50.0,
-            "crypto_position_transaction": 19670.0,
-            "market_symbol": "BTC-EUR"
-          }
-        },
-        "crypto_account_value": 0.0,
-        "eur_account_value": 0.0,
-        "crypto_position_transaction": 0.0,
-        "market_symbol": "BTC-EUR"
-      },
-      "buy_or_sell": {
-        "process_type": 2,
-        "crypto_value": 0.0000809121976432542368054052,
-        "eur_value": 1.6666666666666666666666666667,
-        "price": 20763.25,
-        "fees": 0.0100000000000000000000000000,
-        "is_post_only": true,
-        "profit_percently": 0.8,
-        "profit_in_eur": 0.0033333333333333333333333334,
-        "internal_data": {
-          "strategy": "SharpProcessingMarket",
-          "starting_point_position_to_buy_or_sell": 20598.46,
-          "internal_number": 18,
-          "order_from_internal_number": 0
-        },
-        "market_symbol": "BTC-EUR"
-      },
-      "strategy_name": "MarketCoreDefinedSharpBroker"
-    },
-    {
-      "order_request": {
-        "market_symbol": "BTC-EUR",
-        "amount": 0.0000809121976432542368054052,
-        "price": 20783.85,
-        "stop_price": 0.0,
-        "is_buy": false,
-        "is_margin": false,
-        "should_round_amount": true,
-        "order_type": 0,
-        "extra_parameters": {
-          "RoboNumberOrder": 53
-        }
-      },
-      "order_result": {
-        "order_id": "3f69b7b7-072b-4dd4-9ac4-ad4181097fc8",
-        "result": 4,
-        "amount": 0.0000809,
-        "amount_filled": 0.0,
-        "is_amount_filled_reversed": false,
-        "price": 20783.85,
-        "order_date": "2022-10-27T14:25:06.152384Z",
-        "http_header_date": "2022-10-27T14:25:06Z",
-        "completed_date": "0001-01-01T00:00:00",
-        "market_symbol": "BTC-EUR",
-        "is_buy": false,
-        "fees": 0.0,
-        "fees_currency": "BTC"
-      },
-      "wallet": {
-        "crypto_broker_wallet": {
-          "MarketCoreDefinedSharpBroker": {
-            "crypto_broker_wallet": {},
-            "crypto_account_value": 0.00254194,
-            "eur_account_value": 50.0,
-            "crypto_position_transaction": 19670.0,
-            "market_symbol": "BTC-EUR"
-          }
-        },
-        "crypto_account_value": 0.0,
-        "eur_account_value": 0.0,
-        "crypto_position_transaction": 0.0,
-        "market_symbol": "BTC-EUR"
-      },
-      "buy_or_sell": {
-        "process_type": 2,
-        "crypto_value": 0.0000809121976432542368054052,
-        "eur_value": 1.6666666666666666666666666667,
-        "price": 20783.85,
-        "fees": 0.0100000000000000000000000000,
-        "is_post_only": true,
-        "profit_percently": 0.9,
-        "profit_in_eur": 0.0050000000000000000000000000,
-        "internal_data": {
-          "strategy": "SharpProcessingMarket",
-          "starting_point_position_to_buy_or_sell": 20598.46,
-          "internal_number": 19,
-          "order_from_internal_number": 0
-        },
-        "market_symbol": "BTC-EUR"
-      },
-      "strategy_name": "MarketCoreDefinedSharpBroker"
-    },
-    {
-      "order_request": {
-        "market_symbol": "BTC-EUR",
-        "amount": 0.0000809121976432542368054052,
-        "price": 20804.44,
-        "stop_price": 0.0,
-        "is_buy": false,
-        "is_margin": false,
-        "should_round_amount": true,
-        "order_type": 0,
-        "extra_parameters": {
-          "RoboNumberOrder": 54
-        }
-      },
-      "order_result": {
-        "order_id": "bdf6779c-8590-464a-bf1e-754ddd51ab7e",
-        "result": 4,
-        "amount": 0.0000809,
-        "amount_filled": 0.0,
-        "is_amount_filled_reversed": false,
-        "price": 20804.44,
-        "order_date": "2022-10-27T14:25:06.350929Z",
-        "http_header_date": "2022-10-27T14:25:06Z",
-        "completed_date": "0001-01-01T00:00:00",
-        "market_symbol": "BTC-EUR",
-        "is_buy": false,
-        "fees": 0.0,
-        "fees_currency": "BTC"
-      },
-      "wallet": {
-        "crypto_broker_wallet": {
-          "MarketCoreDefinedSharpBroker": {
-            "crypto_broker_wallet": {},
-            "crypto_account_value": 0.00254194,
-            "eur_account_value": 50.0,
-            "crypto_position_transaction": 19670.0,
-            "market_symbol": "BTC-EUR"
-          }
-        },
-        "crypto_account_value": 0.0,
-        "eur_account_value": 0.0,
-        "crypto_position_transaction": 0.0,
-        "market_symbol": "BTC-EUR"
-      },
-      "buy_or_sell": {
-        "process_type": 2,
-        "crypto_value": 0.0000809121976432542368054052,
-        "eur_value": 1.6666666666666666666666666667,
-        "price": 20804.44,
-        "fees": 0.0100000000000000000000000000,
-        "is_post_only": true,
-        "profit_percently": 1.0,
-        "profit_in_eur": 0.0066666666666666666666666667,
-        "internal_data": {
-          "strategy": "SharpProcessingMarket",
-          "starting_point_position_to_buy_or_sell": 20598.46,
-          "internal_number": 20,
-          "order_from_internal_number": 0
-        },
-        "market_symbol": "BTC-EUR"
-      },
-      "strategy_name": "MarketCoreDefinedSharpBroker"
-    },
-    {
-      "order_request": {
-        "market_symbol": "BTC-EUR",
-        "amount": 0.0000809121976432542368054052,
-        "price": 20825.04,
-        "stop_price": 0.0,
-        "is_buy": false,
-        "is_margin": false,
-        "should_round_amount": true,
-        "order_type": 0,
-        "extra_parameters": {
-          "RoboNumberOrder": 55
-        }
-      },
-      "order_result": {
-        "order_id": "e957b543-b6c8-43f4-b80e-fd259778989f",
-        "result": 4,
-        "amount": 0.0000809,
-        "amount_filled": 0.0,
-        "is_amount_filled_reversed": false,
-        "price": 20825.04,
-        "order_date": "2022-10-27T14:25:06.580408Z",
-        "http_header_date": "2022-10-27T14:25:06Z",
-        "completed_date": "0001-01-01T00:00:00",
-        "market_symbol": "BTC-EUR",
-        "is_buy": false,
-        "fees": 0.0,
-        "fees_currency": "BTC"
-      },
-      "wallet": {
-        "crypto_broker_wallet": {
-          "MarketCoreDefinedSharpBroker": {
-            "crypto_broker_wallet": {},
-            "crypto_account_value": 0.00254194,
-            "eur_account_value": 50.0,
-            "crypto_position_transaction": 19670.0,
-            "market_symbol": "BTC-EUR"
-          }
-        },
-        "crypto_account_value": 0.0,
-        "eur_account_value": 0.0,
-        "crypto_position_transaction": 0.0,
-        "market_symbol": "BTC-EUR"
-      },
-      "buy_or_sell": {
-        "process_type": 2,
-        "crypto_value": 0.0000809121976432542368054052,
-        "eur_value": 1.6666666666666666666666666667,
-        "price": 20825.04,
-        "fees": 0.0100000000000000000000000000,
-        "is_post_only": true,
-        "profit_percently": 1.1,
-        "profit_in_eur": 0.0083333333333333333333333334,
-        "internal_data": {
-          "strategy": "SharpProcessingMarket",
-          "starting_point_position_to_buy_or_sell": 20598.46,
-          "internal_number": 21,
-          "order_from_internal_number": 0
-        },
-        "market_symbol": "BTC-EUR"
-      },
-      "strategy_name": "MarketCoreDefinedSharpBroker"
-    },
-    {
-      "order_request": {
-        "market_symbol": "BTC-EUR",
-        "amount": 0.0000809121976432542368054052,
-        "price": 20845.64,
-        "stop_price": 0.0,
-        "is_buy": false,
-        "is_margin": false,
-        "should_round_amount": true,
-        "order_type": 0,
-        "extra_parameters": {
-          "RoboNumberOrder": 56
-        }
-      },
-      "order_result": {
-        "order_id": "3795d408-a050-4f71-93a6-4824a7f5eb2a",
-        "result": 4,
-        "amount": 0.0000809,
-        "amount_filled": 0.0,
-        "is_amount_filled_reversed": false,
-        "price": 20845.64,
-        "order_date": "2022-10-27T14:25:06.795927Z",
-        "http_header_date": "2022-10-27T14:25:06Z",
-        "completed_date": "0001-01-01T00:00:00",
-        "market_symbol": "BTC-EUR",
-        "is_buy": false,
-        "fees": 0.0,
-        "fees_currency": "BTC"
-      },
-      "wallet": {
-        "crypto_broker_wallet": {
-          "MarketCoreDefinedSharpBroker": {
-            "crypto_broker_wallet": {},
-            "crypto_account_value": 0.00254194,
-            "eur_account_value": 50.0,
-            "crypto_position_transaction": 19670.0,
-            "market_symbol": "BTC-EUR"
-          }
-        },
-        "crypto_account_value": 0.0,
-        "eur_account_value": 0.0,
-        "crypto_position_transaction": 0.0,
-        "market_symbol": "BTC-EUR"
-      },
-      "buy_or_sell": {
-        "process_type": 2,
-        "crypto_value": 0.0000809121976432542368054052,
-        "eur_value": 1.6666666666666666666666666667,
-        "price": 20845.64,
-        "fees": 0.0100000000000000000000000000,
-        "is_post_only": true,
-        "profit_percently": 1.2,
-        "profit_in_eur": 0.0100000000000000000000000000,
-        "internal_data": {
-          "strategy": "SharpProcessingMarket",
-          "starting_point_position_to_buy_or_sell": 20598.46,
-          "internal_number": 22,
-          "order_from_internal_number": 0
-        },
-        "market_symbol": "BTC-EUR"
-      },
-      "strategy_name": "MarketCoreDefinedSharpBroker"
-    },
-    {
-      "order_request": {
-        "market_symbol": "BTC-EUR",
-        "amount": 0.0000809121976432542368054052,
-        "price": 20866.24,
-        "stop_price": 0.0,
-        "is_buy": false,
-        "is_margin": false,
-        "should_round_amount": true,
-        "order_type": 0,
-        "extra_parameters": {
-          "RoboNumberOrder": 57
-        }
-      },
-      "order_result": {
-        "order_id": "31fcec30-8132-40bb-a24c-70507c496814",
-        "result": 4,
-        "amount": 0.0000809,
-        "amount_filled": 0.0,
-        "is_amount_filled_reversed": false,
-        "price": 20866.24,
-        "order_date": "2022-10-27T14:25:06.99893Z",
-        "http_header_date": "2022-10-27T14:25:07Z",
-        "completed_date": "0001-01-01T00:00:00",
-        "market_symbol": "BTC-EUR",
-        "is_buy": false,
-        "fees": 0.0,
-        "fees_currency": "BTC"
-      },
-      "wallet": {
-        "crypto_broker_wallet": {
-          "MarketCoreDefinedSharpBroker": {
-            "crypto_broker_wallet": {},
-            "crypto_account_value": 0.00254194,
-            "eur_account_value": 50.0,
-            "crypto_position_transaction": 19670.0,
-            "market_symbol": "BTC-EUR"
-          }
-        },
-        "crypto_account_value": 0.0,
-        "eur_account_value": 0.0,
-        "crypto_position_transaction": 0.0,
-        "market_symbol": "BTC-EUR"
-      },
-      "buy_or_sell": {
-        "process_type": 2,
-        "crypto_value": 0.0000809121976432542368054052,
-        "eur_value": 1.6666666666666666666666666667,
-        "price": 20866.24,
-        "fees": 0.0100000000000000000000000000,
-        "is_post_only": true,
-        "profit_percently": 1.3,
-        "profit_in_eur": 0.0116666666666666666666666667,
-        "internal_data": {
-          "strategy": "SharpProcessingMarket",
-          "starting_point_position_to_buy_or_sell": 20598.46,
-          "internal_number": 23,
-          "order_from_internal_number": 0
-        },
-        "market_symbol": "BTC-EUR"
-      },
-      "strategy_name": "MarketCoreDefinedSharpBroker"
-    },
-    {
-      "order_request": {
-        "market_symbol": "BTC-EUR",
         "amount": 0.0000809121976432542368054052,
         "price": 20886.84,
         "stop_price": 0.0,
@@ -7508,60 +5744,1679 @@
     {
       "order_request": {
         "market_symbol": "BTC-EUR",
-        "amount": 0.0000809161651887329094944601,
-        "price": 20597.45,
+        "amount": 0.0001979253465178004160390784,
+        "price": 20613.83,
         "stop_price": 0.0,
-        "is_buy": true,
+        "is_buy": false,
         "is_margin": false,
         "should_round_amount": true,
         "order_type": 0,
-        "extra_parameters": {
-          "RoboNumberOrder": 1
-        }
+        "extra_parameters": {}
       },
       "order_result": {
-        "order_id": "91258689-7979-430d-bf64-200bf0de8b2e",
-        "result": 4,
-        "amount": 0.0000809,
-        "amount_filled": 0.0,
+        "order_id": "16:46:08",
+        "result": 1,
+        "message": "Development version",
+        "amount": 0.0001979253465178004160390784,
+        "amount_filled": 0.0001979253465178004160390784,
         "is_amount_filled_reversed": false,
-        "price": 20597.45,
-        "order_date": "2022-10-27T20:05:04.135552Z",
-        "http_header_date": "2022-10-27T20:05:04Z",
-        "completed_date": "0001-01-01T00:00:00",
-        "market_symbol": "BTC-EUR",
-        "is_buy": true,
-        "fees": 0.0,
-        "fees_currency": "BTC"
+        "price": 20613.83,
+        "order_date": "0001-01-01T00:00:00",
+        "is_buy": false,
+        "fees": 0.01
       },
       "wallet": {
         "crypto_broker_wallet": {
           "MarketCoreDefinedSharpBroker": {
             "crypto_broker_wallet": {},
-            "crypto_account_value": 0.00254194,
-            "eur_account_value": 50.0,
-            "crypto_position_transaction": 19670.0,
+            "crypto_account_value": 0.0000788281884666589703763038,
+            "eur_account_value": 100.76166625339651859573228003,
+            "crypto_position_transaction": 20741.63,
             "market_symbol": "BTC-EUR"
           }
         },
-        "crypto_account_value": 0.0,
-        "eur_account_value": 0.0,
+        "crypto_account_value": 0.0000788281884666589703763038,
+        "eur_account_value": 100.76166625339651859573228003,
         "crypto_position_transaction": 0.0,
         "market_symbol": "BTC-EUR"
       },
       "buy_or_sell": {
-        "process_type": 1,
-        "crypto_value": 0.0000809161651887329094944601,
+        "process_type": 2,
+        "crypto_value": 0.0001979253465178004160390784,
+        "eur_value": 4.0,
+        "price": 20613.83,
+        "fees": 0.024,
+        "is_post_only": true,
+        "profit_percently": 2.0,
+        "profit_in_eur": 0.056,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 20209.64,
+          "internal_number": 0,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "BTC-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "BTC-EUR",
+        "amount": 0.0001981274970256109509030156,
+        "price": 20612.99,
+        "stop_price": 0.0,
+        "is_buy": false,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {}
+      },
+      "order_result": {
+        "order_id": "16:46:08",
+        "result": 1,
+        "message": "Development version",
+        "amount": 0.0001981274970256109509030156,
+        "amount_filled": 0.0001981274970256109509030156,
+        "is_amount_filled_reversed": false,
+        "price": 20612.99,
+        "order_date": "0001-01-01T00:00:00",
+        "is_buy": false,
+        "fees": 0.01
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 0.0000788281884666589703763038,
+            "eur_account_value": 100.76166625339651859573228003,
+            "crypto_position_transaction": 20741.63,
+            "market_symbol": "BTC-EUR"
+          }
+        },
+        "crypto_account_value": 0.0000788281884666589703763038,
+        "eur_account_value": 100.76166625339651859573228003,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "BTC-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 2,
+        "crypto_value": 0.0001981274970256109509030156,
+        "eur_value": 4.0,
+        "price": 20612.99,
+        "fees": 0.024,
+        "is_post_only": true,
+        "profit_percently": 2.1,
+        "profit_in_eur": 0.060,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 20189.02,
+          "internal_number": 1,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "BTC-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "BTC-EUR",
+        "amount": 0.0001983301592244100793370219,
+        "price": 20612.09,
+        "stop_price": 0.0,
+        "is_buy": false,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {}
+      },
+      "order_result": {
+        "order_id": "16:46:08",
+        "result": 1,
+        "message": "Development version",
+        "amount": 0.0001983301592244100793370219,
+        "amount_filled": 0.0001983301592244100793370219,
+        "is_amount_filled_reversed": false,
+        "price": 20612.09,
+        "order_date": "0001-01-01T00:00:00",
+        "is_buy": false,
+        "fees": 0.01
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 0.0000788281884666589703763038,
+            "eur_account_value": 100.76166625339651859573228003,
+            "crypto_position_transaction": 20741.63,
+            "market_symbol": "BTC-EUR"
+          }
+        },
+        "crypto_account_value": 0.0000788281884666589703763038,
+        "eur_account_value": 100.76166625339651859573228003,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "BTC-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 2,
+        "crypto_value": 0.0001983301592244100793370219,
+        "eur_value": 4.0,
+        "price": 20612.09,
+        "fees": 0.024,
+        "is_post_only": true,
+        "profit_percently": 2.2,
+        "profit_in_eur": 0.064,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 20168.39,
+          "internal_number": 2,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "BTC-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "BTC-EUR",
+        "amount": 0.000198533137910547916717334,
+        "price": 20611.17,
+        "stop_price": 0.0,
+        "is_buy": false,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {}
+      },
+      "order_result": {
+        "order_id": "16:46:09",
+        "result": 1,
+        "message": "Development version",
+        "amount": 0.000198533137910547916717334,
+        "amount_filled": 0.000198533137910547916717334,
+        "is_amount_filled_reversed": false,
+        "price": 20611.17,
+        "order_date": "0001-01-01T00:00:00",
+        "is_buy": false,
+        "fees": 0.01
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 0.0000788281884666589703763038,
+            "eur_account_value": 100.76166625339651859573228003,
+            "crypto_position_transaction": 20741.63,
+            "market_symbol": "BTC-EUR"
+          }
+        },
+        "crypto_account_value": 0.0000788281884666589703763038,
+        "eur_account_value": 100.76166625339651859573228003,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "BTC-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 2,
+        "crypto_value": 0.000198533137910547916717334,
+        "eur_value": 4.0,
+        "price": 20611.17,
+        "fees": 0.024,
+        "is_post_only": true,
+        "profit_percently": 2.3,
+        "profit_in_eur": 0.068,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 20147.77,
+          "internal_number": 3,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "BTC-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "BTC-EUR",
+        "amount": 0.0001987365324946651662058463,
+        "price": 20610.20,
+        "stop_price": 0.0,
+        "is_buy": false,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {}
+      },
+      "order_result": {
+        "order_id": "16:46:09",
+        "result": 1,
+        "message": "Development version",
+        "amount": 0.0001987365324946651662058463,
+        "amount_filled": 0.0001987365324946651662058463,
+        "is_amount_filled_reversed": false,
+        "price": 20610.20,
+        "order_date": "0001-01-01T00:00:00",
+        "is_buy": false,
+        "fees": 0.01
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 0.0000788281884666589703763038,
+            "eur_account_value": 100.76166625339651859573228003,
+            "crypto_position_transaction": 20741.63,
+            "market_symbol": "BTC-EUR"
+          }
+        },
+        "crypto_account_value": 0.0000788281884666589703763038,
+        "eur_account_value": 100.76166625339651859573228003,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "BTC-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 2,
+        "crypto_value": 0.0001987365324946651662058463,
+        "eur_value": 4.0,
+        "price": 20610.20,
+        "fees": 0.024,
+        "is_post_only": true,
+        "profit_percently": 2.4,
+        "profit_in_eur": 0.072,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 20127.15,
+          "internal_number": 4,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "BTC-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "BTC-EUR",
+        "amount": 0.0000814612718450619643310417,
+        "price": 20602.84,
+        "stop_price": 0.0,
+        "is_buy": false,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {}
+      },
+      "order_result": {
+        "order_id": "16:46:09",
+        "result": 1,
+        "message": "Development version",
+        "amount": 0.0000814612718450619643310417,
+        "amount_filled": 0.0000814612718450619643310417,
+        "is_amount_filled_reversed": false,
+        "price": 20602.84,
+        "order_date": "0001-01-01T00:00:00",
+        "is_buy": false,
+        "fees": 0.01
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 0.0000788281884666589703763038,
+            "eur_account_value": 100.76166625339651859573228003,
+            "crypto_position_transaction": 20741.63,
+            "market_symbol": "BTC-EUR"
+          }
+        },
+        "crypto_account_value": 0.0000788281884666589703763038,
+        "eur_account_value": 100.76166625339651859573228003,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "BTC-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 2,
+        "crypto_value": 0.0000814612718450619643310417,
         "eur_value": 1.6666666666666666666666666667,
-        "price": 20597.45,
+        "price": 20602.84,
         "fees": 0.0100000000000000000000000000,
         "is_post_only": true,
         "profit_percently": 0.7,
         "profit_in_eur": 0.0016666666666666666666666667,
         "internal_data": {
           "strategy": "SharpProcessingMarket",
-          "starting_point_position_to_buy_or_sell": 20742.65,
+          "starting_point_position_to_buy_or_sell": 20459.62,
+          "internal_number": 5,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "BTC-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "BTC-EUR",
+        "amount": 0.0000815433747149651336838394,
+        "price": 20602.53,
+        "stop_price": 0.0,
+        "is_buy": false,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {}
+      },
+      "order_result": {
+        "order_id": "16:46:09",
+        "result": 1,
+        "message": "Development version",
+        "amount": 0.0000815433747149651336838394,
+        "amount_filled": 0.0000815433747149651336838394,
+        "is_amount_filled_reversed": false,
+        "price": 20602.53,
+        "order_date": "0001-01-01T00:00:00",
+        "is_buy": false,
+        "fees": 0.01
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 0.0000788281884666589703763038,
+            "eur_account_value": 100.76166625339651859573228003,
+            "crypto_position_transaction": 20741.63,
+            "market_symbol": "BTC-EUR"
+          }
+        },
+        "crypto_account_value": 0.0000788281884666589703763038,
+        "eur_account_value": 100.76166625339651859573228003,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "BTC-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 2,
+        "crypto_value": 0.0000815433747149651336838394,
+        "eur_value": 1.6666666666666666666666666667,
+        "price": 20602.53,
+        "fees": 0.0100000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 0.8,
+        "profit_in_eur": 0.0033333333333333333333333334,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 20439.02,
+          "internal_number": 6,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "BTC-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "BTC-EUR",
+        "amount": 0.0000816256432508816385727528,
+        "price": 20602.19,
+        "stop_price": 0.0,
+        "is_buy": false,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {}
+      },
+      "order_result": {
+        "order_id": "16:46:09",
+        "result": 1,
+        "message": "Development version",
+        "amount": 0.0000816256432508816385727528,
+        "amount_filled": 0.0000816256432508816385727528,
+        "is_amount_filled_reversed": false,
+        "price": 20602.19,
+        "order_date": "0001-01-01T00:00:00",
+        "is_buy": false,
+        "fees": 0.01
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 0.0000788281884666589703763038,
+            "eur_account_value": 100.76166625339651859573228003,
+            "crypto_position_transaction": 20741.63,
+            "market_symbol": "BTC-EUR"
+          }
+        },
+        "crypto_account_value": 0.0000788281884666589703763038,
+        "eur_account_value": 100.76166625339651859573228003,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "BTC-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 2,
+        "crypto_value": 0.0000816256432508816385727528,
+        "eur_value": 1.6666666666666666666666666667,
+        "price": 20602.19,
+        "fees": 0.0100000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 0.9,
+        "profit_in_eur": 0.0050000000000000000000000000,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 20418.42,
+          "internal_number": 7,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "BTC-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "BTC-EUR",
+        "amount": 0.0000817081180120153421699029,
+        "price": 20601.79,
+        "stop_price": 0.0,
+        "is_buy": false,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {}
+      },
+      "order_result": {
+        "order_id": "16:46:09",
+        "result": 1,
+        "message": "Development version",
+        "amount": 0.0000817081180120153421699029,
+        "amount_filled": 0.0000817081180120153421699029,
+        "is_amount_filled_reversed": false,
+        "price": 20601.79,
+        "order_date": "0001-01-01T00:00:00",
+        "is_buy": false,
+        "fees": 0.01
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 0.0000788281884666589703763038,
+            "eur_account_value": 100.76166625339651859573228003,
+            "crypto_position_transaction": 20741.63,
+            "market_symbol": "BTC-EUR"
+          }
+        },
+        "crypto_account_value": 0.0000788281884666589703763038,
+        "eur_account_value": 100.76166625339651859573228003,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "BTC-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 2,
+        "crypto_value": 0.0000817081180120153421699029,
+        "eur_value": 1.6666666666666666666666666667,
+        "price": 20601.79,
+        "fees": 0.0100000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 1.0,
+        "profit_in_eur": 0.0066666666666666666666666667,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 20397.81,
+          "internal_number": 8,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "BTC-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "BTC-EUR",
+        "amount": 0.0000817907194687921784516461,
+        "price": 20601.36,
+        "stop_price": 0.0,
+        "is_buy": false,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {}
+      },
+      "order_result": {
+        "order_id": "16:46:09",
+        "result": 1,
+        "message": "Development version",
+        "amount": 0.0000817907194687921784516461,
+        "amount_filled": 0.0000817907194687921784516461,
+        "is_amount_filled_reversed": false,
+        "price": 20601.36,
+        "order_date": "0001-01-01T00:00:00",
+        "is_buy": false,
+        "fees": 0.01
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 0.0000788281884666589703763038,
+            "eur_account_value": 100.76166625339651859573228003,
+            "crypto_position_transaction": 20741.63,
+            "market_symbol": "BTC-EUR"
+          }
+        },
+        "crypto_account_value": 0.0000788281884666589703763038,
+        "eur_account_value": 100.76166625339651859573228003,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "BTC-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 2,
+        "crypto_value": 0.0000817907194687921784516461,
+        "eur_value": 1.6666666666666666666666666667,
+        "price": 20601.36,
+        "fees": 0.0100000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 1.1,
+        "profit_in_eur": 0.0083333333333333333333333334,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 20377.21,
+          "internal_number": 9,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "BTC-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "BTC-EUR",
+        "amount": 0.0000818735283233283881722226,
+        "price": 20600.88,
+        "stop_price": 0.0,
+        "is_buy": false,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {}
+      },
+      "order_result": {
+        "order_id": "16:46:09",
+        "result": 1,
+        "message": "Development version",
+        "amount": 0.0000818735283233283881722226,
+        "amount_filled": 0.0000818735283233283881722226,
+        "is_amount_filled_reversed": false,
+        "price": 20600.88,
+        "order_date": "0001-01-01T00:00:00",
+        "is_buy": false,
+        "fees": 0.01
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 0.0000788281884666589703763038,
+            "eur_account_value": 100.76166625339651859573228003,
+            "crypto_position_transaction": 20741.63,
+            "market_symbol": "BTC-EUR"
+          }
+        },
+        "crypto_account_value": 0.0000788281884666589703763038,
+        "eur_account_value": 100.76166625339651859573228003,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "BTC-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 2,
+        "crypto_value": 0.0000818735283233283881722226,
+        "eur_value": 1.6666666666666666666666666667,
+        "price": 20600.88,
+        "fees": 0.0100000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 1.2,
+        "profit_in_eur": 0.0100000000000000000000000000,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 20356.6,
+          "internal_number": 10,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "BTC-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "BTC-EUR",
+        "amount": 0.0000819564647259375819564647,
+        "price": 20600.37,
+        "stop_price": 0.0,
+        "is_buy": false,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {}
+      },
+      "order_result": {
+        "order_id": "16:46:09",
+        "result": 1,
+        "message": "Development version",
+        "amount": 0.0000819564647259375819564647,
+        "amount_filled": 0.0000819564647259375819564647,
+        "is_amount_filled_reversed": false,
+        "price": 20600.37,
+        "order_date": "0001-01-01T00:00:00",
+        "is_buy": false,
+        "fees": 0.01
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 0.0000788281884666589703763038,
+            "eur_account_value": 100.76166625339651859573228003,
+            "crypto_position_transaction": 20741.63,
+            "market_symbol": "BTC-EUR"
+          }
+        },
+        "crypto_account_value": 0.0000788281884666589703763038,
+        "eur_account_value": 100.76166625339651859573228003,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "BTC-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 2,
+        "crypto_value": 0.0000819564647259375819564647,
+        "eur_value": 1.6666666666666666666666666667,
+        "price": 20600.37,
+        "fees": 0.0100000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 1.3,
+        "profit_in_eur": 0.0116666666666666666666666667,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 20336.0,
+          "internal_number": 11,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "BTC-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "BTC-EUR",
+        "amount": 0.0000820395693250768710764576,
+        "price": 20599.82,
+        "stop_price": 0.0,
+        "is_buy": false,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {}
+      },
+      "order_result": {
+        "order_id": "16:46:09",
+        "result": 1,
+        "message": "Development version",
+        "amount": 0.0000820395693250768710764576,
+        "amount_filled": 0.0000820395693250768710764576,
+        "is_amount_filled_reversed": false,
+        "price": 20599.82,
+        "order_date": "0001-01-01T00:00:00",
+        "is_buy": false,
+        "fees": 0.01
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 0.0000788281884666589703763038,
+            "eur_account_value": 100.76166625339651859573228003,
+            "crypto_position_transaction": 20741.63,
+            "market_symbol": "BTC-EUR"
+          }
+        },
+        "crypto_account_value": 0.0000788281884666589703763038,
+        "eur_account_value": 100.76166625339651859573228003,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "BTC-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 2,
+        "crypto_value": 0.0000820395693250768710764576,
+        "eur_value": 1.6666666666666666666666666667,
+        "price": 20599.82,
+        "fees": 0.0100000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 1.4,
+        "profit_in_eur": 0.0133333333333333333333333334,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 20315.4,
+          "internal_number": 12,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "BTC-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "BTC-EUR",
+        "amount": 0.00008212288309791166435655,
+        "price": 20599.21,
+        "stop_price": 0.0,
+        "is_buy": false,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {}
+      },
+      "order_result": {
+        "order_id": "16:46:09",
+        "result": 1,
+        "message": "Development version",
+        "amount": 0.00008212288309791166435655,
+        "amount_filled": 0.00008212288309791166435655,
+        "is_amount_filled_reversed": false,
+        "price": 20599.21,
+        "order_date": "0001-01-01T00:00:00",
+        "is_buy": false,
+        "fees": 0.01
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 0.0000788281884666589703763038,
+            "eur_account_value": 100.76166625339651859573228003,
+            "crypto_position_transaction": 20741.63,
+            "market_symbol": "BTC-EUR"
+          }
+        },
+        "crypto_account_value": 0.0000788281884666589703763038,
+        "eur_account_value": 100.76166625339651859573228003,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "BTC-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 2,
+        "crypto_value": 0.00008212288309791166435655,
+        "eur_value": 1.6666666666666666666666666667,
+        "price": 20599.21,
+        "fees": 0.0100000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 1.5,
+        "profit_in_eur": 0.0150000000000000000000000000,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 20294.79,
+          "internal_number": 13,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "BTC-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "BTC-EUR",
+        "amount": 0.0000822063257109984007581396,
+        "price": 20598.58,
+        "stop_price": 0.0,
+        "is_buy": false,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {}
+      },
+      "order_result": {
+        "order_id": "16:46:09",
+        "result": 1,
+        "message": "Development version",
+        "amount": 0.0000822063257109984007581396,
+        "amount_filled": 0.0000822063257109984007581396,
+        "is_amount_filled_reversed": false,
+        "price": 20598.58,
+        "order_date": "0001-01-01T00:00:00",
+        "is_buy": false,
+        "fees": 0.01
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 0.0000788281884666589703763038,
+            "eur_account_value": 100.76166625339651859573228003,
+            "crypto_position_transaction": 20741.63,
+            "market_symbol": "BTC-EUR"
+          }
+        },
+        "crypto_account_value": 0.0000788281884666589703763038,
+        "eur_account_value": 100.76166625339651859573228003,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "BTC-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 2,
+        "crypto_value": 0.0000822063257109984007581396,
+        "eur_value": 1.6666666666666666666666666667,
+        "price": 20598.58,
+        "fees": 0.0100000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 1.6,
+        "profit_in_eur": 0.0166666666666666666666666667,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 20274.19,
+          "internal_number": 14,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "BTC-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "BTC-EUR",
+        "amount": 0.0000822899786934787166844907,
+        "price": 20597.89,
+        "stop_price": 0.0,
+        "is_buy": false,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {}
+      },
+      "order_result": {
+        "order_id": "16:46:09",
+        "result": 1,
+        "message": "Development version",
+        "amount": 0.0000822899786934787166844907,
+        "amount_filled": 0.0000822899786934787166844907,
+        "is_amount_filled_reversed": false,
+        "price": 20597.89,
+        "order_date": "0001-01-01T00:00:00",
+        "is_buy": false,
+        "fees": 0.01
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 0.0000788281884666589703763038,
+            "eur_account_value": 100.76166625339651859573228003,
+            "crypto_position_transaction": 20741.63,
+            "market_symbol": "BTC-EUR"
+          }
+        },
+        "crypto_account_value": 0.0000788281884666589703763038,
+        "eur_account_value": 100.76166625339651859573228003,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "BTC-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 2,
+        "crypto_value": 0.0000822899786934787166844907,
+        "eur_value": 1.6666666666666666666666666667,
+        "price": 20597.89,
+        "fees": 0.0100000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 1.7,
+        "profit_in_eur": 0.0183333333333333333333333334,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 20253.58,
+          "internal_number": 15,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "BTC-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "BTC-EUR",
+        "amount": 0.0000823737613869369053232231,
+        "price": 20597.17,
+        "stop_price": 0.0,
+        "is_buy": false,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {}
+      },
+      "order_result": {
+        "order_id": "16:46:09",
+        "result": 1,
+        "message": "Development version",
+        "amount": 0.0000823737613869369053232231,
+        "amount_filled": 0.0000823737613869369053232231,
+        "is_amount_filled_reversed": false,
+        "price": 20597.17,
+        "order_date": "0001-01-01T00:00:00",
+        "is_buy": false,
+        "fees": 0.01
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 0.0000788281884666589703763038,
+            "eur_account_value": 100.76166625339651859573228003,
+            "crypto_position_transaction": 20741.63,
+            "market_symbol": "BTC-EUR"
+          }
+        },
+        "crypto_account_value": 0.0000788281884666589703763038,
+        "eur_account_value": 100.76166625339651859573228003,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "BTC-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 2,
+        "crypto_value": 0.0000823737613869369053232231,
+        "eur_value": 1.6666666666666666666666666667,
+        "price": 20597.17,
+        "fees": 0.0100000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 1.8,
+        "profit_in_eur": 0.0200000000000000000000000001,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 20232.98,
+          "internal_number": 16,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "BTC-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "BTC-EUR",
+        "amount": 0.000082457714859243031580975,
+        "price": 20596.42,
+        "stop_price": 0.0,
+        "is_buy": false,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {}
+      },
+      "order_result": {
+        "order_id": "16:46:09",
+        "result": 1,
+        "message": "Development version",
+        "amount": 0.000082457714859243031580975,
+        "amount_filled": 0.000082457714859243031580975,
+        "is_amount_filled_reversed": false,
+        "price": 20596.42,
+        "order_date": "0001-01-01T00:00:00",
+        "is_buy": false,
+        "fees": 0.01
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 0.0000788281884666589703763038,
+            "eur_account_value": 100.76166625339651859573228003,
+            "crypto_position_transaction": 20741.63,
+            "market_symbol": "BTC-EUR"
+          }
+        },
+        "crypto_account_value": 0.0000788281884666589703763038,
+        "eur_account_value": 100.76166625339651859573228003,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "BTC-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 2,
+        "crypto_value": 0.000082457714859243031580975,
+        "eur_value": 1.6666666666666666666666666667,
+        "price": 20596.42,
+        "fees": 0.0100000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 1.9,
+        "profit_in_eur": 0.0216666666666666666666666667,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 20212.38,
+          "internal_number": 17,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "BTC-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "BTC-EUR",
+        "amount": 0.0000825418805120436032436318,
+        "price": 20595.61,
+        "stop_price": 0.0,
+        "is_buy": false,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {}
+      },
+      "order_result": {
+        "order_id": "16:46:09",
+        "result": 1,
+        "message": "Development version",
+        "amount": 0.0000825418805120436032436318,
+        "amount_filled": 0.0000825418805120436032436318,
+        "is_amount_filled_reversed": false,
+        "price": 20595.61,
+        "order_date": "0001-01-01T00:00:00",
+        "is_buy": false,
+        "fees": 0.01
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 0.0000788281884666589703763038,
+            "eur_account_value": 100.76166625339651859573228003,
+            "crypto_position_transaction": 20741.63,
+            "market_symbol": "BTC-EUR"
+          }
+        },
+        "crypto_account_value": 0.0000788281884666589703763038,
+        "eur_account_value": 100.76166625339651859573228003,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "BTC-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 2,
+        "crypto_value": 0.0000825418805120436032436318,
+        "eur_value": 1.6666666666666666666666666667,
+        "price": 20595.61,
+        "fees": 0.0100000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 2.0,
+        "profit_in_eur": 0.0233333333333333333333333334,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 20191.77,
+          "internal_number": 18,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "BTC-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "BTC-EUR",
+        "amount": 0.0000826261771958030529050455,
+        "price": 20594.76,
+        "stop_price": 0.0,
+        "is_buy": false,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {}
+      },
+      "order_result": {
+        "order_id": "16:46:09",
+        "result": 1,
+        "message": "Development version",
+        "amount": 0.0000826261771958030529050455,
+        "amount_filled": 0.0000826261771958030529050455,
+        "is_amount_filled_reversed": false,
+        "price": 20594.76,
+        "order_date": "0001-01-01T00:00:00",
+        "is_buy": false,
+        "fees": 0.01
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 0.0000788281884666589703763038,
+            "eur_account_value": 100.76166625339651859573228003,
+            "crypto_position_transaction": 20741.63,
+            "market_symbol": "BTC-EUR"
+          }
+        },
+        "crypto_account_value": 0.0000788281884666589703763038,
+        "eur_account_value": 100.76166625339651859573228003,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "BTC-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 2,
+        "crypto_value": 0.0000826261771958030529050455,
+        "eur_value": 1.6666666666666666666666666667,
+        "price": 20594.76,
+        "fees": 0.0100000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 2.1,
+        "profit_in_eur": 0.0250000000000000000000000001,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 20171.17,
+          "internal_number": 19,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "BTC-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "BTC-EUR",
+        "amount": 0.0000827106462331669360552414,
+        "price": 20593.88,
+        "stop_price": 0.0,
+        "is_buy": false,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {}
+      },
+      "order_result": {
+        "order_id": "16:46:09",
+        "result": 1,
+        "message": "Development version",
+        "amount": 0.0000827106462331669360552414,
+        "amount_filled": 0.0000827106462331669360552414,
+        "is_amount_filled_reversed": false,
+        "price": 20593.88,
+        "order_date": "0001-01-01T00:00:00",
+        "is_buy": false,
+        "fees": 0.01
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 0.0000788281884666589703763038,
+            "eur_account_value": 100.76166625339651859573228003,
+            "crypto_position_transaction": 20741.63,
+            "market_symbol": "BTC-EUR"
+          }
+        },
+        "crypto_account_value": 0.0000788281884666589703763038,
+        "eur_account_value": 100.76166625339651859573228003,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "BTC-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 2,
+        "crypto_value": 0.0000827106462331669360552414,
+        "eur_value": 1.6666666666666666666666666667,
+        "price": 20593.88,
+        "fees": 0.0100000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 2.2,
+        "profit_in_eur": 0.0266666666666666666666666667,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 20150.57,
+          "internal_number": 20,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "BTC-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "BTC-EUR",
+        "amount": 0.0000827953292836481874115332,
+        "price": 20592.95,
+        "stop_price": 0.0,
+        "is_buy": false,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {}
+      },
+      "order_result": {
+        "order_id": "16:46:09",
+        "result": 1,
+        "message": "Development version",
+        "amount": 0.0000827953292836481874115332,
+        "amount_filled": 0.0000827953292836481874115332,
+        "is_amount_filled_reversed": false,
+        "price": 20592.95,
+        "order_date": "0001-01-01T00:00:00",
+        "is_buy": false,
+        "fees": 0.01
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 0.0000788281884666589703763038,
+            "eur_account_value": 100.76166625339651859573228003,
+            "crypto_position_transaction": 20741.63,
+            "market_symbol": "BTC-EUR"
+          }
+        },
+        "crypto_account_value": 0.0000788281884666589703763038,
+        "eur_account_value": 100.76166625339651859573228003,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "BTC-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 2,
+        "crypto_value": 0.0000827953292836481874115332,
+        "eur_value": 1.6666666666666666666666666667,
+        "price": 20592.95,
+        "fees": 0.0100000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 2.3,
+        "profit_in_eur": 0.0283333333333333333333333334,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 20129.96,
+          "internal_number": 21,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "BTC-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "BTC-EUR",
+        "amount": 0.0000809161651887329094944601,
+        "price": 20741.63,
+        "stop_price": 0.0,
+        "is_buy": false,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {}
+      },
+      "order_result": {
+        "order_id": "16:46:09",
+        "result": 1,
+        "message": "Development version",
+        "amount": 0.0000809161651887329094944601,
+        "amount_filled": 0.0000809161651887329094944601,
+        "is_amount_filled_reversed": false,
+        "price": 20741.63,
+        "order_date": "0001-01-01T00:00:00",
+        "is_buy": false,
+        "fees": 0.01
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 0.0000788281884666589703763038,
+            "eur_account_value": 100.76166625339651859573228003,
+            "crypto_position_transaction": 20741.63,
+            "market_symbol": "BTC-EUR"
+          }
+        },
+        "crypto_account_value": 0.0000788281884666589703763038,
+        "eur_account_value": 100.76166625339651859573228003,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "BTC-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 2,
+        "crypto_value": 0.0000809161651887329094944601,
+        "eur_value": 1.6666666666666666666666666667,
+        "price": 20741.63,
+        "fees": 0.0100000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 0.7,
+        "profit_in_eur": 0.0016666666666666666666666667,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 20597.45,
+          "internal_number": 22,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "BTC-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "BTC-EUR",
+        "amount": 0.0000809173830282586158401927,
+        "price": 20597.14,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {}
+      },
+      "order_result": {
+        "order_id": "18:28:16",
+        "result": 1,
+        "message": "Development version",
+        "amount": 0.0000809173830282586158401927,
+        "amount_filled": 0.0000809173830282586158401927,
+        "is_amount_filled_reversed": false,
+        "price": 20597.14,
+        "order_date": "0001-01-01T00:00:00",
+        "is_buy": true,
+        "fees": 0.01
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 0.0005628997504408736113495342,
+            "eur_account_value": 90.79166625339651859573228178,
+            "crypto_position_transaction": 20594.98,
+            "market_symbol": "BTC-EUR"
+          }
+        },
+        "crypto_account_value": 0.0005628997504408736113495342,
+        "eur_account_value": 90.79166625339651859573228178,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "BTC-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 0.0000809173830282586158401927,
+        "eur_value": 1.6666666666666666666666666667,
+        "price": 20597.14,
+        "fees": 0.0100000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 0.8,
+        "profit_in_eur": 0.0033333333333333333333333334,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 20763.25,
           "internal_number": 0,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "BTC-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "BTC-EUR",
+        "amount": 0.0000809187187653745565654212,
+        "price": 20596.80,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {}
+      },
+      "order_result": {
+        "order_id": "18:28:16",
+        "result": 1,
+        "message": "Development version",
+        "amount": 0.0000809187187653745565654212,
+        "amount_filled": 0.0000809187187653745565654212,
+        "is_amount_filled_reversed": false,
+        "price": 20596.80,
+        "order_date": "0001-01-01T00:00:00",
+        "is_buy": true,
+        "fees": 0.01
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 0.0005628997504408736113495342,
+            "eur_account_value": 90.79166625339651859573228178,
+            "crypto_position_transaction": 20594.98,
+            "market_symbol": "BTC-EUR"
+          }
+        },
+        "crypto_account_value": 0.0005628997504408736113495342,
+        "eur_account_value": 90.79166625339651859573228178,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "BTC-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 0.0000809187187653745565654212,
+        "eur_value": 1.6666666666666666666666666667,
+        "price": 20596.80,
+        "fees": 0.0100000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 0.9,
+        "profit_in_eur": 0.0050000000000000000000000000,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 20783.85,
+          "internal_number": 1,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "BTC-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "BTC-EUR",
+        "amount": 0.0000809202902772652826060218,
+        "price": 20596.40,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {}
+      },
+      "order_result": {
+        "order_id": "18:28:16",
+        "result": 1,
+        "message": "Development version",
+        "amount": 0.0000809202902772652826060218,
+        "amount_filled": 0.0000809202902772652826060218,
+        "is_amount_filled_reversed": false,
+        "price": 20596.40,
+        "order_date": "0001-01-01T00:00:00",
+        "is_buy": true,
+        "fees": 0.01
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 0.0005628997504408736113495342,
+            "eur_account_value": 90.79166625339651859573228178,
+            "crypto_position_transaction": 20594.98,
+            "market_symbol": "BTC-EUR"
+          }
+        },
+        "crypto_account_value": 0.0005628997504408736113495342,
+        "eur_account_value": 90.79166625339651859573228178,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "BTC-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 0.0000809202902772652826060218,
+        "eur_value": 1.6666666666666666666666666667,
+        "price": 20596.40,
+        "fees": 0.0100000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 1.0,
+        "profit_in_eur": 0.0066666666666666666666666667,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 20804.44,
+          "internal_number": 2,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "BTC-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "BTC-EUR",
+        "amount": 0.0000809220190108480821805183,
+        "price": 20595.96,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {}
+      },
+      "order_result": {
+        "order_id": "18:28:16",
+        "result": 1,
+        "message": "Development version",
+        "amount": 0.0000809220190108480821805183,
+        "amount_filled": 0.0000809220190108480821805183,
+        "is_amount_filled_reversed": false,
+        "price": 20595.96,
+        "order_date": "0001-01-01T00:00:00",
+        "is_buy": true,
+        "fees": 0.01
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 0.0005628997504408736113495342,
+            "eur_account_value": 90.79166625339651859573228178,
+            "crypto_position_transaction": 20594.98,
+            "market_symbol": "BTC-EUR"
+          }
+        },
+        "crypto_account_value": 0.0005628997504408736113495342,
+        "eur_account_value": 90.79166625339651859573228178,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "BTC-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 0.0000809220190108480821805183,
+        "eur_value": 1.6666666666666666666666666667,
+        "price": 20595.96,
+        "fees": 0.0100000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 1.1,
+        "profit_in_eur": 0.0083333333333333333333333334,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 20825.04,
+          "internal_number": 3,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "BTC-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "BTC-EUR",
+        "amount": 0.0000809238656942207573923547,
+        "price": 20595.49,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {}
+      },
+      "order_result": {
+        "order_id": "18:28:16",
+        "result": 1,
+        "message": "Development version",
+        "amount": 0.0000809238656942207573923547,
+        "amount_filled": 0.0000809238656942207573923547,
+        "is_amount_filled_reversed": false,
+        "price": 20595.49,
+        "order_date": "0001-01-01T00:00:00",
+        "is_buy": true,
+        "fees": 0.01
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 0.0005628997504408736113495342,
+            "eur_account_value": 90.79166625339651859573228178,
+            "crypto_position_transaction": 20594.98,
+            "market_symbol": "BTC-EUR"
+          }
+        },
+        "crypto_account_value": 0.0005628997504408736113495342,
+        "eur_account_value": 90.79166625339651859573228178,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "BTC-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 0.0000809238656942207573923547,
+        "eur_value": 1.6666666666666666666666666667,
+        "price": 20595.49,
+        "fees": 0.0100000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 1.2,
+        "profit_in_eur": 0.0100000000000000000000000000,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 20845.64,
+          "internal_number": 4,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "BTC-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "BTC-EUR",
+        "amount": 0.0000809258696374877114066955,
+        "price": 20594.98,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {}
+      },
+      "order_result": {
+        "order_id": "18:28:16",
+        "result": 1,
+        "message": "Development version",
+        "amount": 0.0000809258696374877114066955,
+        "amount_filled": 0.0000809258696374877114066955,
+        "is_amount_filled_reversed": false,
+        "price": 20594.98,
+        "order_date": "0001-01-01T00:00:00",
+        "is_buy": true,
+        "fees": 0.01
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 0.0005628997504408736113495342,
+            "eur_account_value": 90.79166625339651859573228178,
+            "crypto_position_transaction": 20594.98,
+            "market_symbol": "BTC-EUR"
+          }
+        },
+        "crypto_account_value": 0.0005628997504408736113495342,
+        "eur_account_value": 90.79166625339651859573228178,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "BTC-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 0.0000809258696374877114066955,
+        "eur_value": 1.6666666666666666666666666667,
+        "price": 20594.98,
+        "fees": 0.0100000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 1.3,
+        "profit_in_eur": 0.0116666666666666666666666667,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 20866.24,
+          "internal_number": 5,
           "order_from_internal_number": 0
         },
         "market_symbol": "BTC-EUR"

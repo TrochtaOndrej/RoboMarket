@@ -13,6 +13,7 @@ using RoboWorkerService.Market.Model;
 using RoboWorkerService.Market.Processing;
 using RoboWorkerService.Market.Processing.DefineMoney;
 using RoboWorkerService.Robo;
+using RoboWorkerService.Telegram;
 
 
 namespace RoboWorkerService;
@@ -23,6 +24,7 @@ public static class RoboServices
     {
         services.AddSingleton<IConfig, Config.Config>();
         services.AddSingleton<IAppRobo, AppRobo>();
+        services.AddSingleton<ITelegram, Telegram.Telegram>();
         // CRYPTO CURRENCY
 
         services.AddSingleton<ICryptoBTC, CryptoBTC>();
@@ -36,6 +38,9 @@ public static class RoboServices
 
         services.AddSingleton<ICryptoDOGE, CryptoDOGE>();
         AddMarketBurker<ICryptoDOGE>(services);
+
+        services.AddSingleton<ICryptoALCX, CryptoALCX>();
+        AddMarketBurker<ICryptoALCX>(services);
 
         services.AddSingleton(typeof(IWallet<>), typeof(Wallet<>));
 
