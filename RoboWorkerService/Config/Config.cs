@@ -57,7 +57,10 @@ namespace RoboWorkerService.Config
             var appPath = configuration.GetValue<string>("RoboApp:RoboDataPath");
             WaitingBetweenStrategyInMiliSeconds = configuration.GetValue<int>("RoboApp:WaitingBetweenStrategyInSec") * 1000;
             TelegramToken = configuration.GetValue<string>("RoboApp:TelegramToken");
-            if (!string.IsNullOrEmpty(appPath)) CurrentPath = appPath;
+            if (!string.IsNullOrEmpty(appPath))
+            {
+                CurrentPath = appPath;
+            }
 
             Directory.CreateDirectory(ConfigPath);
             Directory.CreateDirectory(ReportPath);

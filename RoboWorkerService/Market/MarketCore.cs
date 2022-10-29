@@ -32,7 +32,7 @@ public abstract class MarketCore<T> where T : ICryptoCurrency
         //TODO OT LOW: smazat az bude GUI jinde
         Console.WriteLine();
 
-        _logger.LogInformation("Market position BUY: {ask}, SELL {sell}", ticker.Ask, ticker.Bid);
+        _logger.LogInformation("{Market} position BUY: {ask}, SELL {sell}", BrokerWallet.MarketSymbol, ticker.Ask, ticker.Bid);
 
         _lastTicker = ticker;
         return _lastTicker;

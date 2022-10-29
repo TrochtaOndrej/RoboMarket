@@ -9,9 +9,9 @@
     },
     "MarketCoreDefinedSharpBroker": {
       "crypto_broker_wallet": {},
-      "crypto_account_value": 300.0,
-      "eur_account_value": 65.0,
-      "crypto_position_transaction": 0.085,
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
       "market_symbol": "DOGE-EUR"
     }
   },

@@ -2,18 +2,18 @@
   "note": "Pri spusteni se rozpocitavaji ceny do marketu. Ceny jsou uvedeny v mene Crypta a to v EUR!. Priz zmene udaju a spusteni programu se aplikuji zmeny.Mazani jednotlivych transakci je treba delat s opatrnosti a uvahou",
   "actual_order_number": 0,
   "process_data_buy": {
-    "price_in_eur": 25,
+    "price_in_eur": 0.0,
     "market_process_type": 1,
-    "percent_spectrum_start": 2,
-    "percent_spectrum_end": 15.0,
-    "percent_step_calculate_price": 0.5
+    "percent_spectrum_start": 0.7,
+    "percent_spectrum_end": 4.0,
+    "percent_step_calculate_price": 0.3
   },
   "process_data_sell": {
-    "price_in_crypto_in_eur": 25,
+    "price_in_crypto_in_eur": 0.0,
     "market_process_type": 2,
-    "percent_spectrum_start": 2,
-    "percent_spectrum_end": 15.0,
-    "percent_step_calculate_price": 0.5
+    "percent_spectrum_start": 0.7,
+    "percent_spectrum_end": 4.0,
+    "percent_step_calculate_price": 0.3
   },
   "transaction_data": []
 }

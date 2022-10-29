@@ -1,1 +1,5347 @@
-[]
+[
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002227,
+      "price": 1554.51,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 524
+      }
+    },
+    "order_result": {
+      "order_id": "e4371890-ce7a-477c-ac6b-92247a78c3d7",
+      "result": 4,
+      "amount": 0.002227,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1554.51,
+      "order_date": "2022-10-28T20:32:24.260404Z",
+      "http_header_date": "2022-10-28T20:32:24Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002227,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1554.51,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 1.0,
+      "profit_in_eur": 0.0138461538461538461538461538,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 418,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002234,
+      "price": 1549.80,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 525
+      }
+    },
+    "order_result": {
+      "order_id": "287c9ff7-97ac-461b-b911-2b858a7f1dcf",
+      "result": 4,
+      "amount": 0.002234,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1549.8,
+      "order_date": "2022-10-28T20:32:24.501922Z",
+      "http_header_date": "2022-10-28T20:32:24Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002234,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1549.80,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 1.3,
+      "profit_in_eur": 0.0242307692307692307692307692,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 419,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002240,
+      "price": 1545.09,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 526
+      }
+    },
+    "order_result": {
+      "order_id": "c27a4434-caa9-4241-9c4f-83b93f4dfdc9",
+      "result": 4,
+      "amount": 0.00224,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1545.09,
+      "order_date": "2022-10-28T20:32:24.686133Z",
+      "http_header_date": "2022-10-28T20:32:24Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002240,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1545.09,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 1.6,
+      "profit_in_eur": 0.0346153846153846153846153846,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 420,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002247,
+      "price": 1540.38,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 527
+      }
+    },
+    "order_result": {
+      "order_id": "73e27c7b-3b92-4f4d-928f-9ec59256fb3e",
+      "result": 4,
+      "amount": 0.002247,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1540.38,
+      "order_date": "2022-10-28T20:32:25.12606Z",
+      "http_header_date": "2022-10-28T20:32:25Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002247,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1540.38,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 1.9,
+      "profit_in_eur": 0.0449999999999999999999999999,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 421,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002254,
+      "price": 1535.67,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 528
+      }
+    },
+    "order_result": {
+      "order_id": "b8bd098b-15db-4d19-a7d6-2d02827b9a99",
+      "result": 4,
+      "amount": 0.002254,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1535.67,
+      "order_date": "2022-10-28T20:32:25.5812Z",
+      "http_header_date": "2022-10-28T20:32:25Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002254,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1535.67,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 2.2,
+      "profit_in_eur": 0.0553846153846153846153846153,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 422,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002261,
+      "price": 1530.95,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 529
+      }
+    },
+    "order_result": {
+      "order_id": "44bc59a1-4d01-4e03-9dd7-bd2a6cc2f93a",
+      "result": 4,
+      "amount": 0.002261,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1530.95,
+      "order_date": "2022-10-28T20:32:25.827279Z",
+      "http_header_date": "2022-10-28T20:32:25Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002261,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1530.95,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 2.5,
+      "profit_in_eur": 0.0657692307692307692307692307,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 423,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002268,
+      "price": 1526.24,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 530
+      }
+    },
+    "order_result": {
+      "order_id": "d7eaba2c-f468-4a27-9b9f-d6aa350c6210",
+      "result": 4,
+      "amount": 0.002268,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1526.24,
+      "order_date": "2022-10-28T20:32:26.020083Z",
+      "http_header_date": "2022-10-28T20:32:26Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002268,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1526.24,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 2.8,
+      "profit_in_eur": 0.0761538461538461538461538461,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 424,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002275,
+      "price": 1521.53,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 531
+      }
+    },
+    "order_result": {
+      "order_id": "dea27a0e-8780-44e0-bef9-0f616532e227",
+      "result": 4,
+      "amount": 0.002275,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1521.53,
+      "order_date": "2022-10-28T20:32:26.229643Z",
+      "http_header_date": "2022-10-28T20:32:26Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002275,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1521.53,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 3.1,
+      "profit_in_eur": 0.0865384615384615384615384615,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 425,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002282,
+      "price": 1516.82,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 532
+      }
+    },
+    "order_result": {
+      "order_id": "0e113a28-77d7-47ec-9a1d-8ac14fac9b67",
+      "result": 4,
+      "amount": 0.002282,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1516.82,
+      "order_date": "2022-10-28T20:32:26.476943Z",
+      "http_header_date": "2022-10-28T20:32:26Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002282,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1516.82,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 3.4,
+      "profit_in_eur": 0.0969230769230769230769230768,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 426,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002289,
+      "price": 1512.11,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 533
+      }
+    },
+    "order_result": {
+      "order_id": "c595787e-cbef-44b0-b734-57cf3a79bf09",
+      "result": 4,
+      "amount": 0.002289,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1512.11,
+      "order_date": "2022-10-28T20:32:26.788759Z",
+      "http_header_date": "2022-10-28T20:32:26Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002289,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1512.11,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 3.7,
+      "profit_in_eur": 0.1073076923076923076923076922,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 427,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002296,
+      "price": 1507.40,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 534
+      }
+    },
+    "order_result": {
+      "order_id": "4481e1e9-f488-4e04-bd83-48ecf0871142",
+      "result": 4,
+      "amount": 0.002296,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1507.4,
+      "order_date": "2022-10-28T20:32:26.991537Z",
+      "http_header_date": "2022-10-28T20:32:27Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002296,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1507.40,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 4.0,
+      "profit_in_eur": 0.1176923076923076923076923076,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 428,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002304,
+      "price": 1502.69,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 535
+      }
+    },
+    "order_result": {
+      "order_id": "f64a7cb3-be83-4912-9bc7-2dadbaf07cf9",
+      "result": 4,
+      "amount": 0.002304,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1502.69,
+      "order_date": "2022-10-28T20:32:27.185076Z",
+      "http_header_date": "2022-10-28T20:32:27Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002304,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1502.69,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 4.3,
+      "profit_in_eur": 0.1280769230769230769230769230,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 429,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002311,
+      "price": 1497.98,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 536
+      }
+    },
+    "order_result": {
+      "order_id": "f23f8e35-0a1c-482c-a30d-0dd96a81e879",
+      "result": 4,
+      "amount": 0.002311,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1497.98,
+      "order_date": "2022-10-28T20:32:27.457677Z",
+      "http_header_date": "2022-10-28T20:32:27Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002311,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1497.98,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 4.6,
+      "profit_in_eur": 0.1384615384615384615384615384,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 430,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002318,
+      "price": 1493.27,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 537
+      }
+    },
+    "order_result": {
+      "order_id": "a1a43922-66aa-4448-97f5-af73036d2542",
+      "result": 4,
+      "amount": 0.002318,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1493.27,
+      "order_date": "2022-10-28T20:32:27.67692Z",
+      "http_header_date": "2022-10-28T20:32:27Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002318,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1493.27,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 4.9,
+      "profit_in_eur": 0.1488461538461538461538461537,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 431,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002325,
+      "price": 1488.56,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 538
+      }
+    },
+    "order_result": {
+      "order_id": "b1d52ae9-7b0f-455a-ae9a-ffa52d03c794",
+      "result": 4,
+      "amount": 0.002325,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1488.56,
+      "order_date": "2022-10-28T20:32:27.868972Z",
+      "http_header_date": "2022-10-28T20:32:27Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002325,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1488.56,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 5.2,
+      "profit_in_eur": 0.1592307692307692307692307691,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 432,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002333,
+      "price": 1483.85,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 539
+      }
+    },
+    "order_result": {
+      "order_id": "9f15c132-43dd-4995-8291-f18449a0c208",
+      "result": 4,
+      "amount": 0.002333,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1483.85,
+      "order_date": "2022-10-28T20:32:28.046617Z",
+      "http_header_date": "2022-10-28T20:32:28Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002333,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1483.85,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 5.5,
+      "profit_in_eur": 0.1696153846153846153846153845,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 433,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002340,
+      "price": 1479.14,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 540
+      }
+    },
+    "order_result": {
+      "order_id": "617f72ed-da42-4e6a-b69b-ccc16bdfd471",
+      "result": 4,
+      "amount": 0.00234,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1479.14,
+      "order_date": "2022-10-28T20:32:28.245285Z",
+      "http_header_date": "2022-10-28T20:32:28Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002340,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1479.14,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 5.8,
+      "profit_in_eur": 0.1799999999999999999999999999,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 434,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002348,
+      "price": 1474.43,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 541
+      }
+    },
+    "order_result": {
+      "order_id": "8eb78630-a388-4bc2-9a28-55d2bf44b228",
+      "result": 4,
+      "amount": 0.002348,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1474.43,
+      "order_date": "2022-10-28T20:32:28.465424Z",
+      "http_header_date": "2022-10-28T20:32:28Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002348,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1474.43,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 6.1,
+      "profit_in_eur": 0.1903846153846153846153846153,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 435,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002355,
+      "price": 1469.72,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 542
+      }
+    },
+    "order_result": {
+      "order_id": "87a70c88-97b0-45f7-aecd-bbf43236c744",
+      "result": 4,
+      "amount": 0.002355,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1469.72,
+      "order_date": "2022-10-28T20:32:28.921003Z",
+      "http_header_date": "2022-10-28T20:32:28Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002355,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1469.72,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 6.4,
+      "profit_in_eur": 0.2007692307692307692307692306,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 436,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002363,
+      "price": 1465.01,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 543
+      }
+    },
+    "order_result": {
+      "order_id": "de2ced26-812d-4224-8070-c8609b2a4dd2",
+      "result": 4,
+      "amount": 0.002363,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1465.01,
+      "order_date": "2022-10-28T20:32:29.137861Z",
+      "http_header_date": "2022-10-28T20:32:29Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002363,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1465.01,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 6.7,
+      "profit_in_eur": 0.2111538461538461538461538460,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 437,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002370,
+      "price": 1460.30,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 544
+      }
+    },
+    "order_result": {
+      "order_id": "949710d0-6e55-4d5e-bbd8-6c15c024a8f2",
+      "result": 4,
+      "amount": 0.00237,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1460.3,
+      "order_date": "2022-10-28T20:32:29.33833Z",
+      "http_header_date": "2022-10-28T20:32:29Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002370,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1460.30,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 7.0,
+      "profit_in_eur": 0.2215384615384615384615384614,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 438,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002378,
+      "price": 1455.58,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 545
+      }
+    },
+    "order_result": {
+      "order_id": "60281b68-d0d2-47cc-87ee-3cddc327c755",
+      "result": 4,
+      "amount": 0.002378,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1455.58,
+      "order_date": "2022-10-28T20:32:29.59539Z",
+      "http_header_date": "2022-10-28T20:32:29Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002378,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1455.58,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 7.3,
+      "profit_in_eur": 0.2319230769230769230769230768,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 439,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002386,
+      "price": 1450.87,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 546
+      }
+    },
+    "order_result": {
+      "order_id": "24f256c0-4c34-4dd2-abed-83433c953fd4",
+      "result": 4,
+      "amount": 0.002386,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1450.87,
+      "order_date": "2022-10-28T20:32:29.800769Z",
+      "http_header_date": "2022-10-28T20:32:29Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002386,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1450.87,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 7.6,
+      "profit_in_eur": 0.2423076923076923076923076922,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 440,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002394,
+      "price": 1446.16,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 547
+      }
+    },
+    "order_result": {
+      "order_id": "6132f140-0a9f-40ac-be0b-e49c09684798",
+      "result": 4,
+      "amount": 0.002394,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1446.16,
+      "order_date": "2022-10-28T20:32:30.042291Z",
+      "http_header_date": "2022-10-28T20:32:30Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002394,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1446.16,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 7.9,
+      "profit_in_eur": 0.2526923076923076923076923075,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 441,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002401,
+      "price": 1441.45,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 548
+      }
+    },
+    "order_result": {
+      "order_id": "5d540065-6971-4d7a-9f43-6fa0d2af5d30",
+      "result": 4,
+      "amount": 0.002401,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1441.45,
+      "order_date": "2022-10-28T20:32:30.256799Z",
+      "http_header_date": "2022-10-28T20:32:30Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002401,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1441.45,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 8.2,
+      "profit_in_eur": 0.2630769230769230769230769229,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 442,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002409,
+      "price": 1436.74,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 549
+      }
+    },
+    "order_result": {
+      "order_id": "085bc9ac-4232-4380-b14a-9b0dc911a9ac",
+      "result": 4,
+      "amount": 0.002409,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1436.74,
+      "order_date": "2022-10-28T20:32:30.491934Z",
+      "http_header_date": "2022-10-28T20:32:30Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002409,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1436.74,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 8.5,
+      "profit_in_eur": 0.2734615384615384615384615383,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 443,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002417,
+      "price": 1432.03,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 550
+      }
+    },
+    "order_result": {
+      "order_id": "f0c71c2a-f7a6-4898-b92f-c8de2e2838d5",
+      "result": 4,
+      "amount": 0.002417,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1432.03,
+      "order_date": "2022-10-28T20:32:30.702888Z",
+      "http_header_date": "2022-10-28T20:32:30Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002417,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1432.03,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 8.8,
+      "profit_in_eur": 0.2838461538461538461538461537,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 444,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002425,
+      "price": 1427.32,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 551
+      }
+    },
+    "order_result": {
+      "order_id": "e45a88f6-4b79-4dc9-a6d4-acb62122793d",
+      "result": 4,
+      "amount": 0.002425,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1427.32,
+      "order_date": "2022-10-28T20:32:30.887221Z",
+      "http_header_date": "2022-10-28T20:32:30Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002425,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1427.32,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 9.1,
+      "profit_in_eur": 0.2942307692307692307692307691,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 445,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002433,
+      "price": 1422.61,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 552
+      }
+    },
+    "order_result": {
+      "order_id": "2c9f3970-6f05-46ee-b9cd-a001c1dbf06f",
+      "result": 4,
+      "amount": 0.002433,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1422.61,
+      "order_date": "2022-10-28T20:32:31.089896Z",
+      "http_header_date": "2022-10-28T20:32:31Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002433,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1422.61,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 9.4,
+      "profit_in_eur": 0.3046153846153846153846153844,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 446,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002441,
+      "price": 1417.90,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 553
+      }
+    },
+    "order_result": {
+      "order_id": "18e03be1-215c-4243-bbf7-ff39feacb431",
+      "result": 4,
+      "amount": 0.002441,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1417.9,
+      "order_date": "2022-10-28T20:32:31.310456Z",
+      "http_header_date": "2022-10-28T20:32:31Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002441,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1417.90,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 9.7,
+      "profit_in_eur": 0.3149999999999999999999999998,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 447,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002449,
+      "price": 1413.19,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 554
+      }
+    },
+    "order_result": {
+      "order_id": "928b32f4-e0b5-4ee6-95e6-4d285c462e32",
+      "result": 4,
+      "amount": 0.002449,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1413.19,
+      "order_date": "2022-10-28T20:32:31.505349Z",
+      "http_header_date": "2022-10-28T20:32:31Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002449,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1413.19,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 10.0,
+      "profit_in_eur": 0.3253846153846153846153846152,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 448,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002458,
+      "price": 1408.48,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 555
+      }
+    },
+    "order_result": {
+      "order_id": "2db86d48-8468-4d8c-934b-e2830b53dc6a",
+      "result": 4,
+      "amount": 0.002458,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1408.48,
+      "order_date": "2022-10-28T20:32:31.9295Z",
+      "http_header_date": "2022-10-28T20:32:31Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002458,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1408.48,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 10.3,
+      "profit_in_eur": 0.3357692307692307692307692306,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 449,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002466,
+      "price": 1403.77,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 556
+      }
+    },
+    "order_result": {
+      "order_id": "178a719c-0fb6-49fe-8d28-32988c6e29a6",
+      "result": 4,
+      "amount": 0.002466,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1403.77,
+      "order_date": "2022-10-28T20:32:32.12301Z",
+      "http_header_date": "2022-10-28T20:32:32Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002466,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1403.77,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 10.6,
+      "profit_in_eur": 0.3461538461538461538461538460,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 450,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002474,
+      "price": 1399.06,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 557
+      }
+    },
+    "order_result": {
+      "order_id": "93007eab-e88e-421b-a7c7-507135e229dc",
+      "result": 4,
+      "amount": 0.002474,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1399.06,
+      "order_date": "2022-10-28T20:32:32.310433Z",
+      "http_header_date": "2022-10-28T20:32:32Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002474,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1399.06,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 10.9,
+      "profit_in_eur": 0.3565384615384615384615384613,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 451,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002483,
+      "price": 1394.35,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 558
+      }
+    },
+    "order_result": {
+      "order_id": "ddc17d9c-2e81-4f71-8d7b-0f93c5ef68cb",
+      "result": 4,
+      "amount": 0.002483,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1394.35,
+      "order_date": "2022-10-28T20:32:32.545412Z",
+      "http_header_date": "2022-10-28T20:32:32Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002483,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1394.35,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 11.2,
+      "profit_in_eur": 0.3669230769230769230769230767,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 452,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002491,
+      "price": 1389.64,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 559
+      }
+    },
+    "order_result": {
+      "order_id": "86ed2e48-a37c-45b3-b686-6c26ed139db2",
+      "result": 4,
+      "amount": 0.002491,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1389.64,
+      "order_date": "2022-10-28T20:32:32.728276Z",
+      "http_header_date": "2022-10-28T20:32:32Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002491,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1389.64,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 11.5,
+      "profit_in_eur": 0.3773076923076923076923076921,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 453,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002499,
+      "price": 1384.93,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 560
+      }
+    },
+    "order_result": {
+      "order_id": "927a3b48-04a5-4899-9374-8b5001fcc82b",
+      "result": 4,
+      "amount": 0.002499,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1384.93,
+      "order_date": "2022-10-28T20:32:32.921231Z",
+      "http_header_date": "2022-10-28T20:32:32Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002499,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1384.93,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 11.8,
+      "profit_in_eur": 0.3876923076923076923076923075,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 454,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002508,
+      "price": 1380.21,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 561
+      }
+    },
+    "order_result": {
+      "order_id": "c8e6e0d6-ba7e-48d8-ac16-3f5f3a7e11c2",
+      "result": 4,
+      "amount": 0.002508,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1380.21,
+      "order_date": "2022-10-28T20:32:33.118056Z",
+      "http_header_date": "2022-10-28T20:32:33Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002508,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1380.21,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 12.1,
+      "profit_in_eur": 0.3980769230769230769230769229,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 455,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002517,
+      "price": 1375.50,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 562
+      }
+    },
+    "order_result": {
+      "order_id": "a942dc94-f480-4873-b177-363430e98c12",
+      "result": 4,
+      "amount": 0.002517,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1375.5,
+      "order_date": "2022-10-28T20:32:33.324767Z",
+      "http_header_date": "2022-10-28T20:32:33Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002517,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1375.50,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 12.4,
+      "profit_in_eur": 0.4084615384615384615384615382,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 456,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002525,
+      "price": 1370.79,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 563
+      }
+    },
+    "order_result": {
+      "order_id": "3c274d2b-5300-49d2-aa20-756c9d9a38d7",
+      "result": 4,
+      "amount": 0.002525,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1370.79,
+      "order_date": "2022-10-28T20:32:33.53741Z",
+      "http_header_date": "2022-10-28T20:32:33Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002525,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1370.79,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 12.7,
+      "profit_in_eur": 0.4188461538461538461538461536,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 457,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002534,
+      "price": 1366.08,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 564
+      }
+    },
+    "order_result": {
+      "order_id": "0b79d86c-6683-45bd-b512-f6c85c4711df",
+      "result": 4,
+      "amount": 0.002534,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1366.08,
+      "order_date": "2022-10-28T20:32:33.836074Z",
+      "http_header_date": "2022-10-28T20:32:33Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002534,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1366.08,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 13.0,
+      "profit_in_eur": 0.4292307692307692307692307690,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 458,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002543,
+      "price": 1361.37,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 565
+      }
+    },
+    "order_result": {
+      "order_id": "bcf00f7d-60fb-44a6-b39a-a85c6d543c30",
+      "result": 4,
+      "amount": 0.002543,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1361.37,
+      "order_date": "2022-10-28T20:32:34.033232Z",
+      "http_header_date": "2022-10-28T20:32:34Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002543,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1361.37,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 13.3,
+      "profit_in_eur": 0.4396153846153846153846153844,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.21,
+        "internal_number": 459,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002765,
+      "price": 1582.64,
+      "stop_price": 0.0,
+      "is_buy": false,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 584
+      }
+    },
+    "order_result": {
+      "order_id": "1e9b360a-0e8e-43d4-acbd-648041221d3e",
+      "result": 4,
+      "amount": 0.002765,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1582.64,
+      "order_date": "2022-10-28T20:37:20.257064Z",
+      "http_header_date": "2022-10-28T20:37:20Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": false,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 2,
+      "crypto_value": 0.002765,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1582.64,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 1.0,
+      "profit_in_eur": 0.0173333333333333333333333333,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1566.97,
+        "internal_number": 567,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002765,
+      "price": 1587.34,
+      "stop_price": 0.0,
+      "is_buy": false,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 585
+      }
+    },
+    "order_result": {
+      "order_id": "419de4eb-fc5d-48ff-99aa-9f3e1269a78d",
+      "result": 4,
+      "amount": 0.002765,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1587.34,
+      "order_date": "2022-10-28T20:37:20.505591Z",
+      "http_header_date": "2022-10-28T20:37:20Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": false,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 2,
+      "crypto_value": 0.002765,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1587.34,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 1.3,
+      "profit_in_eur": 0.0303333333333333333333333333,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1566.97,
+        "internal_number": 568,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002765,
+      "price": 1592.04,
+      "stop_price": 0.0,
+      "is_buy": false,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 586
+      }
+    },
+    "order_result": {
+      "order_id": "1e06374f-6d03-45d4-9358-ef63124b981e",
+      "result": 4,
+      "amount": 0.002765,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1592.04,
+      "order_date": "2022-10-28T20:37:20.959994Z",
+      "http_header_date": "2022-10-28T20:37:21Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": false,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 2,
+      "crypto_value": 0.002765,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1592.04,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 1.6,
+      "profit_in_eur": 0.0433333333333333333333333333,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1566.97,
+        "internal_number": 569,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002765,
+      "price": 1596.74,
+      "stop_price": 0.0,
+      "is_buy": false,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 587
+      }
+    },
+    "order_result": {
+      "order_id": "cdb796af-a3f6-43df-94c0-e4f1bac42c63",
+      "result": 4,
+      "amount": 0.002765,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1596.74,
+      "order_date": "2022-10-28T20:37:21.177607Z",
+      "http_header_date": "2022-10-28T20:37:21Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": false,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 2,
+      "crypto_value": 0.002765,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1596.74,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 1.9,
+      "profit_in_eur": 0.0563333333333333333333333333,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1566.97,
+        "internal_number": 570,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002765,
+      "price": 1601.44,
+      "stop_price": 0.0,
+      "is_buy": false,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 588
+      }
+    },
+    "order_result": {
+      "order_id": "159178e9-bf0b-4087-bbb1-b26b91668a95",
+      "result": 4,
+      "amount": 0.002765,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1601.44,
+      "order_date": "2022-10-28T20:37:21.386357Z",
+      "http_header_date": "2022-10-28T20:37:21Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": false,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 2,
+      "crypto_value": 0.002765,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1601.44,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 2.2,
+      "profit_in_eur": 0.0693333333333333333333333333,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1566.97,
+        "internal_number": 571,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002765,
+      "price": 1606.14,
+      "stop_price": 0.0,
+      "is_buy": false,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 589
+      }
+    },
+    "order_result": {
+      "order_id": "0d5171cf-3504-408e-be9b-540148cc6b23",
+      "result": 4,
+      "amount": 0.002765,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1606.14,
+      "order_date": "2022-10-28T20:37:21.591011Z",
+      "http_header_date": "2022-10-28T20:37:21Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": false,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 2,
+      "crypto_value": 0.002765,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1606.14,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 2.5,
+      "profit_in_eur": 0.0823333333333333333333333332,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1566.97,
+        "internal_number": 572,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002765,
+      "price": 1610.85,
+      "stop_price": 0.0,
+      "is_buy": false,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 590
+      }
+    },
+    "order_result": {
+      "order_id": "442def9e-0c5e-4a99-9d2f-c89490ba1eaf",
+      "result": 4,
+      "amount": 0.002765,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1610.85,
+      "order_date": "2022-10-28T20:37:21.775175Z",
+      "http_header_date": "2022-10-28T20:37:21Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": false,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 2,
+      "crypto_value": 0.002765,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1610.85,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 2.8,
+      "profit_in_eur": 0.0953333333333333333333333332,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1566.97,
+        "internal_number": 573,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002765,
+      "price": 1615.55,
+      "stop_price": 0.0,
+      "is_buy": false,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 591
+      }
+    },
+    "order_result": {
+      "order_id": "82f2eea0-3e26-4f9b-bf96-39ed1d0a5b20",
+      "result": 4,
+      "amount": 0.002765,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1615.55,
+      "order_date": "2022-10-28T20:37:21.960064Z",
+      "http_header_date": "2022-10-28T20:37:22Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": false,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 2,
+      "crypto_value": 0.002765,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1615.55,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 3.1,
+      "profit_in_eur": 0.1083333333333333333333333332,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1566.97,
+        "internal_number": 574,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002765,
+      "price": 1620.25,
+      "stop_price": 0.0,
+      "is_buy": false,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 592
+      }
+    },
+    "order_result": {
+      "order_id": "913934d9-9bce-4011-87d9-96123855069f",
+      "result": 4,
+      "amount": 0.002765,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1620.25,
+      "order_date": "2022-10-28T20:37:22.170882Z",
+      "http_header_date": "2022-10-28T20:37:22Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": false,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 2,
+      "crypto_value": 0.002765,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1620.25,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 3.4,
+      "profit_in_eur": 0.1213333333333333333333333332,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1566.97,
+        "internal_number": 575,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002765,
+      "price": 1624.95,
+      "stop_price": 0.0,
+      "is_buy": false,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 593
+      }
+    },
+    "order_result": {
+      "order_id": "1d2551e9-1e2b-476f-911a-2126e16c8596",
+      "result": 4,
+      "amount": 0.002765,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1624.95,
+      "order_date": "2022-10-28T20:37:22.357124Z",
+      "http_header_date": "2022-10-28T20:37:22Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": false,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 2,
+      "crypto_value": 0.002765,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1624.95,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 3.7,
+      "profit_in_eur": 0.1343333333333333333333333332,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1566.97,
+        "internal_number": 576,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002765,
+      "price": 1629.65,
+      "stop_price": 0.0,
+      "is_buy": false,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 594
+      }
+    },
+    "order_result": {
+      "order_id": "ec14813d-2825-4c71-b873-3dd88ac017c3",
+      "result": 4,
+      "amount": 0.002765,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1629.65,
+      "order_date": "2022-10-28T20:37:22.580869Z",
+      "http_header_date": "2022-10-28T20:37:22Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": false,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 2,
+      "crypto_value": 0.002765,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1629.65,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 4.0,
+      "profit_in_eur": 0.1473333333333333333333333332,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1566.97,
+        "internal_number": 577,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002765,
+      "price": 1634.35,
+      "stop_price": 0.0,
+      "is_buy": false,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 595
+      }
+    },
+    "order_result": {
+      "order_id": "0a4ff184-eaaf-403d-be41-82ff1abff2c5",
+      "result": 4,
+      "amount": 0.002765,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1634.35,
+      "order_date": "2022-10-28T20:37:22.770482Z",
+      "http_header_date": "2022-10-28T20:37:22Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": false,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 2,
+      "crypto_value": 0.002765,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1634.35,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 4.3,
+      "profit_in_eur": 0.1603333333333333333333333332,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1566.97,
+        "internal_number": 578,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002765,
+      "price": 1639.05,
+      "stop_price": 0.0,
+      "is_buy": false,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 596
+      }
+    },
+    "order_result": {
+      "order_id": "623cc697-ee6c-4232-add1-106d499a5801",
+      "result": 4,
+      "amount": 0.002765,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1639.05,
+      "order_date": "2022-10-28T20:37:22.954651Z",
+      "http_header_date": "2022-10-28T20:37:23Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": false,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 2,
+      "crypto_value": 0.002765,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1639.05,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 4.6,
+      "profit_in_eur": 0.1733333333333333333333333332,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1566.97,
+        "internal_number": 579,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002765,
+      "price": 1643.75,
+      "stop_price": 0.0,
+      "is_buy": false,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 597
+      }
+    },
+    "order_result": {
+      "order_id": "68797221-e607-4f5e-b619-4229747e2dae",
+      "result": 4,
+      "amount": 0.002765,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1643.75,
+      "order_date": "2022-10-28T20:37:23.178366Z",
+      "http_header_date": "2022-10-28T20:37:23Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": false,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 2,
+      "crypto_value": 0.002765,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1643.75,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 4.9,
+      "profit_in_eur": 0.1863333333333333333333333332,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1566.97,
+        "internal_number": 580,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002765,
+      "price": 1648.45,
+      "stop_price": 0.0,
+      "is_buy": false,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 598
+      }
+    },
+    "order_result": {
+      "order_id": "952e2c85-6019-4574-a180-bd8780a9ca70",
+      "result": 4,
+      "amount": 0.002765,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1648.45,
+      "order_date": "2022-10-28T20:37:23.384184Z",
+      "http_header_date": "2022-10-28T20:37:23Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": false,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 2,
+      "crypto_value": 0.002765,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1648.45,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 5.2,
+      "profit_in_eur": 0.1993333333333333333333333332,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1566.97,
+        "internal_number": 581,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002765,
+      "price": 1653.15,
+      "stop_price": 0.0,
+      "is_buy": false,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 599
+      }
+    },
+    "order_result": {
+      "order_id": "05f9d28e-15cc-493d-8cf8-86ee5e304086",
+      "result": 4,
+      "amount": 0.002765,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1653.15,
+      "order_date": "2022-10-28T20:37:23.58871Z",
+      "http_header_date": "2022-10-28T20:37:23Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": false,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 2,
+      "crypto_value": 0.002765,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1653.15,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 5.5,
+      "profit_in_eur": 0.2123333333333333333333333332,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1566.97,
+        "internal_number": 582,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002765,
+      "price": 1657.85,
+      "stop_price": 0.0,
+      "is_buy": false,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 600
+      }
+    },
+    "order_result": {
+      "order_id": "722a2e13-a6e5-4dc5-b787-47c52fde3d1e",
+      "result": 4,
+      "amount": 0.002765,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1657.85,
+      "order_date": "2022-10-28T20:37:23.776445Z",
+      "http_header_date": "2022-10-28T20:37:23Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": false,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 2,
+      "crypto_value": 0.002765,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1657.85,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 5.8,
+      "profit_in_eur": 0.2253333333333333333333333331,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1566.97,
+        "internal_number": 583,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002227,
+      "price": 1570.06,
+      "stop_price": 0.0,
+      "is_buy": false,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 718
+      }
+    },
+    "order_result": {
+      "order_id": "9538470a-c76b-41b8-af68-ee0d667936e7",
+      "result": 4,
+      "amount": 0.002227,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1570.06,
+      "order_date": "2022-10-29T00:39:55.129579Z",
+      "http_header_date": "2022-10-29T00:39:55Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": false,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 2,
+      "crypto_value": 0.002227,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1570.06,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 1.0,
+      "profit_in_eur": 0.0138461538461538461538461538,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1554.51,
+        "internal_number": 717,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002227,
+      "price": 1554.36,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 736
+      }
+    },
+    "order_result": {
+      "order_id": "2b6b94c5-e9bd-48ae-ad0c-46f7544a60a7",
+      "result": 4,
+      "amount": 0.002227,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1554.36,
+      "order_date": "2022-10-29T02:31:26.537285Z",
+      "http_header_date": "2022-10-29T02:31:26Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002227,
+      "eur_value": 3.4615384615384615384615384616,
+      "price": 1554.36,
+      "fees": 0.0207692307692307692307692308,
+      "is_post_only": true,
+      "profit_percently": 1.0,
+      "profit_in_eur": 0.0138461538461538461538461538,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1570.06,
+        "internal_number": 735,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002766,
+      "price": 1566.81,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 738
+      }
+    },
+    "order_result": {
+      "order_id": "01c98678-8007-458d-b367-de72d48ca051",
+      "result": 4,
+      "amount": 0.002766,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1566.81,
+      "order_date": "2022-10-29T02:51:39.462135Z",
+      "http_header_date": "2022-10-29T02:51:39Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002766,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1566.81,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 1.0,
+      "profit_in_eur": 0.0173333333333333333333333333,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1582.64,
+        "internal_number": 737,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002766,
+      "price": 1566.70,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 743
+      }
+    },
+    "order_result": {
+      "order_id": "5f7e93de-b38f-4b18-bc44-377c16c0d2d4",
+      "result": 4,
+      "amount": 0.002766,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1566.7,
+      "order_date": "2022-10-29T03:16:57.023184Z",
+      "http_header_date": "2022-10-29T03:16:57Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002766,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1566.70,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 1.3,
+      "profit_in_eur": 0.0303333333333333333333333333,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1587.34,
+        "internal_number": 741,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002766,
+      "price": 1566.57,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 744
+      }
+    },
+    "order_result": {
+      "order_id": "0d0ca521-fdef-4372-9888-8fd436e18ccb",
+      "result": 4,
+      "amount": 0.002766,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1566.57,
+      "order_date": "2022-10-29T03:16:57.409483Z",
+      "http_header_date": "2022-10-29T03:16:57Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002766,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1566.57,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 1.6,
+      "profit_in_eur": 0.0433333333333333333333333333,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1592.04,
+        "internal_number": 742,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002766,
+      "price": 1566.40,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 748
+      }
+    },
+    "order_result": {
+      "order_id": "9c9f82a4-703b-43e0-a69c-6ffbb06b82ca",
+      "result": 4,
+      "amount": 0.002766,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1566.4,
+      "order_date": "2022-10-29T03:22:01.521759Z",
+      "http_header_date": "2022-10-29T03:22:01Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002766,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1566.40,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 1.9,
+      "profit_in_eur": 0.0563333333333333333333333333,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1596.74,
+        "internal_number": 747,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002767,
+      "price": 1566.21,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 777
+      }
+    },
+    "order_result": {
+      "order_id": "19ce323f-0204-4a2c-9729-95c374817bc9",
+      "result": 4,
+      "amount": 0.002767,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1566.21,
+      "order_date": "2022-10-29T05:27:33.694847Z",
+      "http_header_date": "2022-10-29T05:27:33Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002767,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1566.21,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 2.2,
+      "profit_in_eur": 0.0693333333333333333333333333,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1601.44,
+        "internal_number": 775,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002767,
+      "price": 1565.99,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 778
+      }
+    },
+    "order_result": {
+      "order_id": "5d90ff21-a327-41d3-a17b-8f00f0efbe95",
+      "result": 4,
+      "amount": 0.002767,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1565.99,
+      "order_date": "2022-10-29T05:27:33.866593Z",
+      "http_header_date": "2022-10-29T05:27:33Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002767,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1565.99,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 2.5,
+      "profit_in_eur": 0.0823333333333333333333333332,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1606.14,
+        "internal_number": 776,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002768,
+      "price": 1565.75,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {
+        "RoboNumberOrder": 826
+      }
+    },
+    "order_result": {
+      "order_id": "9cbed3e0-c789-4c28-922b-fa8932279558",
+      "result": 4,
+      "amount": 0.002768,
+      "amount_filled": 0.0,
+      "is_amount_filled_reversed": false,
+      "price": 1565.75,
+      "order_date": "2022-10-29T08:14:41.770648Z",
+      "http_header_date": "2022-10-29T08:14:41Z",
+      "completed_date": "0001-01-01T00:00:00",
+      "market_symbol": "ETH-EUR",
+      "is_buy": true,
+      "fees": 0.0,
+      "fees_currency": "ETH"
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.005,
+          "eur_account_value": 100.0,
+          "crypto_position_transaction": 1570.0,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002768,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1565.75,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 2.8,
+      "profit_in_eur": 0.0953333333333333333333333332,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1610.85,
+        "internal_number": 825,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002768,
+      "price": 1565.47,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {}
+    },
+    "order_result": {
+      "order_id": "11:36:14",
+      "result": 1,
+      "message": "Development version",
+      "amount": 0.002768,
+      "amount_filled": 0.002768,
+      "is_amount_filled_reversed": false,
+      "price": 1565.47,
+      "order_date": "0001-01-01T00:00:00",
+      "is_buy": true,
+      "fees": 0.01
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.0299082272201626778458214684,
+          "eur_account_value": 61.044075979999999999999999880,
+          "crypto_position_transaction": 1562.23,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0808780172201626778458214684,
+      "eur_account_value": 131.02407597999999999999999988,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002768,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1565.47,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 3.1,
+      "profit_in_eur": 0.1083333333333333333333333332,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1615.55,
+        "internal_number": 846,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002769,
+      "price": 1565.16,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {}
+    },
+    "order_result": {
+      "order_id": "11:36:14",
+      "result": 1,
+      "message": "Development version",
+      "amount": 0.002769,
+      "amount_filled": 0.002769,
+      "is_amount_filled_reversed": false,
+      "price": 1565.16,
+      "order_date": "0001-01-01T00:00:00",
+      "is_buy": true,
+      "fees": 0.01
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.0299082272201626778458214684,
+          "eur_account_value": 61.044075979999999999999999880,
+          "crypto_position_transaction": 1562.23,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0808780172201626778458214684,
+      "eur_account_value": 131.02407597999999999999999988,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002769,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1565.16,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 3.4,
+      "profit_in_eur": 0.1213333333333333333333333332,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1620.25,
+        "internal_number": 847,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002769,
+      "price": 1564.83,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {}
+    },
+    "order_result": {
+      "order_id": "11:36:14",
+      "result": 1,
+      "message": "Development version",
+      "amount": 0.002769,
+      "amount_filled": 0.002769,
+      "is_amount_filled_reversed": false,
+      "price": 1564.83,
+      "order_date": "0001-01-01T00:00:00",
+      "is_buy": true,
+      "fees": 0.01
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.0299082272201626778458214684,
+          "eur_account_value": 61.044075979999999999999999880,
+          "crypto_position_transaction": 1562.23,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0808780172201626778458214684,
+      "eur_account_value": 131.02407597999999999999999988,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002769,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1564.83,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 3.7,
+      "profit_in_eur": 0.1343333333333333333333333332,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1624.95,
+        "internal_number": 848,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002770,
+      "price": 1564.46,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {}
+    },
+    "order_result": {
+      "order_id": "11:36:14",
+      "result": 1,
+      "message": "Development version",
+      "amount": 0.002770,
+      "amount_filled": 0.002770,
+      "is_amount_filled_reversed": false,
+      "price": 1564.46,
+      "order_date": "0001-01-01T00:00:00",
+      "is_buy": true,
+      "fees": 0.01
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.0299082272201626778458214684,
+          "eur_account_value": 61.044075979999999999999999880,
+          "crypto_position_transaction": 1562.23,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0808780172201626778458214684,
+      "eur_account_value": 131.02407597999999999999999988,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002770,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1564.46,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 4.0,
+      "profit_in_eur": 0.1473333333333333333333333332,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1629.65,
+        "internal_number": 849,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002771,
+      "price": 1564.07,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {}
+    },
+    "order_result": {
+      "order_id": "11:36:14",
+      "result": 1,
+      "message": "Development version",
+      "amount": 0.002771,
+      "amount_filled": 0.002771,
+      "is_amount_filled_reversed": false,
+      "price": 1564.07,
+      "order_date": "0001-01-01T00:00:00",
+      "is_buy": true,
+      "fees": 0.01
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.0299082272201626778458214684,
+          "eur_account_value": 61.044075979999999999999999880,
+          "crypto_position_transaction": 1562.23,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0808780172201626778458214684,
+      "eur_account_value": 131.02407597999999999999999988,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002771,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1564.07,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 4.3,
+      "profit_in_eur": 0.1603333333333333333333333332,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1634.35,
+        "internal_number": 850,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002771,
+      "price": 1563.65,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {}
+    },
+    "order_result": {
+      "order_id": "11:36:14",
+      "result": 1,
+      "message": "Development version",
+      "amount": 0.002771,
+      "amount_filled": 0.002771,
+      "is_amount_filled_reversed": false,
+      "price": 1563.65,
+      "order_date": "0001-01-01T00:00:00",
+      "is_buy": true,
+      "fees": 0.01
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.0299082272201626778458214684,
+          "eur_account_value": 61.044075979999999999999999880,
+          "crypto_position_transaction": 1562.23,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0808780172201626778458214684,
+      "eur_account_value": 131.02407597999999999999999988,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002771,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1563.65,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 4.6,
+      "profit_in_eur": 0.1733333333333333333333333332,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1639.05,
+        "internal_number": 851,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002772,
+      "price": 1563.21,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {}
+    },
+    "order_result": {
+      "order_id": "11:36:14",
+      "result": 1,
+      "message": "Development version",
+      "amount": 0.002772,
+      "amount_filled": 0.002772,
+      "is_amount_filled_reversed": false,
+      "price": 1563.21,
+      "order_date": "0001-01-01T00:00:00",
+      "is_buy": true,
+      "fees": 0.01
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.0299082272201626778458214684,
+          "eur_account_value": 61.044075979999999999999999880,
+          "crypto_position_transaction": 1562.23,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0808780172201626778458214684,
+      "eur_account_value": 131.02407597999999999999999988,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002772,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1563.21,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 4.9,
+      "profit_in_eur": 0.1863333333333333333333333332,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1643.75,
+        "internal_number": 852,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002773,
+      "price": 1562.73,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {}
+    },
+    "order_result": {
+      "order_id": "11:36:14",
+      "result": 1,
+      "message": "Development version",
+      "amount": 0.002773,
+      "amount_filled": 0.002773,
+      "is_amount_filled_reversed": false,
+      "price": 1562.73,
+      "order_date": "0001-01-01T00:00:00",
+      "is_buy": true,
+      "fees": 0.01
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.0299082272201626778458214684,
+          "eur_account_value": 61.044075979999999999999999880,
+          "crypto_position_transaction": 1562.23,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0808780172201626778458214684,
+      "eur_account_value": 131.02407597999999999999999988,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002773,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1562.73,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 5.2,
+      "profit_in_eur": 0.1993333333333333333333333332,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1648.45,
+        "internal_number": 853,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  },
+  {
+    "order_request": {
+      "market_symbol": "ETH-EUR",
+      "amount": 0.002774,
+      "price": 1562.23,
+      "stop_price": 0.0,
+      "is_buy": true,
+      "is_margin": false,
+      "should_round_amount": true,
+      "order_type": 0,
+      "extra_parameters": {}
+    },
+    "order_result": {
+      "order_id": "11:36:14",
+      "result": 1,
+      "message": "Development version",
+      "amount": 0.002774,
+      "amount_filled": 0.002774,
+      "is_amount_filled_reversed": false,
+      "price": 1562.23,
+      "order_date": "0001-01-01T00:00:00",
+      "is_buy": true,
+      "fees": 0.01
+    },
+    "wallet": {
+      "crypto_broker_wallet": {
+        "MarketCoreCupBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.05096979,
+          "eur_account_value": 69.98,
+          "crypto_position_transaction": 1373.0,
+          "market_symbol": "ETH-EUR"
+        },
+        "MarketCoreDefinedSharpBroker": {
+          "crypto_broker_wallet": {},
+          "crypto_account_value": 0.0299082272201626778458214684,
+          "eur_account_value": 61.044075979999999999999999880,
+          "crypto_position_transaction": 1562.23,
+          "market_symbol": "ETH-EUR"
+        }
+      },
+      "crypto_account_value": 0.0808780172201626778458214684,
+      "eur_account_value": 131.02407597999999999999999988,
+      "crypto_position_transaction": 0.0,
+      "market_symbol": "ETH-EUR"
+    },
+    "buy_or_sell": {
+      "process_type": 1,
+      "crypto_value": 0.002774,
+      "eur_value": 4.3333333333333333333333333333,
+      "price": 1562.23,
+      "fees": 0.0260000000000000000000000000,
+      "is_post_only": true,
+      "profit_percently": 5.5,
+      "profit_in_eur": 0.2123333333333333333333333332,
+      "internal_data": {
+        "strategy": "SharpProcessingMarket",
+        "starting_point_position_to_buy_or_sell": 1653.15,
+        "internal_number": 854,
+        "order_from_internal_number": 0
+      },
+      "market_symbol": "ETH-EUR"
+    },
+    "strategy_name": "MarketCoreDefinedSharpBroker"
+  }
+]

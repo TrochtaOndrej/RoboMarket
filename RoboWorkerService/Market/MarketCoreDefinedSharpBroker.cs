@@ -76,21 +76,23 @@ public class MarketCoreDefinedSharpBroker<W> : MarketCore<W>, IMarketCoreSharpBr
 
     public async Task RunAsync()
     {
-        // Sharp procedury se ptame 1 x za 30 sec
-        // if (questionToMarket < DateTime.Now) return;
-        // questionToMarket = questionToMarket.AddSeconds(30);
+        try
+        {
+            // nacti aktualni order z Burzy
+            var ticker = await IsTheSameTickerWithLastTickerAsync();
+            if (ticker is null) return;
 
-
-        // nacti aktualni order z Burzy
-        var ticker = await IsTheSameTickerWithLastTickerAsync();
-        if (ticker is null) return;
-
-        //vypocti profit 
-        var completedOrderInMarket = await _cmr.GetCompletedOrderDetailsAsync();
-        var buyOrSellOrders = await _pm.RunProcessingAsync(ticker, _extraDataService, completedOrderInMarket.ToList());
-        await BuyOrSell(buyOrSellOrders);
-        var openOrder = await _cmr.GetOpenOrderDetailAsync();
-        CheckOpenOrdersAndRemoveFromLocalOrders(openOrder);
+            //vypocti profit 
+            var completedOrderInMarket = await _cmr.GetCompletedOrderDetailsAsync();
+            var buyOrSellOrders = await _pm.RunProcessingAsync(ticker, _extraDataService, completedOrderInMarket.ToList());
+            await BuyOrSell(buyOrSellOrders);
+            var openOrder = await _cmr.GetOpenOrderDetailAsync();
+            CheckOpenOrdersAndRemoveFromLocalOrders(openOrder);
+        }
+        catch (Exception ex)
+        {
+            throw new BussinesExceptions($"SHARP Strategy [{BrokerWallet.MarketSymbol}] have error.", ex);
+        }
     }
 
     private void CheckOpenOrdersAndRemoveFromLocalOrders(IEnumerable<ExchangeOrderResult> openOrders)
@@ -98,7 +100,7 @@ public class MarketCoreDefinedSharpBroker<W> : MarketCore<W>, IMarketCoreSharpBr
         foreach (var localOpenOrder in _extraDataService.GetOpenOrderTransaction().ToList())
         {
             if (openOrders.Any(x => x.OrderId == localOpenOrder.OrderResult.OrderId)) continue;
-            _logger.LogInformation("Order: {OrderId}  is not found in open order section at online Market.",
+            _logger.LogInformation("Order: {OrderId}  is not found in open order section at online Market",
                 localOpenOrder.OrderResult.OrderId);
             _extraDataService.RemoveTransaction(localOpenOrder);
         }

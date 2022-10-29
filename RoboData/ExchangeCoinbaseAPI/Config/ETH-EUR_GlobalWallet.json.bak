@@ -9,14 +9,14 @@
     },
     "MarketCoreDefinedSharpBroker": {
       "crypto_broker_wallet": {},
-      "crypto_account_value": 0.0299082272201626778458214684,
-      "eur_account_value": 61.044075979999999999999999880,
-      "crypto_position_transaction": 1562.23,
+      "crypto_account_value": 0.0,
+      "eur_account_value": 0.0,
+      "crypto_position_transaction": 0.0,
       "market_symbol": "ETH-EUR"
     }
   },
-  "crypto_account_value": 0.0808780172201626778458214684,
-  "eur_account_value": 131.02407597999999999999999988,
+  "crypto_account_value": 0.0,
+  "eur_account_value": 0.0,
   "crypto_position_transaction": 0.0,
   "market_symbol": "ETH-EUR"
 }

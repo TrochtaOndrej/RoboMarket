@@ -51,23 +51,23 @@ public class Worker : BackgroundService
         await botTelegram.SendOkTextAsync("-*START ROBO STRATEGY*-");
 
         while (!stoppingToken.IsCancellationRequested)
-            try
+            foreach (var marketCoreBroker in cryptoProcessing)
             {
-                Counter++;
-                foreach (var marketCoreBroker in cryptoProcessing)
+                try
                 {
+                    Counter++;
                     await marketCoreBroker.RunAsync();
                     await Task.Delay(_appRobo.Config.WaitingBetweenStrategyInMiliSeconds, stoppingToken);
-                }
 
-                //     await botTelegram.SendOkTextAsync($"Divam se po: {_counter}");
-                if (Counter == Int32.MaxValue) Counter = 0;
-                if (Counter % 10 == 0) await _appRobo.RoboConfig.SaveDataAsync(stoppingToken);
-            }
-            catch (Exception e)
-            {
-                await botTelegram.SendErrorTextAsync(e, "Error, core crash at: { DateTimeOffset.Now}");
-                throw;
+                    //     await botTelegram.SendOkTextAsync($"Divam se po: {_counter}");
+                    if (Counter == Int32.MaxValue) Counter = 0;
+                    if (Counter % 10 == 0) await _appRobo.RoboConfig.SaveDataAsync(stoppingToken);
+                }
+                catch (Exception e)
+                {
+                    await botTelegram.SendErrorTextAsync(e, $"Error, core crash at: {DateTimeOffset.Now}");
+                    throw;
+                }
             }
     }
 

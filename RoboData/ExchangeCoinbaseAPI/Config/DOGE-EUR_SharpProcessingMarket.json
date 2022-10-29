@@ -1,19 +1,2260 @@
 {
   "note": "Pri spusteni se rozpocitavaji ceny do marketu. Ceny jsou uvedeny v mene Crypta a to v EUR!. Priz zmene udaju a spusteni programu se aplikuji zmeny.Mazani jednotlivych transakci je treba delat s opatrnosti a uvahou",
-  "actual_order_number": 0,
+  "actual_order_number": 98,
   "process_data_buy": {
-    "price_in_eur": 0.0,
+    "price_in_eur": 3.6666666666666666666666666616,
     "market_process_type": 1,
-    "percent_spectrum_start": 0.7,
-    "percent_spectrum_end": 4.0,
-    "percent_step_calculate_price": 0.3
+    "percent_spectrum_start": 1.0,
+    "percent_spectrum_end": 10.0,
+    "percent_step_calculate_price": 0.5
   },
   "process_data_sell": {
-    "price_in_crypto_in_eur": 0.0,
+    "price_in_crypto_in_eur": 0.6593406593406593406593406549,
     "market_process_type": 2,
-    "percent_spectrum_start": 0.7,
-    "percent_spectrum_end": 4.0,
-    "percent_step_calculate_price": 0.3
+    "percent_spectrum_start": 0.9,
+    "percent_spectrum_end": 10.0,
+    "percent_step_calculate_price": 0.5
   },
-  "transaction_data": []
+  "transaction_data": [
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 44.283414,
+        "price": 0.0828,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 641
+        }
+      },
+      "order_result": {
+        "order_id": "901f301e-49f6-4642-9d47-99c5cd6d5902",
+        "result": 4,
+        "amount": 44.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0828,
+        "order_date": "2022-10-28T20:40:50.845066Z",
+        "http_header_date": "2022-10-28T20:40:50Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 44.283414,
+        "eur_value": 3.6666666666666666666666666667,
+        "price": 0.0828,
+        "fees": 0.0220000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 3.5,
+        "profit_in_eur": 0.1063333333333333333333333334,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.0858,
+          "internal_number": 606,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 44.498382,
+        "price": 0.0824,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 642
+        }
+      },
+      "order_result": {
+        "order_id": "ead9baa6-319a-46df-bdd8-9f0e13fb4fe4",
+        "result": 4,
+        "amount": 44.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0824,
+        "order_date": "2022-10-28T20:40:51.046151Z",
+        "http_header_date": "2022-10-28T20:40:51Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 44.498382,
+        "eur_value": 3.6666666666666666666666666667,
+        "price": 0.0824,
+        "fees": 0.0220000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 4.0,
+        "profit_in_eur": 0.1246666666666666666666666668,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.0858,
+          "internal_number": 607,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 44.770045,
+        "price": 0.0819,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 643
+        }
+      },
+      "order_result": {
+        "order_id": "17b88c78-e2f9-4411-914e-468f53f7f637",
+        "result": 4,
+        "amount": 44.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0819,
+        "order_date": "2022-10-28T20:40:51.26365Z",
+        "http_header_date": "2022-10-28T20:40:51Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 44.770045,
+        "eur_value": 3.6666666666666666666666666667,
+        "price": 0.0819,
+        "fees": 0.0220000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 4.5,
+        "profit_in_eur": 0.1430000000000000000000000002,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.0858,
+          "internal_number": 608,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 44.989775,
+        "price": 0.0815,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 644
+        }
+      },
+      "order_result": {
+        "order_id": "dcb11ce9-ca8b-402b-908b-b0a7dd50565d",
+        "result": 4,
+        "amount": 44.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0815,
+        "order_date": "2022-10-28T20:40:51.446125Z",
+        "http_header_date": "2022-10-28T20:40:51Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 44.989775,
+        "eur_value": 3.6666666666666666666666666667,
+        "price": 0.0815,
+        "fees": 0.0220000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 5.0,
+        "profit_in_eur": 0.1613333333333333333333333335,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.0858,
+          "internal_number": 609,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 45.211673,
+        "price": 0.0811,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 645
+        }
+      },
+      "order_result": {
+        "order_id": "22644a14-39fa-4c8a-9638-e13709a4d938",
+        "result": 4,
+        "amount": 45.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0811,
+        "order_date": "2022-10-28T20:40:51.639209Z",
+        "http_header_date": "2022-10-28T20:40:51Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 45.211673,
+        "eur_value": 3.6666666666666666666666666667,
+        "price": 0.0811,
+        "fees": 0.0220000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 5.5,
+        "profit_in_eur": 0.1796666666666666666666666668,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.0858,
+          "internal_number": 610,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 45.435770,
+        "price": 0.0807,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 646
+        }
+      },
+      "order_result": {
+        "order_id": "8e654318-fab2-491a-a26e-1faef1a88f5d",
+        "result": 4,
+        "amount": 45.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0807,
+        "order_date": "2022-10-28T20:40:51.850891Z",
+        "http_header_date": "2022-10-28T20:40:51Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 45.435770,
+        "eur_value": 3.6666666666666666666666666667,
+        "price": 0.0807,
+        "fees": 0.0220000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 6.0,
+        "profit_in_eur": 0.1980000000000000000000000002,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.0858,
+          "internal_number": 611,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 45.719036,
+        "price": 0.0802,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 647
+        }
+      },
+      "order_result": {
+        "order_id": "824fd874-8553-4881-b35b-4ee6adc66bf4",
+        "result": 4,
+        "amount": 45.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0802,
+        "order_date": "2022-10-28T20:40:56.041061Z",
+        "http_header_date": "2022-10-28T20:40:56Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 45.719036,
+        "eur_value": 3.6666666666666666666666666667,
+        "price": 0.0802,
+        "fees": 0.0220000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 6.5,
+        "profit_in_eur": 0.2163333333333333333333333336,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.0858,
+          "internal_number": 612,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 45.948204,
+        "price": 0.0798,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 648
+        }
+      },
+      "order_result": {
+        "order_id": "cc720b06-2044-4abf-b2ad-d844ecacf63a",
+        "result": 4,
+        "amount": 45.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0798,
+        "order_date": "2022-10-28T20:40:56.400276Z",
+        "http_header_date": "2022-10-28T20:40:56Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 45.948204,
+        "eur_value": 3.6666666666666666666666666667,
+        "price": 0.0798,
+        "fees": 0.0220000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 7.0,
+        "profit_in_eur": 0.2346666666666666666666666669,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.0858,
+          "internal_number": 613,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 46.179681,
+        "price": 0.0794,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 649
+        }
+      },
+      "order_result": {
+        "order_id": "7f591123-2ce2-457f-a498-bd2c24b29e2e",
+        "result": 4,
+        "amount": 46.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0794,
+        "order_date": "2022-10-28T20:40:56.584624Z",
+        "http_header_date": "2022-10-28T20:40:56Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 46.179681,
+        "eur_value": 3.6666666666666666666666666667,
+        "price": 0.0794,
+        "fees": 0.0220000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 7.5,
+        "profit_in_eur": 0.2530000000000000000000000002,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.0858,
+          "internal_number": 614,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 46.472328,
+        "price": 0.0789,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 650
+        }
+      },
+      "order_result": {
+        "order_id": "35cc4d8f-162c-4a63-bc35-da678baa4dd5",
+        "result": 4,
+        "amount": 46.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0789,
+        "order_date": "2022-10-28T20:40:56.773465Z",
+        "http_header_date": "2022-10-28T20:40:56Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 46.472328,
+        "eur_value": 3.6666666666666666666666666667,
+        "price": 0.0789,
+        "fees": 0.0220000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 8.0,
+        "profit_in_eur": 0.2713333333333333333333333336,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.0858,
+          "internal_number": 615,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 46.709130,
+        "price": 0.0785,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 651
+        }
+      },
+      "order_result": {
+        "order_id": "e191898b-0659-4ba9-bd56-2e3abef0d00c",
+        "result": 4,
+        "amount": 46.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0785,
+        "order_date": "2022-10-28T20:40:56.962591Z",
+        "http_header_date": "2022-10-28T20:40:57Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 46.709130,
+        "eur_value": 3.6666666666666666666666666667,
+        "price": 0.0785,
+        "fees": 0.0220000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 8.5,
+        "profit_in_eur": 0.2896666666666666666666666670,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.0858,
+          "internal_number": 616,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 46.948357,
+        "price": 0.0781,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 652
+        }
+      },
+      "order_result": {
+        "order_id": "c8b48cf7-b56e-4911-af07-3de4da641c0d",
+        "result": 4,
+        "amount": 46.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0781,
+        "order_date": "2022-10-28T20:40:57.153846Z",
+        "http_header_date": "2022-10-28T20:40:57Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 46.948357,
+        "eur_value": 3.6666666666666666666666666667,
+        "price": 0.0781,
+        "fees": 0.0220000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 9.0,
+        "profit_in_eur": 0.3080000000000000000000000003,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.0858,
+          "internal_number": 617,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 44.123546,
+        "price": 0.0831,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 722
+        }
+      },
+      "order_result": {
+        "order_id": "358291c4-8f25-4185-a27d-15b86d763f7b",
+        "result": 4,
+        "amount": 44.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0831,
+        "order_date": "2022-10-29T01:16:19.622384Z",
+        "http_header_date": "2022-10-29T01:16:19Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 44.123546,
+        "eur_value": 3.6666666666666666666666666667,
+        "price": 0.0831,
+        "fees": 0.0220000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 3.0,
+        "profit_in_eur": 0.0880000000000000000000000001,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.0857,
+          "internal_number": 720,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 43.598890,
+        "price": 0.0841,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 727
+        }
+      },
+      "order_result": {
+        "order_id": "fbd14941-8244-4965-8829-d3c08303ef8c",
+        "result": 4,
+        "amount": 43.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0841,
+        "order_date": "2022-10-29T01:21:23.793931Z",
+        "http_header_date": "2022-10-29T01:21:23Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 43.598890,
+        "eur_value": 3.6666666666666666666666666667,
+        "price": 0.0841,
+        "fees": 0.0220000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 2.0,
+        "profit_in_eur": 0.0513333333333333333333333334,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.0858,
+          "internal_number": 724,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 43.392505,
+        "price": 0.0845,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 786
+        }
+      },
+      "order_result": {
+        "order_id": "4a532470-9787-41d1-91d1-58e6a6635510",
+        "result": 4,
+        "amount": 43.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0845,
+        "order_date": "2022-10-29T06:29:16.940068Z",
+        "http_header_date": "2022-10-29T06:29:16Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 43.392505,
+        "eur_value": 3.6666666666666666666666666667,
+        "price": 0.0845,
+        "fees": 0.0220000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 1.0,
+        "profit_in_eur": 0.0146666666666666666666666667,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.0854,
+          "internal_number": 785,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 43.392505,
+        "price": 0.0845,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 788
+        }
+      },
+      "order_result": {
+        "order_id": "703b5f69-5346-453f-965c-0b5410bce615",
+        "result": 4,
+        "amount": 43.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0845,
+        "order_date": "2022-10-29T06:34:20.786616Z",
+        "http_header_date": "2022-10-29T06:34:20Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 43.392505,
+        "eur_value": 3.6666666666666666666666666667,
+        "price": 0.0845,
+        "fees": 0.0220000000000000000000000000,
+        "is_post_only": true,
+        "profit_percently": 1.5,
+        "profit_in_eur": 0.0330000000000000000000000000,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.0858,
+          "internal_number": 787,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 38.467950,
+        "price": 0.0857,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 790
+        }
+      },
+      "order_result": {
+        "order_id": "8679f259-9881-401d-84cb-db615c1da4cb",
+        "result": 4,
+        "amount": 38.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0857,
+        "order_date": "2022-10-29T06:44:29.332287Z",
+        "http_header_date": "2022-10-29T06:44:29Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 38.467950,
+        "eur_value": 3.2967032967032967032967032967,
+        "price": 0.0857,
+        "fees": 0.0197802197802197802197802198,
+        "is_post_only": true,
+        "profit_percently": 1.0,
+        "profit_in_eur": 0.0131868131868131868131868132,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.0866,
+          "internal_number": 789,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 38.467950,
+        "price": 0.0857,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 792
+        }
+      },
+      "order_result": {
+        "order_id": "42c0b7a2-1c6c-4f05-9152-6a7c0661d4a5",
+        "result": 4,
+        "amount": 38.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0857,
+        "order_date": "2022-10-29T07:14:50.10635Z",
+        "http_header_date": "2022-10-29T07:14:50Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 38.467950,
+        "eur_value": 3.2967032967032967032967032967,
+        "price": 0.0857,
+        "fees": 0.0197802197802197802197802198,
+        "is_post_only": true,
+        "profit_percently": 1.5,
+        "profit_in_eur": 0.0296703296703296703296703297,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.087,
+          "internal_number": 791,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 38.512889,
+        "price": 0.0856,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 800
+        }
+      },
+      "order_result": {
+        "order_id": "5ed89e05-37e0-4aad-9296-91ab3dcd8986",
+        "result": 4,
+        "amount": 38.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0856,
+        "order_date": "2022-10-29T07:19:55.108872Z",
+        "http_header_date": "2022-10-29T07:19:55Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 38.512889,
+        "eur_value": 3.2967032967032967032967032967,
+        "price": 0.0856,
+        "fees": 0.0197802197802197802197802198,
+        "is_post_only": true,
+        "profit_percently": 3.5,
+        "profit_in_eur": 0.0956043956043956043956043957,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.0887,
+          "internal_number": 793,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 38.557933,
+        "price": 0.0855,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 801
+        }
+      },
+      "order_result": {
+        "order_id": "09ee52d5-9b4a-4f8d-8c11-21865a0e5988",
+        "result": 4,
+        "amount": 38.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0855,
+        "order_date": "2022-10-29T07:19:55.312837Z",
+        "http_header_date": "2022-10-29T07:19:55Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 38.557933,
+        "eur_value": 3.2967032967032967032967032967,
+        "price": 0.0855,
+        "fees": 0.0197802197802197802197802198,
+        "is_post_only": true,
+        "profit_percently": 4.0,
+        "profit_in_eur": 0.1120879120879120879120879122,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.0891,
+          "internal_number": 794,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 38.512889,
+        "price": 0.0856,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 802
+        }
+      },
+      "order_result": {
+        "order_id": "4a0bc6cb-4220-42f3-a7df-63a71bd0a567",
+        "result": 4,
+        "amount": 38.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0856,
+        "order_date": "2022-10-29T07:19:55.497088Z",
+        "http_header_date": "2022-10-29T07:19:55Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 38.512889,
+        "eur_value": 3.2967032967032967032967032967,
+        "price": 0.0856,
+        "fees": 0.0197802197802197802197802198,
+        "is_post_only": true,
+        "profit_percently": 4.5,
+        "profit_in_eur": 0.1285714285714285714285714287,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.0896,
+          "internal_number": 795,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 38.557933,
+        "price": 0.0855,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 803
+        }
+      },
+      "order_result": {
+        "order_id": "28a54930-1aad-4568-9b69-2f397896f7c8",
+        "result": 4,
+        "amount": 38.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0855,
+        "order_date": "2022-10-29T07:19:56.142063Z",
+        "http_header_date": "2022-10-29T07:19:56Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 38.557933,
+        "eur_value": 3.2967032967032967032967032967,
+        "price": 0.0855,
+        "fees": 0.0197802197802197802197802198,
+        "is_post_only": true,
+        "profit_percently": 5.0,
+        "profit_in_eur": 0.1450549450549450549450549452,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.09,
+          "internal_number": 796,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 38.467950,
+        "price": 0.0857,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 804
+        }
+      },
+      "order_result": {
+        "order_id": "7a29af30-759a-495b-98f8-d40d1091a26c",
+        "result": 4,
+        "amount": 38.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0857,
+        "order_date": "2022-10-29T07:19:56.344905Z",
+        "http_header_date": "2022-10-29T07:19:56Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 38.467950,
+        "eur_value": 3.2967032967032967032967032967,
+        "price": 0.0857,
+        "fees": 0.0197802197802197802197802198,
+        "is_post_only": true,
+        "profit_percently": 3.0,
+        "profit_in_eur": 0.0791208791208791208791208792,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.0883,
+          "internal_number": 797,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 38.603083,
+        "price": 0.0854,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 805
+        }
+      },
+      "order_result": {
+        "order_id": "8dee98ac-179b-4805-9b3c-93f19c7458fa",
+        "result": 4,
+        "amount": 38.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0854,
+        "order_date": "2022-10-29T07:19:56.513592Z",
+        "http_header_date": "2022-10-29T07:19:56Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 38.603083,
+        "eur_value": 3.2967032967032967032967032967,
+        "price": 0.0854,
+        "fees": 0.0197802197802197802197802198,
+        "is_post_only": true,
+        "profit_percently": 2.5,
+        "profit_in_eur": 0.0626373626373626373626373627,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.0876,
+          "internal_number": 798,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 38.467950,
+        "price": 0.0857,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 806
+        }
+      },
+      "order_result": {
+        "order_id": "f68ef2ab-f93e-4517-80b2-300c7d98b882",
+        "result": 4,
+        "amount": 38.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0857,
+        "order_date": "2022-10-29T07:19:56.677887Z",
+        "http_header_date": "2022-10-29T07:19:56Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 38.467950,
+        "eur_value": 3.2967032967032967032967032967,
+        "price": 0.0857,
+        "fees": 0.0197802197802197802197802198,
+        "is_post_only": true,
+        "profit_percently": 2.0,
+        "profit_in_eur": 0.0461538461538461538461538462,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.0874,
+          "internal_number": 799,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 38.603083,
+        "price": 0.0854,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 813
+        }
+      },
+      "order_result": {
+        "order_id": "6787b133-2b45-4c48-8e9b-d77b90c670e5",
+        "result": 4,
+        "amount": 38.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0854,
+        "order_date": "2022-10-29T07:35:09.973985Z",
+        "http_header_date": "2022-10-29T07:35:10Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 38.603083,
+        "eur_value": 3.2967032967032967032967032967,
+        "price": 0.0854,
+        "fees": 0.0197802197802197802197802198,
+        "is_post_only": true,
+        "profit_percently": 6.5,
+        "profit_in_eur": 0.1945054945054945054945054947,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.0913,
+          "internal_number": 811,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 38.648339,
+        "price": 0.0853,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 814
+        }
+      },
+      "order_result": {
+        "order_id": "f397aac2-870e-44c8-85c3-e6766fae9249",
+        "result": 4,
+        "amount": 38.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0853,
+        "order_date": "2022-10-29T07:35:10.615913Z",
+        "http_header_date": "2022-10-29T07:35:10Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 38.648339,
+        "eur_value": 3.2967032967032967032967032967,
+        "price": 0.0853,
+        "fees": 0.0197802197802197802197802198,
+        "is_post_only": true,
+        "profit_percently": 7.0,
+        "profit_in_eur": 0.2109890109890109890109890112,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.0917,
+          "internal_number": 812,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 38.693701,
+        "price": 0.0852,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 816
+        }
+      },
+      "order_result": {
+        "order_id": "88650036-5e80-49c7-9a16-23caa345e758",
+        "result": 4,
+        "amount": 38.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0852,
+        "order_date": "2022-10-29T07:40:14.401878Z",
+        "http_header_date": "2022-10-29T07:40:14Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 38.693701,
+        "eur_value": 3.2967032967032967032967032967,
+        "price": 0.0852,
+        "fees": 0.0197802197802197802197802198,
+        "is_post_only": true,
+        "profit_percently": 7.5,
+        "profit_in_eur": 0.2274725274725274725274725277,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.0921,
+          "internal_number": 815,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 38.693701,
+        "price": 0.0852,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 818
+        }
+      },
+      "order_result": {
+        "order_id": "87357729-435a-412b-a8dd-1f85ef14da2a",
+        "result": 4,
+        "amount": 38.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0852,
+        "order_date": "2022-10-29T07:55:25.483547Z",
+        "http_header_date": "2022-10-29T07:55:25Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 38.693701,
+        "eur_value": 3.2967032967032967032967032967,
+        "price": 0.0852,
+        "fees": 0.0197802197802197802197802198,
+        "is_post_only": true,
+        "profit_percently": 8.0,
+        "profit_in_eur": 0.2439560439560439560439560442,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.0926,
+          "internal_number": 817,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 38.739169,
+        "price": 0.0851,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 822
+        }
+      },
+      "order_result": {
+        "order_id": "14dcbb4c-7f70-4365-ba02-dcfd8984ec29",
+        "result": 4,
+        "amount": 38.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0851,
+        "order_date": "2022-10-29T08:00:29.590819Z",
+        "http_header_date": "2022-10-29T08:00:29Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 38.739169,
+        "eur_value": 3.2967032967032967032967032967,
+        "price": 0.0851,
+        "fees": 0.0197802197802197802197802198,
+        "is_post_only": true,
+        "profit_percently": 8.5,
+        "profit_in_eur": 0.2604395604395604395604395607,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.093,
+          "internal_number": 819,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 38.784745,
+        "price": 0.0850,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 823
+        }
+      },
+      "order_result": {
+        "order_id": "3efb0565-4e83-407c-9156-7cb03adcb913",
+        "result": 4,
+        "amount": 38.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.085,
+        "order_date": "2022-10-29T08:00:30.171159Z",
+        "http_header_date": "2022-10-29T08:00:30Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 38.784745,
+        "eur_value": 3.2967032967032967032967032967,
+        "price": 0.0850,
+        "fees": 0.0197802197802197802197802198,
+        "is_post_only": true,
+        "profit_percently": 9.0,
+        "profit_in_eur": 0.2769230769230769230769230772,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.0934,
+          "internal_number": 820,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    },
+    {
+      "order_request": {
+        "market_symbol": "DOGE-EUR",
+        "amount": 38.830428,
+        "price": 0.0849,
+        "stop_price": 0.0,
+        "is_buy": true,
+        "is_margin": false,
+        "should_round_amount": true,
+        "order_type": 0,
+        "extra_parameters": {
+          "RoboNumberOrder": 824
+        }
+      },
+      "order_result": {
+        "order_id": "73a28f7c-7eb1-41bc-8221-c145eb3f02cd",
+        "result": 4,
+        "amount": 38.0,
+        "amount_filled": 0.0,
+        "is_amount_filled_reversed": false,
+        "price": 0.0849,
+        "order_date": "2022-10-29T08:00:30.597Z",
+        "http_header_date": "2022-10-29T08:00:30Z",
+        "completed_date": "0001-01-01T00:00:00",
+        "market_symbol": "DOGE-EUR",
+        "is_buy": true,
+        "fees": 0.0,
+        "fees_currency": "DOGE"
+      },
+      "wallet": {
+        "crypto_broker_wallet": {
+          "MarketCoreCupBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 1461.0,
+            "eur_account_value": 88.2,
+            "crypto_position_transaction": 0.0608,
+            "market_symbol": "DOGE-EUR"
+          },
+          "MarketCoreDefinedSharpBroker": {
+            "crypto_broker_wallet": {},
+            "crypto_account_value": 300.0,
+            "eur_account_value": 65.0,
+            "crypto_position_transaction": 0.085,
+            "market_symbol": "DOGE-EUR"
+          }
+        },
+        "crypto_account_value": 0.0,
+        "eur_account_value": 0.0,
+        "crypto_position_transaction": 0.0,
+        "market_symbol": "DOGE-EUR"
+      },
+      "buy_or_sell": {
+        "process_type": 1,
+        "crypto_value": 38.830428,
+        "eur_value": 3.2967032967032967032967032967,
+        "price": 0.0849,
+        "fees": 0.0197802197802197802197802198,
+        "is_post_only": true,
+        "profit_percently": 9.5,
+        "profit_in_eur": 0.2934065934065934065934065937,
+        "internal_data": {
+          "strategy": "SharpProcessingMarket",
+          "starting_point_position_to_buy_or_sell": 0.0938,
+          "internal_number": 821,
+          "order_from_internal_number": 0
+        },
+        "market_symbol": "DOGE-EUR"
+      },
+      "strategy_name": "MarketCoreDefinedSharpBroker"
+    }
+  ]
 }
