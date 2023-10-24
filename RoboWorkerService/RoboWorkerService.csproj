@@ -1,13 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk.Worker">
 
     <PropertyGroup>
-        <TargetFramework>net6.0-windows</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <UserSecretsId>dotnet-RoboWorkerService-46BEBDC3-E741-433F-A64E-DCE7B4204D80</UserSecretsId>
         <Platforms>x86</Platforms>
         <OutputType>Exe</OutputType>
         <PlatformTarget>AnyCPU</PlatformTarget>
+        <LangVersion>12</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
@@ -34,6 +35,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\..\EchangeSharp\src\ExchangeSharp\ExchangeSharp.csproj" />
         <ProjectReference Include="..\..\RobotCryptoExternal\ExchangeSharp\src\ExchangeSharp\ExchangeSharp.csproj" />
         <ProjectReference Include="..\Library\Helper\Helper.csproj" />
     </ItemGroup>

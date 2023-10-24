@@ -1,7 +1,6 @@
 ﻿using ExchangeSharp;
 using Helper.Interface;
 using Helper.Serialization;
-using NLog.LayoutRenderers.Wrappers;
 using RoboWorkerService.Config;
 using RoboWorkerService.Interfaces;
 using RoboWorkerService.Market.Enum;
