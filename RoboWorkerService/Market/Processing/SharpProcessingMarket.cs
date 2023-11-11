@@ -119,30 +119,34 @@ public class SharpProcessingMarket<W> : BaseProcessMarketOrder<W>, IDefinedMoney
         if (buyData.MarketProcessType == MarketProcessType.Buy)
         {
 // TO BUY
-            var countToBuys = (buyData.PercentSpectrumEnd - buyData.PercentSpectrumStart) / buyData.PercentStepCalculatePrice;
-            var moneyStepToBuyEurPrice = buyData.PriceInEur / countToBuys;
+            if (buyData.PriceInEur > 1)
+            {
+                var countToBuys = (buyData.PercentSpectrumEnd - buyData.PercentSpectrumStart) / buyData.PercentStepCalculatePrice;
+                var moneyStepToBuyEurPrice = buyData.PriceInEur / countToBuys;
 
-            if (moneyStepToBuyEurPrice >= 1)
-            {
-                for (int i = 0; i < countToBuys - 1; i++)
+                if (moneyStepToBuyEurPrice >= 1)
                 {
-                    var positionPercentToBuy = buyData.PercentSpectrumStart + buyData.PercentStepCalculatePrice * i;
-                    var buyOrSell = CreateBuyOrderEur(positionPercentToBuy, moneyStepToBuyEurPrice, MarketProcessType.Buy);
-                    if (buyOrSell is not null)
+                    for (int i = 0; i < countToBuys - 1; i++)
                     {
-                        listBuyOrSell.Add(buyOrSell);
-                        buyData.PriceInEur -= moneyStepToBuyEurPrice;
-                        if (buyData.PriceInEur <= 0) break;
-                        // nejsou zadne penize v penezence
+                        var positionPercentToBuy = buyData.PercentSpectrumStart + buyData.PercentStepCalculatePrice * i;
+                        var buyOrSell = CreateBuyOrderEur(positionPercentToBuy, moneyStepToBuyEurPrice, MarketProcessType.Buy);
+                        if (buyOrSell is not null)
+                        {
+                            listBuyOrSell.Add(buyOrSell);
+                            buyData.PriceInEur -= moneyStepToBuyEurPrice;
+                            if (buyData.PriceInEur <= 0) break;
+                            // nejsou zadne penize v penezence
+                        }
+                        else
+                            break;
                     }
-                    else
-                        break;
                 }
-            }
-            else
-            {
-                _logger.LogDebug($"SHARP BUY {_cryptoCurrency.Crypto}: Calculated money is less then one Euro. Change the data:" +
-                                 ObjectDumper.Dump(buyData));
+                else
+                {
+                    _logger.LogDebug(
+                        $"SHARP BUY {_cryptoCurrency.Crypto}: Calculated money is less then one Euro. Change the data:" +
+                        ObjectDumper.Dump(buyData));
+                }
             }
         }
 

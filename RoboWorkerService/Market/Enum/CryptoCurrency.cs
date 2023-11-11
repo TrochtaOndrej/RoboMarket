@@ -6,35 +6,45 @@ namespace RoboWorkerService.Market.Enum;
 
 public class CryptoALGO : ICryptoALGO
 {
-    [JsonIgnore] public string Crypto { get; set; } = "ALGO-EUR";
+    [JsonIgnore]
+    public string Crypto { get; set; } = "ALGO-EUR";
+
     public int CountDecimalNumberInPosition { get; } = 4;
     public int CountDecimalNumberCryptoCurency { get; } = 0;
 }
 
 public class CryptoBTC : ICryptoBTC
 {
-    [JsonIgnore] public string Crypto { get; set; } = "BTC-EUR";
+    [JsonIgnore]
+    public string Crypto { get; set; } = "BTC-EUR";
+
     public int CountDecimalNumberInPosition { get; } = 2;
-    public int CountDecimalNumberCryptoCurency { get; }
+    public int CountDecimalNumberCryptoCurency { get; } = 6;
 }
 
 public class CryptoETH : ICryptoETH
 {
-    [JsonIgnore] public string Crypto { get; set; } = "ETH-EUR";
+    [JsonIgnore]
+    public string Crypto { get; set; } = "ETH-EUR";
+
     public int CountDecimalNumberInPosition { get; } = 2;
     public int CountDecimalNumberCryptoCurency { get; } = 6;
 }
 
 public class CryptoALCX : ICryptoALCX
 {
-    [JsonIgnore] public string Crypto { get; set; } = "ALCX-EUR";
+    [JsonIgnore]
+    public string Crypto { get; set; } = "ALCX-EUR";
+
     public int CountDecimalNumberInPosition { get; } = 4;
     public int CountDecimalNumberCryptoCurency { get; } = 6;
 }
 
 public class CryptoDOGE : ICryptoDOGE
 {
-    [JsonIgnore] public string Crypto { get; set; } = "DOGE-EUR";
+    [JsonIgnore]
+    public string Crypto { get; set; } = "DOGE-EUR";
+
     public int CountDecimalNumberInPosition { get; } = 4;
     public int CountDecimalNumberCryptoCurency { get; } = 6;
 }
@@ -42,8 +52,12 @@ public class CryptoDOGE : ICryptoDOGE
 public interface ICryptoCurrency
 {
     public string Crypto { get; set; }
-    [JsonIgnore] public int CountDecimalNumberInPosition { get; }
-    [JsonIgnore] public int CountDecimalNumberCryptoCurency { get; }
+
+    [JsonIgnore]
+    public int CountDecimalNumberInPosition { get; }
+
+    [JsonIgnore]
+    public int CountDecimalNumberCryptoCurency { get; }
 }
 
 public class CryptoCurrency : ICryptoCurrency

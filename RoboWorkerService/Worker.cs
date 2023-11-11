@@ -22,10 +22,10 @@ public class Worker : BackgroundService
         List<Type> typeCryptoOnMarket = new List<Type>()
         {
             typeof(ICryptoBTC),
-            typeof(ICryptoETH),
-            typeof(ICryptoDOGE),
-            typeof(ICryptoALGO),
-            typeof(ICryptoALCX)
+            // typeof(ICryptoETH),
+            // typeof(ICryptoDOGE),
+            // typeof(ICryptoALGO),
+            // typeof(ICryptoALCX)
         };
 
         List<IMarketCoreBroker> cryptoProcessing = new List<IMarketCoreBroker>();
@@ -85,6 +85,7 @@ public class Worker : BackgroundService
                 return $@"Aktualni smycka: {Counter} ";
             case "/BTCEUR":
                 var wallet = _appRobo.GetService<IWallet<ICryptoBTC>>();
+                if (wallet is null) return "Error: Wallet is null";
                 var walletDump = "Wallet: " + Environment.NewLine;
                 if (wallet is not null)
                 {

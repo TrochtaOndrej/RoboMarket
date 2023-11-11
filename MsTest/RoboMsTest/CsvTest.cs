@@ -5,7 +5,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using RoboWorkerService;
 using RoboWorkerService.Csv;
+using RoboWorkerService.Interface;
+using RoboWorkerService.Interfaces;
 using RoboWorkerService.Json;
+using RoboWorkerService.Market.Enum;
+using RoboWorkerService.Market.Processing;
 
 namespace RoboMsTest;
 
@@ -40,5 +44,21 @@ public class CsvTest : BaseTest
         });
 
         return Verify(File.ReadAllText(csv.FileNameCsv), VerifySettingsTest);
+    }
+}
+
+[TestClass]
+public class ProcessingCupTest : BaseTest
+{
+    public ProcessingCupTest()
+    {
+
+    }
+
+    public override void InitService(ServiceCollection service)
+    {
+        RoboServices.AddRoboServices(service);
+        RoboServices.AddJsonService(service);
+
     }
 }

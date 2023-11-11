@@ -1,5 +1,8 @@
-﻿using Helper.Interface;
+﻿using System.Configuration;
+using Helper.Interface;
 using Helper.Serialization;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using RoboWorkerService.Config;

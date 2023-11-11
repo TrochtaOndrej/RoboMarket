@@ -45,7 +45,7 @@ public static class Program
                 Log.Logger.Write(LogEventLevel.Fatal, ex.ToString());
             }
 
-            appRobo?.RoboConfig.SaveDataAsync().Wait();
+            await appRobo?.RoboConfig.SaveDataAsync()!;
         }
         catch (Exception ex)
         {

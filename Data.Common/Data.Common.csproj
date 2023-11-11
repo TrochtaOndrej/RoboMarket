@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>Data.Common</AssemblyName>
+    <RootNamespace>Data.Common</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFrameworkCore.Data.QueryBuilder" Version="6.0.9"/>
+    <PackageReference Include="EntityFrameworkCore.Data.QueryBuilder.Abstractions" Version="6.0.9"/>
+    <PackageReference Include="EntityFrameworkCore.Data.UnitOfWork" Version="6.0.9"/>
+    <PackageReference Include="EntityFrameworkCore.Data.UnitOfWork.Abstractions" Version="6.0.9"/>
+  </ItemGroup>
+
+</Project>
