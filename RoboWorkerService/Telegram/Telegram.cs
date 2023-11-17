@@ -22,7 +22,7 @@ public class Telegram : TelegramAPi, ITelegram
         _appRobo = appRobo;
         _logger = logger;
 
-        var me = BotClient.GetMeAsync().Result;
+        //   var me = BotClient.GetMeAsync().Result;
     }
 
     public async Task SendOkTextAsync(string text)

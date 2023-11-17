@@ -1,4 +1,5 @@
 ﻿using System.Text.RegularExpressions;
+using Serilog;
 using Telegram.Bot;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Polling;
@@ -17,7 +18,14 @@ public class TelegramAPi
 
     protected TelegramAPi(string token, CancellationToken cancellationToken)
     {
-        Register(token, cancellationToken).Wait();
+        try
+        {
+            Register(token, cancellationToken).Wait();
+        }
+        catch (Exception ex)
+        {
+            Log.Error(ex, "telegram Api failed!");
+        }
     }
 
     private async Task Register(string token, CancellationToken cancellationToken)
